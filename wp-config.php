@@ -40,7 +40,7 @@
 
 /** The name of the database for WordPress */
 
-define('DB_NAME', 'cheetah_conservation_fund');
+define('DB_NAME', 'ccf_2020');
 
 /** MySQL database username */
 
@@ -62,9 +62,9 @@ define('DB_CHARSET', 'utf8mb4');
 
 define('DB_COLLATE', '');
 
-define('WP_SITEURL', 'http://cheetah-2019/');
+define('WP_SITEURL', 'http://cheetah-2020/');
 
-define('WP_HOME', 'http://cheetah-2019/');
+define('WP_HOME', 'http://cheetah-2020/');
 
 /**#@+
 
@@ -148,7 +148,7 @@ define('WP_ALLOW_MULTISITE', true);
 
 define('MULTISITE', true);
 define('SUBDOMAIN_INSTALL', false);
-define('DOMAIN_CURRENT_SITE', 'cheetah-2019');
+define('DOMAIN_CURRENT_SITE', 'cheetah-2020');
 
 define('ADMIN_COOKIE_PATH', '/');
 define('COOKIE_DOMAIN', '');
