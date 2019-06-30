@@ -72,17 +72,16 @@
 
     </div>
 
-    <div class="bg-light py-5">
+    <div class="bg-light overflow-hidden">
 
         <?php if ( have_rows( 'footer_briefs', 'option') ): ?>
         
-         <div class="container">
+        <div class="container my-5">
 
-            <div class="row mb-4">
+            <div class="row my-3">
 
-            <?php while ( have_rows('footer_briefs', 'option') ): the_row();
+                <?php while ( have_rows('footer_briefs', 'option') ): the_row();
 
-                // vars
                 $headline = get_sub_field('headline');
                 $paragraph = get_sub_field('paragraph');
 
@@ -99,13 +98,33 @@
                         <?php echo $paragraph; ?>
                     </div>
                     <?php endif; ?>
+
                 </div>
                 <!-- .col -->
 
-            <?php endwhile; ?>
+                <?php endwhile; ?>
 
             </div>
             <!-- .row -->
+
+           <?php 
+
+           $website_credits = get_field('website_credits', 'option');
+
+           if ($website_credits): ?>
+
+            <div class="row my-3">
+
+                <div class="col-xl-8 offset-xl-4">
+                    <?php echo $website_credits; ?>
+                </div>
+                <!-- .col -->
+
+            </div>
+            <!-- .row -->
+
+            <?php endif; /* website_credits */ ?>
+
             <hr class="dark mb-2">
 
             <div class="row justify-content-between">
