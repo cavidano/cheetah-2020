@@ -155,9 +155,8 @@
 
                         <ul class="extensible-list horizontal fs-lg">
 
-                        <?php while ( have_rows('social_media_links', 'option') ): the_row();
+                            <?php while ( have_rows('social_media_links', 'option') ): the_row();
 
-                            // vars
                             $icon = get_sub_field('icon');
                             $link = get_sub_field('link');
 
