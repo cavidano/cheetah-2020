@@ -87,7 +87,7 @@
 
                 ?>
 
-                <div class="col-lg-6 col-xl-4 mb-3 mb-xl-0">
+                <div class="col-lg-6 col-xl-4 <?php if(get_row_index() !== 3): ?>mb-3 mb-xl-0<?php endif; ?>">
 
                     <?php if ($headline): ?>
                     <h2 class="h5"><?php echo $headline; ?></h2>
@@ -135,7 +135,7 @@
 
             <div class="row justify-content-between">
 
-                <div class="col-lg-auto">
+                <div class="col-md-auto mb-2 mb-md-0">
 
                     <ul class="extensible-list horizontal fs-lg">
                         <li>
@@ -149,7 +149,7 @@
                 </div>
                 <!-- .col -->
 
-                <div class="col-lg-auto mb-2 mb-lg-0">
+                <div class="col-md-auto">
 
                     <?php if ( have_rows('social_media_links', 'option') ): ?>
 
