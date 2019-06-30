@@ -87,7 +87,7 @@
 
                 ?>
 
-                <div class="col-lg-6 col-xl-4 mb-4 mb-xl-0">
+                <div class="col-lg-6 col-xl-4 mb-3 mb-xl-0">
 
                     <?php if ($headline): ?>
                     <h2 class="h5"><?php echo $headline; ?></h2>
@@ -116,7 +116,13 @@
             <div class="row my-3">
 
                 <div class="col-xl-8 offset-xl-4">
-                    <?php echo $website_credits; ?>
+
+                        <div class="fs-md text-muted">
+                           
+                            <?php echo $website_credits; ?>
+                            
+                        </div>
+
                 </div>
                 <!-- .col -->
 
