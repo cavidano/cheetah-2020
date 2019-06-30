@@ -1,0 +1,522 @@
+@import "a-global-variables.scss";
+
+////////////////////////////////////////
+// A. Bootstrap imports
+////////////////////////////////////////
+
+@import "../bootstrap/scss/functions";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+
+@import "../bootstrap/scss/forms";
+@import "../bootstrap/scss/buttons";
+@import "../bootstrap/scss/custom-forms";
+@import "../bootstrap/scss/type";
+@import "../bootstrap/scss/alert";
+
+////////////////////////////////////////
+// B. Icon
+////////////////////////////////////////
+
+%fa-icon {
+    font-family: $font-awesome;
+    font-weight: 900;
+    font-size: inherit;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    color: currentColor;
+}
+
+%fa-spin {
+    -webkit-animation: spin 2s linear infinite;
+    -moz-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+////////////////////////////////////////
+// Blackbaud Forms
+////////////////////////////////////////
+
+$col-a-width: 70%;
+$col-b-width: 30%;
+
+#bbox-root {
+
+    // Global resets
+
+    #mongo-form,
+    div.BBFormContainer,
+    div.BBFormFieldContainer,
+    div.BBFormSection,
+    div.BBFormSectionHeading,
+    div.BBFormFieldRecurrenceInfo {
+        min-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    div.BBFormContainer {
+        background-color: transparent !important;
+    }
+
+    // Spinner
+
+    #bbox-msg-wrapper {
+
+        >img {
+            display: none;
+        }
+
+        text-align: center;
+
+        &::after {
+            color: $secondary;
+            position: absolute;
+            @extend %fa-icon;
+            content: "\f110";
+            @extend %fa-spin;
+        }
+    }
+
+    // Validation 
+    
+    $alert-color: darken($warning, 35%);
+
+    div.BBFormErrorBlock {
+        @extend .alert-warning;
+        font-size: $fs-md;
+        // background-color: $warning;
+        color: darken($warning, 35%);
+        border-color: rgba($alert-color, 0.25);
+        padding: $spacer-2;
+        max-width: unset;
+        margin-bottom: $spacer-2;
+        border-radius: 0;
+    }
+
+    // Generic tags
+
+    input:not([type="checkbox"]),
+    select,
+    textarea {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+        width: $col-a-width;
+        opacity: 1 !important;
+        max-width: unset;
+    }
+
+    select {
+        @extend .custom-select;
+    }
+
+    legend {
+        margin-bottom: $spacer-2;
+
+        >div>label {
+            @extend .h4;
+
+            color: $body-color;
+        }
+    }
+
+    // Labels
+
+    .BBFormFieldLabel {
+        margin: 0 !important;
+        padding-right: 1rem !important;
+        font-size: $fs-md;
+
+        // background: rgba(blue, 0.25);
+        width: $col-b-width;
+    }
+
+    input[type="checkbox"]+label {
+        max-width: unset;
+
+        // background: pink !important;
+
+    }
+
+    // Inputs
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+        @extend .form-control;
+
+        display: inline-block;
+
+        &.BBFormCurrency {
+            display: none;
+        }
+    }
+
+    .BBTwoFields,
+    .BBThreeFields {
+
+        input,
+        select {
+            margin: 0;
+            width: 70%;
+            margin-bottom: $spacer-2;
+        }
+
+        input {
+            float: right;
+        }
+    }
+
+    div.BBFormChecklistItem {
+        padding: 0;
+
+        // @extend .custom-control;
+
+        // @extend .custom-checkbox;
+
+        input[type="checkbox"] {
+            // @extend .custom-control-input;
+        }
+
+        label {
+            width: auto;
+            padding: 0 $spacer-1;
+        }
+    }
+
+    #bboxdonation_recurrence_divRecurrenceCheckbox,
+    #bboxdonation_billing_fldOrgGift,
+    #bboxdonation_billing_fldAnonymous,
+    #bboxdonation_tribute_divTributeGeneral>div,
+    #divTributeAcknowledge>div {
+        // @extend .custom-control;
+
+        // @extend .custom-checkbox;
+
+        input[type="checkbox"] {
+            // @extend .custom-control-input;
+        }
+
+        label.BBFormCheckboxLabel {
+            // @extend .custom-control-label;
+
+            display: inline-block;
+            float: none;
+            width: auto;
+        }
+    }
+
+    div.BBFormSectionHeading {
+        color: $text-muted;
+        border-bottom: 1px solid $border-color;
+    }
+
+    // Sections
+
+    div.BBFormSection {
+        margin-bottom: $form-group-margin-bottom;
+    }
+
+    div.BBFormFieldContainer {
+        margin-top: $spacer-2 !important;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+
+        div.BBFormFieldContainer {
+            margin-top: 0 !important;
+        }
+    }
+
+    div.BBFormFieldRecurrenceInfo {
+        font-size: $fs-md;
+        margin-top: $spacer-2;
+    }
+
+    div.BBRecurrenceFieldContainer {
+        margin: 0;
+
+        span {
+            display: flex;
+            align-items: center;
+            margin-bottom: $spacer-1;
+
+            select {
+                height: 100%;
+                margin: 0 1rem;
+            }
+        }
+    }
+
+    .BBFormFieldRecurrenceInfo {
+        color: $text-muted;
+    }
+
+    .BBLinkSecureInfo {
+        font-size: $fs-sm;
+        margin-bottom: $spacer-1;
+        margin-left: $col-b-width;
+        border-bottom: 0 !important;
+        text-decoration: underline !important;
+        color: $text-muted;
+    }
+
+    #bboxdonation_payment_lblCCType {
+        display: none;
+    }
+
+    // Credit card images
+    div#DCCreditType {
+        margin-left: $col-b-width;
+        width: auto;
+
+        .BBFormFieldLabel {
+            display: none;
+        }
+    }
+
+    #bboxdonation_payment_cboYear {
+        margin-top: $spacer-2;
+        margin-left: $col-b-width;
+    }
+
+    // Expiration
+
+    .BBFieldExpiration .BBFormFieldLabel {
+        margin: 0;
+        padding: 0;
+    }
+
+    .BBFormRadioList {
+        margin: -($spacer-1 / 2);
+        display: flex;
+        flex-wrap: wrap;
+
+        .BBFormRadioItem {
+            margin: $spacer-1 / 2;
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: 33%;
+            align-self: stretch;
+            display: flex;
+
+            // .BBFormRadioButtonContainer
+
+            >div {
+                display: flex;
+                width: 100%;
+            }
+
+            >div>label {
+                align-self: stretch;
+                display: flex;
+                text-align: center;
+                width: 100%;
+
+                >input {
+                    align-self: center;
+                    margin: 0 auto;
+                    background: $light;
+                    border: none;
+
+                    // padding: .25rem;
+                    height: auto !important;
+                }
+            }
+        }
+
+        .BBFormRadioLabel {
+            &.BBFormRadioLabelGivingLevel {
+                border: $border-width solid $border-color;
+                border-radius: 0;
+
+                @extend .btn;
+
+                @extend .btn-lg;
+
+                font-size: $fs-lg;
+            }
+
+            &.BBFormRadioLabelGivingLevelSelected {
+                border-color: transparent !important;
+                background-color: $primary !important;
+
+                input {
+                    display: block;
+                }
+            }
+
+            span {
+                color: $body-color;
+                font-weight: $font-weight-bold;
+            }
+        }
+    }
+
+    // Hide the last part of the form (temporary)
+
+    .BBFormSectionGiftAttributes,
+    .BBDFormSectionComments {
+        display: none;
+    }
+
+    .BBFormContainer[data-bbox-part-id="ce3cb3d7-d112-40a1-bf4e-c9dd10a518f2"] .BBFormChecklist {
+        max-height: unset;
+        overflow: auto;
+        border: 0;
+    }
+
+    div#bboxdonation_comment_fldComments {
+
+        label,
+        textarea {
+            margin: 0;
+        }
+    }
+
+    input.BBFormSubmitbutton {
+        height: auto;
+        box-shadow: unset;
+        border-color: transparent;
+        @extend .btn;
+        @extend .btn-lg;
+        @extend .btn-primary;
+    }
+
+    @media (max-width: 600px) {
+        .BBThreeFields {
+
+            input,
+            select {
+                width: 100%;
+            }
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 100%;
+        }
+
+        .BBFormFieldLabel {
+            width: 100%;
+        }
+
+        #bboxdonation_payment_cboYear,
+        #DCCreditType {
+            margin-left: 0 !important;
+        }
+    }
+}
+
+////////////////////////////////////////
+// Mongo Forms
+////////////////////////////////////////
+
+#bbox-root{
+
+    [data-bbox-part-id='97d435e6-40ec-41a7-b8e5-2a4eacf55d9c'].BBFormContainer {
+        background-color: transparent !important;
+    }
+    #BBPanelHeading,
+    #bboxevent_priceselect_divAddedDonation{
+        display: none;
+    }
+
+    .BBFormTable {
+        background: transparent;
+        border-radius: 0;
+        padding: 0;
+        border-color: $border-color;
+    }
+
+    .BBFormTableHeader{
+        // background-color: $light;
+        border: none;
+    }
+
+    .BBFormTableHeaderCell{
+        padding: $spacer-2;
+        font-size: $fs-md;
+    }
+    
+    .BBFormTableFooter,
+    .BBFormTableHeaderCell,
+    .BBFormColTotal,
+    .BBTableRowCellFinePrint,
+    .BBFormColHidden{
+        display: none;
+    }
+
+    .BBFormColQty {
+        margin-left: auto;
+        float: right;
+    }
+
+    .BBFormTableRow{
+        padding: $spacer-2;
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid $border-color;
+
+        &[data-price-id="26"] {
+            border-bottom: none !important;
+
+        }
+    }
+
+
+    .BBFormTableRowCell {
+        padding: 0;
+        margin: 0;
+
+        &.BBFormColPriceName{
+            width: unset;
+        }
+
+        &.BBFormColQty {
+            width: 100%;
+            margin-top: $spacer-2;
+            margin-bottom: $spacer-2;
+
+            select{
+                width: 100%;
+            }
+
+        }
+    }
+  
+    #bbox-root div.BBFormSection {
+        margin-bottom: unset !important;
+    }
+}

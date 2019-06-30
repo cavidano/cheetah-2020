@@ -1,0 +1,55 @@
+{
+    "key": "group_5cd5d3f182766",
+    "title": "News Author Field",
+    "fields": [
+        {
+            "key": "field_5cd5d3f9cf88b",
+            "label": "News Author",
+            "name": "news_author",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "news-author",
+            "field_type": "select",
+            "allow_null": 0,
+            "add_term": 1,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "object",
+            "multiple": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "format",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "",
+    "modified": 1558869696
+}

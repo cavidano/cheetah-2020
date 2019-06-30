@@ -1,0 +1,460 @@
+/*
+
+In this file:
+
+// A. Bootstrap colors
+// B. Theme colors
+// C. Sitewide grays
+// D. Breakpoints
+// E. Spacing utilities
+// F. Grid gutter and container widths
+// G. Additional widths
+// H. Font Settings
+// I. Border and border radius
+// J. Buttons and links
+// K. Cards
+// L. Components, navs, and dropdowns
+// M. Box shadows
+// N. Forms and alerts
+// O. Modals
+// P. Carousel
+// Q. Figures
+// R. Pagination
+
+*/
+
+
+////////////////////////////////////////
+// A. Bootstrap colors
+////////////////////////////////////////
+
+// Because we haven't yet imported Bootstrap's SASS dependencies,
+// we must copy color variables from /bootstrap/scss/_variables.scss
+
+// Bootstrap Grayscale
+
+$white: #fff !default;
+$gray-100: #F5F5F5 !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+// Redefine to match 20% black (used on card borders)
+
+$gray-400: #cccccc;
+
+// Bootstrap Colors
+
+$blue: #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+
+// If $accessible-colors is true, use accessible palette instead 
+
+$accessible-colors: true;
+
+@if $accessible-colors {
+
+  $gray-600: #777677;
+
+  $blue: #0029F7;
+  $indigo: #8f51f4;
+  $purple: #8762cd;
+  $pink: #e8006d;
+  $red: #ea172b;
+  $orange: #c45500;
+  $green: #21883f;
+  $teal: #0c8763;
+  $cyan: #008299;
+}
+
+////////////////////////////////////////
+// B. Theme colors
+////////////////////////////////////////
+
+// Set your theme's color palette here
+
+$primary: #fec34e;
+$secondary: #E3982E;
+$tertiary: #375339;
+$info: #462B41;
+$dark: #212529;
+$light: #F7F5F0;
+
+// Adding to the map
+
+$theme-colors: (
+  "white": $white, 
+  "black": $black, 
+  
+  // My new color
+  "tertiary": $tertiary
+);
+
+////////////////////////////////////////
+// C. Sitewide grays
+////////////////////////////////////////
+
+// Default Bootstrap grayscale are all over the map, so
+// here we attempt to simplify the grays used on various Bootstrap elements
+
+$body-color: $gray-900;
+$border-color: $gray-300;
+$text-muted: $gray-600;
+
+// Set grays for accessibility
+
+$blockquote-small-color: $gray-700;
+$input-placeholder-color: $gray-700;
+$dropdown-header-color: $gray-700;
+$figure-caption-color: $body-color;
+$input-border-color: $border-color;
+$input-focus-border-color: $border-color;
+
+// Setting varying border colors to the global '$border-color' value
+
+$hr-border-color: $border-color;
+$list-group-border-color: $border-color;
+$nav-tabs-border-color: $border-color;
+$modal-header-border-color: $border-color;
+$pagination-border-color: $border-color;
+
+////////////////////////////////////////
+// D. Breakpoints
+////////////////////////////////////////
+
+// Instead of using arbitrary breakpoints (i.e. 576px), 
+// we separate each breakpoint with 240px gap
+
+$grid-bp-xs: 0;
+$grid-bp-sm: 480px;
+$grid-bp-md: 720px;
+$grid-bp-lg: 960px;
+$grid-bp-xl: 1200px;
+$grid-bp-xxl: 1440px;
+
+$grid-breakpoints: (
+  xs: $grid-bp-xs,
+  sm: $grid-bp-sm,
+  md: $grid-bp-md,
+  lg: $grid-bp-lg,
+  xl: $grid-bp-xl,
+  xxl: $grid-bp-xxl
+);
+
+////////////////////////////////////////
+// E. Spacing utilities
+////////////////////////////////////////
+
+// Add extra spacing classes (margin '.m-*' and padding '.p-*')
+// Adjust defaults to align with grid ('$spacer-2' equals '$grid-gutter-width' / 2)
+
+$spacer: 1rem; // 16px
+
+$spacer-1: $spacer * 0.5; // 8px
+$spacer-2: $spacer; // 16px
+$spacer-3: $spacer * 2; // 32px
+$spacer-4: $spacer * 3; // 48px
+$spacer-5: $spacer * 4; // 64px
+$spacer-6: $spacer * 6; // 96px
+
+$spacers: (
+  0: 0,
+  1: $spacer-1,
+  2: $spacer-2,
+  3: $spacer-3,
+  4: $spacer-4,
+  5: $spacer-5,
+  6: $spacer-6
+);
+
+////////////////////////////////////////
+// F. Grid gutter and container widths
+////////////////////////////////////////
+
+// Set grid gutter width (must be set in REM)
+
+$grid-gutter-width: 2rem; // (32px)
+
+// Set container max-width media queries
+
+// Convert Grid $grid-gutter-width from REM to PX
+
+@function parseInt($n) {
+    @return $n / ($n * 0 + 1);
+}
+
+@function rem-to-px($size) {
+    $value: parseInt($size) * 16px; // 16px is the base size specified
+    @return round($value);
+}
+
+$container-gutter: rem-to-px($grid-gutter-width);
+
+$container-max-width-sm: $grid-bp-sm - $container-gutter;
+$container-max-width-md: $grid-bp-md - $container-gutter;
+$container-max-width-lg: $grid-bp-lg - $container-gutter;
+$container-max-width-xl: $grid-bp-xl - $container-gutter;
+$container-max-width-xxl: $grid-bp-xxl - $container-gutter;
+
+$container-max-widths: (
+  sm: $container-max-width-sm, 
+  md: $container-max-width-md, 
+  lg: $container-max-width-lg, 
+  xl: $container-max-width-xl, 
+  xxl: $container-max-width-xxl
+);
+
+////////////////////////////////////////
+// G. Additional widths
+////////////////////////////////////////
+
+// Set website width as well as '.narrow', '.medium', and '.wide' 
+// Classes using these variables are found in _e-supplementary-classes.scss
+
+$site-width: 2400px;
+$wide-width: 1680px;
+$narrow-width: 55ch; // 65 characters
+$narrow-width-ie: 650px; // I.E. fallback
+
+$medium-width: $narrow-width * 1.25; // Multiple of $narrow-width
+$medium-width-ie: $narrow-width-ie * 1.25; // Multiple of $narrow-width-ie
+
+$floated-figure-offset-x: ($medium-width - $narrow-width) / 2;
+
+////////////////////////////////////////
+// H. Font Settings
+////////////////////////////////////////
+
+// Font Awesome icons
+
+$font-awesome: "Font Awesome 5 Free";
+
+// Font sizes
+// Instead of manipulation Bootstrap Default variables, 
+// we create our own opt-in font size variables
+
+$fs-sm: 0.875rem; // 14px
+$fs-md: 1rem; // 16px
+$fs-rg: 1.25rem; // 18.672px
+$fs-lg: 1.5rem; // 20px
+$fs-xl: 2.5rem; // 28px
+
+// Match font sizes
+
+$font-size-sm: $fs-sm;
+$font-size-base: $fs-md; // 16px
+$font-size-lg: $fs-rg;
+
+// Font weight vars required for customization
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+// Header Font Sizes
+
+$display1-size: $font-size-base * 6;
+$display2-size: $font-size-base * 5;
+$display3-size: $font-size-base * 4;
+$display4-size: $font-size-base * 3;
+
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base * 1.125;
+
+// h1 - h6 font weight
+
+$headings-font-weight: $font-weight-bold;
+
+// Lead font style
+
+$lead-font-size: $fs-lg;
+$lead-font-weight: $font-weight-normal;
+
+// Responsive font sizes
+
+$enable-responsive-font-sizes: true;
+
+// Blockquote
+
+$blockquote-font-size: $fs-lg;
+
+////////////////////////////////////////
+// I. Border and Border radius
+////////////////////////////////////////
+
+// Border width
+
+$border-width: 1px;
+
+// Enable Rounded
+
+$enable-rounded: false;
+
+// Border Radius
+
+$border-radius-sm: 0.25rem;
+$border-radius: 0.5rem;
+$border-radius-lg: 1rem;
+$border-radius-xl: 2rem;
+
+// Set varying border radius values to a single border radius
+
+$input-border-radius-lg: $border-radius;
+$btn-border-radius-lg: $border-radius;
+
+////////////////////////////////////////
+// J. Buttons and links
+////////////////////////////////////////
+
+// Buttons
+
+$btn-font-weight: $font-weight-bold;
+
+// Links
+
+$link-color: $blue;
+$link-hover-decoration: none;
+
+// Caret
+
+$enable-caret: false;
+
+////////////////////////////////////////
+// K. Cards
+////////////////////////////////////////
+
+// Set card spacing to match grid gutter width
+// (creates consistent x axis spacing on device views)
+
+$card-spacer-x: $spacer-2;
+$card-spacer-y: $spacer-2;
+
+// Lighten '$card-cap-bg' and 
+
+$card-cap-bg: rgba($black, 0.05);
+
+// Make '$card-border-color' feel more consistent with global '$border-color' 
+
+$card-border-color: rgba($black, 0.2);
+
+////////////////////////////////////////
+// L. Components, navs, and dropdowns
+////////////////////////////////////////
+
+// Global Components
+
+$component-active-color: $info;
+
+// '.nav-link' padding
+
+$nav-link-padding-x: $spacer-2;
+$nav-link-padding-y: 0.5rem;
+
+// '.list-group' settings
+
+$list-group-bg: transparent;
+$list-group-border-color: $border-color;
+
+$list-group-item-padding-y: 0.75rem !default;
+$list-group-item-padding-x: 0;
+
+////////////////////////////////////////
+// M. Box shadows
+////////////////////////////////////////
+
+$box-shadow-opacity: 0.3;
+
+$box-shadow-sm: 0 0 0.5rem rgba($black, $box-shadow-opacity) !default;
+$box-shadow: 0 0 1rem rgba($black, $box-shadow-opacity) !default;
+$box-shadow-lg: 0 0 3rem rgba($black, $box-shadow-opacity) !default;
+
+$accessible-box-shadow: 0 0 0 $border-width $input-border-color;
+
+////////////////////////////////////////
+// N. Forms and alerts
+////////////////////////////////////////
+
+$form-group-margin-bottom: $spacer-4;
+
+$input-btn-padding-x: $spacer-2;
+
+// Note: Since version 4.2.1, bootstrap added icons to validate
+// We use more descriptive Font Awesome icons, so we simply turn Bootstrap's validation icons off
+
+$enable-validation-icons: false;
+
+// 'nav-item-search' width (required for RTL)
+
+$nav-item-search-button-width: 28px;
+
+// Custom checkbox and radio settings
+
+$custom-control-indicator-checked-color: white;
+$custom-control-indicator-checked-bg: lighten($blue, 5%);
+$custom-control-indicator-active-bg: lighten($blue, 35%);
+
+$custom-control-indicator-active-box-shadow: 0 0 1rem rgba($blue, $box-shadow-opacity);
+
+// Alert padding
+
+$alert-padding-y: $spacer-2;
+$alert-padding-x: $spacer-2;
+
+////////////////////////////////////////
+// O. Modals
+////////////////////////////////////////
+
+$modal-backdrop-bg: $black;
+$modal-backdrop-opacity: 0.85;
+$modal-content-border-color: rgba($black, 0.2);
+
+////////////////////////////////////////
+// P. Carousel
+////////////////////////////////////////
+
+$carousel-control-color: $white !default;
+$carousel-control-opacity: 0.75;
+
+$carousel-indicator-width: 0.75rem;
+$carousel-indicator-height: 0.75rem;
+$carousel-indicator-spacer: 0.25rem;
+$carousel-indicator-active-bg: $white !default;
+
+$carousel-caption-width: 100%;
+
+////////////////////////////////////////
+// Q. Figures
+////////////////////////////////////////
+
+$figure-caption-font-size: $fs-md;
+$figure-caption-color: $text-muted;
+
+////////////////////////////////////////
+// R. Pagination
+////////////////////////////////////////
+
+$pagination-active-bg: $primary;
+$pagination-color: $body-color;
+$pagination-bg: transparent;
+
+$pagination-hover-color: $text-muted;
+$pagination-hover-bg: $white;
+$pagination-hover-border-color: $border-color;

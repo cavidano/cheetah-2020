@@ -1,0 +1,705 @@
+/*
+
+In this file:
+
+// A. SCSS imports (required)
+// B. Theme styles
+
+*/
+
+////////////////////////////////////////
+// A. SCSS imports (Required)
+////////////////////////////////////////
+
+// Import custom SCSS
+
+@import "a-global-variables.scss";
+@import "b-bootstrap-imports.scss";
+@import "c-custom-mixins.scss";
+@import "d-enhancements.scss";
+@import "e-supplementary-classes.scss";
+@import "f-layout-elements.scss";
+// @import "g-dev-tools.scss";
+
+// @import "h-donate.scss";
+
+////////////////////////////////////////
+// B. Theme styles
+////////////////////////////////////////
+
+html{
+    background-color: $dark;
+}
+
+// Put anything you want here
+
+// Theme Fonts
+
+.f-serif {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.f-sans-serif {
+    font-family: 'Roboto', sans-serif;
+}
+
+.f-cheetah-tracks {
+    font-family: 'cheetah-tracks-regular', 'Roboto';
+    font-weight: normal;
+    line-height: normal !important;
+}
+
+// Font styles
+
+body {
+    @extend .f-sans-serif;
+}
+
+p {
+    @extend .f-serif;
+
+    &.h1,
+    &.h2,
+    &.h3,
+    &.h4,
+    &.h5,
+    &.h6 {
+        @extend .f-sans-serif;
+    }
+}
+
+ul.paragraph-li {
+    @extend .f-serif;
+}
+
+////////////////////////////////////////
+// Global Navigation
+////////////////////////////////////////
+
+#global-links {
+    ul:not(.horizontal) {
+        font-size: $fs-md;
+    }
+}
+
+////////////////////////////////////////
+// Translate
+////////////////////////////////////////
+
+$search-button-width: 2rem;
+
+form[role="search"] {
+    .input-group {
+        @extend .position-relative;
+    }
+
+    input {
+        padding-right: $search-button-width;
+    }
+
+    button {
+        @extend .position-absolute;
+
+        @extend .z-index-900;
+
+        @extend .h-100;
+
+        width: $search-button-width;
+        right: 0;
+    }
+}
+
+#gtranslate_selector {
+    @extend .form-control;
+
+    @extend .form-control-sm;
+}
+
+// All Links
+
+#global-links {
+    li > a {
+        @extend .text-body;
+    }
+}
+
+// // extensible-list colors
+
+#aside-nav {
+    li > a {
+        color: white;
+    }
+
+    li.current_page_item > a {
+        color: $primary;
+        font-weight: $font-weight-bold;
+    }
+}
+
+////////////////////////////////////////
+// Featured Panels and Blocks
+////////////////////////////////////////
+
+.featured-article {
+    color: $body-color;
+
+    div {
+        position: relative;
+        margin-bottom: $spacer-2;
+
+        > span {
+            position: absolute;
+            font-size: $fs-sm;
+            background: $primary;
+            margin-left: $spacer-2;
+            margin-right: $spacer-2;
+            padding: ($spacer-1 / 2) $spacer-1;
+            bottom: 0;
+        }
+    }
+
+    a{
+        padding-left: $spacer-2;
+        padding-right: $spacer-2;
+        font-weight: $font-weight-bold;
+        display: block;
+    }
+
+}
+
+////////////////////////////////////////
+// Infographics
+////////////////////////////////////////
+
+#map-affiliates {
+    width: 100%;
+    height: 250px;
+
+    @include media-breakpoint-up(sm) {
+        height: 350px;
+    }
+
+
+    @include media-breakpoint-up(md) {
+        height: 425px;
+    }
+
+
+    @include media-breakpoint-up(lg) {
+        height: 500px;
+    }
+
+
+    @include media-breakpoint-up(xl) {
+        height: 550px;
+    }
+
+
+    @include media-breakpoint-up(xxl) {
+        height: 600px;
+    }
+
+
+    @include media-breakpoint-up(xxxl) {
+        height: 750px;
+    }
+}
+
+span.fa-circle {
+    &.office {
+        color: #FFCC4E;
+    }
+
+    &.affiliate {
+        color: #BC95C4;
+    }
+
+    &.chapter {
+        color: #F58E8B;
+    }
+
+    &.partner-organization {
+        color: #C1BFB7;
+    }
+}
+
+////////////////////////////////////////
+// Leaflet UI
+////////////////////////////////////////
+
+.leaflet-popup-content-wrapper {
+    @extend .rounded;
+
+    @extend .shadow;
+
+    // padding: $spacer-1;
+}
+
+.leaflet-popup-content {
+    font-size: $fs-md;
+
+    p {
+        margin: 0;
+        font-size: $fs-sm;
+
+        &.title {
+            font-size: $fs-md;
+        }
+
+        &.city {
+            color: $text-muted;
+            margin-bottom: $spacer-1 / 2;
+        }
+
+        &.type {}
+
+        &.info {}
+    }
+}
+
+$leaflet-button-size: 40px;
+$leaflet-button-bg: theme-color("info");
+$leaflet-button-color: white;
+
+#map-affiliates {
+    @extend .bg-light;
+
+    .leaflet-bar {
+        margin-left: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .leaflet-bar,
+    .leaflet-bar a {
+        box-shadow: none;
+        border: 0;
+    }
+
+    .leaflet-bar a {
+        @extend .rounded-circle;
+
+        @extend .shadow-sm;
+
+        text-indent: 0;
+        height: $leaflet-button-size;
+        width: $leaflet-button-size;
+        line-height: $leaflet-button-size;
+        font-size: $fs-md;
+        margin-bottom: $spacer-1;
+        background: $leaflet-button-bg;
+        color: $leaflet-button-color;
+
+        @include hover-focus {
+            background: $leaflet-button-bg;
+            text-decoration: none;
+        }
+
+
+        &.leaflet-disabled {
+            span {
+                @extend .opacity-30;
+            }
+        }
+    }
+}
+
+////////////////////////////////////////
+// Decorative
+////////////////////////////////////////
+
+.cheetah-spots {
+    @include apply-background-image("cheetah-spots", ".svg", false);
+}
+
+.pattern-border-top-bottom {
+    @extend .position-relative;
+
+    &::before,
+    &::after {
+        content: "\00a0";
+        position: absolute;
+        width: 100%;
+        height: 40px;
+        left: 0;
+    }
+
+    &::before {
+        top: 0;
+
+        @include apply-background-image("pattern-01", ".svg", false);
+    }
+
+    &::after {
+        bottom: 0;
+
+        @include apply-background-image("pattern-02", ".svg", false);
+    }
+}
+
+.pattern-border-top {
+    @extend .position-relative;
+
+    &::before {
+        content: "\00a0";
+        position: absolute;
+        width: 100%;
+        height: 30px;
+        left: 0;
+    }
+
+    &::before {
+        top: 0;
+
+        @include apply-background-image("pattern-03", ".svg");
+    }
+}
+
+.african-hr {
+    border-top: none;
+    height: 20px;
+
+    @include apply-background-image("african-hr", ".svg", false);
+}
+
+hr.cheetahs {
+    border-color: red;
+    width: $narrow-width;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+////////////////////////////////////////
+// Kids
+////////////////////////////////////////
+
+.for-kids .featured-panel * {
+    text-shadow: none !important;
+}
+
+#kids-tabs {
+    @extend .text-center;
+
+    .nav {
+        flex-direction: row;
+    }
+
+    a.nav-item {
+        @extend .f-cheetah-tracks;
+
+        @extend .bg-primary;
+
+        @extend .py-2;
+
+        @extend .flex-even;
+
+        font-size: $fs-xl;
+        color: $body-color;
+        border-top-left-radius: $border-radius-lg;
+        border-top-right-radius: $border-radius-lg;
+
+        &.active {
+            background-color: $white !important;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        .nav {
+            flex-direction: column;
+        }
+
+        a:last-child {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    }
+}
+
+.pattern-border-colored {
+    @extend .py-4;
+
+    @extend .position-relative;
+
+    &::before,
+    &::after {
+        content: "\00a0";
+        position: absolute;
+        width: 100%;
+        height: 15px;
+        left: 0;
+    }
+
+    &::before {
+        top: .5rem;
+
+        @include apply-background-image("pattern-colored-angles", ".svg", false);
+    }
+
+    &::after {
+        bottom: .5rem;
+
+        @include apply-background-image("pattern-colored-angles", ".svg", false);
+    }
+}
+
+dl p {
+    margin-bottom: 0.5rem;
+}
+
+figure {
+    @extend .figure;
+
+    figcaption {
+        @extend .figure-caption;
+
+        @extend .fs-md;
+    }
+}
+
+////////////////////////////////////////
+// Blockquotes
+////////////////////////////////////////
+
+blockquote {
+    @extend .blockquote;
+
+    > p {
+        @extend .f-sans-serif;
+
+        // @extend .font-weight-bold;
+        @extend .font-italic;
+    }
+
+    .blockquote-footer {
+        @extend .fs-md;
+
+        cite {
+            @extend .d-block;
+        }
+
+        &::before {
+            @extend .d-none;
+        }
+    }
+
+    &.pullout > p {
+        @extend .d-inline;
+
+        background-image: linear-gradient(45deg, rgba($yellow, 0.75) 0%, rgba($yellow, 0.75) 100%);
+        background-repeat: no-repeat;
+        background-size: 100% 0.25rem;
+        background-position: 0 100%;
+        padding: 0.125rem 0;
+    }
+}
+
+.text-block {
+    > ul:not([class]) {
+        @extend .f-serif;
+
+        @extend .fs-rg;
+    }
+}
+
+////////////////////////////////////////
+// Figures
+////////////////////////////////////////
+
+.figure-img,
+.figure-info {
+    @extend .mb-1;
+}
+
+figcaption a {
+    @extend .text-reset;
+}
+
+////////////////////////////////////////
+// Modal
+////////////////////////////////////////
+
+.ekko-lightbox {
+    @extend .text-white;
+
+    .modal-content,
+    .modal-header,
+    .modal-footer,
+    .modal-body {
+        @extend .p-0;
+
+        @extend .border-0;
+
+        background: none;
+    }
+
+    .modal-body {
+        @extend .shadow-lg;
+    }
+
+    .modal-header,
+    .modal-footer {
+        @extend .py-1;
+    }
+
+    .modal-footer {
+        @extend .fs-md;
+
+        @extend .justify-content-start;
+
+        @extend .px-1;
+    }
+}
+
+::-moz-selection {
+    background: rgba(theme-color("primary"), 0.5);
+}
+
+::selection {
+    background: rgba(theme-color("primary"), 0.5);
+}
+
+figure {
+    &.left,
+    &.right {
+        display: block;
+        margin-top: $spacer-4;
+        margin-bottom: $spacer-4;
+        text-align: center;
+
+        > div {
+            display: inline-block;
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        &.left,
+        &.right {
+            margin-top: 0;
+            margin-bottom: $spacer-2;
+            max-width: 50%;
+        }
+
+        &.left {
+            float: left;
+            margin-left: -$floated-figure-offset-x;
+            margin-right: $spacer-3;
+        }
+
+        &.right {
+            float: right;
+            margin-right: -$floated-figure-offset-x;
+            margin-left: $spacer-3;
+        }
+    }
+}
+
+#news-menu {
+    a {
+        @extend .text-white;
+
+        @include hover-focus {
+            text-decoration: none;
+        }
+
+
+        &.active {
+            @extend .text-primary;
+
+            @extend .font-weight-bold;
+        }
+    }
+}
+
+p:empty {
+    display: none !important;
+}
+
+.blog {
+    .banner-block,
+    .two-figure-block {
+        max-width: 1800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+hr.dark {
+    border-top-color: rgba($dark, 0.5);
+}
+
+.modal-footer {
+    @extend .d-block;
+}
+
+.cool-stuff {
+    min-height: 800px;
+}
+
+////////////////////////////////////////
+// Modal
+////////////////////////////////////////
+
+#all-topics ul[data-name="CCF Blog"],
+#all-authors ul {
+    column-count: 2;
+}
+
+#all-topics ul {
+    &:not([data-name="CCF Blog"]){
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+
+.page-numbers {
+    @extend .page-item;
+
+    @extend .page-link;
+
+    &.current {
+        z-index: 1;
+        color: $pagination-active-color;
+        background-color: $pagination-active-bg;
+        border-color: $pagination-active-border-color;
+    }
+}
+
+.staff-list {
+    h4 {
+        @extend .h5;
+
+        margin-bottom: .25rem;
+    }
+
+    p {
+        @extend .f-sans-serif;
+
+        font-size: $fs-md;
+        margin-bottom: 0;
+    }
+}
+
+.card {
+
+    &.partner {
+
+        @include hover-focus {
+
+            .card-img-overlay {
+                @include transition;
+                opacity: 1;
+            }
+        }
+
+        .card-img-overlay {
+            opacity: 0;
+        }
+
+        a.stretched-link {
+
+        }
+    }
+}

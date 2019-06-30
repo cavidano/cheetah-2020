@@ -1,0 +1,371 @@
+////////////////////////////////////////
+// Donate Tabs
+////////////////////////////////////////
+
+#donate-tabs {
+    background: $light;
+
+    .nav-link {
+        color: $tab-link-color;
+
+        &.active {
+            background: $primary;
+        }
+    }
+}
+
+////////////////////////////////////////
+// Blackbaud Forms
+////////////////////////////////////////
+
+$col-a-width: 70%;
+$col-b-width: 30%;
+
+#bbox-root {
+    // Global resets
+
+    #mongo-form,
+    div.BBFormContainer,
+    div.BBFormFieldContainer,
+    div.BBFormSection,
+    div.BBFormSectionHeading,
+    div.BBFormFieldRecurrenceInfo {
+        min-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    // Generic tags
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+        width: $col-a-width;
+        opacity: 1 !important;
+        max-width: unset;
+
+        // border:2px solid blue !important;
+   
+    }
+
+    select {
+        @extend .custom-select;
+    }
+
+    legend {
+        margin-bottom: $spacer-2;
+
+        > div > label {
+            @extend .h4;
+
+            color: $body-color;
+        }
+    }
+
+    // Labels
+
+    .BBFormFieldLabel {
+        margin: 0 !important;
+        padding-right: 1rem !important;
+        font-size: $fs-md;
+
+        // background: rgba(blue, 0.25);
+        width: $col-b-width;
+    }
+
+    input[type="checkbox"] + label {
+        max-width: unset;
+
+        // background: pink !important;
+   
+    }
+
+    // Inputs
+
+    input,
+    textarea {
+        @extend .form-control;
+
+        display: inline-block;
+
+        &.BBFormCurrency {
+            display: none;
+        }
+    }
+
+    .BBTwoFields,
+    .BBThreeFields {
+        input, select {
+            // background: red;
+            margin: 0;
+            width: 70%;
+            margin-bottom: $spacer-2;
+        }
+
+        input {
+            float: right;
+        }
+    }
+
+    // Checkboxes and radios
+
+    // #bboxdonation_giftattributes_ctl00_divAttribCodeTableChecklist {
+    //     background: red;
+    //     height: auto !important;
+    //     overflow: visible;
+    // }
+
+    div.BBFormChecklistItem {
+        padding: 0;
+
+        @extend .custom-control;
+
+        @extend .custom-checkbox;
+
+        input[type="checkbox"] {
+            @extend .custom-control-input;
+        }
+
+        label {
+            width: auto;
+            padding: 0 $spacer-1;
+        }
+    }
+
+    #bboxdonation_recurrence_divRecurrenceCheckbox,
+    #bboxdonation_billing_fldOrgGift,
+    #bboxdonation_billing_fldAnonymous,
+    #bboxdonation_tribute_divTributeGeneral > div,
+    #divTributeAcknowledge > div {
+        @extend .custom-control;
+
+        @extend .custom-checkbox;
+
+        input[type="checkbox"] {
+            @extend .custom-control-input;
+        }
+
+        label.BBFormCheckboxLabel {
+            @extend .custom-control-label;
+
+            display: inline-block;
+            float: none;
+            width: auto;
+        }
+    }
+
+    div.BBFormSectionHeading {
+        color: $text-muted;
+        border-bottom: 1px solid $border-color;
+    }
+
+    // Sections
+
+    div.BBFormSection {
+        margin-bottom: $form-group-margin-bottom;
+
+        // background: rgba(yellow, 0.5);
+   
+    }
+
+    div.BBFormFieldContainer {
+        margin-top: $spacer-2 !important;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+
+        div.BBFormFieldContainer {
+            margin-top: 0 !important;
+        }
+    }
+
+    div.BBFormFieldRecurrenceInfo {
+        font-size: $fs-md;
+        margin-top: $spacer-2;
+    }
+
+    div.BBRecurrenceFieldContainer {
+        margin: 0;
+
+        span {
+            display: flex;
+            align-items: center;
+            margin-bottom: $spacer-1;
+
+            select {
+                height: 100%;
+                margin: 0 1rem;
+            }
+        }
+    }
+
+    .BBFormFieldRecurrenceInfo {
+        color: $text-muted;
+    }
+
+    .BBLinkSecureInfo {
+        font-size: $fs-sm;
+        margin-bottom: $spacer-1;
+        margin-left: $col-b-width;
+        border-bottom: 0 !important;
+        text-decoration: underline !important;
+        color: $text-muted;
+    }
+
+    #bboxdonation_payment_lblCCType {
+        display: none;
+    }
+
+    // Credit card images
+    div#DCCreditType {
+        margin-left: $col-b-width;
+        width: auto;
+
+        .BBFormFieldLabel {
+            display: none;
+        }
+    }
+
+    #bboxdonation_payment_cboYear {
+        margin-top: $spacer-2;
+        margin-left: $col-b-width;
+    }
+
+    // Expiration
+
+    .BBFieldExpiration .BBFormFieldLabel {
+        margin: 0;
+        padding: 0;
+    }
+
+    .BBFormRadioList {
+        margin: -($spacer-1 / 2);
+        display: flex;
+        flex-wrap: wrap;
+
+        .BBFormRadioItem {
+            margin: $spacer-1 / 2;
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: 33%;
+            align-self: stretch;
+            display: flex;
+
+            // .BBFormRadioButtonContainer
+
+            > div {
+                display: flex;
+                width: 100%;
+            }
+
+            > div > label {
+                align-self: stretch;
+                display: flex;
+                text-align: center;
+                width: 100%;
+
+                > input {
+                    align-self: center;
+                    margin: 0 auto;
+                    background: $light;
+                    border: none;
+
+                    // padding: .25rem;
+                    height: auto !important;
+                }
+            }
+        }
+
+        .BBFormRadioLabel {
+            &.BBFormRadioLabelGivingLevel {
+                border: $border-width solid $border-color;
+                border-radius: 0;
+
+                @extend .btn;
+
+                @extend .btn-lg;
+
+                @extend .fs-lg;
+            }
+
+            &.BBFormRadioLabelGivingLevelSelected {
+                border-color: transparent !important;
+                background-color: $primary !important;
+
+                input {
+                    display: block;
+                }
+            }
+
+            span {
+                color: $body-color;
+                font-weight: $font-weight-bold;
+            }
+        }
+    }
+
+    // Hide the last part of the form (temporary)
+
+    .BBFormSectionGiftAttributes,
+    .BBDFormSectionComments {
+        background: green;
+        display: none;
+    }
+
+    .BBFormContainer[data-bbox-part-id="ce3cb3d7-d112-40a1-bf4e-c9dd10a518f2"] .BBFormChecklist {
+        max-height: unset;
+        overflow: auto;
+        border: 0;
+    }
+
+    div#bboxdonation_comment_fldComments {
+        label,
+        textarea {
+            margin: 0;
+        }
+    }
+
+    input.BBFormSubmitbutton {
+        height: auto;
+        box-shadow: unset;
+        border-color: transparent;
+        @extend .btn;
+        @extend .btn-lg;
+        @extend .btn-primary;
+    }
+
+    @media (max-width: 600px) {
+        .BBThreeFields {
+            input,
+            select {
+                width: 100%;
+            }
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 100%;
+        }
+
+        .BBFormFieldLabel {
+            width: 100%;
+        }
+
+        #bboxdonation_payment_cboYear,
+        #DCCreditType {
+            margin-left: 0 !important;
+        }
+    }
+}

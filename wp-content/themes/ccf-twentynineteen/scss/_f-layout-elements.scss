@@ -1,0 +1,1105 @@
+/*
+
+In this file:
+
+// A. Local header and primary nav
+// B. Skip Menu
+// C. Gradients
+// D. Featured panels
+// E. Banner with background
+// F. Extensible lists
+// G. Matrix rows
+// H. Accordion and button toggle
+// I. Tabs
+// J. Side by side
+// K. Card
+// L. Circle
+// M. Carousel
+// N. Enlarge
+// O. Fixed-width Sidebar
+// B. Custom Link
+
+*/
+
+%fa-icon {
+    font-family: $font-awesome;
+    font-weight: 900;
+    font-size: inherit;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    color: currentColor;
+}
+
+////////////////////////////////////////
+// A. Local header and primary nav
+////////////////////////////////////////
+
+// Primary Navigation variables set here override Bootstrap default component settings
+
+// Global Header background color
+$global-header-bg-color: white;
+
+// Global header border color
+$global-header-border-color: $border-color;
+
+// Primary nav font weight
+$primary-nav-link-font-weight: $font-weight-normal;
+
+// Set all links (and toggle buttons) in global header, not including links inside '#nyc-top-header'
+$primary-nav-link-color: $body-color;
+
+// Global header link active (current page) color
+$primary-nav-link-active-color: $secondary;
+
+// Use dark header settings (set the background color inside 'Reset variables for dark header' conditional below)
+$global-header-dark: false;
+
+// Make '.nav-item' selectors the same width regardless of text width
+$nav-pills-consistent-width: true;
+
+// Reset variables for dark header
+@if $global-header-dark {
+
+    $global-header-bg-color: $primary;
+
+    $global-header-border-color: rgba(black, 0.5);
+    $primary-nav-link-color: $white;
+}
+
+// Toggle button color
+$global-header-toggle-button-color: $primary-nav-link-color;
+
+#global-header {
+    background-color: $global-header-bg-color;
+
+    @if $global-header-dark {
+
+        #nyc-logo-placeholder {
+            fill: $white;
+        }
+
+        .goog-te-gadget,
+        .goog-logo-link {
+            color: $white;
+        }
+
+        .goog-logo-link img {
+            margin-left: .5rem;
+            margin-right: .5rem;
+            transform: scale(1.25);
+        }
+    }
+
+    // Remove border radius when global '$enable-rounded' is set to true
+
+    .btn,
+    .input,
+    .nav-link,
+    .dropdown-menu,
+    .form-control {
+        border-radius: 0;
+    }
+
+    button[data-toggle="collapse"] {
+        color: $global-header-toggle-button-color;
+    }
+
+    .nav-link,
+    .dropdown-menu a {
+        color: $primary-nav-link-color;
+    }
+
+    [class*="border-"] {
+        border-color: $global-header-border-color !important;
+    }
+
+    // Add opacity to toggle buttons on 'expanded'
+
+    button[data-toggle="collapse"] {
+        &[aria-expanded="true"] {
+            @extend .opacity-50;
+
+            @include transition;
+        }
+    }
+
+    .dropdown-toggle {
+
+        &::after {
+            display: inline-block;
+            margin-left: .5rem;
+            vertical-align: .125rem;
+
+            content: "\f107";
+
+            @extend %fa-icon;
+            font-size: 1rem;
+
+        }
+
+    }
+
+    // Donate 
+
+    .nav-item.donate {
+        .nav-link {
+            background: $primary;
+        }
+
+        .nav-link.active {
+            color: $primary-nav-link-color !important;
+        }
+    }
+
+    // Set primary nav color and active states (both '.nav-pills' and '.nav-right')
+
+    .nav-link {
+        font-weight: $primary-nav-link-font-weight;
+        font-size: $fs-lg;
+
+        &[aria-expanded="true"]{
+            color: $text-muted;
+        }
+
+        &.active {
+            color: $primary-nav-link-active-color;
+        }
+
+    }
+
+    // Primary Nav (.nav-pills)
+
+    .nav-pills {
+        @extend .nav-fill;
+
+        border-left: $border-width solid $global-header-border-color;
+
+        .nav-item {
+            border-right: $border-width solid $global-header-border-color;
+
+            @if $nav-pills-consistent-width {
+                @include media-breakpoint-up(lg) {
+                    flex: 1;
+                }
+            }
+        }
+
+        .nav-link {
+            background: transparent;
+
+            &.active {
+                text-decoration: underline;
+                color: $primary-nav-link-active-color;
+            }
+        }
+    }
+
+    // Set .dropdown-menu styles
+
+    .dropdown-menu {
+        border: none;
+        padding: 0;
+        width: unset !important;
+
+        ul{
+            background-color: $dark;
+            padding: $nav-link-padding-x;
+            min-width: 150px;
+        }
+
+        a {
+            @extend .text-white;
+            white-space: nowrap;
+        }
+
+        .leader {
+            @extend .text-primary;
+            font-weight: $font-weight-bold;
+        }
+
+        @if $global-header-dark {
+            background-color: $global-header-bg-color;
+        }
+    }
+
+    // Remove unneeded margin from .dropdown-menu within nav
+
+    .nav:not(.nav-pills) {
+        .dropdown-menu {
+            margin: 0;
+        }
+    }
+
+    // Improve .dropdown-menu when present within .nav-pills
+
+    .nav-pills .dropdown-menu {
+        width: 100%;
+        left: 0;
+        margin: 0;
+
+        // When dropdowns are flush left or right, remove Bootrap transform and reposition y axis
+        transform: none !important;
+        top: 100% !important;
+    }
+
+    @include media-breakpoint-down(md) {
+
+        .nav-item {
+            border-top: 1px solid $global-header-border-color;
+            width: 100%;
+
+            // Left align nav items that are not dropdowns
+
+            &.nav-link {
+                text-align: left;
+            }
+        }
+
+        .nav-item {
+            background: none;
+        }
+
+
+        .dropdown-toggle {
+
+            &[aria-expanded="false"]::after {
+                content: "\f107";
+            }
+
+            &[aria-expanded="true"]::after {
+                content: "\f106";
+            }
+
+        }
+
+
+
+
+
+
+
+        .dropdown-menu, 
+        .dropdown-menu ul.extensible-list {
+            position: static !important;
+            width: 100% !important;
+            -webkit-transform: none !important;
+            transform: none !important;
+        }
+
+        .dropdown-menu ul.extensible-list:not(:first-child){
+            padding-top: 0;
+        }
+
+
+        .dropdown-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @if $enable-caret {
+                &[aria-expanded="true"]::after {
+                    @include caret-up;
+                }
+            }
+        }
+    }
+}
+
+/* #global-header */
+
+////////////////////////////////////////
+// B. Skip Menu
+////////////////////////////////////////
+
+// Visible only on keyboard tabbing
+
+.skip-menu {
+    @extend .position-absolute;
+    @extend .shadow;
+    z-index: 20000;
+
+    padding: $spacer-1 !important;
+    top: $spacer;
+    left: $spacer;
+    font-size: $fs-md;
+    background: rgba($light, 0.85);
+    color: $body-color;
+
+    &:hover {
+        color: currentColor;
+    }
+}
+
+////////////////////////////////////////
+// C. Gradients
+////////////////////////////////////////
+
+// Gradients call a custom mixin in '_c-custom-mixins.scss'
+
+[class*="gradient-overlay-"] {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        right: -1px;
+        bottom: -1px;
+    }
+}
+
+// Gradient Overlays
+
+.gradient-overlay-y-black::before {
+    @include linear-gradient;
+}
+
+.gradient-overlay-y-black-tall::before {
+    @include linear-gradient(
+        $direction: to bottom, 
+        $first-color: black, 
+        $second-color: black, 
+        $first-color-opacity: 0, 
+        $second-color-opacity: 0.85, 
+        $first-color-position: 25%, 
+        $second-color-position: 100%
+    );
+}
+
+.gradient-overlay-y-black-short::before {
+    @include linear-gradient(
+        $direction: to bottom, 
+        $first-color: black, 
+        $second-color: black, 
+        $first-color-opacity: 0, 
+        $second-color-opacity: 0.85, 
+        $first-color-position: 50%, 
+        $second-color-position: 100%
+    );
+}
+
+.gradient-overlay-y-white::before {
+    @include linear-gradient(
+        $direction: to bottom, 
+        $first-color: white, 
+        $second-color: white, 
+        $first-color-opacity: 0, 
+        $second-color-opacity: 0.9, 
+        $first-color-position: 0%, 
+        $second-color-position: 100%
+    );
+}
+
+.gradient-overlay-x-black::before {
+    @include linear-gradient(
+        $direction: to left,
+        $first-color: $black,
+        $second-color: $black,
+        $first-color-opacity: 0,
+        $second-color-opacity: 0.75,
+        $first-color-position: 0%,
+        $second-color-position: 100%);
+}
+
+////////////////////////////////////////
+// D. Featured panels
+////////////////////////////////////////
+
+@mixin featured-panel-responsive-settings {
+    
+    [class^="gradient-overlay-"]::before {
+        display: none;
+    }
+
+    .card-img-overlay {
+        position: relative;
+    }
+
+    img.show-on-mobile {
+        opacity: 1;
+    }
+
+    .bg-white {
+
+        h1, h2, h3, h4, p {
+            color: $body-color;
+        }
+
+        h1, h2, h3, h4, p, a.link {
+            text-shadow: none;
+        }
+
+        a.link {
+            color: darken($secondary, 5%) !important;
+        }
+    }
+
+    .bg-info {
+        h1, h2, h3, h4, p, a.link, blockquote, div {
+            text-shadow: none;
+        }
+    }
+}
+
+.featured-block,
+.featured-panel,
+.banner {
+    .card-img,
+    .align-self-end,
+    .align-self-center {
+        width: 100%;
+    }
+}
+
+.featured-panel {
+    .align-self-end {
+        // > div:not(.narrow){ 
+        //   max-width: $grid-bp-xl;
+        //   @include media-breakpoint-up(lg) {
+        //     padding: $spacer-2;
+        //   }
+        // }
+    }
+
+    .bg-white {
+        h1, h2, h3, h4, p, a.link {
+            @extend .text-shadow;
+        }
+    }
+
+    @each $breakpoint in map-keys($grid-breakpoints) {
+        $next: breakpoint-next($breakpoint, $grid-breakpoints);
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        @if $next {
+            &.responsive-#{$next} {
+                @include media-breakpoint-down($breakpoint) {
+                    @include featured-panel-responsive-settings;
+                }
+            }
+        }
+    }
+}
+
+.featured-block {
+    .card-img-overlay {
+        padding: 0;
+    }
+
+    @include media-breakpoint-up(md) {
+        .card-img-overlay {
+            padding: $spacer-2;
+        }
+    }
+
+
+    @include media-breakpoint-down(sm) {
+        margin-bottom: $border-width;
+    }
+}
+
+.banner {
+    overflow: hidden;
+
+    h1, .h1 {
+        @extend .display-1;
+
+        font-size: 8rem;
+        font-style: italic;
+    }
+
+    .card-img-overlay {
+        padding: 0;
+    }
+
+    @include media-breakpoint-down(lg) {
+        h1, .h1 {
+            display: none;
+        }
+    }
+}
+
+////////////////////////////////////////
+// G. Banner with background
+////////////////////////////////////////
+
+$banner-with-background-height: 350px;
+$banner-with-background-opacity: 0.25;
+
+.banner-with-background {
+    position: relative;
+    overflow: hidden;
+
+    min-height: $banner-with-background-height;
+
+    >* {
+        position: relative;
+        z-index: auto;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: auto;
+
+        opacity: $banner-with-background-opacity;
+
+        @include apply-background-image;
+    }
+
+    // Add your own backround classes and append them to the '.banner-with-background' selector
+
+    &.banner-news {
+        &::before {
+            @include apply-background-image('banner-news');
+        }
+    }
+
+    &.banner-donate {
+        &::before {
+            @include apply-background-image('banner-donate');
+        }
+    }
+
+}
+
+////////////////////////////////////////
+// F. Extensible lists
+////////////////////////////////////////
+
+// Note: Link lists can be used in place of Bootstrap's .nav when Link padding is unneeded.
+// Link lists are ideal for horizontal navs when supporting 'rtl'
+
+$extensible-list-margin: 0.5em;
+
+@mixin extensible-list-stack {
+    margin-bottom: $extensible-list-margin;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@mixin responsive-extensible-list-settings {
+    // Remove flex properties
+    display: block !important;
+
+    // Remove side margin and padding
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
+
+    li {
+        @include extensible-list-stack;
+
+        display: block !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+
+.extensible-list {
+    @include list-unstyled;
+
+    margin-bottom: 0;
+
+    // fixed padding added by user agent stylesheet after translation
+    -webkit-padding-start: 0;
+
+    li ul {
+        margin-top: $extensible-list-margin;
+
+        // Indent nested lists by default
+
+        padding-left: $nav-link-padding-x !important;
+        padding-right: $nav-link-padding-x !important;
+    }
+
+    li {
+        @include extensible-list-stack;
+    }
+
+    &.horizontal {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: -$extensible-list-margin;
+        margin-right: -$extensible-list-margin;
+
+        > li {
+            margin-bottom: 0;
+            margin-left: $extensible-list-margin;
+            margin-right: $extensible-list-margin;
+        }
+
+        @each $breakpoint in map-keys($grid-breakpoints) {
+            $next: breakpoint-next($breakpoint, $grid-breakpoints);
+            $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+            @if $next {
+                &.responsive-#{$next} {
+                    @include media-breakpoint-down($breakpoint) {
+                        @include responsive-extensible-list-settings;
+                    }
+                }
+            }
+        }
+    }
+}
+
+////////////////////////////////////////
+// G. Matrix rows
+////////////////////////////////////////
+
+// Note: Add to '.row' class to create a grid of colums
+// with equal spacing on all sides, not just the gutters
+
+$matrix-border-padding: $border-width / 2;
+$matrix-gutter-padding: $grid-gutter-width / 4;
+
+.matrix-border {
+    margin-top: -$matrix-border-padding;
+    margin-right: -$matrix-border-padding;
+    margin-bottom: -$matrix-border-padding;
+    margin-left: -$matrix-border-padding;
+
+    > [class^="col"] {
+        padding: $matrix-border-padding;
+    }
+}
+
+.matrix-gutter {
+    margin-top: -$matrix-gutter-padding;
+    margin-right: -$matrix-gutter-padding;
+    margin-bottom: -$matrix-gutter-padding;
+    margin-left: -$matrix-gutter-padding;
+
+    > [class^="col"] {
+        padding: $matrix-gutter-padding;
+    }
+}
+
+////////////////////////////////////////
+// H. Accordion and button toggle 
+////////////////////////////////////////
+
+// Accordion Preferences
+
+$accordion-button-border: true;
+$accordion-button-shadow: false;
+
+$accordion-title-color: $body-color;
+$accordion-bg-color: transparent;
+
+.btn-toggle,
+.accordion-group {
+    [data-toggle="collapse"] {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+// Button toggle
+
+.btn-toggle {
+    [data-toggle="collapse"] {
+        overflow: hidden;
+
+        &::after {
+            content: "\f067";
+
+            @extend %fa-icon;
+        }
+
+        // Change the right icon here. Go to https://fontawesome.com/icons
+        // Find your icons and paste the unicode below
+
+        &[aria-expanded="true"]::after {
+            content: "\f068";
+        }
+
+        &[aria-expanded="false"]::after {
+            content: "\f067";
+        }
+    }
+}
+
+// Accordions
+
+.accordion-group {
+    .card,
+    .card-header {
+        border: 0;
+
+        @if $enable-rounded {
+            border-radius: $border-radius;
+        }
+        @else {
+            border-radius: 0;
+        }
+    }
+
+    .card {
+        background-color: $accordion-bg-color;
+    }
+
+    a[data-toggle="collapse"] {
+        @if $accordion-button-border {
+            border-top: $border-width solid $border-color;
+        }
+
+        @if $accordion-button-shadow {
+            @extend .shadow-sm;
+        }
+
+        color: $accordion-title-color;
+
+        &:after {
+            content: "\f067";
+
+            @extend %fa-icon;
+        }
+
+        &[aria-expanded="true"] {
+            border-top-color: $primary;
+            background: $primary;
+
+            @include transition($transition-fade);
+
+            @if $accordion-button-shadow {
+                @extend .shadow;
+            }
+        }
+
+        // Change the right icon here. Go to https://fontawesome.com/icons
+        // Find your icons and paste the unicode below
+
+        &[aria-expanded="true"]:after {
+            content: "\f106";
+        }
+
+        &[aria-expanded="false"]:after {
+            content: "\f107";
+        }
+    }
+}
+
+////////////////////////////////////////
+// I. Tabs
+////////////////////////////////////////
+
+// Tab link color (for both .nav-tabs and .nav-pills)
+
+$tab-link-color: $link-color;
+$tab-link-color: $body-color;
+
+// Tab link active styles (for .nav-tabs only)
+
+$nav-tab-active-color: $info;
+$nav-tab-active-font-weight: $font-weight-bold;
+
+@mixin device-nav-pills-and-tabs-settings {
+  flex-direction: column;
+  border-color: transparent;
+  margin-bottom: $spacer-2;
+
+  .nav-item {
+      text-align: center;
+      border-color: $border-color;
+  }
+
+  @if $enable-rounded {
+      border-radius: $border-radius;
+
+      .nav-item {
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+
+          &:first-child {
+              border-top-left-radius: $border-radius;
+              border-top-right-radius: $border-radius;
+          }
+
+          &:last-child {
+              border-bottom-left-radius: $border-radius;
+              border-bottom-right-radius: $border-radius;
+          }
+      }
+
+      & + .tab-content {
+          border-radius: $border-radius;
+      }
+  }
+}
+
+.nav-pills,
+.nav-tabs {
+    .nav-link {
+        color: $tab-link-color;
+
+        &.active {
+            // text-decoration: underline;
+        }
+    }
+
+    .nav-item {
+        text-align: center;
+    }
+
+    @each $breakpoint in map-keys($grid-breakpoints) {
+        $next: breakpoint-next($breakpoint, $grid-breakpoints);
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        @if $next {
+            &.device-#{$next} {
+                @include media-breakpoint-down($breakpoint) {
+                    @include device-nav-pills-and-tabs-settings;
+                }
+            }
+        }
+    }
+}
+
+////////////////////////////////////////
+// J. Side by side
+////////////////////////////////////////
+
+$side-by-side-margin: 0.25em;
+
+.side-by-side {
+    display: flex;
+    flex-direction: row;
+    margin-left: -$side-by-side-margin;
+    margin-right: -$side-by-side-margin;
+
+    > span {
+        margin-left: $side-by-side-margin;
+        margin-right: $side-by-side-margin;
+    }
+}
+
+////////////////////////////////////////
+// K. Card
+////////////////////////////////////////
+
+$default-card-borders: false;
+$default-card-backgrounds: false;
+
+@if $default-card-borders == false {
+    .card,
+    .card-header,
+    .card-footer {
+        border: none;
+    }
+} // end if
+
+@if $default-card-backgrounds == false {
+    .card,
+    .card-header,
+    .card-footer {
+        background-color: transparent;
+    }
+} // end if
+
+////////////////////////////////////////
+// L. Circle
+////////////////////////////////////////
+
+$circle-size: 50px;
+$gallery-button-background: rgba($black, 0.8);
+
+.half-circle {
+    background: $gallery-button-background;
+
+    @extend .d-inline-block;
+
+    &.top,
+    &.bottom {
+        height: $circle-size;
+        width: $circle-size * 2;
+    }
+
+    &.right,
+    &.left {
+        height: $circle-size * 2;
+        width: $circle-size;
+    }
+
+    &.top {
+        border-top-left-radius: $circle-size * 2;
+        border-top-right-radius: $circle-size * 2;
+    }
+
+    &.right {
+        border-bottom-right-radius: $circle-size * 2;
+        border-top-right-radius: $circle-size * 2;
+    }
+
+    &.bottom {
+        border-bottom-left-radius: $circle-size * 2;
+        border-bottom-right-radius: $circle-size * 2;
+    }
+
+    &.left {
+        border-bottom-left-radius: $circle-size * 2;
+        border-top-left-radius: $circle-size * 2;
+    }
+} // end half-circle
+
+////////////////////////////////////////
+// M. Carousel
+////////////////////////////////////////
+
+$carousel-indicator-width: auto;
+$carousel-indicator-height: auto;
+
+.carousel-outer {
+    display: flex;
+    position: relative;
+}
+
+.carousel-arrows {
+    position: absolute;
+    z-index: 900;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    > ul {
+        @extend .list-unstyled;
+
+        @extend .d-flex;
+
+        @extend .justify-content-between;
+
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+        li > a {
+            @extend .d-flex;
+
+            color: white;
+
+            @include hover-focus {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.carousel-indicators {
+    @extend .extensible-list;
+
+    @extend .horizontal;
+
+    position: static;
+    justify-content: center;
+    margin-bottom: 0;
+
+    > li {
+        display: inline-block;
+        width: $carousel-indicator-width !important;
+        height: $carousel-indicator-height !important;
+        text-indent: 0;
+
+        &::before,
+        &::after {
+            display: none;
+        }
+
+        button {
+            outline: none;
+        }
+    }
+
+    li.active {
+        color: $orange !important;
+    }
+}
+
+.carousel-caption {
+    bottom: 0.1 0.25rem;
+    padding: 0;
+
+    > p {
+        display: inline-block;
+        padding: $spacer-2 $spacer-3;
+
+        background: rgba($white, 0.9);
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .carousel-caption {
+        position: static;
+        border-bottom: $border-width solid $border-color;
+
+        > p {
+            @include border-radius(0);
+
+            box-shadow: none !important;
+        }
+    }
+}
+
+
+////////////////////////////////////////
+// N. Enlarge
+////////////////////////////////////////
+
+%enlarge {
+    a.enlarge {
+        @extend .stretched-link;
+
+        line-height: 1;
+
+        > span {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin: $spacer-1;
+            padding: $spacer-1;
+            color: white;
+            background: $gallery-button-background;
+        }
+
+        @include hover-focus {
+            > span {
+                background: black;
+            }
+        }
+    }
+}
+
+.gallery-thumbnails,
+figure {
+    @extend %enlarge;
+}
+
+////////////////////////////////////////
+// O. Fixed width sidebar
+////////////////////////////////////////
+
+$sidebar-fixed-width-max-width: 300px;
+
+.sidebar-fixed-width {
+    @include media-breakpoint-up(xl) {
+        max-width: $sidebar-fixed-width-max-width;
+        border-left: $border-width solid $border-color;
+    }
+}

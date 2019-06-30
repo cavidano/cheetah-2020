@@ -1,0 +1,2359 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="gravityformsrestapiv2">Gravity Forms REST API v2</h1>
+
+<h2 id="upgradingtoversion2">Upgrading to Version 2</h2>
+
+<p>The API is intended to feel as familiar as possible to developers who have worked with the WordPres REST API.
+The endpoints are largely the same as version 1, however, the responses are slightly different and authentication
+is no longer handled by Gravity Forms.</p>
+
+<p>The following breaking changes are required by clients to consume version 2:</p>
+
+<h3 id="authentication">Authentication</h3>
+
+<p>If you&#8217;re using cookie authentication, WordPress supports cookie authentication out of the box so you&#8217;ll just need
+to change the way the nonce is created and sent. Create the nonce using wp_create_nonce( &#8216;wp_rest&#8217; ) and send it
+in the _wpnonce data parameter (either POST data or in the query for GET requests), or via the X-WP-Nonce header.</p>
+
+<p>If you&#8217;re using signature authentication then you&#8217;ll need to implement either Basic or OAuth authentication. Further details here:</p>
+
+<ul>
+<li><a href="http://v2.wp-api.org/guide/authentication/">WordPress REST API authentication documentation</a></li>
+<li><a href="https://code.tutsplus.com/tutorials/wp-rest-api-setting-up-and-using-basic-authentication--cms-24762">WP REST API: Setting Up and Using Basic Authentication</a></li>
+<li><a href="https://code.tutsplus.com/tutorials/wp-rest-api-setting-up-and-using-oauth-10a-authentication--cms-24797">WP REST API: Setting Up and Using OAuth 1.0a Authentication</a></li>
+</ul>
+
+<h3 id="specifythecontenttypewhenappropriate">Specify the Content Type when appropriate</h3>
+
+<p>The content-type application/json must be specified when sending JSON.</p>
+
+<h4 id="example">Example</h4>
+
+<pre><code class="bash">curl --data [EXAMPLE_DATA] --header &quot;Content-Type: application/json&quot; https://localhost/wp-json/gf/v2
+</code></pre>
+
+<h3 id="noresponseenvelope">No Response Envelope</h3>
+
+<p>The response will not be enveloped by default. This means that the response will not be a JSON string containing the
+&#8220;status&#8221; and &#8220;response&#8221; - the body will contain the response and the HTTP code will contain the status.</p>
+
+<p>The WP-API will envelope the response if the _envelope param is included in the request.</p>
+
+<h4 id="example">Example</h4>
+
+<p><strong>Standard response:</strong></p>
+
+<pre><code class="json">{
+    &quot;3&quot;:                &quot;Drop Down First Choice&quot;,
+    &quot;created_by&quot;:       &quot;1&quot;,
+    &quot;currency&quot;:         &quot;USD&quot;,
+    &quot;date_created&quot;:     &quot;2016-10-10 18:06:12&quot;,
+    &quot;form_id&quot;:          &quot;1&quot;,
+    &quot;id&quot;:               &quot;1&quot;,
+    &quot;ip&quot;:               &quot;127.0.0.1&quot;,
+    &quot;is_fulfilled&quot;:     null,
+    &quot;is_read&quot;:          0,
+    &quot;is_starred&quot;:       0,
+    &quot;payment_amount&quot;:   null,
+    &quot;payment_date&quot;:     null,
+    &quot;payment_method&quot;:   null,
+    &quot;payment_status&quot;:   null,
+    &quot;post_id&quot;:          null,
+    &quot;source_url&quot;:       &quot;http://localhost?gf_page=preview&amp;id=1&quot;,
+    &quot;status&quot;:           &quot;active&quot;,
+    &quot;transaction_id&quot;:   null,
+    &quot;transaction_type&quot;: null,
+    &quot;user_agent&quot;:       &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36&quot;
+}
+</code></pre>
+
+<p><strong>Response with _envelope parameter:</strong></p>
+
+<pre><code class="json">{
+    &quot;body&quot;: {
+        &quot;3&quot;:                &quot;Drop Down First Choice&quot;,
+        &quot;created_by&quot;:       &quot;1&quot;,
+        &quot;currency&quot;:         &quot;USD&quot;,
+        &quot;date_created&quot;:     &quot;2016-10-10 18:06:12&quot;,
+        &quot;form_id&quot;:          &quot;1&quot;,
+        &quot;id&quot;:               &quot;1&quot;,
+        &quot;ip&quot;:               &quot;127.0.0.1&quot;,
+        &quot;is_fulfilled&quot;:     null,
+        &quot;is_read&quot;:          0,
+        &quot;is_starred&quot;:       0,
+        &quot;payment_amount&quot;:   null,
+        &quot;payment_date&quot;:     null,
+        &quot;payment_method&quot;:   null,
+        &quot;payment_status&quot;:   null,
+        &quot;post_id&quot;:          null,
+        &quot;source_url&quot;:       &quot;http://localhost?gf_page=preview&amp;id=1&quot;,
+        &quot;status&quot;:           &quot;active&quot;,
+        &quot;transaction_id&quot;:   null,
+        &quot;transaction_type&quot;: null,
+        &quot;user_agent&quot;:       &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36&quot;
+    },
+    &quot;headers&quot;: {
+        &quot;Allow&quot;: &quot;GET, POST, PUT, PATCH, DELETE&quot;
+    },
+    &quot;status&quot;: 200
+}
+</code></pre>
+
+<h3 id="formsubmissions">Form Submissions</h3>
+
+<p>The Form Submissions endpoint now accepts application/json, application/x-www-form-urlencoded and multipart/form-data
+content types. With the introduction of support for multipart/form-data now files can be sent to single file upload fields.</p>
+
+<p>Request values should be sent all together instead of in separate elements for input_values, field_values, target_page
+and source_page.</p>
+
+<h4 id="example">Example</h4>
+
+<p><strong>Example body of a JSON request:</strong></p>
+
+<pre><code class="json">{
+    &quot;input_1&quot;:      &quot;test&quot;,
+    &quot;field_values&quot;: &quot;&quot;,
+    &quot;source_page&quot;:  1,
+    &quot;target_page&quot;:  0
+}
+</code></pre>
+
+<h3 id="postsingleresources">POST Single Resources</h3>
+
+<p>In order to maintain consistency with the WP API, the POST /entries and POST /forms endpoints no longer accept
+collections. This means that it&#8217;s no longer possible to create multiple entries or forms in a single request.</p>
+
+<h3 id="deletenowtrashes">DELETE now trashes</h3>
+
+<p>Sending DELETE requests will send the resource to the trash instead of deleting it permanently.
+Repeating the DELETE request will not delete the resource permanently but it will generate a 401 (Gone) response code.
+Use the &#8216;force&#8217; parameter to delete the entry or form permanently.</p>
+
+<h3 id="deletepostandputresponses">DELETE, POST and PUT responses</h3>
+
+<p>Successful DELETE, POST and PUT requests now return the deleted, updated or created entry or form instead of a confirmation message.</p>
+
+<h2 id="unittests">Unit Tests</h2>
+
+<p>The unit tests can be installed from the terminal using:</p>
+
+<pre><code class="bash">bash tests/bin/install.sh [DB_NAME] [DB_USER] [DB_PASSWORD] [DB_HOST]
+</code></pre>
+
+<p>If you&#8217;re using <a href="https://github.com/Varying-Vagrant-Vagrants/VVV">VVV</a> you can use this command:</p>
+
+<pre><code class="bash">bash tests/bin/install.sh wordpress_unit_tests root root localhost
+</code></pre>
+
+<h1 id="apidocumentation">API Documentation</h1>
+
+<h2 id="authentication">Authentication</h2>
+
+<p>Authentication can be performed using the same methods as the WordPress REST API. For further information on
+WordPress' authentication, the following resources are available:</p>
+
+<ul>
+<li><a href="http://v2.wp-api.org/guide/authentication/">WordPress REST API authentication documentation</a></li>
+<li><a href="https://code.tutsplus.com/tutorials/wp-rest-api-setting-up-and-using-basic-authentication--cms-24762">WP REST API: Setting Up and Using Basic Authentication</a></li>
+<li><a href="https://code.tutsplus.com/tutorials/wp-rest-api-setting-up-and-using-oauth-10a-authentication--cms-24797">WP REST API: Setting Up and Using OAuth 1.0a Authentication</a></li>
+</ul>
+
+<h2 id="apipath">API Path</h2>
+
+<p>The API can be accessed as route from the WordPress REST API. This should look something like this:</p>
+
+<pre><code>https://localhost/wp-json/gf/v2/
+</code></pre>
+
+<p>For example, to obtain the Gravity Forms entry with ID 5, your request would be made to the following:</p>
+
+<pre><code>https://localhost/wp-json/gf/v2/entries/5
+</code></pre>
+
+<h2 id="sendingrequests">Sending Requests</h2>
+
+<h3 id="php">PHP</h3>
+
+<pre><code class="php">// Define the URL that will be accessed.
+$url = rest_url( 'gf/v2/entries' );
+
+// Example using Basic Authentication
+$args = array(
+    'Authorization' =&gt; 'Basic ' . base64_encode( 'admin' . ':' . '12345' ),
+	'headers'       =&gt; array( 'Content-type' =&gt; 'application/json' ),
+);
+
+// Make the request to the API.
+$response = wp_remote_get( $url, $args );
+
+// Check the response code.
+if ( wp_remote_retrieve_response_code( $response ) != 200 || ( empty( wp_remote_retrieve_body( $response ) ) ) ){
+    // If not a 200, HTTP request failed.
+    die( 'There was an error attempting to access the API.' );
+}
+
+// Result is in the response body and is json encoded.
+$body = json_decode( wp_remote_retrieve_body( $response ), true );
+
+// Check the response body.
+if( $body['status'] &gt; 202 ){
+    die( &quot;Could not retrieve forms.&quot; );
+}
+
+// Entries retrieved successfully.
+$entries = $body['response'];
+</code></pre>
+
+<p>In this example, the <em>$entries</em> variable contains the response from the API request.</p>
+
+<h2 id="endpoints">Endpoints</h2>
+
+<h3 id="getentries">GET /entries</h3>
+
+<p>Gets all entries.</p>
+
+<h4 id="path">Path</h4>
+
+<pre><code>https://localhost/wp-json/gf/v2/entries
+</code></pre>
+
+<h4 id="responsejson">Response <em>[json]</em></h4>
+
+<p>The response will contain a JSON object which contains the entry details. An example can be found below:</p>
+
+<p><strong>Example Response</strong></p>
+
+<pre><code class="json">{
+  &quot;id&quot;:           &quot;71&quot;,
+  &quot;form_id&quot;:      &quot;1&quot;,
+  &quot;date_created&quot;: &quot;2016-11-28 18:12:17&quot;,
+  &quot;is_starred&quot;:   0,
+  &quot;is_read&quot;:      0,
+  &quot;ip&quot;:           &quot;127.0.0.1&quot;,
+  &quot;source_url&quot;:   &quot;http:\/\/localhost\/pagename&quot;,
+  &quot;post_id&quot;:      null,
+  &quot;created_by&quot;:   &quot;2&quot;,
+  &quot;user_agent&quot;:   &quot;Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_12_2) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/54.0.2840.87 Safari\/537.36&quot;,
+  &quot;status&quot;:       &quot;active&quot;,
+  &quot;1&quot;:            &quot;&quot;,
+  &quot;2&quot;:            &quot;&quot;,
+  &quot;3&quot;:            &quot;&quot;,
+  &quot;4&quot;:            &quot;&quot;,
+  &quot;5&quot;:            &quot;&quot;,
+  &quot;6.1&quot;:          &quot;&quot;,
+  &quot;6.2&quot;:          &quot;&quot;,
+  &quot;6.3&quot;:          &quot;&quot;
+}
+</code></pre>
+
+<h4 id="optionalarguments">Optional Arguments</h4>
+
+<ul>
+<li><p><strong>_labels</strong> <em>[int]</em></p>
+
+<p>Enabled the inclusion of field labels in the results.</p>
+
+<ul>
+<li><p><strong>Usage</strong></p>
+
+<pre><code>https://localhost/wp-json/gf/v2/entries?_labels=1
+</code></pre></li>
+<li><p><strong>Example Response</strong></p>
+
+<pre><code class="json">[{
+  &quot;id&quot;:           &quot;71&quot;,
+  &quot;form_id&quot;:      &quot;1&quot;,
+  &quot;date_created&quot;: &quot;2016-11-28 18:12:17&quot;,
+  &quot;is_starred&quot;:   0,
+  &quot;is_read&quot;:      0,
+  &quot;ip&quot;:           &quot;127.0.0.1&quot;,
+  &quot;source_url&quot;:   &quot;http:\/\/localhost\/pagename&quot;,
+  &quot;post_id&quot;:      null,
+  &quot;created_by&quot;:   &quot;2&quot;,
+  &quot;user_agent&quot;:   &quot;Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_12_2) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/54.0.2840.87 Safari\/537.36&quot;,
+  &quot;status&quot;:       &quot;active&quot;,
+  &quot;1&quot;:            &quot;&quot;,
+  &quot;2&quot;:            &quot;&quot;,
+  &quot;3&quot;:            &quot;&quot;,
+  &quot;4&quot;:            &quot;&quot;,
+  &quot;5&quot;:            &quot;&quot;,
+  &quot;6.1&quot;:          &quot;&quot;,
+  &quot;6.2&quot;:          &quot;&quot;,
+  &quot;6.3&quot;:          &quot;&quot;,
+  &quot;_labels&quot;: {
+    &quot;1&quot;:  &quot;Single Line Text&quot;,
+    &quot;2&quot;:  &quot;Paragraph Text&quot;,
+    &quot;13&quot;: &quot;File&quot;,
+    &quot;3&quot;:  &quot;Drop Down&quot;,
+    &quot;4&quot;:  &quot;Multi Select&quot;,
+    &quot;5&quot;:  &quot;Number&quot;,
+    &quot;6&quot;: {
+      &quot;6.1&quot;: &quot;Checkboxes First Choice&quot;,
+      &quot;6.2&quot;: &quot;Checkboxes Second Choice&quot;,
+      &quot;6.3&quot;: &quot;Checkboxes Third Choice&quot;
+    }
+  }
+}]
+</code></pre></li>
+</ul></li>
+<li><p><strong>include</strong> <em>[int]</em></p>
+
+<p>An array of entries to include in the response.</p>
+
+<ul>
+<li><p><strong>Usage</strong></p>
+
+<pre><code>https://localhost/wp-json/gf/v2/entries?include[0]=1&amp;include[1]=3
+</code></pre></li>
+<li><p><strong>Example Response</strong></p>
+
+<pre><code class="json">[{
+  &quot;date_created&quot;: &quot;2016-11-28 18:12:17&quot;,
+  &quot;1&quot;:            &quot;Text&quot;,
+  &quot;6.1&quot;:          &quot;first&quot;,
+  &quot;6.2&quot;:          &quot;second&quot;,
+  &quot;6.3&quot;:          &quot;third&quot;
+}]
+</code></pre></li>
+</ul></li>
+<li><p><strong>_field_ids</strong> <em>[int]</em></p>
+
+<p>A comma separated list of fields to include in the response.</p>
+
+<ul>
+<li><p><strong>Usage</strong></p>
+
+<pre><code>https://localhost/wp-json/gf/v2/entries/5?_field_ids=1,6.1,6.2,6.3,date_created
+</code></pre></li>
+<li><p><strong>Example Response</strong></p>
+
+<pre><code class="json">[{
+  &quot;date_created&quot;: &quot;2016-11-28 18:12:17&quot;,
+  &quot;1&quot;:            &quot;Text&quot;,
+  &quot;6.1&quot;:          &quot;first&quot;,
+  &quot;6.2&quot;:          &quot;second&quot;,
+  &quot;6.3&quot;:          &quot;third&quot;
+}]
+</code></pre></li>
+</ul></li>
+<li><p><strong>search</strong> <em>[json]</em></p>
+
+<p>The search criteria.</p>
+
+<ul>
+<li><p><strong>Properties</strong></p>
+
+<ul>
+<li><p><strong>field_filters</strong> <em>[array]</em></p>
+
+<p>An array of filters to search by.</p></li>
+<li><p><strong>key</strong> <em>[int|float]</em></p>
+
+<p>The field ID.</p></li>
+<li><p><strong>value</strong> <em>[string]</em></p>
+
+<p>The value to search for.</p></li>
+<li><p><strong>operator</strong> <em>[string]</em></p>
+
+<p>The comparison operator to use.</p></li>
+</ul></li>
+<li><p><strong>Usage</strong></p>
+
+<pre><code class="json">{
+  &quot;field_filters&quot;: [{
+    &quot;key&quot;:      1,
+    &quot;value&quot;:    &quot;Field Value&quot;,
+    &quot;operator&quot;: &quot;contains&quot;
+  }]
+}
+</code></pre></li>
+</ul></li>
+<li><p><strong>paging</strong> <em>[array]</em></p>
+
+<p>The paging criteria.</p>
+
+<ul>
+<li><p><strong>Properties</strong></p>
+
+<ul>
+<li><p><strong>page_size</strong> <em>[int]</em></p>
+
+<p>The number of results per page.</p></li>
+<li><p><strong>current_page</strong> <em>[int]</em></p>
+
+<p>The current page to pull details from.</p></li>
+<li><p><strong>offset</strong> <em>[int]</em></p>
+
+<p>The offset to begin with.</p></li>
+</ul></li>
+<li><p><strong>Usage</strong></p>
+
+<pre><code>https://localhost/wp-json/gf/v2/entries?paging[page_size]=20&amp;paging[current_page]=2&amp;paging[offset]=30
+</code></pre></li>
+</ul></li>
+<li><p><strong>sorting</strong> <em>[array]</em></p>
+
+<p>The sorting criteria.</p>
+
+<ul>
+<li><p><strong>Properties</strong></p>
+
+<ul>
+<li><p><strong>key</strong> <em>[string|int]</em></p>
+
+<p>The key to sort by.</p></li>
+<li><p><strong>direction</strong> <em>[string]</em></p>
+
+<p>The direction. Either <em>ASC</em> or <em>DESC</em>.</p></li>
+<li><p><strong>is_numeric</strong> <em>[bool]</em></p>
+
+<p>If the key is numeric.</p></li>
+</ul></li>
+<li><p><strong>Usage</strong></p>
+
+<pre><code>https://localhost/wp-json/gf/v2/entries?sorting[key]=id&amp;sorting[direction]=ASC&amp;sorting[is_numeric]=true
+</code></pre></li>
+</ul></li>
+<li><p><strong>form_ids</strong> <em>[array]</em></p>
+
+<p>The form IDs to be included in the search.</p>
+
+<ul>
+<li><strong>Usage</strong>
+
+<pre><code>https://localhost/wp-json/gf/v2/entries?form_ids[0]=1&amp;form_ids[1]=2
+</code></pre></li>
+</ul></li>
+</ul>
+
+<hr />
+
+<h3 id="postentries">POST /entries</h3>
+
+<p>Creates an entry.</p>
+
+<h4 id="path">Path</h4>
+
+<pre><code>https://localhost/wp-json/gf/v2/entries
+</code></pre>
+
+<h4 id="responsejson">Response <em>[json]</em></h4>
+
+<p>When creating an entry, the response body will contain the complete new entry.</p>
+
+<h4 id="optionalarguments">Optional Arguments</h4>
+
+<ul>
+<li><p><strong>created_by</strong> <em>[string]</em></p>
+
+<p>The user ID of the entry submitter.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the entry submitter as the user with user ID <em>1</em>.
+
+<pre><code>created_by=1
+</code></pre></li>
+</ul></li>
+<li><p><strong>date_created</strong> <em>[string]</em></p>
+
+<p>The date the entry was created, in UTC.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the date created as <em>2016&#8211;11&#8211;28 18:12:17</em>.
+
+<pre><code>date_created=2016-11-28+18%3A12%3A17
+</code></pre></li>
+</ul></li>
+<li><p><strong>ip</strong> <em>[string]</em></p>
+
+<p>The IP address of the entry creator.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the entry IP as <em>127.0.0.1</em>.
+
+<pre><code>ip=127.0.0.1
+</code></pre></li>
+</ul></li>
+<li><p><strong>is_fulfilled</strong> <em>[bool]</em></p>
+
+<p>Whether the transaction has been fulfilled, if applicable.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the entry as fulfilled.
+
+<pre><code>is_fulfilled=1
+</code></pre></li>
+</ul></li>
+<li><p><strong>is_read</strong> <em>[bool]</em></p>
+
+<p>Whether the entry has been read.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Marks the entry as read.
+
+<pre><code>is_read=1
+</code></pre></li>
+</ul></li>
+<li><p><strong>is_starred</strong> <em>[bool]</em></p>
+
+<p>Whether the entry is starred.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Stars the entry.
+
+<pre><code>is_starred=1
+</code></pre></li>
+</ul></li>
+<li><p><strong>source_url</strong> <em>[string]</em></p>
+
+<p>The URL where the form was embedded.</p>
+
+<ul>
+<li><strong>Examples</strong>
+
+Set the source URL as <em>http://localhost/pagename</em>:
+
+<pre><code>source_url=http%3A%2F%2Flocalhost%2Fpagename
+</code></pre></li>
+</ul></li>
+<li><p><strong>status</strong> <em>[string]</em></p>
+
+<p>The status of the entry.</p>
+
+<ul>
+<li><strong>Examples</strong>
+
+Sets the status to <em>active</em>:
+
+<pre><code> status=active
+</code></pre></li>
+</ul></li>
+<li><p><strong>user_agent</strong> <em>[string]</em></p>
+
+<p>The user agent string for the browser used to submit the entry.</p>
+
+<ul>
+<li><strong>Examples</strong>
+
+Sets the user agent as <em>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.87 Safari/537.36</em>
+
+<pre><code>user_agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_12_2%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F54.0.2840.87+Safari%2F537.36``
+</code></pre></li>
+</ul></li>
+</ul>
+
+<h4 id="paymentarguments">Payment Arguments</h4>
+
+<ul>
+<li><p><strong>payment_amount</strong> <em>[int]</em></p>
+
+<p>The amount of the payment, if applicable.</p>
+
+<ul>
+<li><p><strong>Limitations</strong></p>
+
+<p>Only applies when payment fields are present.</p></li>
+<li><p><strong>Examples</strong></p>
+
+<p>Sets the payment amount of <em>$2500</em>.</p>
+
+<pre><code>payment_amount=2500
+</code></pre></li>
+</ul></li>
+<li><p><strong>payment_date</strong> <em>[string]</em></p>
+
+<p>The date of the payment, if applicable.</p>
+
+<ul>
+<li><p><strong>Limitations</strong></p>
+
+<p>Only applies when payment fields are present.</p></li>
+<li><p><strong>Example</strong></p>
+
+<p>Sets the payment date as <em>2016&#8211;11&#8211;28 18:12:17</em>.</p>
+
+<pre><code>payment_date=2016-11-28+18%3A12%3A17
+</code></pre></li>
+</ul></li>
+<li><p><strong>payment_method</strong> <em>[string]</em></p>
+
+<p>The payment method for the payment, if applicable.</p>
+
+<ul>
+<li><p><strong>Limitations</strong></p>
+
+<p>Only applies when payment fields are present.</p></li>
+<li><p><strong>Example</strong></p>
+
+<p>Sets the payment method as <em>Stripe</em>.</p>
+
+<pre><code>payment_method=Stripe
+</code></pre></li>
+</ul></li>
+<li><p><strong>payment_status</strong> <em>[string]</em></p>
+
+<p>The status of the payment, if applicable.</p>
+
+<ul>
+<li><p><strong>Limitations</strong></p>
+
+<p>Only applies when payment fields are present.</p></li>
+<li><p><strong>Example</strong></p>
+
+<p>Sets the payment status as <em>Paid</em>.</p>
+
+<pre><code>payment_status=Paid
+</code></pre></li>
+</ul></li>
+<li><p><strong>transaction_id</strong> <em>[string]</em></p>
+
+<p>The transaction ID for the payment, if applicable.</p>
+
+<ul>
+<li><p><strong>Limitations</strong></p>
+
+<p>Only applies when payment fields are present.</p></li>
+<li><p><strong>Example</strong></p>
+
+<p>Sets the transaction ID as <em>1234</em>.</p>
+
+<pre><code>transaction_id=1234
+</code></pre></li>
+</ul></li>
+<li><p><strong>transaction_type</strong> <em>[string]</em></p>
+
+<p>The type of the transaction, if applicable.</p>
+
+<ul>
+<li><p><strong>Limitations</strong></p>
+
+<p>Only applies when payment fields are present.</p></li>
+<li><p><strong>Example</strong></p>
+
+<p>Sets the <em>Subscription</em> transaction type.</p>
+
+<pre><code>transaction_type=Subscription
+</code></pre></li>
+</ul></li>
+</ul>
+
+<hr />
+
+<h3 id="entry_id">GET /entries/</h3>
+
+<p>Gets an entry based on the entry ID.</p>
+
+<h4 id="path">Path</h4>
+
+<pre><code>    https://localhost/wp-json/gf/v2/entries/1
+</code></pre>
+
+<h4 id="responsejson">Response <em>[json]</em></h4>
+
+<p>The response will contain a JSON object which contains the entry details. An example can be found below:</p>
+
+<ul>
+<li><strong>Example</strong>
+
+<pre><code class="json">{
+  &quot;id&quot;:           &quot;71&quot;,
+  &quot;form_id&quot;:      &quot;1&quot;,
+  &quot;date_created&quot;: &quot;2016-11-28 18:12:17&quot;,
+  &quot;is_starred&quot;:   0,
+  &quot;is_read&quot;:      0,
+  &quot;ip&quot;:           &quot;127.0.0.1&quot;,
+  &quot;source_url&quot;:   &quot;http:\/\/localhost\/pagename&quot;,
+  &quot;post_id&quot;:      null,
+  &quot;created_by&quot;:   &quot;2&quot;,
+  &quot;user_agent&quot;:   &quot;Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_12_2) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/54.0.2840.87 Safari\/537.36&quot;,
+  &quot;status&quot;:       &quot;active&quot;,
+  &quot;1&quot;:            &quot;&quot;,
+  &quot;2&quot;:            &quot;&quot;,
+  &quot;3&quot;:            &quot;&quot;,
+  &quot;4&quot;:            &quot;&quot;,
+  &quot;5&quot;:            &quot;&quot;,
+  &quot;6.1&quot;:          &quot;&quot;,
+  &quot;6.2&quot;:          &quot;&quot;,
+  &quot;6.3&quot;:          &quot;&quot;
+}
+</code></pre></li>
+</ul>
+
+<h4 id="optionalarguments">Optional Arguments</h4>
+
+<ul>
+<li><p><strong>_labels</strong> <em>[int]</em></p>
+
+<p>Whether to include the labels.</p>
+
+<ul>
+<li><p><strong>Usage</strong></p>
+
+<pre><code>https://localhost/wp-json/gf/v2/entries/5?_labels=1
+</code></pre></li>
+<li><p><strong>Example Response</strong></p>
+
+<pre><code class="json">{
+  &quot;id&quot;:           &quot;71&quot;,
+  &quot;form_id&quot;:      &quot;1&quot;,
+  &quot;date_created&quot;: &quot;2016-11-28 18:12:17&quot;,
+  &quot;is_starred&quot;:   0,
+  &quot;is_read&quot;:      0,
+  &quot;ip&quot;:           &quot;127.0.0.1&quot;,
+  &quot;source_url&quot;:   &quot;http:\/\/localhost\/pagename&quot;,
+  &quot;post_id&quot;:      null,
+  &quot;created_by&quot;:   &quot;2&quot;,
+  &quot;user_agent&quot;:   &quot;Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_12_2) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/54.0.2840.87 Safari\/537.36&quot;,
+  &quot;status&quot;:       &quot;active&quot;,
+  &quot;1&quot;:            &quot;&quot;,
+  &quot;2&quot;:            &quot;&quot;,
+  &quot;3&quot;:            &quot;&quot;,
+  &quot;4&quot;:            &quot;&quot;,
+  &quot;5&quot;:            &quot;&quot;,
+  &quot;6.1&quot;:          &quot;&quot;,
+  &quot;6.2&quot;:          &quot;&quot;,
+  &quot;6.3&quot;:          &quot;&quot;,
+  &quot;labels&quot;: {
+    &quot;1&quot;:  &quot;Single Line Text&quot;,
+    &quot;2&quot;:  &quot;Paragraph Text&quot;,
+    &quot;13&quot;: &quot;File&quot;,
+    &quot;3&quot;:  &quot;Drop Down&quot;,
+    &quot;4&quot;:  &quot;Multi Select&quot;,
+    &quot;5&quot;:  &quot;Number&quot;,
+    &quot;6&quot;: {
+      &quot;6.1&quot;: &quot;Checkboxes First Choice&quot;,
+      &quot;6.2&quot;: &quot;Checkboxes Second Choice&quot;,
+      &quot;6.3&quot;: &quot;Checkboxes Third Choice&quot;
+    }
+  }
+}
+</code></pre></li>
+</ul></li>
+<li><p><strong>_field_ids</strong> <em>[int]</em></p>
+
+<p>A comma separated list of fields to include in the response.</p>
+
+<ul>
+<li><p><strong>Usage</strong></p>
+
+<pre><code>https://localhost/wp-json/gf/v2/entries/5?_field_ids=1,6.1,6.2,6.3,date_created
+</code></pre></li>
+<li><p><strong>Example Response</strong></p>
+
+<pre><code class="json">{
+  &quot;date_created&quot;: &quot;2016-11-28 18:12:17&quot;,
+  &quot;1&quot;:            &quot;Text&quot;,
+  &quot;6.1&quot;:          &quot;first&quot;,
+  &quot;6.2&quot;:          &quot;second&quot;,
+  &quot;6.3&quot;:          &quot;third&quot;
+}
+</code></pre></li>
+</ul></li>
+</ul>
+
+<hr />
+
+<h3 id="entry_id">PUT /entries/</h3>
+
+<p>Updates an entry based on the specified entry ID.</p>
+
+<h4 id="path">Path</h4>
+
+<pre><code>https://localhost/wp-json/gf/v2/entries/1
+</code></pre>
+
+<h4 id="responsejson">Response <em>[json]</em></h4>
+
+<p>When updating an entry, the response body will contain the complete updated entry.</p>
+
+<h4 id="optionalarguments">Optional Arguments</h4>
+
+<ul>
+<li><p><strong>created_by</strong> <em>[string]</em></p>
+
+<p>The user ID of the entry submitter.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the entry submitter as the user with user ID <em>1</em>.
+
+<pre><code>created_by=1
+</code></pre></li>
+</ul></li>
+<li><p><strong>date_created</strong> <em>[string]</em></p>
+
+<p>The date the entry was created, in UTC.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the date created as <em>2016&#8211;11&#8211;28 18:12:17</em>.
+
+<pre><code>date_created=2016-11-28+18%3A12%3A17
+</code></pre></li>
+</ul></li>
+<li><p><strong>ip</strong> <em>[string]</em></p>
+
+<p>The IP address of the entry creator.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the entry IP as <em>127.0.0.1</em>.
+
+<pre><code>ip=127.0.0.1
+</code></pre></li>
+</ul></li>
+<li><p><strong>is_fulfilled</strong> <em>[bool]</em></p>
+
+<p>Whether the transaction has been fulfilled, if applicable.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the entry as fulfilled.
+
+<pre><code>is_fulfilled=1
+</code></pre></li>
+</ul></li>
+<li><p><strong>is_read</strong> <em>[bool]</em></p>
+
+<p>Whether the entry has been read.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Marks the entry as read.
+
+<pre><code>is_read=1
+</code></pre></li>
+</ul></li>
+<li><p><strong>is_starred</strong> <em>[bool]</em></p>
+
+<p>Whether the entry is starred.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Stars the entry.
+
+<pre><code>is_starred=1
+</code></pre></li>
+</ul></li>
+<li><p><strong>source_url</strong> <em>[string]</em></p>
+
+<p>The URL where the form was embedded.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the source URL as <em>http://localhost/pagename</em>.
+
+<pre><code>source_url=http%3A%2F%2Flocalhost%2Fpagename
+</code></pre></li>
+</ul></li>
+<li><p><strong>status</strong> <em>[string]</em></p>
+
+<p>The status of the entry.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the status to <em>active</em>.
+
+<pre><code>status=active
+</code></pre></li>
+</ul></li>
+<li><p><strong>user_agent</strong> <em>[string]</em></p>
+
+<p>The user agent string for the browser used to submit the entry.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the user agent as <em>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.87 Safari/537.36</em>
+
+<pre><code>user_agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_12_2%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F54.0.2840.87+Safari%2F537.36``
+</code></pre></li>
+</ul></li>
+</ul>
+
+<h4 id="paymentarguments">Payment Arguments</h4>
+
+<ul>
+<li><p><strong>payment_amount</strong> <em>[int]</em></p>
+
+<p>The amount of the payment, if applicable.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the payment amount of <em>$2500</em>.
+
+<pre><code>payment_amount=2500
+</code></pre></li>
+</ul></li>
+<li><p><strong>payment_date</strong> <em>[string]</em></p>
+
+<p>The date of the payment, if applicable.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the payment date as <em>2016&#8211;11&#8211;28 18:12:17</em>.
+
+<pre><code>payment_date=2016-11-28+18%3A12%3A17
+</code></pre></li>
+</ul></li>
+<li><p><strong>payment_method</strong> <em>[string]</em></p>
+
+<p>The payment method for the payment, if applicable.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the payment method as <em>Stripe</em>.
+
+<pre><code>payment_method=Stripe
+</code></pre></li>
+</ul></li>
+<li><p><strong>payment_status</strong> <em>[string]</em></p>
+
+<p>The status of the payment, if applicable.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the payment status as <em>Paid</em>.
+
+<pre><code>payment_status=Paid
+</code></pre></li>
+</ul></li>
+<li><p><strong>transaction_id</strong> <em>[string]</em></p>
+
+<p>The transaction ID for the payment, if applicable.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the transaction ID as <em>1234</em>.
+
+<pre><code>transaction_id=1234
+</code></pre></li>
+</ul></li>
+<li><p><strong>transaction_type</strong> <em>[string]</em></p>
+
+<p>The type of the transaction, if applicable.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the <em>Subscription</em> transaction type.
+
+<pre><code>transaction_type=Subscription
+</code></pre></li>
+</ul></li>
+</ul>
+
+<hr />
+
+<h3 id="postentriesentry_idnotifications">POST /entries/<a href="#entry_id">ENTRY_ID</a>/notifications</h3>
+
+<p>Sends the notifications for the given entry.</p>
+
+<h4 id="path">Path</h4>
+
+<pre><code>https://localhost/wp-json/gf/v2/entries/1/notifications
+</code></pre>
+
+<h4 id="responsejson">Response <em>[json]</em></h4>
+
+<ul>
+<li><strong>Success</strong> <em>[json]</em></li>
+</ul>
+
+<p>An array of notification IDs passed to WordPres for sending.</p>
+
+<h4 id="optionalarguments">Optional Arguments</h4>
+
+<ul>
+<li><p><strong>_notifications</strong> <em>[array]</em></p>
+
+<p>Limit the notifications to specific IDs.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the entry submitter as the user with user ID <em>1</em>.
+
+<pre><code>https://localhost/wp-json/gf/v2/entries/1/notifications?_notifications=574ff8257d864,596e543d90b46
+</code></pre></li>
+</ul></li>
+<li><p><strong>_event</strong> <em>[string]</em></p>
+
+<p>The event to trigger. Default: form_submission.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the date created as <em>2016&#8211;11&#8211;28 18:12:17</em>.
+
+<pre><code>https://localhost/wp-json/gf/v2/entries/1/notifications?_event=form_submission
+</code></pre></li>
+</ul></li>
+</ul>
+
+<hr />
+
+<h3 id="entry_id">DELETE /entries/</h3>
+
+<p>Sends the specified entry to the trash. If the entry is already in the trash then repeating this request will not delete
+the entry permanently but the response code will be 410 (Gone). Use the &#8216;force&#8217; parameter to delete the entry permanently.</p>
+
+<h4 id="path">Path</h4>
+
+<pre><code>https://localhost/wp-json/gf/v2/entries/1
+https://localhost/wp-json/gf/v2/entries/1?force=1
+</code></pre>
+
+<h4 id="responsejson">Response <em>[json]</em></h4>
+
+<ul>
+<li><strong>Success</strong> <em>[json]</em></li>
+</ul>
+
+<p>The trashed or deleted entry.</p>
+
+<ul>
+<li><strong>Failure</strong> <em>[json]</em></li>
+</ul>
+
+<pre><code class="```json">  {
+    &quot;code&quot;:    &quot;gf_cannot_delete&quot;,
+    &quot;message&quot;: &quot;Invalid entry id: 71&quot;,
+    &quot;data&quot;:    {
+      &quot;status&quot;: 500
+    }
+  }
+
+</code></pre>
+
+<hr />
+
+<h3 id="getforms">GET /forms</h3>
+
+<p>Gets the details of all forms.</p>
+
+<h4 id="path">Path</h4>
+
+<pre><code>https://localhost/wp-json/gf/v2/forms
+</code></pre>
+
+<h4 id="responsejson">Response <em>[json]</em></h4>
+
+<pre><code class="json">{
+  &quot;4&quot;: {
+    &quot;id&quot;:      &quot;4&quot;,
+    &quot;title&quot;:   &quot;Multi-Page Form&quot;,
+    &quot;entries&quot;: &quot;2&quot;
+  },
+  &quot;1&quot;: {
+    &quot;id&quot;:      &quot;1&quot;,
+    &quot;title&quot;:   &quot;Test Form&quot;,
+    &quot;entries&quot;: &quot;60&quot;
+  },
+  &quot;5&quot;: {
+    &quot;id&quot;:      &quot;5&quot;,
+    &quot;title&quot;:   &quot;Test Form 2&quot;,
+    &quot;entries&quot;: &quot;2&quot;
+  },
+  &quot;6&quot;: {
+    &quot;id&quot;:      &quot;6&quot;,
+    &quot;title&quot;:   &quot;Test Form 3&quot;,
+    &quot;entries&quot;: &quot;2&quot;
+  }
+}
+</code></pre>
+
+<h4 id="optionalarguments">Optional Arguments</h4>
+
+<ul>
+<li><strong>include</strong> <em>[array]</em>
+
+Limit the forms to specific IDs.
+
+<ul>
+<li><strong>Example</strong>
+
+Returns the forms with IDs <em>1</em> and <em>2</em>.
+
+<pre><code>https://localhost/wp-json/gf/v2/forms?include[0]=1&amp;include[1]=2
+</code></pre></li>
+</ul></li>
+</ul>
+
+<hr />
+
+<h3 id="postforms">POST /forms</h3>
+
+<p>Creates a form.</p>
+
+<h4 id="path">Path</h4>
+
+<pre><code>https://localhost/wp-json/gf/v2/forms
+</code></pre>
+
+<h4 id="response">Response</h4>
+
+<ul>
+<li><p><strong>Success</strong> <em>[json]</em></p>
+
+<p>The newly created form.</p></li>
+<li><p><strong>Failure</strong> <em>[json]</em></p></li>
+</ul>
+
+<pre><code class="```json">  {
+    &quot;code&quot;:    &quot;missing_form_json&quot;,
+    &quot;message&quot;: &quot;The Form object must be sent as a JSON string in the request body with the content-type header set to application\/json.&quot;,
+    &quot;data&quot;: {
+    &quot;status&quot;: 400
+    }
+  }
+
+</code></pre>
+
+<h4 id="requiredarguments">Required Arguments</h4>
+
+<ul>
+<li><strong>title</strong> <em>[string]</em>
+
+The form title.
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the form title as <em>Form Title</em>
+
+<pre><code class="json">{
+  &quot;title&quot;: &quot;Form Title&quot;
+}
+</code></pre></li>
+</ul></li>
+</ul>
+
+<hr />
+
+<h3 id="putforms">PUT /forms</h3>
+
+<p>Updates a form.</p>
+
+<h4 id="path">Path</h4>
+
+<pre><code>https://localhost/wp-json/gf/v2/forms
+</code></pre>
+
+<h4 id="response">Response</h4>
+
+<ul>
+<li><p><strong>Success</strong> <em>[json]</em></p>
+
+<p>The updated form.</p></li>
+<li><p><strong>Failure</strong> <em>[json]</em></p></li>
+</ul>
+
+<pre><code class="```json">  {
+    &quot;code&quot;:    &quot;missing_form_json&quot;,
+    &quot;message&quot;: &quot;The Form object must be sent as a JSON string in the request body with the content-type header set to application\/json.&quot;,
+    &quot;data&quot;: {
+    &quot;status&quot;: 400
+    }
+  }
+
+</code></pre>
+
+<h4 id="requiredarguments">Required Arguments</h4>
+
+<ul>
+<li><strong>title</strong> <em>[string]</em>
+
+The form title.
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the form title as <em>Form Title</em>
+
+<pre><code class="json">{
+  &quot;title&quot;: &quot;Form Title&quot;
+}
+</code></pre></li>
+</ul></li>
+</ul>
+
+<hr />
+
+<h3 id="deleteforms">DELETE /forms</h3>
+
+<p>Sends the specified form to the trash. If the form is already in the trash then repeating this request will not delete
+the form permanently but the response code will be 410 (Gone). Use the &#8216;force&#8217; parameter to delete the entry permanently.</p>
+
+<h4 id="path">Path</h4>
+
+<pre><code>https://localhost/wp-json/gf/v2/forms
+</code></pre>
+
+<h4 id="response">Response</h4>
+
+<ul>
+<li><p><strong>Success</strong> <em>[json]</em></p>
+
+<p>The deleted form.</p></li>
+<li><p><strong>Failure</strong> <em>[json]</em></p></li>
+</ul>
+
+<pre><code class="```json">  {
+    &quot;code&quot;:    &quot;gf_form_invalid_id&quot;,
+    &quot;message&quot;: &quot;Invalid form id.&quot;,
+    &quot;data&quot;: {
+    &quot;status&quot;: 404
+    }
+  }
+
+</code></pre>
+
+<h4 id="requiredarguments">Required Arguments</h4>
+
+<ul>
+<li><strong>title</strong> <em>[string]</em>
+
+The form title.
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the form title as <em>Form Title</em>
+
+<pre><code class="json">{
+  &quot;title&quot;: &quot;Form Title&quot;
+}
+</code></pre></li>
+</ul></li>
+</ul>
+
+<hr />
+
+<h3 id="form_id">GET /forms/</h3>
+
+<p>Gets the details of a form based on the specified form ID.</p>
+
+<h4 id="path">Path</h4>
+
+<pre><code>https://localhost/wp-json/gf/v2/forms/1
+</code></pre>
+
+<h4 id="response">Response</h4>
+
+<pre><code class="json">{
+  &quot;title&quot;:                &quot;Test Form&quot;,
+  &quot;description&quot;:          &quot;&quot;,
+  &quot;labelPlacement&quot;:       &quot;top_label&quot;,
+  &quot;descriptionPlacement&quot;: &quot;below&quot;,
+  &quot;button&quot;: {
+    &quot;type&quot;:     &quot;text&quot;,
+    &quot;text&quot;:     &quot;Submit&quot;,
+    &quot;imageUrl&quot;: &quot;&quot;
+  },
+  &quot;fields&quot;: [
+    {
+      &quot;type&quot;:                 &quot;text&quot;,
+      &quot;id&quot;:                   1,
+      &quot;label&quot;:                &quot;Single Line Text&quot;,
+      &quot;adminLabel&quot;:           &quot;&quot;,
+      &quot;isRequired&quot;:           false,
+      &quot;size&quot;:                 &quot;medium&quot;,
+      &quot;errorMessage&quot;:         &quot;&quot;,
+      &quot;inputs&quot;:               null,
+      &quot;formId&quot;:               1,
+      &quot;description&quot;:          &quot;&quot;,
+      &quot;allowsPrepopulate&quot;:    false,
+      &quot;inputMask&quot;:            false,
+      &quot;inputMaskValue&quot;:       &quot;&quot;,
+      &quot;inputType&quot;:            &quot;&quot;,
+      &quot;labelPlacement&quot;:       &quot;&quot;,
+      &quot;descriptionPlacement&quot;: &quot;&quot;,
+      &quot;subLabelPlacement&quot;:    &quot;&quot;,
+      &quot;placeholder&quot;:          &quot;&quot;,
+      &quot;cssClass&quot;:             &quot;&quot;,
+      &quot;inputName&quot;:            &quot;&quot;,
+      &quot;noDuplicates&quot;:         false,
+      &quot;defaultValue&quot;:         &quot;&quot;,
+      &quot;choices&quot;:              &quot;&quot;,
+      &quot;conditionalLogic&quot;:     &quot;&quot;,
+      &quot;failed_validation&quot;:    &quot;&quot;,
+      &quot;productField&quot;:         &quot;&quot;,
+      &quot;enablePasswordInput&quot;:  &quot;&quot;,
+      &quot;maxLength&quot;:            &quot;&quot;,
+      &quot;pageNumber&quot;:           1,
+      &quot;displayOnly&quot;:          &quot;&quot;,
+      &quot;multipleFiles&quot;:        false,
+      &quot;maxFiles&quot;:             &quot;&quot;,
+      &quot;calculationFormula&quot;:   &quot;&quot;,
+      &quot;calculationRounding&quot;:  &quot;&quot;,
+      &quot;enableCalculation&quot;:    &quot;&quot;,
+      &quot;disableQuantity&quot;:      false,
+      &quot;displayAllCategories&quot;: false,
+      &quot;useRichTextEditor&quot;:    false,
+      &quot;visibility&quot;:           &quot;visible&quot;
+    },
+    {
+      &quot;type&quot;:         &quot;radio&quot;,
+      &quot;id&quot;:           7,
+      &quot;label&quot;:        &quot;Radio Buttons&quot;,
+      &quot;adminLabel&quot;:   &quot;&quot;,
+      &quot;isRequired&quot;:   false,
+      &quot;size&quot;:         &quot;medium&quot;,
+      &quot;errorMessage&quot;: &quot;&quot;,
+      &quot;inputs&quot;:       null,
+      &quot;choices&quot;: [
+        {
+          &quot;text&quot;:       &quot;Radio Buttons First Choice&quot;,
+          &quot;value&quot;:      &quot;Radio Buttons First Choice&quot;,
+          &quot;isSelected&quot;: false,
+          &quot;price&quot;:      &quot;&quot;
+        },
+        {
+          &quot;text&quot;:       &quot;Radio Buttons Second Choice&quot;,
+          &quot;value&quot;:      &quot;Radio Buttons Second Choice&quot;,
+          &quot;isSelected&quot;: false,
+          &quot;price&quot;:      &quot;&quot;
+        },
+        {
+          &quot;text&quot;:       &quot;Radio Buttons Third Choice&quot;,
+          &quot;value&quot;:      &quot;Radio Buttons Third Choice&quot;,
+          &quot;isSelected&quot;: false,
+          &quot;price&quot;:      &quot;&quot;
+        }
+      ],
+      &quot;formId&quot;:               1,
+      &quot;description&quot;:          &quot;&quot;,
+      &quot;allowsPrepopulate&quot;:    false,
+      &quot;inputMask&quot;:            false,
+      &quot;inputMaskValue&quot;:       &quot;&quot;,
+      &quot;inputType&quot;:            &quot;&quot;,
+      &quot;labelPlacement&quot;:       &quot;&quot;,
+      &quot;descriptionPlacement&quot;: &quot;&quot;,
+      &quot;subLabelPlacement&quot;:    &quot;&quot;,
+      &quot;placeholder&quot;:          &quot;&quot;,
+      &quot;cssClass&quot;:             &quot;&quot;,
+      &quot;inputName&quot;:            &quot;&quot;,
+      &quot;noDuplicates&quot;:         false,
+      &quot;defaultValue&quot;:         &quot;&quot;,
+      &quot;conditionalLogic&quot;:     &quot;&quot;,
+      &quot;failed_validation&quot;:    &quot;&quot;,
+      &quot;productField&quot;:         &quot;&quot;,
+      &quot;enableOtherChoice&quot;:    &quot;&quot;,
+      &quot;enablePrice&quot;:          &quot;&quot;,
+      &quot;pageNumber&quot;:           1,
+      &quot;displayOnly&quot;:          &quot;&quot;,
+      &quot;multipleFiles&quot;:        false,
+      &quot;maxFiles&quot;:             &quot;&quot;,
+      &quot;calculationFormula&quot;:   &quot;&quot;,
+      &quot;calculationRounding&quot;:  &quot;&quot;,
+      &quot;enableCalculation&quot;:    &quot;&quot;,
+      &quot;disableQuantity&quot;:      false,
+      &quot;displayAllCategories&quot;: false,
+      &quot;useRichTextEditor&quot;:    false,
+      &quot;visibility&quot;:           &quot;visible&quot;
+    },
+    {
+      &quot;type&quot;:         &quot;product&quot;,
+      &quot;id&quot;:           22,
+      &quot;label&quot;:        &quot;Product Name&quot;,
+      &quot;adminLabel&quot;:   &quot;&quot;,
+      &quot;isRequired&quot;:   false,
+      &quot;size&quot;:         &quot;medium&quot;,
+      &quot;errorMessage&quot;: &quot;&quot;,
+      &quot;inputs&quot;: [
+        {
+          &quot;id&quot;:    &quot;22.1&quot;,
+          &quot;label&quot;: &quot;Name&quot;,
+          &quot;name&quot;:  &quot;&quot;
+        },
+        {
+          &quot;id&quot;:    &quot;22.2&quot;,
+          &quot;label&quot;: &quot;Price&quot;,
+          &quot;name&quot;:  &quot;&quot;
+        },
+        {
+          &quot;id&quot;:    &quot;22.3&quot;,
+          &quot;label&quot;: &quot;Quantity&quot;,
+          &quot;name&quot;:  &quot;&quot;
+        }
+      ],
+        &quot;inputType&quot;:            &quot;singleproduct&quot;,
+        &quot;enablePrice&quot;:          null,
+        &quot;formId&quot;:               1,
+        &quot;description&quot;:          &quot;&quot;,
+        &quot;allowsPrepopulate&quot;:    false,
+        &quot;inputMask&quot;:            false,
+        &quot;inputMaskValue&quot;:       &quot;&quot;,
+        &quot;labelPlacement&quot;:       &quot;&quot;,
+        &quot;descriptionPlacement&quot;: &quot;&quot;,
+        &quot;subLabelPlacement&quot;:    &quot;&quot;,
+        &quot;placeholder&quot;:          &quot;&quot;,
+        &quot;cssClass&quot;:             &quot;&quot;,
+        &quot;inputName&quot;:            &quot;&quot;,
+        &quot;visibility&quot;:           &quot;visible&quot;,
+        &quot;noDuplicates&quot;:         false,
+        &quot;defaultValue&quot;:         &quot;&quot;,
+        &quot;choices&quot;:              &quot;&quot;,
+        &quot;conditionalLogic&quot;:     &quot;&quot;,
+        &quot;failed_validation&quot;:    &quot;&quot;,
+        &quot;productField&quot;:         &quot;&quot;,
+        &quot;basePrice&quot;:            &quot;$200.00&quot;,
+        &quot;disableQuantity&quot;:      false,
+        &quot;pageNumber&quot;:           1,
+        &quot;displayOnly&quot;:          &quot;&quot;,
+        &quot;multipleFiles&quot;:        false,
+        &quot;maxFiles&quot;:             &quot;&quot;,
+        &quot;calculationFormula&quot;:   &quot;&quot;,
+        &quot;calculationRounding&quot;:  &quot;&quot;,
+        &quot;enableCalculation&quot;:    &quot;&quot;,
+        &quot;displayAllCategories&quot;: false,
+        &quot;useRichTextEditor&quot;:    false
+    }
+  ],
+  &quot;version&quot;: &quot;2.1.1.11&quot;,
+  &quot;id&quot;: 1,
+  &quot;useCurrentUserAsAuthor&quot;:     true,
+  &quot;postContentTemplateEnabled&quot;: false,
+  &quot;postTitleTemplateEnabled&quot;:   false,
+  &quot;postTitleTemplate&quot;:          &quot;&quot;,
+  &quot;postContentTemplate&quot;:        &quot;&quot;,
+  &quot;lastPageButton&quot;:             null,
+  &quot;pagination&quot;:                 null,
+  &quot;firstPageCssClass&quot;:          null,
+  &quot;postAuthor&quot;:                 &quot;1&quot;,
+  &quot;postCategory&quot;:               &quot;1&quot;,
+  &quot;postFormat&quot;:                 &quot;0&quot;,
+  &quot;postStatus&quot;:                 &quot;draft&quot;,
+  &quot;subLabelPlacement&quot;:          &quot;below&quot;,
+  &quot;cssClass&quot;:                   &quot;&quot;,
+  &quot;enableHoneypot&quot;:             false,
+  &quot;enableAnimation&quot;:            false,
+  &quot;save&quot;: {
+    &quot;enabled&quot;: true,
+    &quot;button&quot;: {
+      &quot;type&quot;: &quot;link&quot;,
+      &quot;text&quot;: &quot;Save and Continue Later&quot;
+    }
+  },
+  &quot;limitEntries&quot;:           false,
+  &quot;limitEntriesCount&quot;:      &quot;&quot;,
+  &quot;limitEntriesPeriod&quot;:     &quot;&quot;,
+  &quot;limitEntriesMessage&quot;:    &quot;&quot;,
+  &quot;scheduleForm&quot;:           false,
+  &quot;scheduleStart&quot;:          &quot;&quot;,
+  &quot;scheduleStartHour&quot;:      &quot;&quot;,
+  &quot;scheduleStartMinute&quot;:    &quot;&quot;,
+  &quot;scheduleStartAmpm&quot;:      &quot;&quot;,
+  &quot;scheduleEnd&quot;:            &quot;&quot;,
+  &quot;scheduleEndHour&quot;:        &quot;&quot;,
+  &quot;scheduleEndMinute&quot;:      &quot;&quot;,
+  &quot;scheduleEndAmpm&quot;:        &quot;&quot;,
+  &quot;schedulePendingMessage&quot;: &quot;&quot;,
+  &quot;scheduleMessage&quot;:        &quot;&quot;,
+  &quot;requireLogin&quot;:           false,
+  &quot;requireLoginMessage&quot;:    &quot;&quot;,
+  &quot;notifications&quot;: {
+    &quot;57f6965a0b2e0&quot;: {
+      &quot;id&quot;:      &quot;57f6965a0b2e0&quot;,
+      &quot;to&quot;:      &quot;{admin_email}&quot;,
+      &quot;name&quot;:    &quot;Admin Notification&quot;,
+      &quot;event&quot;:   &quot;form_submission&quot;,
+      &quot;toType&quot;:  &quot;email&quot;,
+      &quot;subject&quot;: &quot;New submission from {form_title}&quot;,
+      &quot;message&quot;: &quot;{all_fields}&quot;
+    }
+  },
+  &quot;confirmations&quot;: {
+    &quot;57f6965a0bcd0&quot;: {
+      &quot;id&quot;:                &quot;57f6965a0bcd0&quot;,
+      &quot;name&quot;:              &quot;Default Confirmation&quot;,
+      &quot;isDefault&quot;:         true,
+      &quot;type&quot;:              &quot;page&quot;,
+      &quot;message&quot;:           &quot;&quot;,
+      &quot;url&quot;:               &quot;&quot;,
+      &quot;pageId&quot;:            2,
+      &quot;queryString&quot;:       &quot;&quot;,
+      &quot;disableAutoformat&quot;: false,
+      &quot;conditionalLogic&quot;:  [],
+      &quot;gppcmtEnable&quot;:      true
+    }
+  },
+  &quot;is_active&quot;:    &quot;1&quot;,
+  &quot;date_created&quot;: &quot;2016-10-06 18:22:18&quot;,
+  &quot;is_trash&quot;:     &quot;0&quot;
+}
+</code></pre>
+
+<hr />
+
+<h3 id="getformsform_identries">GET /forms/<a href="#form_id">FORM_ID</a>/entries</h3>
+
+<p>Gets entries associated with a specific form.</p>
+
+<h4 id="path">Path</h4>
+
+<pre><code>https://localhost/wp-json/gf/v2/forms/1/entries
+</code></pre>
+
+<h4 id="responsejson">Response <em>[json]</em></h4>
+
+<p>The response will contain a JSON object which contains the entry details. An example can be found below:</p>
+
+<p><strong>Example Response</strong></p>
+
+<pre><code class="json">{
+  &quot;id&quot;:           &quot;71&quot;,
+  &quot;form_id&quot;:      &quot;1&quot;,
+  &quot;date_created&quot;: &quot;2016-11-28 18:12:17&quot;,
+  &quot;is_starred&quot;:   0,
+  &quot;is_read&quot;:      0,
+  &quot;ip&quot;:           &quot;127.0.0.1&quot;,
+  &quot;source_url&quot;:   &quot;http:\/\/localhost\/pagename&quot;,
+  &quot;post_id&quot;:      null,
+  &quot;created_by&quot;:   &quot;2&quot;,
+  &quot;user_agent&quot;:   &quot;Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_12_2) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/54.0.2840.87 Safari\/537.36&quot;,
+  &quot;status&quot;:       &quot;active&quot;,
+  &quot;1&quot;:            &quot;&quot;,
+  &quot;2&quot;:            &quot;&quot;,
+  &quot;3&quot;:            &quot;&quot;,
+  &quot;4&quot;:            &quot;&quot;,
+  &quot;5&quot;:            &quot;&quot;,
+  &quot;6.1&quot;:          &quot;&quot;,
+  &quot;6.2&quot;:          &quot;&quot;,
+  &quot;6.3&quot;:          &quot;&quot;
+}
+</code></pre>
+
+<h4 id="optionalarguments">Optional Arguments</h4>
+
+<ul>
+<li><p><strong>_labels</strong> <em>[int]</em></p>
+
+<p>Whether to include the labels.</p>
+
+<ul>
+<li><p><strong>Usage</strong></p>
+
+<pre><code>https://localhost/wp-json/gf/v2/forms/1/entries?_labels=1
+</code></pre></li>
+<li><p><strong>Example Response</strong></p>
+
+<pre><code class="json">{
+  &quot;id&quot;:           &quot;71&quot;,
+  &quot;form_id&quot;:      &quot;1&quot;,
+  &quot;date_created&quot;: &quot;2016-11-28 18:12:17&quot;,
+  &quot;is_starred&quot;:   0,
+  &quot;is_read&quot;:      0,
+  &quot;ip&quot;:           &quot;127.0.0.1&quot;,
+  &quot;source_url&quot;:   &quot;http:\/\/localhost\/pagename&quot;,
+  &quot;post_id&quot;:      null,
+  &quot;created_by&quot;:   &quot;2&quot;,
+  &quot;user_agent&quot;:   &quot;Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_12_2) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/54.0.2840.87 Safari\/537.36&quot;,
+  &quot;status&quot;:       &quot;active&quot;,
+  &quot;1&quot;:            &quot;&quot;,
+  &quot;2&quot;:            &quot;&quot;,
+  &quot;3&quot;:            &quot;&quot;,
+  &quot;4&quot;:            &quot;&quot;,
+  &quot;5&quot;:            &quot;&quot;,
+  &quot;6.1&quot;:          &quot;&quot;,
+  &quot;6.2&quot;:          &quot;&quot;,
+  &quot;6.3&quot;:          &quot;&quot;,
+  &quot;labels&quot;: {
+    &quot;1&quot;:  &quot;Single Line Text&quot;,
+    &quot;2&quot;:  &quot;Paragraph Text&quot;,
+    &quot;13&quot;: &quot;File&quot;,
+    &quot;3&quot;:  &quot;Drop Down&quot;,
+    &quot;4&quot;:  &quot;Multi Select&quot;,
+    &quot;5&quot;:  &quot;Number&quot;,
+    &quot;6&quot;: {
+      &quot;6.1&quot;: &quot;Checkboxes First Choice&quot;,
+      &quot;6.2&quot;: &quot;Checkboxes Second Choice&quot;,
+      &quot;6.3&quot;: &quot;Checkboxes Third Choice&quot;
+    }
+  }
+}
+</code></pre></li>
+</ul></li>
+<li><p><strong>_field_ids</strong> <em>[int]</em></p>
+
+<p>A comma separated list of fields to include in the response.</p>
+
+<ul>
+<li><p><strong>Usage</strong></p>
+
+<pre><code>https://localhost/wp-json/gf/v2/entries/5?_field_ids=1,6.1,6.2,6.3,date_created
+</code></pre></li>
+<li><p><strong>Example Response</strong></p>
+
+<pre><code class="json">{
+  &quot;date_created&quot;: &quot;2016-11-28 18:12:17&quot;,
+  &quot;1&quot;:            &quot;Text&quot;,
+  &quot;6.1&quot;:          &quot;first&quot;,
+  &quot;6.2&quot;:          &quot;second&quot;,
+  &quot;6.3&quot;:          &quot;third&quot;
+}
+</code></pre></li>
+</ul></li>
+<li><p><strong>search</strong> <em>[json]</em></p>
+
+<p>The search criteria.</p>
+
+<ul>
+<li><strong>Usage</strong>
+
+<ul>
+<li><p><strong>field_filters</strong> <em>array</em></p>
+
+<p>An array of filters to search by.</p></li>
+<li><p><strong>key</strong> <em>int|float</em></p>
+
+<p>The field ID.</p></li>
+<li><p><strong>value</strong> <em>string</em></p>
+
+<p>The value to search for.</p></li>
+<li><p><strong>operator</strong> <em>string</em></p>
+
+<p>The comparison operator to use.</p></li>
+</ul>
+
+<pre><code class="json">{
+  &quot;field_filters&quot;: [{
+  &quot;key&quot;:      1,
+  &quot;value&quot;:    &quot;Field Value&quot;,
+  &quot;operator&quot;: &quot;contains&quot;
+  }]
+}
+</code></pre></li>
+</ul></li>
+<li><p><strong>paging</strong> <em>[array]</em></p>
+
+<p>The paging criteria.</p>
+
+<ul>
+<li><p><strong>Parameters</strong></p>
+
+<ul>
+<li><p><strong>page_size</strong> <em>[int]</em></p>
+
+<p>The number of results per page.</p></li>
+<li><p><strong>current_page</strong> <em>[int]</em></p>
+
+<p>The current page to pull details from.</p></li>
+<li><p><strong>offset</strong> <em>[int]</em></p>
+
+<p>The offset to begin with.</p></li>
+</ul></li>
+<li><p><strong>Usage</strong></p>
+
+<pre><code>https://localhost/wp-json/gf/v2/forms/1/entries?paging[page_size]=20&amp;paging[current_page]=2&amp;paging[offset]=30
+</code></pre></li>
+</ul></li>
+<li><p><strong>sorting</strong> <em>[array]</em></p>
+
+<p>The sorting criteria.</p>
+
+<ul>
+<li><p><strong>Parameters</strong></p>
+
+<ul>
+<li><p><strong>key</strong> <em>[string|int]</em></p>
+
+<p>The key to sort by.</p></li>
+<li><p><strong>direction</strong> <em>[string]</em></p>
+
+<p>The direction. Either <em>ASC</em> or <em>DESC</em>.</p></li>
+<li><p><strong>is_numeric</strong> <em>[bool]</em></p>
+
+<p>If the key is numeric.</p></li>
+</ul></li>
+<li><p><strong>Usage</strong></p>
+
+<pre><code>https://localhost/wp-json/gf/v2/forms/1/entries?sorting[key]=id&amp;sorting[direction]=ASC&amp;sorting[is_numeric]=true
+</code></pre></li>
+</ul></li>
+</ul>
+
+<hr />
+
+<h3 id="postformsform_identries">POST /forms/<a href="#form_id">FORM_ID</a>/entries</h3>
+
+<p>Creates an entry based on the specified form ID.</p>
+
+<h4 id="path">Path</h4>
+
+<pre><code>https://localhost/wp-json/gf/v2/forms/1/entries
+</code></pre>
+
+<h4 id="responsejson">Response <em>[json]</em></h4>
+
+<p>When creating an entry, the response body will contain the new entry.</p>
+
+<h4 id="optionalarguments">Optional Arguments</h4>
+
+<ul>
+<li><p><strong>created_by</strong> <em>[string]</em></p>
+
+<p>The user ID of the entry submitter.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the entry submitter as the user with user ID <em>1</em>.
+
+<pre><code>created_by=1
+</code></pre></li>
+</ul></li>
+<li><p><strong>date_created</strong> <em>[string]</em></p>
+
+<p>The date the entry was created, in UTC.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the date created as <em>2016&#8211;11&#8211;28 18:12:17</em>.
+
+<pre><code>date_created=2016-11-28+18%3A12%3A17
+</code></pre></li>
+</ul></li>
+<li><p><strong>ip</strong> <em>[string]</em></p>
+
+<p>The IP address of the entry creator.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the entry IP as <em>127.0.0.1</em>.
+
+<pre><code>ip=127.0.0.1
+</code></pre></li>
+</ul></li>
+<li><p><strong>is_fulfilled</strong> <em>[bool]</em></p>
+
+<p>Whether the transaction has been fulfilled, if applicable.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the entry as fulfilled.
+
+<pre><code>is_fulfilled=1
+</code></pre></li>
+</ul></li>
+<li><p><strong>is_read</strong> <em>[bool]</em></p>
+
+<p>Whether the entry has been read.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Marks the entry as read.
+
+<pre><code>is_read=1
+</code></pre></li>
+</ul></li>
+<li><p><strong>is_starred</strong> <em>[bool]</em></p>
+
+<p>Whether the entry is starred.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Stars the entry.
+
+<pre><code>is_starred=1
+</code></pre></li>
+</ul></li>
+<li><p><strong>source_url</strong> <em>[string]</em></p>
+
+<p>The URL where the form was embedded.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the source URL as <em>http://localhost/pagename</em>.
+
+<pre><code>source_url=http%3A%2F%2Flocalhost%2Fpagename
+</code></pre></li>
+</ul></li>
+<li><p><strong>status</strong> <em>[string]</em></p>
+
+<p>The status of the entry.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the status to <em>active</em>.
+
+<pre><code>status=active
+</code></pre></li>
+</ul></li>
+<li><p><strong>user_agent</strong> <em>[string]</em></p>
+
+<p>The user agent string for the browser used to submit the entry.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the user agent as:
+
+<em>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.87 Safari/537.36</em>
+
+<pre><code>user_agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_12_2%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F54.0.2840.87+Safari%2F537.36``
+</code></pre></li>
+</ul></li>
+</ul>
+
+<h4 id="paymentarguments">Payment Arguments</h4>
+
+<ul>
+<li><p><strong>payment_amount</strong> <em>[int]</em></p>
+
+<p>The amount of the payment, if applicable.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the payment amount of <em>$2500</em>.
+
+<pre><code>payment_amount=2500
+</code></pre></li>
+</ul></li>
+<li><p><strong>payment_date</strong> <em>[string]</em></p>
+
+<p>The date of the payment, if applicable.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the payment date as <em>2016&#8211;11&#8211;28 18:12:17</em>.
+
+<pre><code>payment_date=2016-11-28+18%3A12%3A17
+</code></pre></li>
+</ul></li>
+<li><p><strong>payment_method</strong> <em>[string]</em></p>
+
+<p>The payment method for the payment, if applicable.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the payment method as <em>Stripe</em>.
+
+<pre><code>payment_method=Stripe
+</code></pre></li>
+</ul></li>
+<li><p><strong>payment_status</strong> <em>[string]</em></p>
+
+<p>The status of the payment, if applicable.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the payment status as <em>Paid</em>.
+
+<pre><code>payment_status=Paid
+</code></pre></li>
+</ul></li>
+<li><p><strong>transaction_id</strong> <em>[string]</em></p>
+
+<p>The transaction ID for the payment, if applicable.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the transaction ID as <em>1234</em>.
+
+<pre><code>transaction_id=1234
+</code></pre></li>
+</ul></li>
+<li><p><strong>transaction_type</strong> <em>[string]</em></p>
+
+<p>The type of the transaction, if applicable.</p>
+
+<ul>
+<li><strong>Example</strong>
+
+Sets the <em>Subscription</em> transaction type.
+
+<pre><code>transaction_type=Subscription
+</code></pre></li>
+</ul></li>
+</ul>
+
+<hr />
+
+<h3 id="getformsform_idresults">GET /forms/<a href="#form_id">FORM_ID</a>/results</h3>
+
+<p>Gets form details, including entry details.</p>
+
+<h4 id="path">Path</h4>
+
+<pre><code>https://localhost/wp-json/gf/v2/forms/1/results
+</code></pre>
+
+<h4 id="response">Response</h4>
+
+<pre><code class="json">{
+  &quot;entry_count&quot;: &quot;60&quot;,
+  &quot;field_data&quot;: {
+    &quot;1&quot;:  29,
+    &quot;2&quot;:  7,
+    &quot;13&quot;: 12,
+    &quot;3&quot;: {
+      &quot;Drop Down First Choice&quot;:  52,
+      &quot;Drop Down Second Choice&quot;: 0,
+      &quot;Drop Down Third Choice&quot;:  0
+    },
+    &quot;4&quot;: {
+      &quot;Multi Select First Choice&quot;:  2,
+      &quot;Multi Select Second Choice&quot;: 0,
+      &quot;Multi Select Third Choice&quot;:  0
+    },
+    &quot;5&quot;: 2,
+    &quot;6&quot;: {
+      &quot;Checkboxes First Choice&quot;:  2,
+      &quot;Checkboxes Second Choice&quot;: 0,
+      &quot;Checkboxes Third Choice&quot;:  0
+    },
+    &quot;7&quot;: {
+      &quot;Radio Buttons First Choice&quot;:  0,
+      &quot;Radio Buttons Second Choice&quot;: 0,
+      &quot;Radio Buttons Third Choice&quot;:  0
+    },
+    &quot;8&quot;:  0,
+    &quot;9&quot;:  0,
+    &quot;10&quot;: 0,
+    &quot;14&quot;: 6,
+    &quot;15&quot;: 3,
+    &quot;16&quot;: 0,
+    &quot;17&quot;: 2,
+    &quot;18&quot;: 0,
+    &quot;19&quot;: 0,
+    &quot;20&quot;: 0,
+    &quot;21&quot;: 0,
+    &quot;22&quot;: 8,
+    &quot;23&quot;: 1,
+    &quot;24&quot;: 0
+  },
+  &quot;status&quot;:    &quot;complete&quot;,
+  &quot;timestamp&quot;: 1480536695,
+  &quot;_labels&quot;: {
+    &quot;1&quot;:  &quot;Single Line Text&quot;,
+    &quot;2&quot;:  &quot;Paragraph Text&quot;,
+    &quot;13&quot;: &quot;File&quot;,
+    &quot;3&quot;: {
+      &quot;label&quot;: &quot;Drop Down&quot;,
+      &quot;choices&quot;: {
+        &quot;Drop Down First Choice&quot;:  &quot;Drop Down First Choice&quot;,
+        &quot;Drop Down Second Choice&quot;: &quot;Drop Down Second Choice&quot;,
+        &quot;Drop Down Third Choice&quot;:  &quot;Drop Down Third Choice&quot;
+      }
+    },
+    &quot;4&quot;: {
+      &quot;label&quot;: &quot;Multi Select&quot;,
+      &quot;choices&quot;: {
+        &quot;Multi Select First Choice&quot;:  &quot;Multi Select First Choice&quot;,
+        &quot;Multi Select Second Choice&quot;: &quot;Multi Select Second Choice&quot;,
+        &quot;Multi Select Third Choice&quot;:  &quot;Multi Select Third Choice&quot;
+      }
+    },
+    &quot;5&quot;: &quot;Number&quot;,
+    &quot;6&quot;: {
+      &quot;label&quot;: &quot;Checkboxes&quot;,
+      &quot;choices&quot;: {
+        &quot;Checkboxes First Choice&quot;:  &quot;Checkboxes First Choice&quot;,
+        &quot;Checkboxes Second Choice&quot;: &quot;Checkboxes Second Choice&quot;,
+        &quot;Checkboxes Third Choice&quot;:  &quot;Checkboxes Third Choice&quot;
+      }
+    },
+    &quot;7&quot;: {
+      &quot;label&quot;: &quot;Radio Buttons&quot;,
+      &quot;choices&quot;: {
+        &quot;Radio Buttons First Choice&quot;:  &quot;Radio Buttons First Choice&quot;,
+        &quot;Radio Buttons Second Choice&quot;: &quot;Radio Buttons Second Choice&quot;,
+        &quot;Radio Buttons Third Choice&quot;:  &quot;Radio Buttons Third Choice&quot;
+      }
+    },
+    &quot;8&quot;:  &quot;Hidden Field&quot;,
+    &quot;9&quot;:  &quot;HTML Block&quot;,
+    &quot;10&quot;: &quot;Section Break&quot;,
+    &quot;14&quot;: &quot;List&quot;,
+    &quot;15&quot;: &quot;Date&quot;,
+    &quot;16&quot;: &quot;Phone&quot;,
+    &quot;17&quot;: &quot;Post Body&quot;,
+    &quot;18&quot;: &quot;Name&quot;,
+    &quot;19&quot;: &quot;Name&quot;,
+    &quot;20&quot;: &quot;Name&quot;,
+    &quot;21&quot;: &quot;Email&quot;,
+    &quot;22&quot;: &quot;Product Name&quot;,
+    &quot;23&quot;: &quot;Total&quot;,
+    &quot;24&quot;: &quot;Coupon&quot;
+  }
+}
+</code></pre>
+
+<h4 id="optionalarguments">Optional Arguments</h4>
+
+<ul>
+<li><strong>search</strong> <em>[json]</em>
+
+The search criteria.
+
+<ul>
+<li><p><strong>Parameters</strong></p></li>
+<li><p><p> <strong>field_filters</strong> <em>[array]</em><br />
+An array of filters to search by.</p></p></li>
+<li><p><p> <strong>key</strong> <em>[int|float]</em></p>
+
+<p>The field ID.</p></p></li>
+<li><p><p> <strong>value</strong> <em>[string]</em><br />
+The value to search for.</p></p></li>
+<li><p> <strong>operator</strong> <em>[string]</em><br />
+The comparison operator to use.</p></li>
+<li><p><strong>Usage</strong></p>
+
+<pre><code class="json">{
+  &quot;field_filters&quot;: [{
+    &quot;key&quot;:      1,
+    &quot;value&quot;:    &quot;Field Value&quot;,
+    &quot;operator&quot;: &quot;contains&quot;
+  }]
+}
+</code></pre></li>
+</ul></li>
+</ul>
+
+<hr />
+
+<h3 id="postformsform_idsubmissions">POST /forms/<a href="#form_id">FORM_ID</a>/submissions</h3>
+
+<p>Submits the specified form ID with the specified values.</p>
+
+<h4 id="path">Path</h4>
+
+<pre><code>https://localhost/wp-json/gf/v2/forms/1/submissions
+</code></pre>
+
+<h4 id="response">Response</h4>
+
+<h4 id="requiredarguments">Required Arguments</h4>
+
+<ul>
+<li><strong>input_[FIELD_ID]</strong> <em>[string]</em>
+
+The input values. Replace field ID with the input that you want to submit data for.</li>
+</ul>
+
+<h4 id="returns">Returns</h4>
+
+<pre><code class="json">{
+  &quot;is_valid&quot;:             true,
+  &quot;page_number&quot;:          0,
+  &quot;source_page_number&quot;:   1,
+  &quot;confirmation_message&quot;: &quot;&lt;div id='gform_confirmation_wrapper_6' class='gform_confirmation_wrapper '&gt;&lt;div id='gform_confirmation_message_6' class='gform_confirmation_message_6 gform_confirmation_message'&gt;Thanks for contacting us! We will get in touch with you shortly.&lt;\/div&gt;&lt;\/div&gt;&quot;
+}
+</code></pre>
+
+<h4 id="optionalarguments">Optional Arguments</h4>
+
+<ul>
+<li><p><strong>field_values</strong> <em>[string]</em></p>
+
+<p>The field values.</p></li>
+<li><p><strong>source_page</strong> <em>[string]</em></p>
+
+<p>The source page number.</p></li>
+<li><p><strong>target_page</strong> <em>[string]</em></p>
+
+<p>The target page number.</p></li>
+</ul>
+
+<hr />
+
+<h3 id="getformsform_idfeeds">GET /forms/<a href="#form_id">FORM_ID</a>/feeds</h3>
+
+<p>Returns the feeds for the specified form ID.</p>
+
+<h4 id="path">Path</h4>
+
+<pre><code>https://localhost/wp-json/gf/v2/forms/1/feeds
+</code></pre>
+
+<h4 id="response">Response</h4>
+
+<p>An array of feeds.</p>
+
+<h4 id="optionalurlparameters">Optional URL Parameters</h4>
+
+<ul>
+<li><p><strong>include</strong> <em>[array]</em></p>
+
+<p>An array of feed IDs to include in the response. e.g. include[0]=1&amp;include[1]=2</p></li>
+<li><p><strong>addon</strong> <em>[string]</em></p>
+
+<p>The slug of a feed add-on.</p></li>
+</ul>
+
+<hr />
+
+<h3 id="postformsform_idfeeds">POST /forms/<a href="#form_id">FORM_ID</a>/feeds</h3>
+
+<p>Adds a feed for the specified form ID.</p>
+
+<h4 id="path">Path</h4>
+
+<pre><code>https://localhost/wp-json/gf/v2/forms/36/feeds
+</code></pre>
+
+<h4 id="response">Response</h4>
+
+<p>The newly created feed.</p>
+
+<h4 id="arguments">Arguments</h4>
+
+<ul>
+<li><p><strong>meta</strong> <em>[object]</em></p>
+
+<p>The feed meta.</p></li>
+<li><p><strong>addon_slug</strong> <em>[object]</em></p>
+
+<p>The add-on slug for the feed.</p></li>
+</ul>
+
+<h4 id="optionalurlparameter">Optional URL Parameter</h4>
+
+<ul>
+<li><strong>include</strong> <em>[array]</em>
+
+An array of feed IDs to include in the response. e.g. include[0]=1&amp;include[1]=2</li>
+</ul>
+
+<p><strong>Example Payload</strong></p>
+
+<pre><code class="json">{
+  &quot;addon_slug&quot;: &quot;gravityformstestaddon&quot;,
+  &quot;meta&quot;: {
+    &quot;textField&quot;: &quot;My Value&quot;
+  }
+}
+</code></pre>
+
+<p><strong>Example Response</strong></p>
+
+<pre><code class="json">{
+  &quot;addon_slug&quot;: &quot;gravityformstestaddon&quot;,
+  &quot;meta&quot;: {
+    &quot;textField&quot;: &quot;My Value&quot;
+  },
+  &quot;form_id&quot;: 36,
+  &quot;id&quot;: 31
+}
+</code></pre>
+
+<hr />
+
+<h3 id="getfeeds">GET /feeds</h3>
+
+<p>Returns all the feeds optionally filtered by ID and/or add-on slug.</p>
+
+<h4 id="path">Path</h4>
+
+<pre><code>https://localhost/wp-json/gf/v2/feeds
+</code></pre>
+
+<h4 id="response">Response</h4>
+
+<p>An array of feeds.</p>
+
+<h4 id="optionalurlparameters">Optional URL Parameters</h4>
+
+<ul>
+<li><p><strong>include</strong> <em>[array]</em></p>
+
+<p>An array of feed IDs to include in the response. e.g. include[0]=1&amp;include[1]=2</p></li>
+<li><p><strong>addon</strong> <em>[string]</em></p>
+
+<p>The slug of a feed add-on.</p></li>
+</ul>
+
+<p><strong>Example Response</strong></p>
+
+<pre><code class="json">[
+  {
+    &quot;id&quot;: &quot;31&quot;,
+    &quot;form_id&quot;: &quot;36&quot;,
+    &quot;addon_slug&quot;: &quot;gravityformstestaddon&quot;,
+    &quot;meta&quot;: {
+      &quot;textField&quot;: &quot;My Value&quot;
+    }
+  }
+]
+</code></pre>
+
+<hr />
+
+<h3 id="postfeeds">POST /feeds</h3>
+
+<p>Adds a feed.</p>
+
+<h4 id="path">Path</h4>
+
+<pre><code>https://localhost/wp-json/gf/v2/feeds
+</code></pre>
+
+<h4 id="response">Response</h4>
+
+<p>The newly created feed.</p>
+
+<h4 id="arguments">Arguments</h4>
+
+<ul>
+<li><p><strong>meta</strong> <em>[object]</em></p>
+
+<p>The feed meta.</p></li>
+<li><p><strong>addon_slug</strong> <em>[object]</em></p>
+
+<p>The add-on slug for the feed.</p></li>
+</ul>
+
+<p><strong>Example Payload</strong></p>
+
+<pre><code class="json">{
+  &quot;addon_slug&quot;: &quot;gravityformstestaddon&quot;,
+  &quot;meta&quot;: {
+    &quot;textField&quot;: &quot;My Value&quot;
+  },
+  &quot;form_id&quot;: 36
+}
+</code></pre>
+
+<p><strong>Example Response</strong></p>
+
+<pre><code class="json">{
+    &quot;id&quot;: &quot;31&quot;,
+    &quot;form_id&quot;: &quot;36&quot;,
+    &quot;addon_slug&quot;: &quot;gravityformstestaddon&quot;,
+    &quot;meta&quot;: {
+      &quot;textField&quot;: &quot;My Value&quot;
+    }
+}
+</code></pre>
+
+<hr />
+
+<h3 id="feedid">PUT /feeds/</h3>
+
+<p>Updates a feed.</p>
+
+<h4 id="path">Path</h4>
+
+<pre><code>https://localhost/wp-json/gf/v2/feeds/34
+</code></pre>
+
+<h4 id="response">Response</h4>
+
+<p>The updated feed.</p>
+
+<h4 id="arguments">Arguments</h4>
+
+<ul>
+<li><p><strong>meta</strong> <em>[object]</em></p>
+
+<p>The feed meta.</p></li>
+<li><p><strong>addon_slug</strong> <em>[string]</em></p>
+
+<p>The add-on slug for the feed.</p></li>
+<li><p><strong>form_id</strong> <em>[integer]</em></p>
+
+<p>The form ID for the feed.</p></li>
+</ul>
+
+<p><strong>Example Payload</strong></p>
+
+<pre><code class="json">{
+  &quot;addon_slug&quot;: &quot;gravityformstestaddon&quot;,
+  &quot;meta&quot;: {
+    &quot;feedName&quot;: &quot;My Value2&quot;
+  },
+  &quot;form_id&quot;: 36
+}
+</code></pre>
+
+<p><strong>Example Response</strong></p>
+
+<pre><code class="json">{
+  &quot;id&quot;: &quot;34&quot;,
+  &quot;form_id&quot;: &quot;36&quot;,
+  &quot;addon_slug&quot;: &quot;gravityformstestaddon&quot;,
+  &quot;meta&quot;: {
+    &quot;feedName&quot;: &quot;My Value2&quot;
+  }
+}
+</code></pre>
+
+<hr />
+
+<h3 id="feedid">DELETE /feeds/</h3>
+
+<p>Deleted a feed.</p>
+
+<h4 id="path">Path</h4>
+
+<pre><code>https://localhost/wp-json/gf/v2/feeds/34
+</code></pre>
+
+<h4 id="response">Response</h4>
+
+<p>The result and, if successful, the deleted feed.</p>
+
+<p><strong>Example Response</strong></p>
+
+<pre><code class="json">{
+  &quot;deleted&quot;: true,
+  &quot;previous&quot;: {
+    &quot;id&quot;: &quot;34&quot;,
+    &quot;form_id&quot;: &quot;36&quot;,
+    &quot;addon_slug&quot;: &quot;gravityformstestaddon&quot;,
+    &quot;meta&quot;: {
+      &quot;feedName&quot;: &quot;My Value2&quot;
+    }
+  }
+}
+</code></pre>
+
+</body>
+</html>
+

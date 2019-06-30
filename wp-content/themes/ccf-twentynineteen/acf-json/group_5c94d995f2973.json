@@ -1,0 +1,52 @@
+{
+    "key": "group_5c94d995f2973",
+    "title": "Scientific Papers - Author Contributors",
+    "fields": [
+        {
+            "key": "field_5c94d9a961648",
+            "label": "Scientific Paper Authors",
+            "name": "scientific_paper_authors",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "scientific-paper-author",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "object",
+            "multiple": 0,
+            "choices": {
+                "Marker, Laurie, L.": "Marker, Laurie, L.",
+                "Potgieter, Gail C.": "Potgieter, Gail C.",
+                "Dennis, Sean D.": "Dennis, Sean D.",
+                "": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "resource-category:scientific-papers"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1558091496
+}

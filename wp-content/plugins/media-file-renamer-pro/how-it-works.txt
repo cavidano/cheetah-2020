@@ -1,0 +1,20 @@
+Just a simple file to remember things :)
+
+== BASICS
+
+Media File Renamer renames the files, the related files (if thumbnails have been generated for the Media being modified) and then look for references to those files in the database to rename them.
+
+== MAIN FUNCTIONS
+
+* rename( $media, $manual_filename = null, $fromMediaLibrary = true )
+Main function. $media is the ID or the content of the Media entry (as an array). $manual_filename is the new filename, if a filename is being forced (otherwise the Renamer will find the best choice). $fromMediaLibrary means that the renaming is being made from the Media Library. That is considered 'safe', otherwise media might be renamed at an insecure moment, for example while editing a post, and in that case, we should rename it later.
+
+== CORE HELPERS
+
+* sensitive_file_exists( $filename, $fullpath = true, $caseInsensitive = true )
+Renaming files can be a tricky process! :) If we check file_exists on ABC.jpg and the file is actually abc.jpg, it will be true. So we need to use our own file_exists function.
+
+== REFERENCES CHECK
+(Images that are detected as used by WordPress)
+
+

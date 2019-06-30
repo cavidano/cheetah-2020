@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="plainviewsdk">Plainview SDK</h1>
+
+<p>A toolkit of commonly used classes and functions, including Wordpress and Drupal SDKs.</p>
+
+<p>The SDK contains:</p>
+
+<ul>
+<li>Base set of useful functions</li>
+<li>Drupal SDK - currently only a Drupalized db_aware_object class</li>
+<li>Form2 manipulation class for HTML5</li>
+<li>Pagination class</li>
+<li>Table manipulation class</li>
+<li>Wordpress SDK - fully fledged SDK</li>
+<li>XHTML element class</li>
+<li>Unit tests</li>
+</ul>
+
+<h2 id="base">Base</h2>
+
+<ul>
+<li>base.php is a base class of [mostly] static functions</li>
+<li>traits\db_aware_object is a trait that your objects can use to update themselves in the database</li>
+<li>form.php is an obsolete form handling class. Use form2 instead.</li>
+<li>mail\mail.php is a wrapper for PHPMailer</li>
+</ul>
+
+<h2 id="requirements">Requirements</h2>
+
+<ul>
+<li>PHP v5.4 for traits support.</li>
+</ul>
+
+<h2 id="standaloneusage">Standalone usage</h2>
+
+<p>Copy the files into a directory called plainview.</p>
+
+<p>Require the autoloader. Assuming you have the SDK in a subdirectory called &#8220;plainview&#8221; (it must be called plainview but can be placed anywhere):</p>
+
+<pre><code>require_once( 'plainview/autoload.php' );
+</code></pre>
+
+<p>After that the classes are loaded automatically. The SDK&#8217;s function can now be accessed statically:</p>
+
+<pre><code>if ( \plainview\sdk_broadcast\base::is_email( 'test@test.com' ) )
+	echo 'Valid e-mail address!';
+</code></pre>
+
+<p>Or by dynamically instantiating the base:</p>
+
+<pre><code>class sdk_test extends \plainview\sdk_broadcast\base
+{
+}
+
+$test = new sdk_test();
+if ( $test-&gt;is_email( 'test@test.com' ) )
+	echo 'Valid e-mail address!';
+
+$instance = sdk_test::instance();
+</code></pre>
+
+<h2 id="license">License</h2>
+
+<p>GPL v3</p>
+
+<h2 id="contact">Contact</h2>
+
+<p>The author can be contacted at: edward@plainview.se</p>
+
+</body>
+</html>
+
