@@ -7390,6 +7390,9 @@ In this file:
     background: #fec34e; }
   #global-header .nav-item.donate .nav-link.active {
     color: #212529 !important; }
+  @media (max-width: 959.98px) {
+    #global-header .nav-item.donate {
+      display: none; } }
   #global-header .nav-link {
     font-weight: 400;
     font-size: 1.5rem; }

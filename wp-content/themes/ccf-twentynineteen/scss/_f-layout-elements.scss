@@ -60,7 +60,6 @@ $nav-pills-consistent-width: true;
 
 // Reset variables for dark header
 @if $global-header-dark {
-
     $global-header-bg-color: $primary;
 
     $global-header-border-color: rgba(black, 0.5);
@@ -74,7 +73,6 @@ $global-header-toggle-button-color: $primary-nav-link-color;
     background-color: $global-header-bg-color;
 
     @if $global-header-dark {
-
         #nyc-logo-placeholder {
             fill: $white;
         }
@@ -125,30 +123,32 @@ $global-header-toggle-button-color: $primary-nav-link-color;
     }
 
     .dropdown-toggle {
-
         &::after {
             display: inline-block;
             margin-left: .5rem;
             vertical-align: .125rem;
-
             content: "\f107";
 
             @extend %fa-icon;
+
             font-size: 1rem;
-
         }
-
     }
 
-    // Donate 
+    // Donate
 
     .nav-item.donate {
+        
         .nav-link {
             background: $primary;
         }
 
         .nav-link.active {
             color: $primary-nav-link-color !important;
+        }
+
+        @include media-breakpoint-down(md) {
+            display: none;
         }
     }
 
@@ -158,14 +158,13 @@ $global-header-toggle-button-color: $primary-nav-link-color;
         font-weight: $primary-nav-link-font-weight;
         font-size: $fs-lg;
 
-        &[aria-expanded="true"]{
+        &[aria-expanded="true"] {
             color: $text-muted;
         }
 
         &.active {
             color: $primary-nav-link-active-color;
         }
-
     }
 
     // Primary Nav (.nav-pills)
@@ -202,7 +201,7 @@ $global-header-toggle-button-color: $primary-nav-link-color;
         padding: 0;
         width: unset !important;
 
-        ul{
+        ul {
             background-color: $dark;
             padding: $nav-link-padding-x;
             min-width: 150px;
@@ -210,11 +209,13 @@ $global-header-toggle-button-color: $primary-nav-link-color;
 
         a {
             @extend .text-white;
+
             white-space: nowrap;
         }
 
         .leader {
             @extend .text-primary;
+
             font-weight: $font-weight-bold;
         }
 
@@ -244,7 +245,6 @@ $global-header-toggle-button-color: $primary-nav-link-color;
     }
 
     @include media-breakpoint-down(md) {
-
         .nav-item {
             border-top: 1px solid $global-header-border-color;
             width: 100%;
@@ -260,9 +260,7 @@ $global-header-toggle-button-color: $primary-nav-link-color;
             background: none;
         }
 
-
         .dropdown-toggle {
-
             &[aria-expanded="false"]::after {
                 content: "\f107";
             }
@@ -270,16 +268,9 @@ $global-header-toggle-button-color: $primary-nav-link-color;
             &[aria-expanded="true"]::after {
                 content: "\f106";
             }
-
         }
 
-
-
-
-
-
-
-        .dropdown-menu, 
+        .dropdown-menu,
         .dropdown-menu ul.extensible-list {
             position: static !important;
             width: 100% !important;
@@ -287,10 +278,9 @@ $global-header-toggle-button-color: $primary-nav-link-color;
             transform: none !important;
         }
 
-        .dropdown-menu ul.extensible-list:not(:first-child){
+        .dropdown-menu ul.extensible-list:not(:first-child) {
             padding-top: 0;
         }
-
 
         .dropdown-toggle {
             display: flex;
@@ -316,9 +306,10 @@ $global-header-toggle-button-color: $primary-nav-link-color;
 
 .skip-menu {
     @extend .position-absolute;
-    @extend .shadow;
-    z-index: 20000;
 
+    @extend .shadow;
+
+    z-index: 20000;
     padding: $spacer-1 !important;
     top: $spacer;
     left: $spacer;
@@ -358,50 +349,19 @@ $global-header-toggle-button-color: $primary-nav-link-color;
 }
 
 .gradient-overlay-y-black-tall::before {
-    @include linear-gradient(
-        $direction: to bottom, 
-        $first-color: black, 
-        $second-color: black, 
-        $first-color-opacity: 0, 
-        $second-color-opacity: 0.85, 
-        $first-color-position: 25%, 
-        $second-color-position: 100%
-    );
+    @include linear-gradient($direction: to bottom, $first-color: black, $second-color: black, $first-color-opacity: 0, $second-color-opacity: 0.85, $first-color-position: 25%, $second-color-position: 100%);
 }
 
 .gradient-overlay-y-black-short::before {
-    @include linear-gradient(
-        $direction: to bottom, 
-        $first-color: black, 
-        $second-color: black, 
-        $first-color-opacity: 0, 
-        $second-color-opacity: 0.85, 
-        $first-color-position: 50%, 
-        $second-color-position: 100%
-    );
+    @include linear-gradient($direction: to bottom, $first-color: black, $second-color: black, $first-color-opacity: 0, $second-color-opacity: 0.85, $first-color-position: 50%, $second-color-position: 100%);
 }
 
 .gradient-overlay-y-white::before {
-    @include linear-gradient(
-        $direction: to bottom, 
-        $first-color: white, 
-        $second-color: white, 
-        $first-color-opacity: 0, 
-        $second-color-opacity: 0.9, 
-        $first-color-position: 0%, 
-        $second-color-position: 100%
-    );
+    @include linear-gradient($direction: to bottom, $first-color: white, $second-color: white, $first-color-opacity: 0, $second-color-opacity: 0.9, $first-color-position: 0%, $second-color-position: 100%);
 }
 
 .gradient-overlay-x-black::before {
-    @include linear-gradient(
-        $direction: to left,
-        $first-color: $black,
-        $second-color: $black,
-        $first-color-opacity: 0,
-        $second-color-opacity: 0.75,
-        $first-color-position: 0%,
-        $second-color-position: 100%);
+    @include linear-gradient($direction: to left, $first-color: $black, $second-color: $black, $first-color-opacity: 0, $second-color-opacity: 0.75, $first-color-position: 0%, $second-color-position: 100%);
 }
 
 ////////////////////////////////////////
@@ -409,7 +369,6 @@ $global-header-toggle-button-color: $primary-nav-link-color;
 ////////////////////////////////////////
 
 @mixin featured-panel-responsive-settings {
-    
     [class^="gradient-overlay-"]::before {
         display: none;
     }
@@ -423,7 +382,6 @@ $global-header-toggle-button-color: $primary-nav-link-color;
     }
 
     .bg-white {
-
         h1, h2, h3, h4, p {
             color: $body-color;
         }
@@ -462,6 +420,7 @@ $global-header-toggle-button-color: $primary-nav-link-color;
         //     padding: $spacer-2;
         //   }
         // }
+   
     }
 
     .bg-white {
@@ -532,10 +491,9 @@ $banner-with-background-opacity: 0.25;
 .banner-with-background {
     position: relative;
     overflow: hidden;
-
     min-height: $banner-with-background-height;
 
-    >* {
+    > * {
         position: relative;
         z-index: auto;
     }
@@ -550,7 +508,6 @@ $banner-with-background-opacity: 0.25;
         bottom: 0;
         left: 0;
         z-index: auto;
-
         opacity: $banner-with-background-opacity;
 
         @include apply-background-image;
@@ -560,16 +517,15 @@ $banner-with-background-opacity: 0.25;
 
     &.banner-news {
         &::before {
-            @include apply-background-image('banner-news');
+            @include apply-background-image("banner-news");
         }
     }
 
     &.banner-donate {
         &::before {
-            @include apply-background-image('banner-donate');
+            @include apply-background-image("banner-donate");
         }
     }
-
 }
 
 ////////////////////////////////////////
@@ -810,39 +766,39 @@ $nav-tab-active-color: $info;
 $nav-tab-active-font-weight: $font-weight-bold;
 
 @mixin device-nav-pills-and-tabs-settings {
-  flex-direction: column;
-  border-color: transparent;
-  margin-bottom: $spacer-2;
+    flex-direction: column;
+    border-color: transparent;
+    margin-bottom: $spacer-2;
 
-  .nav-item {
-      text-align: center;
-      border-color: $border-color;
-  }
+    .nav-item {
+        text-align: center;
+        border-color: $border-color;
+    }
 
-  @if $enable-rounded {
-      border-radius: $border-radius;
+    @if $enable-rounded {
+        border-radius: $border-radius;
 
-      .nav-item {
-          border-top-left-radius: 0;
-          border-top-right-radius: 0;
-          border-bottom-left-radius: 0;
-          border-bottom-right-radius: 0;
+        .nav-item {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
 
-          &:first-child {
-              border-top-left-radius: $border-radius;
-              border-top-right-radius: $border-radius;
-          }
+            &:first-child {
+                border-top-left-radius: $border-radius;
+                border-top-right-radius: $border-radius;
+            }
 
-          &:last-child {
-              border-bottom-left-radius: $border-radius;
-              border-bottom-right-radius: $border-radius;
-          }
-      }
+            &:last-child {
+                border-bottom-left-radius: $border-radius;
+                border-bottom-right-radius: $border-radius;
+            }
+        }
 
-      & + .tab-content {
-          border-radius: $border-radius;
-      }
-  }
+        & + .tab-content {
+            border-radius: $border-radius;
+        }
+    }
 }
 
 .nav-pills,
@@ -852,6 +808,7 @@ $nav-tab-active-font-weight: $font-weight-bold;
 
         &.active {
             // text-decoration: underline;
+       
         }
     }
 
@@ -1039,7 +996,6 @@ $carousel-indicator-height: auto;
     > p {
         display: inline-block;
         padding: $spacer-2 $spacer-3;
-
         background: rgba($white, 0.9);
     }
 }
