@@ -9,7 +9,7 @@ get_header();
 $donate_url = $_SERVER[REQUEST_URI];
 
 if (strpos($donate_url, '/donate/sponsor') !== false) :
-    $form = '6fb04bf9-dd82-4dff-ad14-ee935828dd70';
+    $form = '42099271-19f3-4544-b7b9-97ab9196c0fe';    
     $type = 'sponsor';
 elseif (strpos($donate_url, '/donate/recurring') !== false) :
     $form = 'b9cdbd87-026a-4f39-b5f4-a3aed39adfab';
@@ -25,18 +25,19 @@ endif;
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-    <?php
-    
-    $featured_image_id = get_post_thumbnail_id($post->ID);
-    $featured_image = wp_get_attachment_image_src($featured_image_id, 'full', false, '');
-    $featured_image_alt = get_post_meta($featured_image_id, '_wp_attachment_image_alt', true);
-    
+    <?php if (have_rows('banner_on_page', 'options')): while (have_rows('banner_on_page', 'options')): the_row();
+        
+    $headline = get_sub_field('headline');
+    $text = get_sub_field('text');
+    $image = get_sub_field('image');
+    $disclaimer = get_sub_field('disclaimer');
+
     ?>
 
     <style>
 
         .banner-with-background.featured-image::before{
-            background-image: url(<?php echo $featured_image[0]; ?>);
+            background-image: url(<?php echo $image['url']; ?>);
             opacity : .4;
         }
 
@@ -45,11 +46,15 @@ endif;
     <div class="bg-dark banner-with-background featured-image d-flex flex-column">
 
         <div class="container-fluid my-auto">
-            <div class="narrow text-white text-center text-shadow my-3">
+            <div class="medium text-white text-center text-shadow my-3">
                 <h1 class="display-4 text-primary">
-                    Donate with Confidence
+                    <?php echo $headline; ?>
                 </h1>
-                <p class="fs-lg">Support the best in scientific research, educational programming, and conservation.</p>
+
+                <p class="fs-lg">
+                    <?php echo $text; ?>
+                </p>
+                
                 <a class="shadow-lg my-2 d-inline-block" href="https://www.charitynavigator.org/index.cfm?bay=search.summary&orgid=6617" target="_blank">
                     <img class="rounded" src="<?php echo get_template_directory_uri(); ?>/images/charity-navigator-four-star-badge.svg" alt="Charity Navigator Four Star Rating">
                 </a>
@@ -62,16 +67,18 @@ endif;
     <!-- .banner-with-background -->
 
     <div class="container-fluid bg-light py-2">
-        <div class="narrow text-center fs-md">
+        <div class="medium text-center fs-md">
             <p>
                 <em>
-                    Donations made on this page will be processed by the Cheetah Conservation Fund USA. CCF USA is a Registered Non Profit 501(c) 3: #31-1726923.
+                    <?php echo $disclaimer; ?>
                 </em>
             </p>
         </div>
 
     </div>
-    <!--  -->
+    <!-- .container-fluid -->
+
+	<?php endwhile; endif; /* banner */ ?>
 
     <div class="container">
 
@@ -108,26 +115,53 @@ endif;
 
             <div class="col-lg-4">
 
+                <?php if (have_rows('international_donors', 'options')): while (have_rows('international_donors', 'options')): the_row();
+            
+                $headline = get_sub_field('headline');
+                $text = get_sub_field('text');
+
+                ?>
+
                 <div class="card border my-5">
                     <div class="card-header border-bottom text-center">
-                        International Donors
+                        <?php echo $headline; ?>
                     </div>
                     
                     <div class="card-body">
+
                         <div class="fs-md">
-                            <p>
-                                To donate in another country and receive all eligible benefits, please visit your country's affiliated page:
-                            </p>
+                            
+                            <?php echo $text; ?>
+
+                            <?php if( have_rows('affiliate_donations') ): ?>
+
                             <ul class="extensible-list">
-                                <li><a href="https://cheetahconservationfund.ca/donate/" target="_blank">Canada</a></li>
-                                <li><a href="http://cheetah.org.uk/donate" target="_blank">United Kingdom</a></li>
-                                <li><a href="http://www.aga-artenschutz.de/spenden.html?fb_item_id_fix=909" target="_blank">Germany</a></li>
-                                <li><a href="https://cheetah.org.au/" target="_blank">Australia</a></li>
+
+                                <?php while ( have_rows('affiliate_donations') ) : the_row();
+
+                                $link = get_sub_field('link');
+
+                                ?>
+                            
+                                <li>
+                                    <a href="<?php echo $link['url']; ?>" <?php if ($link['target']) : ?>target="<?php echo $link['target'] ?>"<?php endif; ?> title="<?php echo $link['title']; ?>"><?php echo $link['title']; ?></a>
+                                </li>
+
+                                <?php endwhile; ?>
+                            
                             </ul>
+
+                            <?php endif; /* affiliate_donations */ ?>
+
                         </div>
+
                     </div>
+                    <!-- .card-body -->
+
                 </div>
                 <!-- .card -->
+
+                <?php endwhile;  endif;/* international_donors */ ?>
 
             <div class="card border my-5">
                 <div class="card-header border-bottom text-center">
@@ -156,39 +190,6 @@ endif;
 
     </div>
     <!-- .container-fluid -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <?php endwhile; endif; /* have_posts */ ?>
 
