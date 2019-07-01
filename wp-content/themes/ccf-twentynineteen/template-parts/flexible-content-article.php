@@ -517,9 +517,9 @@ $images = get_sub_field('images');
 
         <div class="col-lg-6">
             <?php if ($image): ?>
-                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>">
+                <img class="w-100" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>">
             <?php else : ?>
-                <img src="https://placehold.it/800x600.jpg" alt="Placeholder">
+                <img class="w-100" src="https://placehold.it/800x600.jpg" alt="Placeholder">
             <?php endif; ?>
         </div>
         <!-- .col -->
