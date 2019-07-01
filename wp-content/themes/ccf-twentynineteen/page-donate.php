@@ -163,24 +163,42 @@ endif;
 
                 <?php endwhile;  endif;/* international_donors */ ?>
 
-            <div class="card border my-5">
-                <div class="card-header border-bottom text-center">
-                    Helpful Information
-                </div>
-                <div class="card-body">
-                    <div class="fs-md">
-                        <p>
-                            If you are having difficulty completing your donation, please call <strong class="no-wrap">1-866-909-3399</strong>.
-                        </p>
+                <?php if (have_rows('helpful_information', 'options')): while (have_rows('helpful_information', 'options')): the_row();
+            
+                $headline = get_sub_field('headline');
+                $text = get_sub_field('text');
 
-                        <p>
-                            CCF is a registered Trust in Namibia (Incorporated Association Not For Gain, with
-                            Registration Number 21/20002/341).
-                        </p>
+                ?>
+
+                <div class="card border my-5">
+                    <div class="card-header border-bottom text-center">
+                        <?php echo $headline; ?>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="fs-md">
+                                <?php echo $text; ?>
+                        </div>
+
+
+                        <div class="fs-md d-none">
+                            <p>
+                                If you are having difficulty completing your donation, please call <strong class="no-wrap">1-866-909-3399</strong>.
+                            </p>
+
+                            <p>
+                                CCF is a registered Trust in Namibia (Incorporated Association Not For Gain, with
+                                Registration Number 21/20002/341).
+                            </p>
+                        </div>
+
+
                     </div>
                 </div>
-            </div>
-            <!-- .card -->
+                <!-- .card -->
+
+                <?php endwhile;  endif;/* helpful_information */ ?>
 
             </div>
             <!-- .col -->
