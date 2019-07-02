@@ -202,19 +202,22 @@
 
     <div class="bg-dark py-2">
 
-        <div class="container">
+            <div class="container f-sans-serif text-white">
 
-            <p class="fs-sm text-white">
-                <span class="d-block d-sm-inline-block">© 2019 Cheetah Conservation Fund</span>
-                <span class="d-none d-sm-inline-block mx-1">•</span>
-                <a class="text-reset" href="<?php echo home_url(); ?>/privacy-policy">Privacy Policy</a>
-            </p>
-        
+                <ul class="extensible-list horizontal f-sans-serif fs-sm">
+                    <li>
+                        &#169; <?php echo date('Y'); ?> Cheetah Conservation Fund
+                    </li>
+                    <li>
+                        <a class="text-reset" href="<?php echo home_url(); ?>/privacy-policy">Privacy Policy</a>
+                    </li>
+                </ul>
+                    
+            </div>
+            <!-- .container -->
+
         </div>
-        <!-- .container -->
-    
-    </div>
-    <!-- .bg-dark -->
+        <!-- .bg-dark -->
 
 </footer>
 
