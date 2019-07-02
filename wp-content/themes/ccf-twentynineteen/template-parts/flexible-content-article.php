@@ -214,7 +214,7 @@ $enlarge_b = $figure_b['enlarge'];
 
 ?>
 
-<div class="two-figure-block my-4 mx-n2">
+<div class="two-figure-block my-5 mx-n2">
 
     <div class="row matrix-gutter">
 
