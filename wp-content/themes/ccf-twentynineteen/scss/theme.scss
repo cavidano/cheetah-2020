@@ -19,6 +19,7 @@ In this file:
 @import "d-enhancements.scss";
 @import "e-supplementary-classes.scss";
 @import "f-layout-elements.scss";
+
 // @import "g-dev-tools.scss";
 
 // @import "h-donate.scss";
@@ -27,7 +28,7 @@ In this file:
 // B. Theme styles
 ////////////////////////////////////////
 
-html{
+html {
     background-color: $dark;
 }
 
@@ -158,13 +159,12 @@ form[role="search"] {
         }
     }
 
-    a{
+    a {
         padding-left: $spacer-2;
         padding-right: $spacer-2;
         font-weight: $font-weight-bold;
         display: block;
     }
-
 }
 
 ////////////////////////////////////////
@@ -231,8 +231,6 @@ span.fa-circle {
     @extend .rounded;
 
     @extend .shadow;
-
-    // padding: $spacer-1;
 }
 
 .leaflet-popup-content {
@@ -248,12 +246,9 @@ span.fa-circle {
 
         &.city {
             color: $text-muted;
-            margin-bottom: $spacer-1 / 2;
+            margin-top: ($spacer-1);
+            margin-bottom: ($spacer-1 / 2);
         }
-
-        &.type {}
-
-        &.info {}
     }
 }
 
@@ -647,12 +642,11 @@ hr.dark {
 }
 
 #all-topics ul {
-    &:not([data-name="CCF Blog"]){
+    &:not([data-name="CCF Blog"]) {
         justify-content: center;
         text-align: center;
     }
 }
-
 
 .page-numbers {
     @extend .page-item;
@@ -683,23 +677,20 @@ hr.dark {
 }
 
 .card {
-
     &.partner {
-
         @include hover-focus {
-
             .card-img-overlay {
                 @include transition;
+
                 opacity: 1;
             }
         }
+
 
         .card-img-overlay {
             opacity: 0;
         }
 
-        a.stretched-link {
-
-        }
+        a.stretched-link {}
     }
 }

@@ -8055,6 +8055,7 @@ span.fa-circle.partner-organization {
       font-size: 1rem; }
     .leaflet-popup-content p.city {
       color: #777677;
+      margin-top: 0.5rem;
       margin-bottom: 0.25rem; }
 
 #map-affiliates .leaflet-bar {

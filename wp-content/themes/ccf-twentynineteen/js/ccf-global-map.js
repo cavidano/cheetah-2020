@@ -41,7 +41,8 @@ jQuery(function ($) {
     var popupOptions = {
         maxWidth: 300,
         className: 'rounded-0',
-        closeButton: false
+        closeButton: false,
+        offset: [0, -40]
     };
 
     L.control.zoom({
