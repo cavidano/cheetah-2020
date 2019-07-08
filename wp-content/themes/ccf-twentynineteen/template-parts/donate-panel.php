@@ -1,18 +1,35 @@
+<?php if (have_rows('donate_panel', 'options')):
+
+while (have_rows('donate_panel', 'options')): the_row();
+    
+// vars
+$headline = get_sub_field('headline');
+$link = get_sub_field('link');
+
+$image_full = get_sub_field('image_full');
+
+?>
+
 <section class="featured-panel responsive-lg">
 
       <div class="card bg-dark">
-        <img class="card-img opacity-20 show-on-mobile" src="<?php echo get_template_directory_uri(); ?>/images/donate.jpg" alt="Placeholder">
+
+        <?php if ($image_full): ?>
+            <img class="card-img opacity-20 show-on-mobile" src="<?php echo $image_full['url']; ?>" alt="<?php echo $image_full['alt']; ?>">
+        <?php else : ?>
+            <img class="card-img opacity-20 show-on-mobile" src="<?php echo get_template_directory_uri(); ?>/images/donate.jpg" alt="Placeholder">
+        <?php endif; ?>
+
         <div class="card-img-overlay d-flex px-0">
 
           <div class="container-fluid align-self-center">
+          
+            <div class="narrow py-3 text-white text-center">
 
-            <div class="narrow py-2 text-white text-center">
-
-              <h2 class="text-shadow">
-                Join the race to save the cheetah
+              <h2 class="h1 text-shadow mb-2">
+                  <?php echo $headline; ?>
+                  <a class="text-primary" href="<?php echo $link['url']; ?>" <?php if($link['target']) : ?>target="<?php echo $link['target'] ?>"<?php endif; ?>><?php echo $link['title']; ?></a>
               </h2>
-
-              <p class="text-shadow">Support our science-based, results-driven conservation initiatives. Together, we can save the cheetah.</p>
 
               <div class="row matrix-border">
 
@@ -29,11 +46,18 @@
               </div>
               <!-- .matrix-border -->
 
-            </div>
+          </div>
+          <!-- .narrow -->
 
           </div>
           <!-- .container -->
+
         </div>
+        <!-- .card-img-overlay -->
+
       </div>
+      <!-- .card -->
 
     </section>
+
+	<?php endwhile; endif; /* donate_panel */ ?>
