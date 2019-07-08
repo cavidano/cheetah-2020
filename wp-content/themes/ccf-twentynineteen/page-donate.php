@@ -9,13 +9,13 @@ get_header();
 $donate_url = $_SERVER[REQUEST_URI];
 
 if (strpos($donate_url, '/donate/sponsor') !== false) :
-    $form = '42099271-19f3-4544-b7b9-97ab9196c0fe';    
+    $form = '6fb04bf9-dd82-4dff-ad14-ee935828dd70';
     $type = 'sponsor';
 elseif (strpos($donate_url, '/donate/recurring') !== false) :
     $form = 'b9cdbd87-026a-4f39-b5f4-a3aed39adfab';
     $type = 'recurring';
 else :
-    $form = 'ce3cb3d7-d112-40a1-bf4e-c9dd10a518f2';
+    $form = '42099271-19f3-4544-b7b9-97ab9196c0fe';
     $type = 'once';
 endif;
 
