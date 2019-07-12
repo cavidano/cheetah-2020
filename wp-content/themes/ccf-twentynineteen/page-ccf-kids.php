@@ -166,7 +166,7 @@ $parent_title = get_the_title($post->post_parent);
                                     where you can spend time with the cheetahs!
                                 </p>
 
-                                <a href="mailto:info@cheetah.org?subject=CCF Kids" class="btn btn-lg btn-block btn-primary">
+                                <a href="<?php echo home_url(); ?>/contact-ccf/" class="btn btn-lg btn-block btn-primary">
                                     Contact Us
                                 </a>
                                 
