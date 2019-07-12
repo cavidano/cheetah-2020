@@ -61,7 +61,6 @@ $col-a-width: 70%;
 $col-b-width: 30%;
 
 #bbox-root {
-
     // Global resets
 
     #mongo-form,
@@ -82,8 +81,7 @@ $col-b-width: 30%;
     // Spinner
 
     #bbox-msg-wrapper {
-
-        >img {
+        > img {
             display: none;
         }
 
@@ -92,19 +90,24 @@ $col-b-width: 30%;
         &::after {
             color: $secondary;
             position: absolute;
+
             @extend %fa-icon;
+
             content: "\f110";
+
             @extend %fa-spin;
         }
     }
 
-    // Validation 
-    
+    // Validation
+
     $alert-color: darken($warning, 35%);
 
     div.BBFormErrorBlock {
         @extend .alert-warning;
+
         font-size: $fs-md;
+
         // background-color: $warning;
         color: darken($warning, 35%);
         border-color: rgba($alert-color, 0.25);
@@ -140,7 +143,7 @@ $col-b-width: 30%;
     legend {
         margin-bottom: $spacer-2;
 
-        >div>label {
+        > div > label {
             @extend .h4;
 
             color: $body-color;
@@ -158,11 +161,11 @@ $col-b-width: 30%;
         width: $col-b-width;
     }
 
-    input[type="checkbox"]+label {
+    input[type="checkbox"] + label {
         max-width: unset;
 
         // background: pink !important;
-
+   
     }
 
     // Inputs
@@ -182,7 +185,6 @@ $col-b-width: 30%;
 
     .BBTwoFields,
     .BBThreeFields {
-
         input,
         select {
             margin: 0;
@@ -204,6 +206,7 @@ $col-b-width: 30%;
 
         input[type="checkbox"] {
             // @extend .custom-control-input;
+       
         }
 
         label {
@@ -215,14 +218,15 @@ $col-b-width: 30%;
     #bboxdonation_recurrence_divRecurrenceCheckbox,
     #bboxdonation_billing_fldOrgGift,
     #bboxdonation_billing_fldAnonymous,
-    #bboxdonation_tribute_divTributeGeneral>div,
-    #divTributeAcknowledge>div {
+    #bboxdonation_tribute_divTributeGeneral > div,
+    #divTributeAcknowledge > div {
         // @extend .custom-control;
 
         // @extend .custom-checkbox;
 
         input[type="checkbox"] {
             // @extend .custom-control-input;
+       
         }
 
         label.BBFormCheckboxLabel {
@@ -331,18 +335,18 @@ $col-b-width: 30%;
 
             // .BBFormRadioButtonContainer
 
-            >div {
+            > div {
                 display: flex;
                 width: 100%;
             }
 
-            >div>label {
+            > div > label {
                 align-self: stretch;
                 display: flex;
                 text-align: center;
                 width: 100%;
 
-                >input {
+                > input {
                     align-self: center;
                     margin: 0 auto;
                     background: $light;
@@ -384,11 +388,17 @@ $col-b-width: 30%;
 
     // Hide the last part of the form (temporary)
 
-    .BBFormSectionGiftAttributes,
-    .BBDFormSectionComments {
-        display: none;
-    }
+    // .BBFormSectionGiftAttributes,
+    // .BBDFormSectionComments {
+    //     display: none;
+    // }
 
+    // Fix comment label margin on device view
+
+    #bboxdonation_comment_lblComments{
+        margin-bottom: 0.5em !important;
+    }
+    
     .BBFormContainer[data-bbox-part-id="ce3cb3d7-d112-40a1-bf4e-c9dd10a518f2"] .BBFormChecklist {
         max-height: unset;
         overflow: auto;
@@ -396,7 +406,6 @@ $col-b-width: 30%;
     }
 
     div#bboxdonation_comment_fldComments {
-
         label,
         textarea {
             margin: 0;
@@ -407,14 +416,16 @@ $col-b-width: 30%;
         height: auto;
         box-shadow: unset;
         border-color: transparent;
+
         @extend .btn;
+
         @extend .btn-lg;
+
         @extend .btn-primary;
     }
 
     @media (max-width: 600px) {
         .BBThreeFields {
-
             input,
             select {
                 width: 100%;
@@ -443,13 +454,13 @@ $col-b-width: 30%;
 // Mongo Forms
 ////////////////////////////////////////
 
-#bbox-root{
-
+#bbox-root {
     [data-bbox-part-id='97d435e6-40ec-41a7-b8e5-2a4eacf55d9c'].BBFormContainer {
         background-color: transparent !important;
     }
+
     #BBPanelHeading,
-    #bboxevent_priceselect_divAddedDonation{
+    #bboxevent_priceselect_divAddedDonation {
         display: none;
     }
 
@@ -460,21 +471,21 @@ $col-b-width: 30%;
         border-color: $border-color;
     }
 
-    .BBFormTableHeader{
+    .BBFormTableHeader {
         // background-color: $light;
         border: none;
     }
 
-    .BBFormTableHeaderCell{
+    .BBFormTableHeaderCell {
         padding: $spacer-2;
         font-size: $fs-md;
     }
-    
+
     .BBFormTableFooter,
     .BBFormTableHeaderCell,
     .BBFormColTotal,
     .BBTableRowCellFinePrint,
-    .BBFormColHidden{
+    .BBFormColHidden {
         display: none;
     }
 
@@ -483,7 +494,7 @@ $col-b-width: 30%;
         float: right;
     }
 
-    .BBFormTableRow{
+    .BBFormTableRow {
         padding: $spacer-2;
         display: flex;
         flex-direction: column;
@@ -491,16 +502,14 @@ $col-b-width: 30%;
 
         &[data-price-id="26"] {
             border-bottom: none !important;
-
         }
     }
-
 
     .BBFormTableRowCell {
         padding: 0;
         margin: 0;
 
-        &.BBFormColPriceName{
+        &.BBFormColPriceName {
             width: unset;
         }
 
@@ -509,13 +518,12 @@ $col-b-width: 30%;
             margin-top: $spacer-2;
             margin-bottom: $spacer-2;
 
-            select{
+            select {
                 width: 100%;
             }
-
         }
     }
-  
+
     #bbox-root div.BBFormSection {
         margin-bottom: unset !important;
     }

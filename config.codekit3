@@ -38851,16 +38851,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"/wp-content/themes/ccf-twentynineteen/scss/forms.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/wp-content/themes/ccf-twentynineteen/scss/forms-min.css",
-		"oF": 0,
-		"oS": 3
-		},
 	"/wp-content/themes/ccf-twentynineteen/scss/forms.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -38869,9 +38859,9 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/themes/ccf-twentynineteen/scss/forms.css",
-		"oF": 0,
-		"oS": 0,
+		"oAP": "/wp-content/themes/ccf-twentynineteen/css/forms.css",
+		"oF": 2,
+		"oS": 3,
 		"uL": 1
 		},
 	"/wp-content/themes/ccf-twentynineteen/scss/theme.scss": {
