@@ -105,6 +105,8 @@ $featured_image_alt = get_post_meta($featured_image_id,'_wp_attachment_image_alt
 
         </header>
 
+        <?php if ( get_field('hide_feature_on_post') === false ): ?>
+
         <div class="medium mb-5">
 
             <figure class="figure my-0">
@@ -118,6 +120,9 @@ $featured_image_alt = get_post_meta($featured_image_id,'_wp_attachment_image_alt
             </figure>
 
         </div>
+        <!-- .medium -->
+
+        <?php endif; ?>
 
         <?php get_template_part('template-parts/flexible-content-article'); ?>
 
