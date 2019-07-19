@@ -116,6 +116,7 @@ $parent_title = get_the_title($post->post_parent);
 
                         $video_url = get_field('video_url');
                         $video_id = substr(strrchr($video_url, '/'), 1);
+                         
                         ?>
 
                         <div class="col-lg-6">

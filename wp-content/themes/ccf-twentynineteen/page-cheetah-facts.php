@@ -21,10 +21,13 @@ $parent_title = get_the_title($post->post_parent);
 
                 <img class="mb-3" src="<?php echo get_template_directory_uri(); ?>/images/ccf-kids-logo-large.svg" alt="Placeholder">
 
-                <p class="text-shadow">
-                    Welcome to Cheetah Conservation Fund’s Kids page—the purrfect place to start your cheetah studies! From cool cheetah facts to how kids like YOU are helping
-                    CCF save the cheetah in the wild.
-                </p>
+                <?php $introduction = get_field('introduction'); ?>
+
+                <?php if( $introduction ): ?>
+                <div class="text-shadow">
+                  <?php echo $introduction; ?>
+                </div>
+                <?php endif; ?>
 
             </div>
             <!-- .narrow -->
@@ -49,42 +52,71 @@ $parent_title = get_the_title($post->post_parent);
 
     </section>
 
-    <?php get_template_part('template-parts/related-reading'); ?>
-
     <div class="wide overflow-hidden">
 
         <div class="my-6" id="primary-content">
 
+            <?php if (have_rows('video_with_two_paragraphs')): while (have_rows('video_with_two_paragraphs')): the_row();
+
+            $video = get_sub_field('video');
+            $post_object = $video;
+
+            $paragraph_one = get_sub_field('paragraph_one');
+            $paragraph_two = get_sub_field('paragraph_two');
+
+            ?>
+            
             <div class="container-fluid my-5">
 
                 <div class="medium">
 
                     <div class="rounded-lg overflow-hidden mb-4">
-                    
+
+                        <?php
+
+                        if ($post_object) :
+
+                        $post = $post_object;
+                        setup_postdata($post);
+
+                        $video_url = get_field('video_url');
+                        $video_id = substr(strrchr($video_url, '/'), 1);
+                        
+                        ?>
+                        
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/5Y_zNbiB3kE" frameborder="0" allowtransparency="true" allowfullscreen="true"></iframe>
+                            <?php if (strpos($video_url, 'vimeo') !== false) : ?>
+                                <iframe src="https://player.vimeo.com/video/<?php echo $video_id; ?>" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                            <?php else : ?>
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?php echo $video_id; ?>" frameborder="0" allowTransparency="true" allowfullscreen="true"></iframe>
+                            <?php endif; ?>
                         </div>
+
+                        <?php endif; wp_reset_postdata(); /* post_objects */?>
 
                     </div>
                     <!-- .rounded-lg -->
 
                     <div class="row matrix-gutter">
+
+                        <?php if ($paragraph_one): ?>
+
                         <div class="col-md-6">
-                            <p>
-                                Unlike other “big cats”, a classification that includes: lions, tigers, leopards, and jaguars)
-                                cheetahs don’t roar. They growl when facing danger, and they vocalize with sounds more equivalent to a
-                                high-pitched chirp or bubble.
-                            </p>
+                            <?php echo $paragraph_one; ?>      
                         </div>
                         <!-- .col -->
+                        
+                        <?php endif; ?>
+                        
+                        <?php if ($paragraph_two): ?>
+
                         <div class="col-md-6">
-                            <p>
-                                Cheetahs bark when communicating with each other. The cheetah is also
-                                unique among big cats in that it can also purr while both inhaling and exhaling.
-                            </p>
+                            <?php echo $paragraph_two; ?>
                         </div>
                         <!-- .col -->
-                    
+
+                        <?php endif; ?>
+                                            
                     </div>
                     <!-- .row -->
                 
@@ -94,27 +126,51 @@ $parent_title = get_the_title($post->post_parent);
             </div>
             <!-- .container -->
 
+            <?php endwhile; endif; /* video_with_two_paragraphs */ ?>
+
+            <?php if (have_rows('a_lot_of_kids')): while (have_rows('a_lot_of_kids')): the_row();
+
+            $illustration = get_sub_field('illustration');
+            $image = get_sub_field('image');
+            $headline = get_sub_field('headline');
+            $text = get_sub_field('text');
+
+            ?>
+
             <div class="container my-5">
 
-                <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/images/kids/cheetahs-playing.png" alt="Card image">
+                <?php if ($illustration): ?>
+                    <img class="w-100" src="<?php echo $illustration['url']; ?>" alt="<?php echo $illustration['alt']; ?>">
+                <?php else : ?>
+                    <div class="gradient-overlay-y-black">
+                        <img class="w-100" src="https://via.placeholder.com/1500x1000" alt="Placeholder">
+                    </div>
+                <?php endif; ?>
 
                 <div class="narrow text-center mt-n3 mt-lg-n6">
 
-                    <img class="rounded-circle mb-3" src="<?php echo get_template_directory_uri(); ?>/images/kids/kids-cheetah-facts-a-lot-of-kids.jpg" alt="Placeholder" style="height:200px;">
-
-                    <h2 class="card-title f-cheetah-tracks display-3 mb-2 text-tertiary">A lot of kids</h2>
-
-                    <p>
-                        A mother cheetah usually cares for anywhere from 2 to 8 cubs per
-                        litter, but cubs are often the target of other predators and many do not survive
-                        past the first year.
-                    </p>
+                    <?php if ($image): ?>
+                        <img class="rounded-circle mb-3" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"  style="width:200px;">
+                    <?php else : ?>
+                        <div class="gradient-overlay-y-black">
+                            <img class="rounded-circle mb-3" src="https://via.placeholder.com/300x300" alt="Placeholder" style="width:200px;">
+                        </div>
+                    <?php endif; ?>
+                    
+                    <?php if ($headline): ?>
+                        <h2 class="card-title f-cheetah-tracks display-3 mb-2 text-tertiary"><?php echo $headline; ?></h2>
+                    <?php endif; ?>
+                    <?php if ($text): ?>
+                        <?php echo $text; ?>
+                    <?php endif; ?>
 
                 </div>
                 <!-- .narrow -->
 
             </div>
             <!-- .container -->
+
+            <?php endwhile; endif; /* a_lot_of_kids */ ?>
 
             <div class="featured-panel responsive-lg my-5">
 
