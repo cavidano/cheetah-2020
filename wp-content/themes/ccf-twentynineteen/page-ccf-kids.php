@@ -21,13 +21,9 @@ $parent_title = get_the_title($post->post_parent);
 
                 <img class="mb-3" src="<?php echo get_template_directory_uri(); ?>/images/ccf-kids-logo-large.svg" alt="Placeholder">
 
-                <?php $introduction = get_field('introduction'); ?>
-
-                <?php if( $introduction ): ?>
                 <div class="text-shadow">
-                  <?php echo $introduction; ?>
+                  <?php the_content(); ?>
                 </div>
-                <?php endif; ?>
 
             </div>
             <!-- .narrow -->
@@ -38,11 +34,12 @@ $parent_title = get_the_title($post->post_parent);
         <div class="container" id="kids-tabs">
 
             <nav class="nav nav-pills" role="tablist">
-                <a class="nav-item nav-link" href="/kids/cheetah-facts" aria-selected="false" role="tab">
+
+                <a class="nav-item nav-link" href="/kids/cheetah-facts" aria-selected="true" role="tab">
                     Cheetah Facts
                 </a>
 
-                <a class="nav-item nav-link active" href="/kids/ccf-kids" aria-selected="true" role="tab">
+                <a class="nav-item nav-link active" href="/kids/ccf-kids" aria-selected="false" role="tab">
                     CCF Kids
                 </a>
             </nav>
@@ -147,13 +144,27 @@ $parent_title = get_the_title($post->post_parent);
 
             <div class="posts-area"></div>
 
+            <?php if (have_rows('call_to_action')):  while (have_rows('call_to_action')): the_row();
+        
+            $image = get_sub_field('image');
+            $headline = get_sub_field('headline');
+            $paragraph = get_sub_field('paragraph');
+
+            ?>
+
             <div class="featured-panel responsive-lg">
 
                 <div class="card bg-white">
 
-                    <div class="gradient-overlay-y-white">
-                        <img class="card-img" src="<?php echo get_template_directory_uri(); ?>/images/kids/kids-ccf-kids-contact-us.jpg" alt="Card image">
-                    </div>
+                    <?php if ($image): ?>
+                        <div class="gradient-overlay-y-white d-none d-lg-block">
+                            <img class="card-img" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                        </div>
+                    <?php else : ?>
+                        <div class="gradient-overlay-y-white d-none d-lg-block">
+                            <img class="card-img" src="https://via.placeholder.com/1500x1000" alt="Placeholder">
+                        </div>
+                    <?php endif; ?>
 
                     <div class="card-img-overlay d-flex px-0">
 
@@ -161,18 +172,36 @@ $parent_title = get_the_title($post->post_parent);
 
                             <div class="narrow text-center my-4">
 
-                                <h2 class="f-cheetah-tracks display-3 mb-1 text-tertiary">Become a CCF Kid!</h2>
+                                <?php if ($headline): ?>
+                                    <h2 class="f-cheetah-tracks display-3 mb-1 text-tertiary"><?php echo $headline; ?></h2>
+                                <?php endif; ?>
 
-                                <p>
-                                    Get help from the grown ups to share your cheetah stories from school projects to
-                                    fundraisers by sending us an email. Your submissions may be published to our site,
-                                    where you can spend time with the cheetahs!
-                                </p>
+                                <?php if ($paragraph): ?>
+                                    <?php echo $paragraph; ?>
+                                <?php endif; ?>
 
-                                <a href="<?php echo home_url(); ?>/contact-ccf/" class="btn btn-lg btn-block btn-primary">
-                                    Contact Us
-                                </a>
+                                <?php if (have_rows('links')):?>
+                                    
+                                <div class="row matrix-border mt-3">
+
+                                    <?php while (have_rows('links')) : the_row();
+
+                                    $link = get_sub_field('link');
+
+                                    ?>
+
+                                    <div class="col-md">
+                                        <a class="btn btn-lg btn-block btn-primary" href="<?php echo $link['url']; ?>" <?php if ($link['target']) : ?>target="<?php echo $link['target'] ?>"<?php endif; ?>>
+                                            <?php echo $link['title']; ?>
+                                        </a>
+                                    </div>
+
+                                    <?php endwhile; /* links */ ?>
+                                    
+                                </div>
                                 
+                                <?php endif; /* links */ ?>
+
                             </div>
                             <!-- .narrow -->
 
@@ -187,6 +216,8 @@ $parent_title = get_the_title($post->post_parent);
 
             </div>
             <!-- .featured-panel -->
+            
+            <?php endwhile; endif; /* call_to_action */ ?>
 
             <?php get_template_part('template-parts/article-footer'); ?>
         

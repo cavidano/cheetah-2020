@@ -412,14 +412,6 @@ $parent_title = get_the_title($post->post_parent);
             </div>
             <!-- .container -->
 
-
-
-
-
-
-
-
-
             <?php get_template_part('template-parts/article-footer'); ?>
 
         </div>

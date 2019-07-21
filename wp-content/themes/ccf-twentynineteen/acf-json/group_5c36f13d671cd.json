@@ -870,6 +870,13 @@
                 "operator": "==",
                 "value": "page-legal.php"
             }
+        ],
+        [
+            {
+                "param": "page_parent",
+                "operator": "!=",
+                "value": "1382"
+            }
         ]
     ],
     "menu_order": 0,
@@ -889,5 +896,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1560428803
+    "modified": 1563726730
 }

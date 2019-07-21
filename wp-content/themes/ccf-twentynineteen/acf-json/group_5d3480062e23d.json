@@ -1,6 +1,6 @@
 {
     "key": "group_5d3480062e23d",
-    "title": "Cheetah Facts - Call to Action",
+    "title": "Kids - Call to Action",
     "fields": [
         {
             "key": "field_5d34805456a81",
@@ -125,6 +125,13 @@
                 "operator": "==",
                 "value": "1387"
             }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "1389"
+            }
         ]
     ],
     "menu_order": 0,
@@ -132,8 +139,11 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "discussion",
+        "comments"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1563723298
+    "modified": 1563724730
 }
