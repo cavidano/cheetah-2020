@@ -70281,14 +70281,6 @@
 		"opt": 0,
 		"q": 100
 		},
-	"/wp-content/uploads/gravity_forms/.htaccess": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/uploads/gravity_forms/.htaccess",
-		"oF": 0
-		},
 	"/wp-content/uploads/gravity_forms/1-95508060cad94d7ae8b55d1e9a6a7de6/2019/06/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -70610,7 +70602,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/05/event-01.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/05/support-dogs-saving-cheetahs-02-250x250.jpg": {
@@ -70654,7 +70646,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/05/support-dogs-saving-cheetahs-03.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/05/support-dogs-saving-cheetahs-04-250x250.jpg": {
@@ -70918,7 +70910,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/06/Bushblok_Chew_ColorCalloutBlock_800x600.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/06/ccf-united-states-home-250x250.jpg": {
@@ -71267,7 +71259,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/06/Chew_FeaturedImage_1000x563-250x250.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/06/Chew_FeaturedImage_1000x563.jpg": {
@@ -71278,7 +71270,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/06/Chew_FeaturedImage_1000x563.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/06/ColumbisZoo_FeaturedImage_1000x563-250x250.jpg": {
@@ -71509,7 +71501,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/06/FCA_Chew_ColorCalloutBlock_800x600-250x250.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/06/FCA_Chew_ColorCalloutBlock_800x600.jpg": {
@@ -71520,7 +71512,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/06/FCA_Chew_ColorCalloutBlock_800x600.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/06/FFA_Chew_ColorCalloutBlock_800x600-250x250.jpg": {
@@ -71531,7 +71523,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/06/FFA_Chew_ColorCalloutBlock_800x600-250x250.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/06/FFA_Chew_ColorCalloutBlock_800x600.jpg": {
@@ -71542,7 +71534,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/06/FFA_Chew_ColorCalloutBlock_800x600.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/06/GiraffePostAAP_NewsBlog_Figures_1000-600-250x250.jpg": {
@@ -71663,7 +71655,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/06/Jaya_Chew_NewsBlog_Figures_1000-600-250x250.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/06/Jaya_Chew_NewsBlog_Figures_1000-600.jpg": {
