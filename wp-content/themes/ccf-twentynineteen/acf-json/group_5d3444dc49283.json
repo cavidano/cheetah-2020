@@ -350,10 +350,10 @@
                                 "id": ""
                             },
                             "collapsed": "",
-                            "min": 0,
+                            "min": 1,
                             "max": 0,
-                            "layout": "table",
-                            "button_label": "",
+                            "layout": "block",
+                            "button_label": "Add Fact",
                             "sub_fields": [
                                 {
                                     "key": "field_5d3472eb03200",
@@ -455,5 +455,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1563718439
+    "modified": 1563720124
 }

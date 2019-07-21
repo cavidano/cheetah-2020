@@ -64,7 +64,7 @@ $parent_title = get_the_title($post->post_parent);
 
             ?>
             
-            <div class="container-fluid my-5 bg-danger">
+            <div class="container-fluid my-5">
 
                 <div class="medium">
 
@@ -252,6 +252,7 @@ $parent_title = get_the_title($post->post_parent);
                                 <?php if ($headline): ?>
                                     <h2 class="card-title display-3 mb-2 f-cheetah-tracks text-tertiary"><?php echo $headline; ?></h2>
                                 <?php endif; ?>
+
                                 <?php if ($paragraph): ?>
                                     <?php echo $paragraph; ?>
                                 <?php endif; ?>
@@ -269,7 +270,63 @@ $parent_title = get_the_title($post->post_parent);
             </div>
             <!-- .featured-panel -->
 
-            <?php endif; /* video_with_two_paragraphs_block | illustration_with_image_and_text_block | banner_block | figure_block | two_figure_block | gallery_carousel_block | thumnail_links_block | gallery_thumbnail_block */ ?>
+            <?php elseif( get_row_layout() == 'fact_repeater' ): ?>
+
+            <?php if( have_rows('facts') ): ?>
+
+            <div class="container my-5">
+
+                <?php while ( have_rows('facts') ) : the_row();
+
+                $image = get_sub_field('image');
+                $headline = get_sub_field('headline');
+                $paragraph = get_sub_field('paragraph');
+
+                ?>
+
+                <div class="row align-items-center bg-light my-3">
+
+                    <div class="col-lg-6">
+                        <div class="mx-n2">
+
+                            <?php if ($image): ?>
+                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                            <?php else : ?>
+                                <img src="https://via.placeholder.com/800x800" alt="Placeholder">
+                            <?php endif; ?>
+
+                        </div>
+                    </div>
+                    <!-- .col -->
+
+                    <div class="col-lg-6">
+
+                        <div class="narrow p-3">
+
+                            <?php if ($headline): ?>
+                                <h2 class="card-title display-3 mb-2 f-cheetah-tracks text-tertiary text-center"><?php echo $headline; ?></h2>
+                            <?php endif; ?>
+
+                            <?php if ($paragraph): ?>
+                                <?php echo $paragraph; ?>
+                            <?php endif; ?>
+
+                        </div>
+
+                    </div>
+                    <!-- .col -->
+
+                </div>
+                <!-- .row -->
+
+                <?php endwhile; /* facts */ ?>
+            
+            </div>
+            <!-- .container -->
+
+            <?php endif; /* facts */ ?>
+
+            <?php endif; /* video_with_two_paragraphs_block | illustration_with_image_and_text_block | video_with_image_and_text_block | fact_repeater */ ?>
                     
             <?php endwhile; endif; /* cheetah_facts_content */ ?>
 
