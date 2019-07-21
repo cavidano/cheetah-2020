@@ -1,6 +1,6 @@
 {
     "key": "group_5d3444dc49283",
-    "title": "Cheetah Facts Flexible Content Field",
+    "title": "Kids - Cheetah Facts Flexible Content Field",
     "fields": [
         {
             "key": "field_5d3444ff7ea41",
@@ -18,10 +18,221 @@
             "layouts": {
                 "layout_5d344588d6f32": {
                     "key": "layout_5d344588d6f32",
-                    "name": "",
-                    "label": "",
+                    "name": "video_with_two_paragraphs_block",
+                    "label": "Video With Two Paragraphs Block",
                     "display": "block",
-                    "sub_fields": [],
+                    "sub_fields": [
+                        {
+                            "key": "field_5d344b4834417",
+                            "label": "Video",
+                            "name": "video",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "videos"
+                            ],
+                            "taxonomy": "",
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "return_format": "object",
+                            "ui": 1
+                        },
+                        {
+                            "key": "field_5d344b5634418",
+                            "label": "Paragraph One",
+                            "name": "paragraph_one",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "very_simple",
+                            "media_upload": 0,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_5d344b7734419",
+                            "label": "Paragraph Two",
+                            "name": "paragraph_two",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "very_simple",
+                            "media_upload": 0,
+                            "delay": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5d344f9b39ac1": {
+                    "key": "layout_5d344f9b39ac1",
+                    "name": "illustration_with_image_and_text_block",
+                    "label": "Illustration With Image and Text Block",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5d344fc739ac2",
+                            "label": "Illustration",
+                            "name": "illustration",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_5d344ffe39ac3",
+                            "label": "Image",
+                            "name": "image",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_5d34500839ac4",
+                            "label": "Headline",
+                            "name": "headline",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5d34501039ac5",
+                            "label": "Text Type",
+                            "name": "text_type",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "One Paragraph": "One Paragraph",
+                                "Two Paragraph": "Two Paragraph"
+                            },
+                            "default_value": [
+                                "One Paragraph"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_5d3450d45cfef",
+                            "label": "Paragraph One",
+                            "name": "paragraph_one",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "very_simple",
+                            "media_upload": 0,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_5d34510f5cff0",
+                            "label": "Paragraph Two",
+                            "name": "paragraph_two",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5d34501039ac5",
+                                        "operator": "==",
+                                        "value": "Two Paragraph"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "very_simple",
+                            "media_upload": 0,
+                            "delay": 0
+                        }
+                    ],
                     "min": "",
                     "max": ""
                 }
@@ -29,83 +240,6 @@
             "button_label": "Add Row",
             "min": "",
             "max": ""
-        },
-        {
-            "key": "field_5d2c4c53a17ce",
-            "label": "Video with Two Paragraphs",
-            "name": "video_with_two_paragraphs",
-            "type": "group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_5d2c520804494",
-                    "label": "Video",
-                    "name": "video",
-                    "type": "post_object",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": [
-                        "videos"
-                    ],
-                    "taxonomy": "",
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "return_format": "object",
-                    "ui": 1
-                },
-                {
-                    "key": "field_5d2c4cbea17d0",
-                    "label": "Paragraph One",
-                    "name": "paragraph_one",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "very_simple",
-                    "media_upload": 0,
-                    "delay": 0
-                },
-                {
-                    "key": "field_5d2c4cefa17d1",
-                    "label": "Paragraph Two",
-                    "name": "paragraph_two",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "very_simple",
-                    "media_upload": 0,
-                    "delay": 0
-                }
-            ]
         }
     ],
     "location": [
@@ -134,5 +268,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1563707199
+    "modified": 1563710491
 }
