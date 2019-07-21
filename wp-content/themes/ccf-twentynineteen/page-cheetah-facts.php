@@ -330,6 +330,96 @@ $parent_title = get_the_title($post->post_parent);
                     
             <?php endwhile; endif; /* cheetah_facts_content */ ?>
 
+            <?php if (have_rows('call_to_action')):  while (have_rows('call_to_action')): the_row();
+        
+            $image = get_sub_field('image');
+            $headline = get_sub_field('headline');
+            $paragraph = get_sub_field('paragraph');
+
+            ?>
+
+            <div class="featured-panel responsive-lg">
+
+                <div class="card bg-white">
+
+                    <?php if ($image): ?>
+                        <div class="gradient-overlay-y-white d-none d-lg-block">
+                            <img class="card-img" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                        </div>
+                    <?php else : ?>
+                        <div class="gradient-overlay-y-white d-none d-lg-block">
+                            <img class="card-img" src="https://via.placeholder.com/1500x1000" alt="Placeholder">
+                        </div>
+                    <?php endif; ?>
+
+                    <div class="card-img-overlay d-flex px-0">
+
+                        <div class="container align-self-end">
+
+                            <div class="narrow text-center my-4">
+
+                                <?php if ($headline): ?>
+                                    <h2 class="f-cheetah-tracks display-3 mb-1 text-tertiary"><?php echo $headline; ?></h2>
+                                <?php endif; ?>
+
+                                <?php if ($paragraph): ?>
+                                    <?php echo $paragraph; ?>
+                                <?php endif; ?>
+
+                                <?php if (have_rows('links')):?>
+                                    
+                                <div class="row matrix-border mt-3">
+
+                                    <?php while ( have_rows('links') ) : the_row();
+
+                                    $link = get_sub_field('link');
+
+                                    ?>
+
+                                    <div class="col-md">
+                                        <a class="btn btn-lg btn-block btn-primary" href="<?php echo $link['url']; ?>" <?php if ($link['target']) : ?>target="<?php echo $link['target'] ?>"<?php endif; ?>>
+                                            <?php echo $link['title']; ?>
+                                        </a>
+                                    </div>
+
+                                    <?php endwhile; /* links */ ?>
+                                    
+                                </div>
+                                
+                                <?php endif; /* links */ ?>
+
+                            </div>
+                            <!-- .narrow -->
+
+                        </div>
+                        <!-- .container -->
+
+                    </div>
+                    <!-- .card-img-overlay -->
+
+                </div>
+                <!-- .card -->
+
+            </div>
+            <!-- .featured-panel -->
+            
+            <?php endwhile; endif; /* call_to_action */ ?>
+            
+            <div class="container my-3">
+                <div class="narrow text-center">
+                    <p class="f-sans-serif fs-md">Illustrations on this page provided by <a href="https://www.smallappleart.com/" class="text-reset" target="_blank">Tess Sheehey</a></p>
+                </div>
+            </div>
+            <!-- .container -->
+
+
+
+
+
+
+
+
+
             <?php get_template_part('template-parts/article-footer'); ?>
 
         </div>
