@@ -21,13 +21,9 @@ $parent_title = get_the_title($post->post_parent);
 
                 <img class="mb-3" src="<?php echo get_template_directory_uri(); ?>/images/ccf-kids-logo-large.svg" alt="Placeholder">
 
-                <?php $introduction = get_field('introduction'); ?>
-
-                <?php if( $introduction ): ?>
                 <div class="text-shadow">
-                  <?php echo $introduction; ?>
+                  <?php the_content(); ?>
                 </div>
-                <?php endif; ?>
 
             </div>
             <!-- .narrow -->

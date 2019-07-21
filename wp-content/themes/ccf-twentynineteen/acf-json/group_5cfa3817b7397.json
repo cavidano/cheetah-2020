@@ -59,6 +59,16 @@
                 "value": "4136"
             },
             {
+                "param": "page",
+                "operator": "!=",
+                "value": "1387"
+            },
+            {
+                "param": "page",
+                "operator": "!=",
+                "value": "1389"
+            },
+            {
                 "param": "page_template",
                 "operator": "!=",
                 "value": "page-legal.php"
@@ -87,5 +97,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1561900231
+    "modified": 1563707395
 }
