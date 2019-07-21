@@ -185,15 +185,89 @@ $parent_title = get_the_title($post->post_parent);
 
                     <?php endif; ?>
 
-                    <?php if ($text): ?>
-                        <?php echo $text; ?>
-                    <?php endif; ?>
-
                 </div>
                 <!-- .narrow -->
 
             </div>
             <!-- .container -->
+
+            <?php elseif( get_row_layout() == 'video_with_image_and_text_block' ):
+
+            $image = get_sub_field('image');
+
+            $video = get_sub_field('video');
+            $post_object = $video;
+
+            $headline = get_sub_field('headline');
+            $paragraph = get_sub_field('paragraph');
+
+            ?>
+
+            <div class="featured-panel responsive-lg my-5">
+
+                <div class="card bg-light">
+
+                    <?php if ($image): ?>
+                        <div class="gradient-overlay-y-white d-none d-lg-block">
+                            <img class="card-img" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                        </div>
+                    <?php else : ?>
+                        <div class="gradient-overlay-y-white d-none d-lg-block">
+                            <img class="card-img" src="https://via.placeholder.com/1500x1000" alt="Placeholder">
+                        </div>
+                    <?php endif; ?>
+
+                    <div class="card-img-overlay d-flex">
+
+                        <div class="container align-self-center my-4">
+
+                            <div class="narrow rounded-lg overflow-hidden mb-4">
+
+                                <?php
+
+                                if ($post_object) :
+
+                                $post = $post_object;
+                                setup_postdata($post);
+
+                                $video_url = get_field('video_url');
+                                $video_id = substr(strrchr($video_url, '/'), 1);
+                                
+                                ?>
+                                
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <?php if (strpos($video_url, 'vimeo') !== false) : ?>
+                                        <iframe src="https://player.vimeo.com/video/<?php echo $video_id; ?>" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                                    <?php else : ?>
+                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?php echo $video_id; ?>" frameborder="0" allowTransparency="true" allowfullscreen="true"></iframe>
+                                    <?php endif; ?>
+                                </div>
+
+                                <?php endif; wp_reset_postdata(); /* post_objects */ ?>
+
+                            </div>
+
+                            <div class="narrow text-center">
+                                
+                                <?php if ($headline): ?>
+                                    <h2 class="card-title display-3 mb-2 f-cheetah-tracks text-tertiary"><?php echo $headline; ?></h2>
+                                <?php endif; ?>
+                                <?php if ($paragraph): ?>
+                                    <?php echo $paragraph; ?>
+                                <?php endif; ?>
+
+                            </div>
+                                
+                        </div>
+                        <!-- .container -->
+
+                    </div>
+
+                </div>
+                <!-- .card -->
+
+            </div>
+            <!-- .featured-panel -->
 
             <?php endif; /* video_with_two_paragraphs_block | illustration_with_image_and_text_block | banner_block | figure_block | two_figure_block | gallery_carousel_block | thumnail_links_block | gallery_thumbnail_block */ ?>
                     
