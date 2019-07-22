@@ -4,10 +4,11 @@ Author: Translate AI Multilingual Solutions
 Tags: translate wordpress, multilingual, translate, translation, language, bilingual, localization, translation proxy, i18n, l10n, localisation, multilanguage, google translate
 Requires at least: 2.8.1
 Tested up to: 5.2
-Stable tag: 2.8.47
+Stable tag: 2.8.48
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://gtranslate.io/?xyz=998#pricing
+Author URI: https://gtranslate.io/?xyz=998
 
 Translate WordPress with Google Translate multilanguage plugin to make your website multilingual. Complete multilingual solution for WordPress.
 
@@ -58,7 +59,7 @@ Please check our [FAQ](https://gtranslate.io/?xyz=998#faq) to get quick answers.
 * URL Translation aka slug translation is possible (example.com/about-us &rarr; example.es/sobre-nosotros)
 * Add hreflang tags for translated alternatives
 * You can manually correct translations
-* In context translation interface (make corrections without loosing the context)
+* In context translation interface (make corrections without losing the context)
 * Meta data translation (meta keywords, meta description)
 * Translating schema.org microdata for better search engine appearance
 * Seamless updates (cloud service updated on our side - SaaS, you do not need to worry about backups on your side)
@@ -141,7 +142,7 @@ You can read this blog post for more info: https://gtranslate.io/blog/translatio
 Yes, we use Google Translate widget for website which provides free machine translations which makes it possible to make your wordpress website multilingual instantly upon installation.
 
 = Can I modify the translations? =
-That feature is available in our paid version. You will be able to make edits directly on the page without loosing the context.
+That feature is available in our paid version. You will be able to make edits directly on the page without losing the context.
 
 = Which languages are supported? =
 Here is the list: Afrikaans, Albanian, Amharic, Arabic, Armenian, Azerbaijani, Basque, Belarusian, Bengali, Bosnian, Bulgarian, Catalan, Cebuano, Chichewa, Chinese (Simplified), Chinese (Traditional), Corsican, Croatian, Czech, Danish, Dutch, English, Esperanto, Estonian, Filipino, Finnish, French, Frisian, Galician, Georgian, German, Greek, Gujarati, Haitian Creole, Hausa, Hawaiian, Hebrew, Hindi, Hmong, Hungarian, Icelandic, Igbo, Indonesian, Irish, Italian, Japanese, Javanese, Kannada, Kazakh, Khmer, Korean, Kurdish (Kurmanji), Kyrgyz, Lao, Latin, Latvian, Lithuanian, Luxembourgish, Macedonian, Malagasy, Malay, Malayalam, Maltese, Maori, Marathi, Mongolian, Myanmar (Burmese), Nepali, Norwegian, Pashto, Persian, Polish, Portuguese, Punjabi, Romanian, Russian, Samoan, Scottish Gaelic, Serbian, Sesotho, Shona, Sindhi, Sinhala, Slovak, Slovenian, Somali, Spanish, Sudanese, Swahili, Swedish, Tajik, Tamil, Telugu, Thai, Turkish, Ukrainian, Urdu, Uzbek, Vietnamese, Welsh, Xhosa, Yiddish, Yoruba, Zulu
@@ -210,7 +211,6 @@ You can check that this website is indexed in Google by searching for site:gtran
 You need to go to the language you want to edit, for instance, French: http://domain.com/fr/ and add ?language_edit=1 to the end of the URL: http://domain.com/fr/?language_edit=1 and you will see the Edit and Add to Cart buttons near each text.
 
 == Screenshots ==
-
 1. Dropdown with flags
 2. Nice dropdown with flags (closed)
 3. Nice dropdown with flags (open)
@@ -221,6 +221,10 @@ You need to go to the language you want to edit, for instance, French: http://do
 8. User Dashboard
 
 == Changelog ==
+= 2.8.48 =
+* Fix for Javanese language hreflang code: jv instead of jw
+* Typo in variable name fixed
+
 = 2.8.47 =
 * Fix for hebrew hreflang code when hebrew is the original language
 * Visitor real IP detection fixed for woocommerce plugin

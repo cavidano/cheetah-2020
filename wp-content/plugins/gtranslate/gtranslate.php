@@ -3,7 +3,7 @@
 Plugin Name: GTranslate
 Plugin URI: https://gtranslate.io/?xyz=998
 Description: Makes your website <strong>multilingual</strong> and available to the world using Google Translate. For support visit <a href="https://wordpress.org/support/plugin/gtranslate">GTranslate Support</a>.
-Version: 2.8.47
+Version: 2.8.48
 Author: Translate AI Multilingual Solutions
 Author URI: https://gtranslate.io
 Text Domain: gtranslate
@@ -438,7 +438,7 @@ function RefreshDoWidgetCode() {
                 widget_preview += '<br />';
             else
                 widget_preview += ' ';
-            widget_preview += '<select onchange="doGTranslate(this);" class="notranslate" id="gtranslate_selector">';
+            widget_preview += '<select onchange="doGTranslate(this);" class="notranslate" id="gtranslate_selector" aria-label="Website Language Selector">';
 
             widget_preview += '<option value="">Select Language</option>';
             jQuery.each(language_codes2, function(i, val) {
@@ -1944,8 +1944,10 @@ if($data['add_hreflang_tags'] and ($data['pro_version'] or $data['enterprise_ver
 
         if($current_url !== false) {
             // adding default language
-            if($data['default_language'] == 'iw')
+            if($data['default_language'] === 'iw')
                 echo '<link rel="alternate" hreflang="he" href="'.$current_url.'" />'."\n";
+            elseif($data['default_language'] === 'jw')
+                echo '<link rel="alternate" hreflang="jv" href="'.$current_url.'" />'."\n";
             else
                 echo '<link rel="alternate" hreflang="'.$data['default_language'].'" href="'.$current_url.'" />'."\n";
 
@@ -1960,8 +1962,10 @@ if($data['add_hreflang_tags'] and ($data['pro_version'] or $data['enterprise_ver
                     $href = str_ireplace('://' . $_SERVER['HTTP_HOST'], '://' . $_SERVER['HTTP_HOST'] . '/' . $lang, $current_url);
 
                 if(!empty($href) and $lang != $data['default_language']) {
-                    if($lang == 'iw')
+                    if($lang === 'iw')
                         echo '<link rel="alternate" hreflang="he" href="'.$href.'" />'."\n";
+                    elseif($lang === 'jw')
+                        echo '<link rel="alternate" hreflang="jv" href="'.$href.'" />'."\n";
                     else
                         echo '<link rel="alternate" hreflang="'.$lang.'" href="'.$href.'" />'."\n";
                 }

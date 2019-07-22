@@ -120,7 +120,7 @@ if(isset($_SERVER['HTTP_CF_CONNECTING_IP']) and !empty($_SERVER['HTTP_CF_CONNECT
     $viewer_ip_address = $_SERVER['HTTP_CF_CONNECTING_IP'];
 if(isset($_SERVER['HTTP_X_SUCURI_CLIENTIP']) and !empty($_SERVER['HTTP_X_SUCURI_CLIENTIP']))
     $viewer_ip_address = $_SERVER['HTTP_X_SUCURI_CLIENTIP'];
-if(!isset($viewer_ip_addres))
+if(!isset($viewer_ip_address))
     $viewer_ip_address = $_SERVER['REMOTE_ADDR'];
 
 $headers[] = 'X-GT-Viewer-IP: ' . $viewer_ip_address;
