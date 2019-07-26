@@ -77,6 +77,8 @@ add_action( 'init', 'create_child_post_types' );
         $query->query_vars['order'] = 'ASC';
         $query->query_vars['meta_key'] = 'start_date';
         $query->query_vars['meta_type'] = 'DATETIME';
+        $query->query_vars['meta_value'] = date("Y-m-d");
+        $query->query_vars['meta_compare'] = '>';
         $query->query_vars['orderby'] = 'meta_value';
       }
 

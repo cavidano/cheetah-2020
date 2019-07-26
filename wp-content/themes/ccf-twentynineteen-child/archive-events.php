@@ -53,11 +53,6 @@ if ($image): ?>
                             $featured_image = wp_get_attachment_image_src($featured_image_id, 'full', false, '');
                             $featured_image_alt = get_post_meta($featured_image_id, '_wp_attachment_image_alt', true);
 
-                            $date = new DateTime(get_field('start_date'));
-                            $today = DateTime::createFromFormat("U", time());
-                            
-                            if ($date > $today) :
-
                             ?>
 
                             <div class="row align-items-center my-3">
@@ -101,7 +96,7 @@ if ($image): ?>
                             </div>
                             <!-- .row -->
 
-                        <?php endif; endwhile; endif; ?>
+                        <?php endwhile; endif; ?>
 
                         <div class="pagination justify-content-center">
 
