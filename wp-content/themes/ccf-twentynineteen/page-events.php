@@ -107,6 +107,7 @@ $parent_title = get_the_title($post->post_parent);
                         'meta_key' => 'start_date',
   	                    'meta_type' => 'DATETIME',
                         'orderby' => 'meta_value',
+                        'posts_per_page' => 99,
                     );
                     
                     $loop = new WP_Query( $args );
