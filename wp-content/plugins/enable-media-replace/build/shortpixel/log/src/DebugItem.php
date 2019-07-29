@@ -123,7 +123,7 @@ class DebugItem
         } else {
           $debug=debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS,5);
         }
-        
+
         $i = 4;
         if (isset($debug[$i]))
         {

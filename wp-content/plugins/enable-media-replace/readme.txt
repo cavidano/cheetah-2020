@@ -47,6 +47,17 @@ If you want more control over the format used to display the time, you can use t
 
 == Changelog ==
 
+= 3.3.5 =
+
+Release date: 25th July 2019
+* fix Replace button on the MediaLibrary image details popup
+
+= 3.3.4 =
+
+Release date: 23rd July 2019
+* compatibility fixes for WP version 4.8 and below
+* cache killer
+
 = 3.3.3 =
 
 Release date: 19th July 2019
@@ -311,3 +322,8 @@ Second, if the file really looks unchanged, make sure WordPress has write permis
 == Wishlist / Coming attractions ==
 
 Do you have suggestions? Feel free to contact ShortPixel <a href="https://shortpixel.com/contact" target="_blank">here</a>
+
+
+== Contribute ==
+
+Want to help us improve the plugin feel free to submit PRs via GitHub <a href="https://github.com/short-pixel-optimizer/enable-media-replace" target="_blank">here</a>.

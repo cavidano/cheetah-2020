@@ -1,6 +1,6 @@
 <?php if (have_rows('governance_list_group')):
 
-$all_rows = count(get_field('governance_list_group'));
+    $all_rows = count(get_field('governance_list_group'));
     $count = 1;
 
 ?>

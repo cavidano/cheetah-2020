@@ -557,7 +557,6 @@ $images = get_sub_field('images');
 
     <?php while ( have_rows('buttons') ) : the_row();
 
-    // vars
     $link = get_sub_field('link');
 
     ?>
@@ -603,6 +602,67 @@ $images = get_sub_field('images');
     <?php elseif ($color === 'Dark') : ?>
 
     <hr class="narrow my-4 border-dark">
+
+    <?php endif; ?>
+
+
+
+
+<?php elseif( get_row_layout() == 'cards_block' ):
+    
+    $card_count = count(get_sub_field('cards'));
+
+    ?>
+
+    <?php if( have_rows('cards') ): ?>
+
+    <div class="cards-block medium my-4">
+        
+        <div class="row matrix-gutter">
+        
+            <?php while (have_rows('cards')) : the_row();
+
+            $header = get_sub_field('header');
+            $title = get_sub_field('title');
+            $text = get_sub_field('text');
+            $link = get_sub_field('link');
+
+            ?>
+
+            <?php if ($card_count > 1) : ?>
+            
+            <div class="col-md-6">
+
+            <?php else : ?>
+            
+            <div class="col-md">
+            
+            <?php endif; ?>
+
+                <div class="card h-100 bg-primary">
+                    <div class="card-header border-bottom border-dark">
+                        <p class="fs-md f-sans-serif"><?php echo $header; ?><?php echo $count; ?></p>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="h3 card-title"><?php echo $title; ?></h5>
+                        <div class="card-text">
+                            <?php echo $text; ?>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn btn-white" href="<?php echo $link['url'] ?>"><?php echo $link['title'] ?></a>
+                    </div>
+                </div>
+            </div>
+            <!-- .col -->
+            
+            <?php endwhile; ?>
+
+        </div>
+        <!-- .row -->
+
+    </div>
+    <!-- .cards-block -->
 
     <?php endif; ?>
 
