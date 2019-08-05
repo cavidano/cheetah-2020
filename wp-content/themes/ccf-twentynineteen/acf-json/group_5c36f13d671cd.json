@@ -980,6 +980,13 @@
                 "operator": "!=",
                 "value": "1382"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "page-general.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -999,5 +1006,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1564397993
+    "modified": 1564822486
 }

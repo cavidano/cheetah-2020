@@ -650,7 +650,7 @@ $images = get_sub_field('images');
                         </div>
                     </div>
                     <div class="card-footer">
-                        <a class="btn btn-white" href="<?php echo $link['url'] ?>"><?php echo $link['title'] ?></a>
+                        <a class="btn btn-lg btn-white" href="<?php echo $link['url'] ?>"><?php echo $link['title'] ?></a>
                     </div>
                 </div>
             </div>
