@@ -37141,6 +37141,14 @@
 		"oAP": "/wp-content/themes/ccf-twentynineteen/page.php",
 		"oF": 0
 		},
+	"/wp-content/themes/ccf-twentynineteen/protected-page-backup.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/ccf-twentynineteen/protected-page-backup.php",
+		"oF": 0
+		},
 	"/wp-content/themes/ccf-twentynineteen/protected-page.php": {
 		"cB": 0,
 		"ft": 8192,

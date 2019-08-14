@@ -37,7 +37,6 @@ $parent_title = get_the_title($post->post_parent);
         <div class="my-5">
 
             <div class="narrow my-4">
-
                 <?php 
 
                 if (post_password_required($post)) :
@@ -50,16 +49,12 @@ $parent_title = get_the_title($post->post_parent);
 
                     get_template_part('template-parts/flexible-content-article');
 
-                    the_content();
-
-
                 endif;
 
                 get_template_part('template-parts/article-footer');
                 get_template_part('template-parts/related-reading');
 
                 ?>
-
             </div>
 
         </div>
