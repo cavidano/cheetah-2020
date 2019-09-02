@@ -83,3 +83,14 @@ add_action( 'init', 'create_child_post_types' );
       }
 
     }
+
+    add_action( 'activate_header', 'load_site_specific_plugin' );
+
+    function load_site_specific_plugin() {
+        if (wp_installing()) {
+            require_once( WP_PLUGIN_DIR . '/child-starter-menu/index.php' );
+            require_once( WP_PLUGIN_DIR . '/gtranslate/gtranslate.php' );
+            }
+
+        return ;
+    }
