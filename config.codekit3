@@ -36102,6 +36102,16 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/wp-content/themes/ccf-twentynineteen/css/theme.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/ccf-twentynineteen/css/theme-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/wp-content/themes/ccf-twentynineteen/favicon.ico": {
 		"cB": 0,
 		"ft": 8192,
@@ -37296,7 +37306,7 @@
 		"oA": 0,
 		"oAP": "/wp-content/themes/ccf-twentynineteen/css/theme.css",
 		"oF": 2,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"/wp-content/themes/ccf-twentynineteen/search.php": {
