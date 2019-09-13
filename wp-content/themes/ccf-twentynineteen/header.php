@@ -75,7 +75,7 @@ $inside_news = strpos($url, 'news');
                         <div class="col-auto order-md-last">
                             <button class="navbar-toggler no-btn-style" type="button" data-toggle="collapse" data-target="#nav-primary"
                                 aria-controls="nav-primary" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="fas fa-bars fa-lg" role="img"></span>
+                                <span class="fas fa-bars fa-lg"></span>
                             </button>
                         </div>
                         <!-- .col -->
