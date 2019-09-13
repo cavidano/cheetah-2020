@@ -33,9 +33,9 @@ if( $featured_videos ): ?>
         <div class="col-lg-6">
             <div class="embed-responsive embed-responsive-16by9">
                 <?php if (strpos($video_url,'vimeo') !== false) : ?>
-                    <iframe src="https://player.vimeo.com/video/<?php echo $video_id; ?>" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/<?php echo $video_id; ?>" title="Cheetah Conservation Fund Featured Video" allowfullscreen></iframe>
                 <?php else : ?>
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?php echo $video_id; ?>" allowfullscreen></iframe>
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?php echo $video_id; ?>" title="Cheetah Conservation Fund Featured Video" allowfullscreen></iframe>
                 <?php endif; ?>
             </div>
         </div>
