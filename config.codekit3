@@ -70778,6 +70778,138 @@
 		"opt": 1,
 		"q": 100
 		},
+	"/wp-content/uploads/sites/2/2019/06/2019Event_CheetahGalaConrad_Banner-250x250.png": {
+		"ft": 32768,
+		"iS": 121521,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/06/2019Event_CheetahGalaConrad_Banner-250x250.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/06/2019Event_CheetahGalaConrad_Banner.png": {
+		"ft": 32768,
+		"iS": 293824,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/06/2019Event_CheetahGalaConrad_Banner.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/06/2019Event_ColumbusZoo_Banner-250x250.png": {
+		"ft": 32768,
+		"iS": 127585,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/06/2019Event_ColumbusZoo_Banner-250x250.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/06/2019Event_ColumbusZoo_Banner.png": {
+		"ft": 32768,
+		"iS": 274265,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/06/2019Event_ColumbusZoo_Banner.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/06/2019Event_ConradEvent_FeaturedImage_1000x563-250x250.jpg": {
+		"ft": 16384,
+		"iS": 19606,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/06/2019Event_ConradEvent_FeaturedImage_1000x563-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/06/2019Event_ConradEvent_FeaturedImage_1000x563.jpg": {
+		"ft": 16384,
+		"iS": 132569,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/06/2019Event_ConradEvent_FeaturedImage_1000x563.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/06/2019Event_DArthurArtistImage_PastelPortrait-250x250.png": {
+		"ft": 32768,
+		"iS": 155201,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/06/2019Event_DArthurArtistImage_PastelPortrait-250x250.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/06/2019Event_DArthurArtistImage_PastelPortrait.png": {
+		"ft": 32768,
+		"iS": 885599,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/06/2019Event_DArthurArtistImage_PastelPortrait.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/06/2019Event_DCGala_Banner-250x250.png": {
+		"ft": 32768,
+		"iS": 111572,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/06/2019Event_DCGala_Banner-250x250.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/06/2019Event_DCGala_Banner.png": {
+		"ft": 32768,
+		"iS": 274226,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/06/2019Event_DCGala_Banner.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/06/2019Event_OKC_Banner-250x250.png": {
+		"ft": 32768,
+		"iS": 143979,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/06/2019Event_OKC_Banner-250x250.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/06/2019Event_OKC_Banner.png": {
+		"ft": 32768,
+		"iS": 352397,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/06/2019Event_OKC_Banner.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/wp-content/uploads/sites/2/2019/06/AAP_CCF_FeaturedImage_1000x563-250x250.jpg": {
 		"ft": 16384,
 		"iS": 20219,
@@ -72127,6 +72259,36 @@
 		"oIPL": 0,
 		"opt": 1,
 		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/06/WCN_19-Expo-Brochure-pdf-143x250.jpg": {
+		"ft": 16384,
+		"iS": 11681,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/06/WCN_19-Expo-Brochure-pdf-143x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/06/WCN_19-Expo-Brochure-pdf.jpg": {
+		"ft": 16384,
+		"iS": 134197,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/06/WCN_19-Expo-Brochure-pdf.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/06/WCN_19-Expo-Brochure.pdf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/06/WCN_19-Expo-Brochure.pdf",
+		"oF": 0
 		},
 	"/wp-content/uploads/sites/2/2019/06/WCNExpo_FeaturedImage_1000x563-250x250.jpg": {
 		"ft": 16384,
