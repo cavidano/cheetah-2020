@@ -117,7 +117,7 @@
 
                 <div class="col-xl-8 offset-xl-4">
 
-                        <div class="fs-md text-muted">
+                        <div class="fs-md">
                            
                             <?php echo $website_credits; ?>
                             
@@ -167,6 +167,10 @@
                                 <?php if ($link): ?>
 
                                     <a class="text-body" href="<?php echo $link['url']; ?>" title="<?php echo $link['title']; ?>" target="_blank">
+
+                                    <span class="sr-only">
+                                        <?php echo $link['title']; ?>
+                                    </span>
                                     
                                     <?php if ($icon): ?>
                                         <?php echo $icon; ?>
