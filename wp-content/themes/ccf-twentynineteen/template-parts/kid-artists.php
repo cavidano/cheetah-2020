@@ -26,7 +26,7 @@
         
         <li>
             <a class="no-btn-style text-secondary" data-page="<?php echo $currentPage + 1; ?>" href="#" title="Previous">
-                <span class="fas fa-angle-double-left" title="Previous" role="img"></span>
+                <span class="fas fa-angle-double-left" title="Previous"></span>
             </a>
         </li>
         
@@ -34,7 +34,7 @@
 
         <li>
             <a class="no-btn-style text-secondary disabled opacity-40" data-page="<?php echo $currentPage + 1; ?>" href="#1" title="Previous">
-                <span class="fas fa-angle-double-left" title="Previous" role="img"></span>
+                <span class="fas fa-angle-double-left" title="Previous"></span>
             </a>
         </li>
         
@@ -48,7 +48,7 @@
         
         <li>
             <a class="no-btn-style text-secondary" data-page="<?php echo $currentPage - 1; ?>" href="#" title="Next">
-                <span class="fas fa-angle-double-right" title="Next" role="img"></span>
+                <span class="fas fa-angle-double-right" title="Next"></span>
             </a>
         </li>
 
@@ -56,7 +56,7 @@
 
         <li>
             <a class="no-btn-style text-secondary disabled opacity-40" data-page="<?php echo $currentPage - 1; ?>" href="#1" title="Next">
-                <span class="fas fa-angle-double-right" title="Next" role="img"></span>
+                <span class="fas fa-angle-double-right" title="Next"></span>
             </a>
         </li>
         

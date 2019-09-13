@@ -23,7 +23,7 @@ $featured_image_alt = get_post_meta($featured_image_id,'_wp_attachment_image_alt
               Events
             </a>
           </li>
-          <li><span class="fa fa-caret-right" role="img"></span></li>
+          <li><span class="fa fa-caret-right"></span></li>
           <li class="text-primary font-weight-bold">
             <?php echo $start_date->format("F Y"); ?>
           </li>
