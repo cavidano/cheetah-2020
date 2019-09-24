@@ -15,7 +15,7 @@ elseif (strpos($donate_url, '/donate/recurring') !== false) :
     $form = 'b9cdbd87-026a-4f39-b5f4-a3aed39adfab';
     $type = 'recurring';
 else :
-    $form = '42099271-19f3-4544-b7b9-97ab9196c0fe';
+    $form = 'ce3cb3d7-d112-40a1-bf4e-c9dd10a518f2';
     $type = 'once';
 endif;
 
