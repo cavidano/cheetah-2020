@@ -60,16 +60,23 @@
                                 
                         $title = get_sub_field('title');
                         $info = get_sub_field('info');
+                        $link = get_sub_field('link');
 
                         ?>
                 
-                        <div class="fs-md">
+                        <div class="fs-md mb-2">
 
                             <p class="f-sans-serif text-muted"><strong><?php echo $title; ?></strong></p>
                         
                             <?php echo $info; ?>
                         
                         </div>
+
+                        <?php if ($link): ?>
+
+                            <p class="fs-md"><a class="link text-body" href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a></p>
+                        
+                        <?php endif; ?>
 
                         <?php endwhile; endif; /* contact */ ?>
 
