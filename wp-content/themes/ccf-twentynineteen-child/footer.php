@@ -51,17 +51,24 @@
             <div class="row">
 
                 <div class="col-lg-6 col-xl-4 mb-3 mb-xl-0">
+
                     <h5 class="mb-0">Cheetah Conservation Fund</h5>
+                
                     <div class="fs-md">
+
                         <p class="f-sans-serif text-muted"><strong>United States</strong></p>
-                        <p class="fs-md">
+                    
+                        <p>
                             <strong class="d-block">Address</strong>
                             200 Daingerfield Rd<br>
                             Suite 200<br>
                             Alexandria, VA 22314
                         </p>
+
                         <p class="fs-md"><a class="link text-body" href="mailTo:info@cheetah.org">Contact Us</a></p>
+                    
                     </div>
+
                 </div>
                 <!-- .col -->
 

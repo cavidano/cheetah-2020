@@ -367,6 +367,26 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/wp-admin/css/color-picker-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/css/color-picker-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-admin/css/color-picker-rtl-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/css/color-picker-rtl-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/wp-admin/css/color-picker-rtl.css": {
 		"aP": 1,
 		"bl": 0,
@@ -374,6 +394,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/wp-admin/css/color-picker-rtl-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-admin/css/color-picker-rtl.min-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/css/color-picker-rtl.min-min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -394,6 +424,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/wp-admin/css/color-picker-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-admin/css/color-picker.min-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/css/color-picker.min-min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -817,6 +857,26 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"/wp-admin/css/common-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/css/common-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-admin/css/common-rtl-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/css/common-rtl-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/wp-admin/css/common-rtl.css": {
 		"aP": 1,
 		"bl": 0,
@@ -824,6 +884,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/wp-admin/css/common-rtl-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-admin/css/common-rtl.min-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/css/common-rtl.min-min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -844,6 +914,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/wp-admin/css/common-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-admin/css/common.min-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/css/common.min-min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -1137,6 +1217,26 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/wp-admin/css/forms-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/css/forms-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-admin/css/forms-rtl-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/css/forms-rtl-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/wp-admin/css/forms-rtl.css": {
 		"aP": 1,
 		"bl": 0,
@@ -1144,6 +1244,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/wp-admin/css/forms-rtl-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-admin/css/forms-rtl.min-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/css/forms-rtl.min-min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -1164,6 +1274,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/wp-admin/css/forms-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-admin/css/forms.min-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/css/forms.min-min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -1217,6 +1337,26 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/wp-admin/css/install-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/css/install-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-admin/css/install-rtl-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/css/install-rtl-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/wp-admin/css/install-rtl.css": {
 		"aP": 1,
 		"bl": 0,
@@ -1224,6 +1364,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/wp-admin/css/install-rtl-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-admin/css/install-rtl.min-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/css/install-rtl.min-min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -1244,6 +1394,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/wp-admin/css/install-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-admin/css/install.min-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/css/install.min-min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -1337,6 +1497,26 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/wp-admin/css/login-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/css/login-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-admin/css/login-rtl-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/css/login-rtl-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/wp-admin/css/login-rtl.css": {
 		"aP": 1,
 		"bl": 0,
@@ -1344,6 +1524,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/wp-admin/css/login-rtl-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-admin/css/login-rtl.min-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/css/login-rtl.min-min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -1364,6 +1554,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/wp-admin/css/login-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-admin/css/login.min-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/css/login.min-min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -3454,6 +3654,17 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"/wp-admin/js/customize-nav-menus-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-admin/js/customize-nav-menus-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"/wp-admin/js/customize-nav-menus.js": {
 		"bF": 0,
 		"ft": 64,
@@ -3461,6 +3672,17 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/wp-admin/js/customize-nav-menus-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/wp-admin/js/customize-nav-menus.min-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-admin/js/customize-nav-menus.min-min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -3806,6 +4028,17 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"/wp-admin/js/nav-menu-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-admin/js/nav-menu-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"/wp-admin/js/nav-menu.js": {
 		"bF": 0,
 		"ft": 64,
@@ -3813,6 +4046,17 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/wp-admin/js/nav-menu-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/wp-admin/js/nav-menu.min-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-admin/js/nav-menu.min-min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -3872,6 +4116,17 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"/wp-admin/js/post-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-admin/js/post-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"/wp-admin/js/post.js": {
 		"bF": 0,
 		"ft": 64,
@@ -3879,6 +4134,17 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/wp-admin/js/post-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/wp-admin/js/post.min-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-admin/js/post.min-min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -4114,6 +4380,17 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"/wp-admin/js/updates-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-admin/js/updates-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"/wp-admin/js/updates.js": {
 		"bF": 0,
 		"ft": 64,
@@ -4121,6 +4398,17 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/wp-admin/js/updates-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/wp-admin/js/updates.min-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-admin/js/updates.min-min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -34560,34 +34848,12 @@
 		"oAP": "/wp-content/themes/ccf-twentynineteen-child/functions.php",
 		"oF": 0
 		},
-	"/wp-content/themes/ccf-twentynineteen-child/images/01.jpg": {
-		"ft": 16384,
-		"iS": 177602,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/wp-content/themes/ccf-twentynineteen-child/images/01.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
 	"/wp-content/themes/ccf-twentynineteen-child/images/avatar-generic.jpg": {
 		"ft": 16384,
 		"iS": 20552,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/wp-content/themes/ccf-twentynineteen-child/images/avatar-generic.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/wp-content/themes/ccf-twentynineteen-child/images/donate.jpg": {
-		"ft": 16384,
-		"iS": 214912,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/wp-content/themes/ccf-twentynineteen-child/images/donate.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -76417,7 +76683,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/06/AREDay_1-250x250.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/06/AREDay_1.jpg": {
@@ -76439,7 +76705,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/06/AREDay_2-250x250.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/06/AREDay_2.jpg": {
@@ -76483,7 +76749,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/06/avatar-poala-bari-250x250.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/06/avatar-poala-bari.jpg": {
@@ -76527,7 +76793,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/06/Brian_Event_FeaturedImage_1000x563-250x250.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/06/Brian_Event_FeaturedImage_1000x563.jpg": {
@@ -76538,7 +76804,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/06/Brian_Event_FeaturedImage_1000x563.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/06/BrianBadger_Soin_1-250x250.jpg": {
@@ -76659,7 +76925,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/06/ccf-united-states-new-york-chapter-event-250x250.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/06/ccf-united-states-new-york-chapter-event.jpg": {
@@ -76692,7 +76958,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/06/ccf-united-states-news-feature-test.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/06/ccf-united-states-northern-california-chapter-event-250x250.jpg": {
@@ -76736,7 +77002,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/06/ccf-united-states-volunteer.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/06/CCFBoardMeeting_FeaturedImage_1000x563-250x250.jpg": {
@@ -76799,7 +77065,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/06/CCFUSA_NYPost_1_NewsBlog_Figures_1000-600-250x250.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/06/CCFUSA_NYPost_1_NewsBlog_Figures_1000-600.jpg": {
@@ -76821,7 +77087,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/06/CCFUSA_NYPost_2_NewsBlog_Figures_1000-600-250x250.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/06/CCFUSA_NYPost_2_NewsBlog_Figures_1000-600.jpg": {
@@ -76832,7 +77098,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/06/CCFUSA_NYPost_2_NewsBlog_Figures_1000-600.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/06/CCFUSA_NYPost_FeaturedImage_1000x563-250x250.jpg": {
@@ -76854,7 +77120,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/06/CCFUSA_NYPost_FeaturedImage_1000x563.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/06/ChampagneforCheetahs_1-250x250.jpg": {
@@ -77107,7 +77373,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/06/DixitFundraising_3-250x250.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/06/DixitFundraising_3.jpg": {
@@ -77415,7 +77681,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/06/Kids_Brooke_1-250x250.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/06/Kids_Brooke_1.jpg": {
@@ -77437,7 +77703,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/06/Kids_Brooke_2-250x250.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/06/Kids_Brooke_2.jpg": {
@@ -77459,7 +77725,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/06/Kids_Brooke_FeaturedImage-250x250.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/06/Kids_Brooke_FeaturedImage.jpg": {
@@ -77503,7 +77769,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/06/PaintingforCheetahsNorCal_1-250x250.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/06/PaintingforCheetahsNorCal_1.jpg": {
@@ -77819,7 +78085,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/06/WorkingGuest_Jeanine_1-250x250.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/06/WorkingGuest_Jeanine_1.jpg": {
@@ -77841,7 +78107,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/06/WorkingGuest_Jeanine_2-250x250.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/06/WorkingGuest_Jeanine_2.jpg": {
@@ -78732,7 +78998,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/07/WorkingGuest_Justin_2_NewsBlog_Figures_1000-600.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/07/WorkingGuest_Justin_FeaturedImage_1000x563-250x250.jpg": {
@@ -78765,7 +79031,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/08/2019_Challengers_ColorCalloutBlock_800x600-250x250.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/08/2019_Challengers_ColorCalloutBlock_800x600.jpg": {
@@ -78776,7 +79042,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/08/2019_Challengers_ColorCalloutBlock_800x600.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/08/2019Event_AlesandTails_FeaturedImage_1000x563-250x250.jpg": {
@@ -78787,7 +79053,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/08/2019Event_AlesandTails_FeaturedImage_1000x563-250x250.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/08/2019Event_AlesandTails_FeaturedImage_1000x563.jpg": {
@@ -78798,7 +79064,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/08/2019Event_AlesandTails_FeaturedImage_1000x563.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/08/2019Event_AnnualBoardMeetingBronxZoo_Banner-250x250.png": {
@@ -78818,8 +79084,8 @@
 		"oA": 0,
 		"oAP": "/wp-content/uploads/sites/2/2019/08/2019Event_AnnualBoardMeetingBronxZoo_Banner.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -78952,7 +79218,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/08/IMG_71401-250x250.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/08/IMG_71401.jpg": {
@@ -78963,7 +79229,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/08/IMG_71401.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/08/Indiana_StudentInvolvementFair_FeaturedImage_1000x563-250x250.jpg": {
@@ -79018,7 +79284,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/08/latzke-250x250.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/08/latzke.jpg": {
@@ -79040,7 +79306,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/08/MarisaK_Avatar-250x250.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/08/MarisaK_Avatar.jpg": {
@@ -79051,7 +79317,7 @@
 		"oAP": "/wp-content/uploads/sites/2/2019/08/MarisaK_Avatar.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/2/2019/08/PaolaBari_LogoSquares_600x600-250x250.jpg": {
@@ -79184,6 +79450,1520 @@
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/09/img_4053-250x250.jpg": {
+		"ft": 16384,
+		"iS": 34829,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/09/img_4053-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/09/img_4053.jpg": {
+		"ft": 16384,
+		"iS": 3706527,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/09/img_4053.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/09/ziyan-huang-img_4680-250x250.jpg": {
+		"ft": 16384,
+		"iS": 38618,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/09/ziyan-huang-img_4680-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/09/ziyan-huang-img_4680.jpg": {
+		"ft": 16384,
+		"iS": 3995138,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/09/ziyan-huang-img_4680.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/10/2019_Kids_IsabelleBusch2_web-250x250.jpg": {
+		"ft": 16384,
+		"iS": 28110,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/10/2019_Kids_IsabelleBusch2_web-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/10/2019_Kids_IsabelleBusch2_web.jpg": {
+		"ft": 16384,
+		"iS": 204122,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/10/2019_Kids_IsabelleBusch2_web.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/10/2019_Kids_IsabelleBusch_FeaturedImage_1000x563-250x250.jpg": {
+		"ft": 16384,
+		"iS": 21926,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/10/2019_Kids_IsabelleBusch_FeaturedImage_1000x563-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/10/2019_Kids_IsabelleBusch_FeaturedImage_1000x563.jpg": {
+		"ft": 16384,
+		"iS": 99343,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/10/2019_Kids_IsabelleBusch_FeaturedImage_1000x563.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/10/cheetah-conservation-fund-donate-ccf-usa-250x250.jpg": {
+		"ft": 16384,
+		"iS": 17062,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/10/cheetah-conservation-fund-donate-ccf-usa-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/10/cheetah-conservation-fund-donate-ccf-usa.jpg": {
+		"ft": 16384,
+		"iS": 214912,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/10/cheetah-conservation-fund-donate-ccf-usa.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/10/HVArtMarket-postcard-250x250.jpeg": {
+		"ft": 16384,
+		"iS": 16567,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/10/HVArtMarket-postcard-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/10/HVArtMarket-postcard.jpeg": {
+		"ft": 16384,
+		"iS": 630762,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/10/HVArtMarket-postcard.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2017/03/EU_Carbonizer_FeaturedImage_1000x563-250x250.jpg": {
+		"ft": 16384,
+		"iS": 21329,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2017/03/EU_Carbonizer_FeaturedImage_1000x563-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2017/03/EU_Carbonizer_FeaturedImage_1000x563.jpg": {
+		"ft": 16384,
+		"iS": 148704,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2017/03/EU_Carbonizer_FeaturedImage_1000x563.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/2012_Bushblok_Chips_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 24237,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/2012_Bushblok_Chips_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/2012_Bushblok_Chips_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 150800,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/2012_Bushblok_Chips_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/2012_Bushblok_Products1_FeaturedImage_1000x563-250x250.jpg": {
+		"ft": 16384,
+		"iS": 18054,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/2012_Bushblok_Products1_FeaturedImage_1000x563-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/2012_Bushblok_Products1_FeaturedImage_1000x563.jpg": {
+		"ft": 16384,
+		"iS": 119721,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/2012_Bushblok_Products1_FeaturedImage_1000x563.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/2012_BushblokChipper_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 19631,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/2012_BushblokChipper_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/2012_BushblokChipper_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 168897,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/2012_BushblokChipper_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/2017_BushblokBTDC_FeaturedImage_1000x563-250x250.jpg": {
+		"ft": 16384,
+		"iS": 18053,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/2017_BushblokBTDC_FeaturedImage_1000x563-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/2017_BushblokBTDC_FeaturedImage_1000x563.jpg": {
+		"ft": 16384,
+		"iS": 141950,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/2017_BushblokBTDC_FeaturedImage_1000x563.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/2019_Viget_ThreatstoTheCheetah_ClimateChange_FeaturedImage_1000x563-250x250.jpg": {
+		"ft": 16384,
+		"iS": 18736,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/2019_Viget_ThreatstoTheCheetah_ClimateChange_FeaturedImage_1000x563-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/2019_Viget_ThreatstoTheCheetah_ClimateChange_FeaturedImage_1000x563.jpg": {
+		"ft": 16384,
+		"iS": 112514,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/2019_Viget_ThreatstoTheCheetah_ClimateChange_FeaturedImage_1000x563.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/AlliedMeats_FeaturedImage-250x250.jpg": {
+		"ft": 16384,
+		"iS": 22846,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/AlliedMeats_FeaturedImage-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/AlliedMeats_FeaturedImage.jpg": {
+		"ft": 16384,
+		"iS": 137135,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/AlliedMeats_FeaturedImage.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/Biomass-Tech-Demonstration-Center-v2-pdf-193x250.jpg": {
+		"ft": 16384,
+		"iS": 8459,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/Biomass-Tech-Demonstration-Center-v2-pdf-193x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/Biomass-Tech-Demonstration-Center-v2-pdf.jpg": {
+		"ft": 16384,
+		"iS": 107059,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/Biomass-Tech-Demonstration-Center-v2-pdf.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/Biomass-Tech-Demonstration-Center-v2.pdf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/Biomass-Tech-Demonstration-Center-v2.pdf",
+		"oF": 0
+		},
+	"/wp-content/uploads/sites/3/2019/09/Bushblok-Logo-1-250x128.jpg": {
+		"ft": 16384,
+		"iS": 22054,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/Bushblok-Logo-1-250x128.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/Bushblok-Logo-1.jpg": {
+		"ft": 16384,
+		"iS": 48267,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/Bushblok-Logo-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/Bushblok-Logo_web.jpg": {
+		"ft": 16384,
+		"iS": 40793,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/Bushblok-Logo_web.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/BushblokHero-250x250.jpg": {
+		"ft": 16384,
+		"iS": 28448,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/BushblokHero-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/BushblokHero.jpg": {
+		"ft": 16384,
+		"iS": 322280,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/BushblokHero.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/BushblokPOSvisual-250x250.jpg": {
+		"ft": 16384,
+		"iS": 20374,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/BushblokPOSvisual-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/BushblokPOSvisual.jpg": {
+		"ft": 16384,
+		"iS": 150953,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/BushblokPOSvisual.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/BushEncroachment_ColorCalloutBlock_800x600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 17107,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/BushEncroachment_ColorCalloutBlock_800x600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/BushEncroachment_ColorCalloutBlock_800x600.jpg": {
+		"ft": 16384,
+		"iS": 130224,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/BushEncroachment_ColorCalloutBlock_800x600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/ccf-logos-01-28-19_2019_CCFLogo_Color-250x250.jpg": {
+		"ft": 16384,
+		"iS": 608198,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/ccf-logos-01-28-19_2019_CCFLogo_Color-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/ccf-logos-01-28-19_2019_CCFLogo_Color-e1551973006684-250x250.jpg": {
+		"ft": 16384,
+		"iS": 14912,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/ccf-logos-01-28-19_2019_CCFLogo_Color-e1551973006684-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/ccf-logos-01-28-19_2019_CCFLogo_Color-e1551973006684.jpg": {
+		"ft": 16384,
+		"iS": 72519,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/ccf-logos-01-28-19_2019_CCFLogo_Color-e1551973006684.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/ccf-logos-01-28-19_2019_CCFLogo_Color.jpg": {
+		"ft": 16384,
+		"iS": 1378554,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/ccf-logos-01-28-19_2019_CCFLogo_Color.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/CCFBanner_1200x800-Banner-250x250.jpg": {
+		"ft": 16384,
+		"iS": 13743,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/CCFBanner_1200x800-Banner-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/CCFBanner_1200x800-Banner.jpg": {
+		"ft": 16384,
+		"iS": 151694,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/CCFBanner_1200x800-Banner.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/CCFOrganizational_ColorCalloutBlock_800x600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 18464,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/CCFOrganizational_ColorCalloutBlock_800x600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/CCFOrganizational_ColorCalloutBlock_800x600.jpg": {
+		"ft": 16384,
+		"iS": 91245,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/CCFOrganizational_ColorCalloutBlock_800x600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/CheetahConservation_ColorCalloutBlock_800x600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 18422,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/CheetahConservation_ColorCalloutBlock_800x600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/CheetahConservation_ColorCalloutBlock_800x600.jpg": {
+		"ft": 16384,
+		"iS": 115092,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/CheetahConservation_ColorCalloutBlock_800x600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/cropped-Bushblok-Logo-250x250.jpg": {
+		"ft": 16384,
+		"iS": 25465,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/cropped-Bushblok-Logo-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/cropped-Bushblok-Logo.jpg": {
+		"ft": 16384,
+		"iS": 53783,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/cropped-Bushblok-Logo.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/cropped-Bushblok-Logo_web-1.jpg": {
+		"ft": 16384,
+		"iS": 20309,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/cropped-Bushblok-Logo_web-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/cropped-Bushblok-Logo_web.jpg": {
+		"ft": 16384,
+		"iS": 20309,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/cropped-Bushblok-Logo_web.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/Farm_LGDatSign_FeaturedImage_1000x563-250x250.jpg": {
+		"ft": 16384,
+		"iS": 20786,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/Farm_LGDatSign_FeaturedImage_1000x563-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/Farm_LGDatSign_FeaturedImage_1000x563.jpg": {
+		"ft": 16384,
+		"iS": 165254,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/Farm_LGDatSign_FeaturedImage_1000x563.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/Farm_LGDGoats_FeaturedImage_1000x563-250x250.jpg": {
+		"ft": 16384,
+		"iS": 15694,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/Farm_LGDGoats_FeaturedImage_1000x563-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/Farm_LGDGoats_FeaturedImage_1000x563.jpg": {
+		"ft": 16384,
+		"iS": 148594,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/Farm_LGDGoats_FeaturedImage_1000x563.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/Favicon.jpg": {
+		"ft": 16384,
+		"iS": 12470,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/Favicon.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/fielddrying.jpg": {
+		"ft": 16384,
+		"iS": 21924,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/fielddrying.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/FSC_DK_NAMIBIA_0418_4279-250x250.jpg": {
+		"ft": 16384,
+		"iS": 29848,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/FSC_DK_NAMIBIA_0418_4279-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/FSC_DK_NAMIBIA_0418_4279.jpg": {
+		"ft": 16384,
+		"iS": 2530490,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/FSC_DK_NAMIBIA_0418_4279.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/milledchipsvertical.jpg": {
+		"ft": 16384,
+		"iS": 18727,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/milledchipsvertical.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/millfinal.jpg": {
+		"ft": 16384,
+		"iS": 17139,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/millfinal.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/newpackMEDIA2-250x250.jpg": {
+		"ft": 16384,
+		"iS": 21949,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/newpackMEDIA2-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/newpackMEDIA2.jpg": {
+		"ft": 16384,
+		"iS": 34170,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/newpackMEDIA2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/oven2_1421.jpg": {
+		"ft": 16384,
+		"iS": 13931,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/oven2_1421.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/plant2.jpg": {
+		"ft": 16384,
+		"iS": 22551,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/plant2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/Saving-the-Cheetah_FINAL-P-no-bleed-Lo-1-pdf-250x250.jpg": {
+		"ft": 16384,
+		"iS": 18189,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/Saving-the-Cheetah_FINAL-P-no-bleed-Lo-1-pdf-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/Saving-the-Cheetah_FINAL-P-no-bleed-Lo-1-pdf.jpg": {
+		"ft": 16384,
+		"iS": 203587,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/Saving-the-Cheetah_FINAL-P-no-bleed-Lo-1-pdf.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/Saving-the-Cheetah_FINAL-P-no-bleed-Lo-1.pdf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/Saving-the-Cheetah_FINAL-P-no-bleed-Lo-1.pdf",
+		"oF": 0
+		},
+	"/wp-content/uploads/sites/3/2019/09/Saving-the-Cheetah_FINAL-P-no-bleed-Lo-pdf-250x250.jpg": {
+		"ft": 16384,
+		"iS": 18189,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/Saving-the-Cheetah_FINAL-P-no-bleed-Lo-pdf-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/Saving-the-Cheetah_FINAL-P-no-bleed-Lo-pdf.jpg": {
+		"ft": 16384,
+		"iS": 203587,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/Saving-the-Cheetah_FINAL-P-no-bleed-Lo-pdf.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/Saving-the-Cheetah_FINAL-P-no-bleed-Lo.pdf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/Saving-the-Cheetah_FINAL-P-no-bleed-Lo.pdf",
+		"oF": 0
+		},
+	"/wp-content/uploads/sites/3/2019/09/South-Africa-2013-593-250x250.jpg": {
+		"ft": 16384,
+		"iS": 37431,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/South-Africa-2013-593-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/South-Africa-2013-593.jpg": {
+		"ft": 16384,
+		"iS": 5183726,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/South-Africa-2013-593.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/tractor2mill.jpg": {
+		"ft": 16384,
+		"iS": 22490,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/tractor2mill.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/Twitter-6-250x250.jpg": {
+		"ft": 16384,
+		"iS": 12137,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/Twitter-6-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/Twitter-6.jpg": {
+		"ft": 16384,
+		"iS": 114008,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/Twitter-6.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/viget-ccf-climatechange-pdf-112x250.jpg": {
+		"ft": 16384,
+		"iS": 9997,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/viget-ccf-climatechange-pdf-112x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/viget-ccf-climatechange-pdf.jpg": {
+		"ft": 16384,
+		"iS": 502501,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/viget-ccf-climatechange-pdf.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/viget-ccf-climatechange.pdf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/viget-ccf-climatechange.pdf",
+		"oF": 0
+		},
+	"/wp-content/uploads/sites/3/2019/09/viget-ccf-climatechange_FullLength-250x250.jpg": {
+		"ft": 16384,
+		"iS": 17189,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/viget-ccf-climatechange_FullLength-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/09/viget-ccf-climatechange_FullLength.jpg": {
+		"ft": 16384,
+		"iS": 474410,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/09/viget-ccf-climatechange_FullLength.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/AboutBushblok_Workers_Page-Featured-1500-x-500-250x250.jpg": {
+		"ft": 16384,
+		"iS": 19175,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/AboutBushblok_Workers_Page-Featured-1500-x-500-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/AboutBushblok_Workers_Page-Featured-1500-x-500.jpg": {
+		"ft": 16384,
+		"iS": 176118,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/AboutBushblok_Workers_Page-Featured-1500-x-500.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/BruceBrewerandPackaging_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 26203,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/BruceBrewerandPackaging_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/BruceBrewerandPackaging_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 258968,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/BruceBrewerandPackaging_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/BushblokStacked_Page-Featured-1500-x-500-250x250.jpg": {
+		"ft": 16384,
+		"iS": 22450,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/BushblokStacked_Page-Featured-1500-x-500-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/BushblokStacked_Page-Featured-1500-x-500.jpg": {
+		"ft": 16384,
+		"iS": 236377,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/BushblokStacked_Page-Featured-1500-x-500.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/Bushbok_SpeciesList-pdf-182x250.jpg": {
+		"ft": 16384,
+		"iS": 26508,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/Bushbok_SpeciesList-pdf-182x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/Bushbok_SpeciesList-pdf.jpg": {
+		"ft": 16384,
+		"iS": 618947,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/Bushbok_SpeciesList-pdf.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/Bushbok_SpeciesList.pdf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/Bushbok_SpeciesList.pdf",
+		"oF": 0
+		},
+	"/wp-content/uploads/sites/3/2019/10/cheetah-conservation-fund-donate-bushblok-250x250.jpg": {
+		"ft": 16384,
+		"iS": 7407,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/cheetah-conservation-fund-donate-bushblok-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/cheetah-conservation-fund-donate-bushblok.jpg": {
+		"ft": 16384,
+		"iS": 569675,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/cheetah-conservation-fund-donate-bushblok.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/Cheetah_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 21405,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/Cheetah_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/Cheetah_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 165619,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/Cheetah_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/Chipper_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 22551,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/Chipper_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/Chipper_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 141361,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/Chipper_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/ChipperDemo_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 25348,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/ChipperDemo_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/ChipperDemo_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 229680,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/ChipperDemo_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/ChipperLoaded_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 23862,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/ChipperLoaded_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/ChipperLoaded_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 214441,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/ChipperLoaded_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/ChipsinHands_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 24266,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/ChipsinHands_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/ChipsinHands_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 151998,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/ChipsinHands_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/Conveyor_Women_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 21155,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/Conveyor_Women_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/Conveyor_Women_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 130252,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/Conveyor_Women_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/DryingLargePiecesThornbush_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 23289,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/DryingLargePiecesThornbush_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/DryingLargePiecesThornbush_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 176873,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/DryingLargePiecesThornbush_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/DryingPiledChips_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 21698,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/DryingPiledChips_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/DryingPiledChips_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 239077,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/DryingPiledChips_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/EntrySign_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 26120,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/EntrySign_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/EntrySign_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 206223,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/EntrySign_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/Equipment2_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 15730,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/Equipment2_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/Equipment2_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 89880,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/Equipment2_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/Equipment_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 23045,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/Equipment_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/Equipment_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 126354,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/Equipment_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/Extrusion_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 13496,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/Extrusion_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/Extrusion_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 117709,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/Extrusion_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/FactoryVisit_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 18493,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/FactoryVisit_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/FactoryVisit_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 160865,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/FactoryVisit_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/FinishedLogs_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 17299,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/FinishedLogs_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/FinishedLogs_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 120568,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/FinishedLogs_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/FinishingLogs_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 22784,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/FinishingLogs_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/FinishingLogs_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 138136,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/FinishingLogs_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/Harvester_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 23145,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/Harvester_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/Harvester_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 264752,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/Harvester_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/LogsinBins_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 19885,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/LogsinBins_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/LogsinBins_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 156236,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/LogsinBins_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/Management_Page-Featured-1500-x-500-250x250.jpg": {
+		"ft": 16384,
+		"iS": 13102,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/Management_Page-Featured-1500-x-500-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/Management_Page-Featured-1500-x-500.jpg": {
+		"ft": 16384,
+		"iS": 116607,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/Management_Page-Featured-1500-x-500.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/OryxandCalves_Page-Featured-1500-x-500-250x250.jpg": {
+		"ft": 16384,
+		"iS": 16949,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/OryxandCalves_Page-Featured-1500-x-500-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/OryxandCalves_Page-Featured-1500-x-500.jpg": {
+		"ft": 16384,
+		"iS": 134948,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/OryxandCalves_Page-Featured-1500-x-500.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/PackagingLogs_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 18866,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/PackagingLogs_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/PackagingLogs_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 129677,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/PackagingLogs_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/Products_Page-Featured-1500-x-500-250x250.jpg": {
+		"ft": 16384,
+		"iS": 23701,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/Products_Page-Featured-1500-x-500-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/Products_Page-Featured-1500-x-500.jpg": {
+		"ft": 16384,
+		"iS": 187494,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/Products_Page-Featured-1500-x-500.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/waterberg-picture-for-website-250x250.png": {
+		"ft": 32768,
+		"iS": 52109,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/waterberg-picture-for-website-250x250.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/waterberg-picture-for-website.png": {
+		"ft": 32768,
+		"iS": 381629,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/waterberg-picture-for-website.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/WOrkerandHarvestor_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 21765,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/WOrkerandHarvestor_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/3/2019/10/WOrkerandHarvestor_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 163267,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/3/2019/10/WOrkerandHarvestor_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"q": 100
 		},
 	"/wp-content/uploads/wp-coder/script-1.js": {
@@ -80201,6 +81981,26 @@
 		"oAP": "/wp-includes/cron.php",
 		"oF": 0
 		},
+	"/wp-includes/css/admin-bar-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-includes/css/admin-bar-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-includes/css/admin-bar-rtl-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-includes/css/admin-bar-rtl-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/wp-includes/css/admin-bar-rtl.css": {
 		"aP": 1,
 		"bl": 0,
@@ -80208,6 +82008,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/wp-includes/css/admin-bar-rtl-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-includes/css/admin-bar-rtl.min-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-includes/css/admin-bar-rtl.min-min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -80231,6 +82041,16 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/wp-includes/css/admin-bar.min-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-includes/css/admin-bar.min-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/wp-includes/css/admin-bar.min.css": {
 		"aP": 1,
 		"bl": 0,
@@ -80241,6 +82061,26 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/wp-includes/css/buttons-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-includes/css/buttons-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-includes/css/buttons-rtl-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-includes/css/buttons-rtl-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/wp-includes/css/buttons-rtl.css": {
 		"aP": 1,
 		"bl": 0,
@@ -80248,6 +82088,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/wp-includes/css/buttons-rtl-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-includes/css/buttons-rtl.min-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-includes/css/buttons-rtl.min-min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -80268,6 +82118,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/wp-includes/css/buttons-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-includes/css/buttons.min-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-includes/css/buttons.min-min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -80861,6 +82721,26 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/wp-includes/css/media-views-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-includes/css/media-views-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-includes/css/media-views-rtl-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-includes/css/media-views-rtl-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/wp-includes/css/media-views-rtl.css": {
 		"aP": 1,
 		"bl": 0,
@@ -80868,6 +82748,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/wp-includes/css/media-views-rtl-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-includes/css/media-views-rtl.min-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-includes/css/media-views-rtl.min-min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -80888,6 +82778,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/wp-includes/css/media-views-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-includes/css/media-views.min-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-includes/css/media-views.min-min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -84774,6 +86674,17 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"/wp-includes/js/media-grid-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-includes/js/media-grid-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"/wp-includes/js/media-grid.js": {
 		"bF": 0,
 		"ft": 64,
@@ -84781,6 +86692,17 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/wp-includes/js/media-grid-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/wp-includes/js/media-grid.min-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-includes/js/media-grid.min-min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -84818,6 +86740,17 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"/wp-includes/js/media-views-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-includes/js/media-views-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"/wp-includes/js/media-views.js": {
 		"bF": 0,
 		"ft": 64,
@@ -84825,6 +86758,17 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/wp-includes/js/media-views-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/wp-includes/js/media-views.min-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-includes/js/media-views.min-min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -86298,6 +88242,17 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"/wp-includes/js/wp-a11y-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-includes/js/wp-a11y-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"/wp-includes/js/wp-a11y.js": {
 		"bF": 0,
 		"ft": 64,
@@ -86305,6 +88260,17 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/wp-includes/js/wp-a11y-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/wp-includes/js/wp-a11y.min-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-includes/js/wp-a11y.min-min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -86595,6 +88561,17 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"/wp-includes/js/wp-sanitize-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-includes/js/wp-sanitize-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"/wp-includes/js/wp-sanitize.js": {
 		"bF": 0,
 		"ft": 64,
@@ -86602,6 +88579,17 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/wp-includes/js/wp-sanitize-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/wp-includes/js/wp-sanitize.min-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-includes/js/wp-sanitize.min-min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
