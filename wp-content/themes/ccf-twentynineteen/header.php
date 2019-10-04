@@ -31,12 +31,20 @@ $inside_news = strpos($url, 'news');
 
         <?php if (is_child_theme()) : ?>
 
+        <?php $title = get_field('header_title_text', 'option'); ?>
+
         <div class="container-fluid bg-info py-1">
 
             <div class="row align-items-center justify-content-between fs-md">
 
                 <div class="col-auto">
-                    <p class="text-white f-sans-serif">CCF Affiliate</p>
+
+                    <?php if ($title): ?>
+                        <p class="text-white f-sans-serif"><?php echo $title ?></p>
+                    <?php else : ?>
+                        <p class="text-white f-sans-serif">CCF Affiliate</p>
+                    <?php endif; ?>
+                
                 </div>
                 <!-- .col -->
 
