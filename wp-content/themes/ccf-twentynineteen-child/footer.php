@@ -51,34 +51,70 @@
             <div class="row">
 
                 <div class="col-lg-6 col-xl-4 mb-3 mb-xl-0">
+
                     <h5 class="mb-0">Cheetah Conservation Fund</h5>
-                    <div class="fs-md">
-                        <p class="f-sans-serif text-muted"><strong>United States</strong></p>
-                        <p class="fs-md">
-                            <strong class="d-block">Address</strong>
-                            200 Daingerfield Rd<br>
-                            Suite 200<br>
-                            Alexandria, VA 22314
-                        </p>
-                        <p class="fs-md"><a class="link text-body" href="mailTo:info@cheetah.org">Contact Us</a></p>
-                    </div>
+
+                    <?php if (have_rows('contact', 'options')):
+  
+                        while (have_rows('contact', 'options')): the_row();
+                                
+                        $title = get_sub_field('title');
+                        $info = get_sub_field('info');
+                        $link = get_sub_field('link');
+
+                        ?>
+                
+                        <div class="fs-md mb-2">
+
+                            <p class="f-sans-serif text-muted"><strong><?php echo $title; ?></strong></p>
+                        
+                            <?php echo $info; ?>
+                        
+                        </div>
+
+                        <?php if ($link): ?>
+
+                            <p class="fs-md"><a class="link text-body" href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a></p>
+                        
+                        <?php endif; ?>
+
+                        <?php endwhile; endif; /* contact */ ?>
+
                 </div>
                 <!-- .col -->
 
                 <div class="col-lg-6 col-xl-4">
 
-                    <h5>Support CCF</h5>
+                 <?php if (have_rows('general_info', 'options')):
+  
+                    while (have_rows('general_info', 'options')): the_row();
+                            
+                    $headline = get_sub_field('headline');
+                    $paragraph = get_sub_field('paragraph');
+                    $link = get_sub_field('link');
 
-                    <p class="fs-md">
-                        CCF USA is a registered non-profit 501(c) 3. Donations are fully tax-deductible in the United States if given to a CCF USA office and/or deposited to a U.S. bank.
-                    </p>
+                    ?>
 
-                    <ul class="extensible-list horizontal">
-                        <li>
-                            <a class="btn btn-primary" href="/donate" title="Donate to CCF United States">Donate</a>
-                        </li>
-                    </ul>
+                    <?php if ($headline): ?>
+                        <h5><?php echo $headline; ?></h5>
+                    <?php endif; ?>
 
+                    <?php if ($paragraph): ?>
+
+                    <div class="f-serif fs-md mb-2">
+                        <?php echo $paragraph; ?>
+                    </div>
+
+                    <?php endif; ?>
+
+                    <?php if ($link): ?>
+
+                    <a class="btn btn-primary" href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
+                    
+                    <?php endif; ?>
+
+                <?php endwhile; endif; /* general_info */ ?>
+                    
                 </div>
                 <!-- .col -->
 

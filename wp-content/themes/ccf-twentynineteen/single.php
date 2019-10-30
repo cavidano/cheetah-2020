@@ -18,7 +18,7 @@ get_header(); ?>
               News
             </a>
           </li>
-          <li><span class="fa fa-caret-right" role="img"></span></li>
+          <li><span class="fa fa-caret-right"></span></li>
           <li>
             <a class="text-primary font-weight-bold" href="<?php echo home_url(); ?>/ccf-blog">
               CCF Blog

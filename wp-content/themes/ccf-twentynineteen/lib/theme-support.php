@@ -600,7 +600,7 @@
                                     <div class="row matrix-gutter align-items-center">
                                         <div class="col-auto">
                                             <button class="no-btn-style btn-prev" type="button">
-                                                <span class="fas fa-arrow-left" title="Previous" role="img"></span>
+                                                <span class="fas fa-arrow-left" title="Previous"></span>
                                             </button>
                                         </div>
                                         <!-- .col -->
@@ -614,7 +614,7 @@
                                         <!-- .col -->
                                         <div class="col-auto">
                                             <button class="no-btn-style btn-next" type="button">
-                                                <span class="fas fa-arrow-right" title="Next" role="img"></span>
+                                                <span class="fas fa-arrow-right" title="Next"></span>
                                             </button>
                                         </div>
                                         <!-- .col -->

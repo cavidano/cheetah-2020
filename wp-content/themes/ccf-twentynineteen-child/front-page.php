@@ -126,7 +126,8 @@
       </section>
       <!-- #latest-news -->
 
-  <?php
+      <?php
+
       $args = array(
           'post_type' => 'events',
           'order' => 'ASC',
