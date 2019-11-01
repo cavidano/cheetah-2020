@@ -68,7 +68,11 @@ get_header(); ?>
     
         </header>
 
-        <?php if( has_post_thumbnail() ):
+        <?php 
+
+        if ( get_field('hide_feature_on_post') === false ): 
+
+        if( has_post_thumbnail() ):
         
         $featured_image_url = get_the_post_thumbnail_url( get_the_ID(),'full' );
         $featured_image_caption = get_the_post_thumbnail_caption( get_the_ID() );
@@ -102,7 +106,10 @@ get_header(); ?>
         </div>
         <!-- .medium -->
 
-        <?php endif; /* has_post_thumbnail */ ?>
+        <?php 
+
+        endif; /* has_post_thumbnail */
+        endif; /* hide_feature_on_post */ ?>
 
         <?php get_template_part('template-parts/flexible-content-article'); ?>
 
