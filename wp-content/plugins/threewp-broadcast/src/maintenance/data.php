@@ -21,6 +21,7 @@ class data
 		$this->checks->add_check( new checks\view_blog_access\check );
 		$this->checks->add_check( new checks\view_post_info\check );
 		$this->checks->add_check( new checks\view_taxonomy_info\check );
+		$this->checks->add_check( new checks\view_user_info\check );
 	}
 
 	/**

@@ -67,6 +67,17 @@ class attachment_data
 		// Copy all of the custom data for this post.
 		$r->post_custom = get_post_custom( $r->id );
 
+		// Save all of the taxonomies.
+		$r->taxonomies = [];
+		$taxonomies = get_object_taxonomies( [ 'object_type' => $r->post->post_type ], 'array' );
+		foreach( $taxonomies as $taxonomy_slug => $taxonomy )
+		{
+			$terms = get_the_terms( $r->post->ID, $taxonomy_slug );
+			if ( ! is_array( $terms ) || count( $terms ) < 1 )
+				continue;
+			$r->taxonomies[ $taxonomy_slug ] = $terms;
+		}
+
 		return $r;
 	}
 

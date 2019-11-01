@@ -238,6 +238,22 @@ trait attachments
 			}
 		}
 
+		if ( isset( $attachment_data->taxonomies ) )
+		{
+			foreach( $attachment_data->taxonomies as $taxonomy => $terms )
+			{
+				if ( ! is_array( $terms ) )
+					continue;
+				delete_option( $taxonomy . '_children' );
+				clean_term_cache( '', $taxonomy );
+				$object_terms = [];
+				foreach( $terms as $term )
+					$object_terms []= $term->name;
+				$this->debug( 'Copy attachment: Setting taxonomy %s terms: %s', $taxonomy, $object_terms );
+				wp_set_object_terms( $action->attachment_id, $object_terms, $taxonomy );
+			}
+		}
+
 		if ( ! $is_url )
 			$this->debug( 'Copy attachment: File sizes again: %s %s ; %s %s', $source, filesize( $source ), $target, filesize( $target ) );
 		$action->finish();
@@ -357,6 +373,26 @@ trait attachments
 			if ( $count > 0 )
 				$this->debug( 'Modified caption ID: %s times', $count );
 
+			// data-id="123"
+			$content = str_replace( 'data-id="' . $a->old->ID . '"', 'data-id="' . $a->new->ID . '"', $content, $count );
+			if ( $count > 0 )
+				$this->debug( 'Modified data-id: %s times', $count );
+
+			// /?attachment_id=123"
+			$content = str_replace( '/?attachment_id=' . $a->old->ID . '"', '/?attachment_id=' . $a->new->ID . '"', $content, $count );
+			if ( $count > 0 )
+				$this->debug( 'Modified /?attachment_id: %s times', $count );
+
+			// data-wp-pid="123"
+			$content = str_replace(
+				sprintf( 'data-wp-pid"=%s"', $a->old->ID ),
+				sprintf( 'data-wp-pid"=%s"', $a->new->ID ),
+				$content,
+				$count
+			);
+			if ( $count > 0 )
+				$this->debug( 'Modified data-wp-pid=: %s times', $count );
+
 			// This is for Gutenberg: <!-- wp:image {"id":1780} --> and <!-- wp:image {"id":1780,"align":"center"} -->
 			$content = preg_replace( '/(<!-- wp:image {"id":)' . $a->old->ID . '([},])/', '${1}' . $a->new->ID . '${2}', $content, -1, $count );
 			if ( $count > 0 )
@@ -364,7 +400,6 @@ trait attachments
 
 			foreach( $guids as $old_guid => $new_guid )
 			{
-				$this->debug( 'Image replace GUIDs: %s %s', $old_guid, $new_guid );
 				$count = 0;
 
 				// We are going to be pregging things in order to ensure that as an exact, local match as possible is replaced with new values
@@ -379,7 +414,7 @@ trait attachments
 					$new_match = str_replace( $old_guid, $new_guid, $old_match, $count );
 					if ( $count > 0 )
 					{
-						$this->debug( 'a: Modified attachment guid in link: %s times', $count );
+						$this->debug( 'a: Modified attachment guid %s in link: %s times', $old_guid, $count );
 						$content = str_replace( $old_match, $new_match, $content );
 						$old_match = $new_match;
 					}

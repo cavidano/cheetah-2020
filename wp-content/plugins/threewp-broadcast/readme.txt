@@ -4,9 +4,9 @@ Donate link: https://broadcast.plainviewplugins.com
 License: GPLv3
 Requires at least: 4.6
 Requires PHP: 5.4
-Stable tag: 44.02
+Stable tag: 45.05
 Tags: multipost, sharing, duplicate, franchise, syndication, marketing, news, hub
-Tested up to: 5.2
+Tested up to: 5.3
 
 Network content syndication made easy! Automatically share content by multiposting between multisite blogs.
 
@@ -73,11 +73,13 @@ The following add-ons add support for the plugin after which they are named.
 * <a href="https://broadcast.plainviewplugins.com/addon/cm-tooltip-glossary/">CM Tooltip Glossary</a>
 * <a href="https://broadcast.plainviewplugins.com/addon/contact-form-7/">Contact Form 7</a>
 * <a href="https://broadcast.plainviewplugins.com/addon/divi-builder/">Divi Builder</a>
+* <a href="https://broadcast.plainviewplugins.com/addon/download-manager/">Download Manager</a>
 * <a href="https://broadcast.plainviewplugins.com/addon/download-monitor/">Download Monitor</a>
 * <a href="https://broadcast.plainviewplugins.com/addon/elementor/">Elementor</a>
 * <a href="https://broadcast.plainviewplugins.com/addon/eventon/">EventOn</a>
 * <a href="https://broadcast.plainviewplugins.com/addon/event-organiser/">Event Organiser</a>
 * <a href="https://broadcast.plainviewplugins.com/addon/events-manager/">Events Manager</a>
+* <a href="https://broadcast.plainviewplugins.com/addon/fliphtml5/">Flip HTML5</a>
 * <a href="https://broadcast.plainviewplugins.com/addon/foogallery/">FooGallery</a>
 * <a href="https://broadcast.plainviewplugins.com/addon/formidable-forms/">Formidable Forms</a>
 * <a href="https://broadcast.plainviewplugins.com/addon/geo-my-wp/">GEO my WordPress</a>
@@ -118,9 +120,11 @@ The following add-ons add support for the plugin after which they are named.
 * <a href="https://broadcast.plainviewplugins.com/addon/woocommerce/">WooCommerce</a>
 * <a href="https://broadcast.plainviewplugins.com/addon/wp-all-import/">WP All Import</a>
 * <a href="https://broadcast.plainviewplugins.com/addon/wpcustom-category-image/">WPCustom Category Image</a>
+* <a href="https://broadcast.plainviewplugins.com/addon/wpforms/">WPForms</a>
 * <a href="https://broadcast.plainviewplugins.com/addon/wplms/">WPLMS</a>
 * <a href="https://broadcast.plainviewplugins.com/addon/wpml/">WPML</a>
 * <a href="https://broadcast.plainviewplugins.com/addon/wp-ultimate-recipe/">WP Ultimate Recipe</a>
+* <a href="https://broadcast.plainviewplugins.com/addon/wp-ultimo/">WP Ultimo</a>
 * <a href="https://broadcast.plainviewplugins.com/addon/yoast-seo/">Yoast SEO</a>
 
 Control pack
@@ -135,7 +139,12 @@ These add-ons give you extra control of what you broadcast and how.
 * <a href="https://broadcast.plainviewplugins.com/addon/comments/">Comments</a> adds support for broadcasting of comments.
 * <a href="https://broadcast.plainviewplugins.com/addon/custom-field-attachments/">Custom Field Attachments</a> allows post custom field containing attachment IDs to be broadcasted correctly.
 * <a href="https://broadcast.plainviewplugins.com/addon/custom-field-posts/">Custom Field Posts</a> allows post custom field containing post IDs to be broadcasted correctly.
+* <a href="https://broadcast.plainviewplugins.com/addon/custom-field-terms/">Custom Field Terms</a> allows post custom field containing taxonomy term IDs to be broadcasted correctly.
 * <a href="https://broadcast.plainviewplugins.com/addon/delete-before-broadcast/">Delete Before Broadcast</a> deletes duplicate and similar child posts on each blog before broadcasting.
+* <a href="https://broadcast.plainviewplugins.com/addon/gutenberg-attachments/">Gutenberg Attachments</a>: Modify attachment IDs found in Gutenberg blocks to match their equivalent attachments on each blog.
+* <a href="https://broadcast.plainviewplugins.com/addon/gutenberg-menus/">Gutenberg Menus</a>: Modify menu IDs found in Gutenberg blocks to match their equivalent attachments on each blog.
+* <a href="https://broadcast.plainviewplugins.com/addon/gutenberg-posts/">Gutenberg Posts</a>: Modify post IDs found in Gutenberg blocks to match their equivalent attachments on each blog.
+* <a href="https://broadcast.plainviewplugins.com/addon/gutenberg-terms/">Gutenberg Terms</a>: Modify taxonomy term IDs found in Gutenberg blocks to match their equivalent attachments on each blog.
 * <a href="https://broadcast.plainviewplugins.com/addon/hreflang/">Hreflang</a> adds support for <a href="https://en.wikipedia.org/wiki/Hreflang">SEO-friendly hreflang html tags</a>.
 * <a href="https://broadcast.plainviewplugins.com/addon/keep-child-status/">Keep Child Status</a> keeps the status of post children to private, pending, published, draft, no matter the status of the parent.
 * <a href="https://broadcast.plainviewplugins.com/addon/link-before-broadcast/">Link Before Broadcast</a> attempts to find unlinked children on each child blog during broadcast.
@@ -308,11 +317,10 @@ You will not need solution #1 if you use solutions #2 and #3. :)
 
 Make sure that:
 
-1. The plugin is network enabled
-2. Your user level has broadcast access (Broadcast access role)
-3. Your user has write access to more than this blog (see Admin settings > Maintenenace > View blog access). You can also use the <a href="https://broadcast.plainviewplugins.com/addon/all-blogs/">All Blogs add-on</a> to give yourself access to all blogs.
-4. The correct post type(s) have been selected in the Broadcast settings
-5. The <a href="https://broadcast.plainviewplugins.com/addon/user-blog-settings/">User & Blog Settings add-on</a> is not set to hide the meta box from the user / role / blog
+1. Your user level has broadcast access (Broadcast access role)
+2. Your user has write access to more than this blog (see Admin settings > Maintenenace > View blog access). You can also use the <a href="https://broadcast.plainviewplugins.com/addon/all-blogs/">All Blogs add-on</a> to give yourself access to all blogs.
+3. The correct post type(s) have been selected in the Broadcast settings
+4. The <a href="https://broadcast.plainviewplugins.com/addon/user-blog-settings/">User & Blog Settings add-on</a> is not set to hide the meta box from the user / role / blog
 
 = WooCommerce =
 
@@ -327,6 +335,48 @@ This will broadcast all normal product settings: SKU, price, etc.
 If your products have variations, a product image gallery, you want to sync stock, you want to sync orders, need the attribute taxonomies to be synced, you'll be wanting the <a href="https://broadcast.plainviewplugins.com/addon/woocommerce/">WooCommerce add-on</a>.
 
 == Changelog ==
+
+= 45.05 20191016 =
+
+* Fix: All taxonomy terms being set when none are set.
+
+= 45.04 20191006 =
+
+* Fix: Content and title changing to 0.
+
+= 45.03 20191004 =
+
+* <a href="https://broadcast.plainviewplugins.com/addon/fliphtml5/">Flip HTML5</a>: Adds support for <a href="http://fliphtml5.com/">Flip HTML5</a> plugin.
+* Fix: Replace attachment IDs in data-wp-pid attribute.
+
+= 45.02 20180919 =
+
+* Fix: Replace the image URLs in post content later, to allow the various shortcode add-ons to correctly replace image IDs.
+* Fix: Replace attachment IDs in data-id attributes and ?attachment_id=123 URLs.
+* Fix: Add support for parsing multiline Gutenberg blocks.
+* Fix: Increase compatibility with add-ons that require syncing of extra taxonomies.
+* Fix: Linking API cache update, in case the same post is used to unlink and then link in the same request.
+
+= 45.01 20180828 =
+
+* Fix: Clean up missing taxonomies before trying to sync them. Fixes warnings in terms_and_taxonomies trait and fatal errors.
+* New add-on: <a href="https://broadcast.plainviewplugins.com/addon/gutenberg-attachments/">Gutenberg Attachments</a>: Modify attachment IDs found in Gutenberg blocks to match their equivalent attachments on each blog.
+* New add-on: <a href="https://broadcast.plainviewplugins.com/addon/gutenberg-menus/">Gutenberg Menus</a>: Modify menu IDs found in Gutenberg blocks to match their equivalent attachments on each blog.
+* New add-on: <a href="https://broadcast.plainviewplugins.com/addon/gutenberg-posts/">Gutenberg Posts</a>: Modify post IDs found in Gutenberg blocks to match their equivalent attachments on each blog.
+* New add-on: <a href="https://broadcast.plainviewplugins.com/addon/gutenberg-terms/">Gutenberg Terms</a>: Modify taxonomy term IDs found in Gutenberg blocks to match their equivalent attachments on each blog.
+* New add-on: <a href="https://broadcast.plainviewplugins.com/addon/wp-ultimo/">WP Ultimo</a>: Adds support for the <a href="https://wpultimo.com/">WP Ultimo</a> plugin.
+* Dev: Add new broadcasting_data->try_add_attachment() to add attachments without throwing exceptions.
+* Dev: Added <a href="https://broadcast.plainviewplugins.com/doc/developer-api/">Linking API</a>.
+
+= 44.05 20190715 =
+
+* New: Attachment taxonomies are copied. This adds support for the Responsive Lightbox & Gallery plugin's media folder functionality.
+* Fix: Find Unlinked Children now works with pages that have the same slug as other pages.
+* Fix: get_user_writeable_blogs now checks that the blog in the add_access() call is valid. Prevents a bunch of warnings.
+* Fix: Force non-publish post statuses via SQL change. This fixes a bug when drafts would not convert to scheduled.
+* New add-on. <a href="https://broadcast.plainviewplugins.com/addon/custom-field-terms/">Custom Field Terms</a>: Allow post custom field containing taxonomy term IDs to be broadcasted correctly.
+* New add-on. <a href="https://broadcast.plainviewplugins.com/addon/download-manager/">Download Manager</a>: Adds support for the <a href="https://wordpress.org/plugins/download-manager/">Download Manager</a> plugin.
+* New add-on. <a href="https://broadcast.plainviewplugins.com/addon/wpforms/">WPForms</a>: Adds support for the <a href="https://wpforms.com/">WPForms</a> plugin.
 
 = 44.02 20190505 =
 

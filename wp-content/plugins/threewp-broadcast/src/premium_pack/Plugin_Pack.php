@@ -25,6 +25,7 @@ abstract class Plugin_Pack
 		$this->add_action( 'ThreeWP_Broadcast_Plugin_Pack_get_plugin_classes' );
 		$this->add_action( 'threewp_broadcast_plugin_pack_uninstall' );
 		$this->add_action( 'threewp_broadcast_plugin_pack_tabs' );
+		$this->add_action( 'threewp_broadcast_prepare_meta_box' );
 		$this->edd_init();
 	}
 
@@ -106,6 +107,33 @@ abstract class Plugin_Pack
 		@since		2015-10-28 15:10:14
 	**/
 	public abstract function threewp_broadcast_plugin_pack_tabs( $action );
+
+	/**
+		@brief		threewp_broadcast_prepare_meta_box
+		@since		2019-10-03 15:21:42
+	**/
+	public function threewp_broadcast_prepare_meta_box( $action )
+	{
+		$status = $this->edd_get_cached_license_status();
+		if (  $status->license != 'valid' )
+			return;
+		$expiration = strtotime( $status->expires );
+		$diff = $expiration - time();
+		if ( $diff > 30 * DAY_IN_SECONDS )
+			return;
+		$meta_box_data = $action->meta_box_data;	// Convenience.
+
+		$renewal_url = add_query_arg( [
+			'edd_license_key' => $this->get_site_option( 'edd_updater_license_key' ),
+		], $this->edd_get_url() . 'checkout' );
+		$pack_name = str_replace( 'ThreeWP Broadcast', '', $this->edd_get_item_name() );
+		$text = sprintf( 'Your %s license <strong>expires</strong> in %s. If you wish to renew it, and receive a renewal discount, use this <a href="%s">renewal url</a>.',
+			$pack_name,
+			human_time_diff( $expiration ),
+			$renewal_url
+		);
+		$meta_box_data->html->put( $this->edd_get_item_name(), $text );
+	}
 
 	/**
 		@brief		Put all of our plugins in the list.

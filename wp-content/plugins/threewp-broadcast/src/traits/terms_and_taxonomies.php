@@ -28,9 +28,10 @@ trait terms_and_taxonomies
 
 	public function get_current_blog_taxonomy_terms( $taxonomy )
 	{
-		$terms = get_terms( $taxonomy, array(
+		$terms = get_terms( [
 			'hide_empty' => false,
-		) );
+			'taxonomy' => $taxonomy,
+		] );
 		if ( is_wp_error( $terms ) )
 			return [];
 		$terms = (array) $terms;
@@ -62,8 +63,9 @@ trait terms_and_taxonomies
 			return;
 
 		// Fetch them and then try to find their parents.
-		$new_terms = get_terms( $o->taxonomy->name, [
+		$new_terms = get_terms( [
 			'include' => array_keys( $wanted_terms ),
+			'taxonomy' => $o->taxonomy->name,
 		] );
 		foreach( $new_terms as $new_term )
 		{
@@ -73,7 +75,7 @@ trait terms_and_taxonomies
 
 		if ( count( $wanted_terms ) > 0 )
 		{
-			$this->debug( 'Warning! Wanted these extra terms, but get_terms could not supply them. So ignoring them.' );
+			$this->debug( 'Warning! Wanted these extra terms, but get_terms could not supply them. So ignoring them: %s', $wanted_terms );
 			return;
 		}
 
@@ -153,6 +155,11 @@ trait terms_and_taxonomies
 		if ( ! isset( $bcd->parent_blog_taxonomies[ $taxonomy ] ) )
 			return;
 
+		// Clean up the terms.
+		foreach( $bcd->parent_blog_taxonomies[ $taxonomy ][ 'terms' ] as $index => $term )
+			if ( ! $term )
+				unset( $bcd->parent_blog_taxonomies[ $taxonomy ][ 'terms' ][ $index ] );
+
 		$source_terms = $bcd->parent_blog_taxonomies[ $taxonomy ][ 'terms' ];
 
 		if ( ! isset( $bcd->parent_blog_taxonomies[ $taxonomy ][ 'equivalent_terms' ] ) )
@@ -162,9 +169,10 @@ trait terms_and_taxonomies
 		$needed_slugs = [];
 		foreach( $source_terms as $source_term )
 			$needed_slugs[ $source_term->slug ] = true;
-		$target_terms = get_terms( $taxonomy, [
+		$target_terms = get_terms( [
 			'slug' => array_keys( $needed_slugs ),
 			'hide_empty' => false,
+			'taxonomy' => $taxonomy,
 		] );
 		$target_terms = $this->array_rekey( $target_terms, 'term_id' );
 
@@ -316,8 +324,9 @@ trait terms_and_taxonomies
 	**/
 	public function taxonomy_terms_to_tree( $taxonomy )
 	{
-		$terms = get_terms( $taxonomy, [
+		$terms = get_terms( [
 			'hide_empty' => false,
+			'taxonomy' => $taxonomy,
 		] );
 		$tree = new \plainview\sdk_broadcast\tree\tree();
 		// Add root node 0, so that the terms can attach themselves to it.
@@ -369,8 +378,9 @@ trait terms_and_taxonomies
 			if ( isset( $bcd->post->ID ) )
 				$taxonomy_terms = get_the_terms( $bcd->post->ID, $parent_blog_taxonomy );
 			else
-				$taxonomy_terms = get_terms( [ $parent_blog_taxonomy ], [
+				$taxonomy_terms = get_terms( [
 					'hide_empty' => false,
+					'taxonomy' => $parent_blog_taxonomy,
 				] );
 
 			// No terms = empty = false.
@@ -453,7 +463,7 @@ trait terms_and_taxonomies
 			}
 			else
 			{
-				throw new \Exception( 'Unable to create a new term.' );
+				throw new \Exception( sprintf( 'Unable to create a new term:  %s', json_encode( $wp_error ) ) );
 			}
 		}
 

@@ -145,7 +145,9 @@ class ThreeWP_Broadcast
 		$this->add_action( 'threewp_broadcast_get_user_writable_blogs', 100 );		// Allow other plugins to do this first.
 		$this->add_filter( 'threewp_broadcast_get_post_types', 5 );					// Add our custom post types to the array of broadcastable post types.
 		$this->add_action( 'threewp_broadcast_maybe_clear_post', 100 );
-		$this->add_filter( 'threewp_broadcast_parse_content' );
+
+		// Due to how shotgunny / destructive the image URL replacement during content parsing is, do this last.
+		$this->add_filter( 'threewp_broadcast_parse_content', 100 );
 		$this->add_action( 'threewp_broadcast_prepare_broadcasting_data' );
 		$this->add_filter( 'threewp_broadcast_prepare_meta_box', 5 );
 		$this->add_filter( 'threewp_broadcast_prepare_meta_box', 'threewp_broadcast_prepared_meta_box', 100 );
@@ -177,7 +179,7 @@ class ThreeWP_Broadcast
 		  `post_id` int(11) NOT NULL COMMENT 'Post ID',
 		  `data` longtext NOT NULL COMMENT 'Serialized BroadcastData',
 		  KEY `blog_id` (`blog_id`,`post_id`)
-		) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+		);
 		");
 
 		if ( $db_ver < 1 )

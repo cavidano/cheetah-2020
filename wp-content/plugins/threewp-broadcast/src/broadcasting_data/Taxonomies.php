@@ -136,6 +136,10 @@ class Taxonomies
 
 		// Copy the collected taxonomy data.
 		$this->broadcasting_data->parent_blog_taxonomies[ $options->taxonomy ] = $post_bcd->parent_blog_taxonomies[ $options->taxonomy ];
+
+		// Broadcast will primarily sync parent_post_taxonomies. If an empty parent_post_taxonomies is found, it will sync the equivalent parent_blog_taxonomies.
+		if ( ! isset( $this->broadcasting_data->parent_post_taxonomies[ $options->taxonomy ] ) )
+			$this->broadcasting_data->parent_post_taxonomies[ $options->taxonomy ] = [];
 	}
 
 	/**

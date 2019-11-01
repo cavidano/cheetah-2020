@@ -2,8 +2,8 @@
 
 namespace threewp_broadcast;
 
-use \Exception;
-use \threewp_broadcast\broadcast_data\blog;
+use Exception;
+use threewp_broadcast\broadcast_data\blog;
 
 /**
 	@brief		This is general purpose container for storing and working with all the data necessary to broadcast posts.
@@ -514,5 +514,24 @@ class broadcasting_data
 	public function terms()
 	{
 		return new \threewp_broadcast\broadcasting_data\Terms( $this );
+	}
+
+	/**
+		@brief		Try to add an attachment ID. Do not throw an exception if failing.
+		@see		add_attachment()
+		@since		2019-08-22 09:50:32
+	**/
+	public function try_add_attachment( $id )
+	{
+		try
+		{
+			$this->add_attachment( $id );
+			return true;
+		}
+		catch ( Exception $e )
+		{
+			ThreeWP_Broadcast()->debug( 'Unable to add attachment %s: %s', $id, $e->getMessage() );
+			return false;
+		}
 	}
 }

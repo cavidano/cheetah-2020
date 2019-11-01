@@ -38,6 +38,8 @@ class get_user_writable_blogs
 	**/
 	public function add_access( $blog_id )
 	{
+		if ( ! ThreeWP_Broadcast()->blog_exists( $blog_id ) )
+			return;
 		$blog = blog::from_blog_id( $blog_id );
 		$this->blogs->set( $blog_id, $blog );
 		return $this;

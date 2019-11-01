@@ -3,7 +3,7 @@ Contributors: levertechadmin
 Tags: doc, pdf, pdf viewer, office, google, document, embed, intranet
 Requires at least: 3.5
 Tested up to: 5.2.2
-Stable tag: 4.3
+Stable tag: 4.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -31,7 +31,7 @@ Once installed and Activated, click Add Media from any page or post, just like a
 
 When you insert into your post, it will appear in the editor as a 'shortcode' as follows:
 
-[pdf-embedder url="https://mysite.com/wp-content/uploads/2015/01/Plan-Summary.pdf"]
+[pdf-embedder url='https://mysite.com/wp-content/uploads/2015/01/Plan-Summary.pdf']
 
 You can change the default appearance - e.g. width, and toolbar position/appearance through **Settings -> PDF Embedder**.
 
@@ -202,6 +202,10 @@ the Plugins section of your Wordpress admin
 1. Follow the instructions from step 4 above
 
 == Changelog ==
+
+= 4.4 =
+
+Fixed code for policy compatibility
 
 = 4.3 =
 

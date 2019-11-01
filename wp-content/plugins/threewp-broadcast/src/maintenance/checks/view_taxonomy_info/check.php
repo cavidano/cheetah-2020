@@ -40,7 +40,7 @@ class check
 		if ( $o->form->is_posting() )
 		{
 			$o->form->post()->use_post_value();
-			$this->view_post_info( $o );
+			$this->view_taxonomy_info( $o );
 		}
 
 		$o->r .= $o->form->open_tag();
@@ -49,7 +49,11 @@ class check
 		return $o->r;
 	}
 
-	public function view_post_info( $o )
+	/**
+		@brief		Show the taxonomy info.
+		@since		2019-06-21 11:55:38
+	**/
+	public function view_taxonomy_info( $o )
 	{
 		$taxonomy_slug = $o->inputs->taxonomy_slug->get_value();
 
@@ -60,7 +64,10 @@ class check
 
 		foreach( $terms as $term )
 		{
-			$text = sprintf( '<pre>%s</pre>', var_export( $term, true ) );
+			$text = sprintf( '<pre>%s%s</pre>',
+				var_export( $term, true ),
+				var_export( get_term_meta( $term->term_id ), true )
+				);
 			$o->r .= $this->broadcast()->message( $text );
 		}
 	}

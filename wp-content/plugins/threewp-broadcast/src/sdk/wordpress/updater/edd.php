@@ -73,7 +73,7 @@ trait edd
 					->p( 'Your license for this plugin is not activated. You will not receive any automatic updates. Enter the license key in the text field below and press the activation button.' );
 
 				$license_key = $form->text( 'license_key' )
-					->description( 'The key that you recieved in the confirmation email after your purchase.' )
+					->description( 'The key that you received in the confirmation email after your purchase.' )
 					->label( 'License key' )
 					->minlength( 32 )
 					->maxlength( 32 )
@@ -472,6 +472,14 @@ trait edd
 
 		if ( $valid || $inactive )
 		{
+			$renewal_url = add_query_arg( [
+			'edd_license_key' => $this->get_site_option( 'edd_updater_license_key' ),
+			], $this->edd_get_url() . 'checkout' );
+			$text = sprintf( 'If you wish to renew your license, and receive a renewal discount, use this <a href="%s">renewal url</a>.',
+				$renewal_url
+			);
+			$rows[ 'Renewal' ] = $text;
+
 			$rows[ 'Key' ] = $this->get_site_option( 'edd_updater_license_key' );
 
 			$rows[ 'Purchaser' ] = sprintf( '%s, <a href="mailto:%s">%s</a>', $status->customer_name, $status->customer_email, $status->customer_email );

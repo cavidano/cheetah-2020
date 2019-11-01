@@ -125,9 +125,15 @@ trait broadcast_data
 
 		if ( $broadcast_data->is_modified() )
 			if ( $broadcast_data->is_empty() )
+			{
 				$this->sql_delete_broadcast_data( $blog_id, $post_id );
+				$this->broadcast_data_cache()->cache_no_data( $blog_id, $post_id );
+			}
 			else
+			{
 				$this->sql_update_broadcast_data( $blog_id, $post_id, $broadcast_data );
+				$this->broadcast_data_cache()->set_for( $blog_id, $post_id, $broadcast_data );
+			}
 	}
 
 	/**

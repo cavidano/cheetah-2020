@@ -44,7 +44,9 @@ class Child_Fields
 	**/
 	public function add_meta( $key, $value )
 	{
-		add_post_meta( $this->broadcasting_data->new_post( 'ID' ), $key, wp_slash( $value ) );
+		if ( is_string( $value ) )
+			$value = wp_slash( $value );
+		add_post_meta( $this->broadcasting_data->new_post( 'ID' ), $key, $value );
 		return $this;
 	}
 
@@ -79,6 +81,20 @@ class Child_Fields
 	{
 		ThreeWP_Broadcast()->debug( 'Child fields: updating %s on blog %s post %s with %s', $key, get_current_blog_id(), $this->broadcasting_data->new_post( 'ID' ), $value );
 		update_post_meta( $this->broadcasting_data->new_post( 'ID' ), $key, $value );
+		return $this;
+	}
+
+	/**
+		@brief		Update several meta values.
+		@since		2019-06-27 08:16:02
+	**/
+	public function update_metas( $key, $values )
+	{
+		// Delete all existing metas with this key.
+		delete_post_meta( $this->broadcasting_data->new_post( 'ID' ), $key );
+		ThreeWP_Broadcast()->debug( 'Child fields: updating %s keys on blog %s post %s with %s', $key, get_current_blog_id(), $this->broadcasting_data->new_post( 'ID' ), $values );
+		foreach( $values as $value )
+			add_post_meta( $this->broadcasting_data->new_post( 'ID' ), $key, $value );
 		return $this;
 	}
 

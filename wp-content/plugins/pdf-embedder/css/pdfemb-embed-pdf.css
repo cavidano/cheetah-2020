@@ -417,7 +417,9 @@ input.pdfemb-page-num {
 	position: relative;
 	background-color: lightGrey;
 }
-
+.poweredby{
+	float: right !important;
+}
 
 /* Safari 6.1+ (9.0 is the latest version of Safari at this time) */
 

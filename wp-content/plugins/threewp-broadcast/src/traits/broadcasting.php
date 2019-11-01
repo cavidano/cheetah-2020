@@ -101,7 +101,8 @@ trait broadcasting
 			$bcd->taxonomies();
 			$this->collect_post_type_taxonomies( $bcd );
 			$this->debug( 'Taxonomy data dump: %s', $bcd->taxonomy_data );
-			$this->debug( 'Parent taxonomies dump: %s', $bcd->parent_post_taxonomies );
+			$this->debug( 'Parent blog taxonomies dump: %s', $bcd->parent_blog_taxonomies );
+			$this->debug( 'Parent post taxonomies dump: %s', $bcd->parent_post_taxonomies );
 		}
 		else
 			$this->debug( 'Will not broadcast taxonomies.' );
@@ -423,6 +424,10 @@ trait broadcasting
 			if ( ! is_a( $bcd->new_post, 'WP_Post' ) )
 				wp_die( 'Broadcast fatal error! After creating / updating the child post, it has disappeared. Try enabling Broadcast debug mode to help diagnose the error.' );
 
+			global $wpdb;
+			$this->debug( 'Forcing post_status to %s', $bcd->post->post_status );
+			$wpdb->update( $wpdb->posts, [ 'post_status' => $bcd->post->post_status ], [ 'ID' => $bcd->new_post( 'ID' ) ] );
+
 			$action = $this->new_action( 'broadcasting_after_update_post' );
 			$action->broadcasting_data = $bcd;
 			$action->execute();
@@ -471,32 +476,40 @@ trait broadcasting
 			if ( $bcd->taxonomies )
 			{
 				$this->debug( 'Taxonomies: Starting sync of %s', implode( ', ', array_keys( $bcd->parent_post_taxonomies ) ) );
-				foreach( $bcd->parent_post_taxonomies as $parent_post_taxonomy => $parent_post_terms )
+				foreach( $bcd->parent_post_taxonomies as $parent_taxonomy => $terms )
 				{
-					$this->debug( 'Taxonomies: Handling taxonomy %s', $parent_post_taxonomy );
+					$syncing_parent_blog_taxonomies = false;
+					$this->debug( 'Taxonomies: Handling taxonomy %s', $parent_taxonomy );
+
+					// If the post does not have any assigned terms, it is because we are also_syncing the terms, but the taxonomy does not belong to this post type.
+					if (
+						( ! is_array( $terms ) )
+						||
+						( count( $terms ) < 1 )
+					)
+					{
+						// Sync the terms from the parent BLOG instead of post.
+						$this->debug( 'Syncing parent blog taxonomies instead.' );
+						$terms = $bcd->parent_blog_taxonomies[ $parent_taxonomy ][ 'terms' ];
+						$syncing_parent_blog_taxonomies = true;
+					}
 
 					// If we're updating a linked post, remove all the taxonomies and start from the top.
 					if ( $bcd->link )
 						if ( $bcd->broadcast_data->has_linked_child_on_this_blog() )
-							wp_set_object_terms( $bcd->new_post( 'ID' ), [], $parent_post_taxonomy );
+							wp_set_object_terms( $bcd->new_post( 'ID' ), [], $parent_taxonomy );
 
-					// Skip this iteration if there are no terms
-					if ( ! is_array( $parent_post_terms ) )
-					{
-						$this->debug( 'Taxonomies: Skipping %s because the parent post does not have any terms set for this taxonomy.', $parent_post_taxonomy );
-						continue;
-					}
-
-					$this->debug( 'Taxonomies: Syncing terms for %s.', $parent_post_taxonomy );
-					$this->sync_terms( $bcd, $parent_post_taxonomy );
-					$this->debug( 'Taxonomies: Synced terms for %s.', $parent_post_taxonomy );
+					$this->debug( 'Taxonomies: Syncing terms for %s.', $parent_taxonomy );
+					$this->sync_terms( $bcd, $parent_taxonomy );
+					$this->debug( 'Taxonomies: Synced terms for %s.', $parent_taxonomy );
 
 					// Get a list of terms that the target blog has.
-					$target_blog_terms = $this->get_current_blog_taxonomy_terms( $parent_post_taxonomy );
+					$target_blog_terms = $this->get_current_blog_taxonomy_terms( $parent_taxonomy );
 
 					// Go through the original post's terms and compare each slug with the slug of the target terms.
 					$taxonomies_to_add_to = [];
-					foreach( $parent_post_terms as $term )
+
+					foreach( $terms as $term )
 					{
 						$new_term_id = $bcd->terms()->get( $term->term_id );
 						$taxonomies_to_add_to[] = $new_term_id;
@@ -506,13 +519,17 @@ trait broadcasting
 					if ( count( $taxonomies_to_add_to ) > 0 )
 					{
 						// This relates to the bug mentioned in the method $this->set_term_parent()
-						delete_option( $parent_post_taxonomy . '_children' );
-						clean_term_cache( '', $parent_post_taxonomy );
-						$this->debug( 'Setting taxonomies for %s: %s', $parent_post_taxonomy, $taxonomies_to_add_to );
-						wp_set_object_terms( $bcd->new_post( 'ID' ), $taxonomies_to_add_to, $parent_post_taxonomy );
+						delete_option( $parent_taxonomy . '_children' );
+						clean_term_cache( '', $parent_taxonomy );
+
+						if ( ! $syncing_parent_blog_taxonomies )
+						{
+							$this->debug( 'Setting taxonomies for %s: %s', $parent_taxonomy, $taxonomies_to_add_to );
+							wp_set_object_terms( $bcd->new_post( 'ID' ), $taxonomies_to_add_to, $parent_taxonomy );
+						}
 					}
 					else
-						$this->debug( 'No taxonomy terms for %s', $parent_post_taxonomy );
+						$this->debug( 'No taxonomy terms for %s', $parent_taxonomy );
 				}
 				$this->debug( 'Taxonomies: Finished.' );
 			}

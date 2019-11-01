@@ -64,7 +64,7 @@ class check
 			return;
 		}
 
-		$text = sprintf( '<pre>%s</pre>', var_export( $post, true ) );
+		$text = sprintf( '<pre>%s</pre>', stripslashes( var_export( $post, true ) ) );
 		$o->r .= $this->broadcast()->message( htmlspecialchars( $text ) );
 
 		$metas = get_post_meta( $post_id );
@@ -79,7 +79,7 @@ class check
 			$metas [ $key ] = $value;
 		}
 
-		$text = sprintf( '<pre>%s</pre>', var_export( $metas, true ) );
+		$text = sprintf( '<pre>%s</pre>', stripslashes( var_export( $metas, true ) ) );
 		$o->r .= $this->broadcast()->message( $text );
 
 		// Show all posts that have this post as the parent.
@@ -96,7 +96,25 @@ class check
 			$child_post_ids[ $child_post->ID ] = sprintf( '%s / %s', $child_post->post_title, $child_post->post_type );
 		ksort( $child_post_ids );
 
-		$text = sprintf( '<pre>%s</pre>', var_export( $child_post_ids, true ) );
+		$text = sprintf( '<pre>%s</pre>', stripslashes( var_export( $child_post_ids, true ) ) );
 		$o->r .= $this->broadcast()->message( $text );
+
+		// And taxonomy info also.
+		$taxonomies = get_object_taxonomies( [ 'object_type' => $post->post_type ], 'array' );
+		foreach( $taxonomies as $taxonomy_slug => $taxonomy )
+		{
+			$terms = get_the_terms( $post->ID, $taxonomy_slug );
+			$text = sprintf( '<pre>%s: %s</pre>', $taxonomy_slug, stripslashes( var_export( $terms, true ) ) );
+			$o->r .= $this->broadcast()->message( $text );
+		}
+
+		// And comment info also.
+		$comments = get_comments( [ 'post_id' => $post->ID ] );
+		foreach( $comments as $comment )
+		{
+			$meta = get_comment_meta( $comment->comment_ID );
+			$text = sprintf( '<pre>Comment: %s %s</pre>', stripslashes( var_export( $comment, true ) ), stripslashes( var_export( $meta, true ) ) );
+			$o->r .= $this->broadcast()->message( $text );
+		}
 	}
 }

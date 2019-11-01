@@ -14,7 +14,7 @@ trait misc
 	**/
 	public function api()
 	{
-		return new \threewp_broadcast\api();
+		return new \threewp_broadcast\api\api();
 	}
 
 	/**
@@ -186,6 +186,15 @@ trait misc
 			}
 		}
 		return $hook_callbacks;
+	}
+
+	/**
+		@brief		Return the Gutenberg handler.
+		@since		2019-07-22 17:54:37
+	**/
+	public function gutenberg()
+	{
+		return new \threewp_broadcast\gutenberg();
 	}
 
 	/**
