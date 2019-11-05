@@ -134,6 +134,7 @@
           'meta_key' => 'start_date',
           'meta_type' => 'DATETIME',
           'orderby' => 'meta_value',
+          'posts_per_page' => -1
       );
       
       $events_header = false;
