@@ -8,6 +8,8 @@ $end_date = new DateTime(get_field('end_date_time'));
 $featured_image_id = get_post_thumbnail_id($post->ID);
 $featured_image = wp_get_attachment_image_src($featured_image_id,'full', false, '');
 $featured_image_alt = get_post_meta($featured_image_id,'_wp_attachment_image_alt', true);
+$featured_image_post = get_post($featured_image_id);
+$featured_image_caption = $featured_image_post->post_excerpt;
 
 ?>
 
@@ -135,6 +137,9 @@ $featured_image_alt = get_post_meta($featured_image_id,'_wp_attachment_image_alt
 
                 <?php if ($featured_image) : ?>
                     <img class="figure-img" src="<?php echo $featured_image[0]; ?>" alt="<?php echo $featured_image_alt; ?>">
+                    <?php if ($featured_image_caption): ?>
+                    <figcaption class="figure-caption"><?php echo $featured_image_caption; ?></figcaption>
+                    <?php endif; ?>
                 <?php else : ?>
                     <img class="figure-img" src="https://via.placeholder.com/1000x563" alt="Placeholder">
                 <?php endif; ?>
