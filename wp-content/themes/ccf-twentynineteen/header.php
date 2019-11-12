@@ -10,8 +10,6 @@ $inside_news = strpos($url, 'news');
 
 <html lang="en" dir="ltr">
 
-<!-- # Test One More Time -->
-
 <head>
 
     <!-- Required meta tags -->
@@ -131,6 +129,14 @@ $inside_news = strpos($url, 'news');
                                         <img src="<?php echo get_template_directory_uri(); ?>/images/ccf-kids-logo.svg" alt="Placeholder">
                                     </a>
                                 </li>
+
+                                <?php elseif (get_posts(['post_type' => 'videos'])): ?>
+
+                                  <li class="d-none d-lg-block">
+                                      <a href="<?php echo get_bloginfo( 'url' )?>/videos" title="Videos">
+                                          Videos
+                                      </a>
+                                  </li>
 
                                 <?php endif; ?>
                                 

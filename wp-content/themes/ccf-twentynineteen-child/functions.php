@@ -1,7 +1,7 @@
 <?php
 
 
-// Parent Post Types
+// Child Post Types
 
 function create_child_post_types() {
 
@@ -16,6 +16,20 @@ function create_child_post_types() {
         'public' => true,
         'has_archive' => true,
         'menu_icon' => 'dashicons-calendar'
+        )
+    );
+
+    register_post_type(
+        'Videos',
+        array(
+            'labels' => array(
+            'name' => __('Videos'),
+            'singular_name' => __('Video')
+        ),
+        'supports' => array( 'title' ),
+        'public' => true,
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-video-alt3'
         )
     );
 

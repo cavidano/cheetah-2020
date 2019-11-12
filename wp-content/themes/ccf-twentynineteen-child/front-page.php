@@ -159,7 +159,7 @@
 
       ?>
 
-      <section class="container" id="events">
+      <section class="container mb-5" id="events">
 
           <header class="text-center mb-3">
               <h3 class="display-4 mb-0">Upcoming Events</h3>
@@ -231,6 +231,68 @@
       <?php
 
       endif; /* $events_header */
+
+      ?>
+
+      <?php
+       
+      $args = array(
+          'post_type' => 'videos',
+          'order' => 'ASC',
+          'posts_per_page' => 2
+      );
+
+      $videos = new WP_Query( $args );
+      
+      if ( $videos->have_posts() ) :
+
+      ?>
+
+      <section class="container" id="videos">
+
+          <header class="text-center mb-3">
+              <h3 class="display-4 mb-0">Videos</h3>
+              <a class="link text-body fs-md" href="<?php echo home_url(); ?>/videos">All Videos</a>
+          </header>
+          
+          <div class="row matrix-gutter justify-content-center">
+
+          <?php
+        
+          while ( $videos->have_posts() ) :
+
+          $videos->the_post();
+          $video_url = get_field('video_url');
+          $video_id = substr( strrchr( $video_url, '/' ), 1 );
+
+          ?>
+
+          <div class="col-md-4">
+            <div class="embed-responsive embed-responsive-16by9">
+                <?php if (strpos($video_url, 'vimeo') !== false) : ?>
+                    <iframe src="https://player.vimeo.com/video/<?php echo $video_id; ?>" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                <?php else : ?>
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?php echo $video_id; ?>" frameborder="0" allowTransparency="true" allowfullscreen="true"></iframe>
+                <?php endif; ?>
+            </div>
+          </div>
+          <!-- .col -->
+
+          <?php
+
+          endwhile;
+
+          ?>
+
+          </div>
+
+      </section>
+
+      <?php
+      
+      endif; 
+  
+      wp_reset_postdata();
 
       ?>
 
