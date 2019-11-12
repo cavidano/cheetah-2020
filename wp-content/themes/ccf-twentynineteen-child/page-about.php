@@ -138,6 +138,8 @@ get_header();
 
     <?php endwhile; endif; /* have_posts */ ?>
 
+    <?php get_template_part('template-parts/flexible-content-article'); ?>    
+
     <?php get_template_part('template-parts/donate-panel'); ?>
 
 </main>
