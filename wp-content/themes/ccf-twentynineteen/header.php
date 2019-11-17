@@ -131,12 +131,15 @@ $inside_news = strpos($url, 'news');
                                 </li>
 
                                 <?php elseif (get_posts(['post_type' => 'videos'])): ?>
-                                    <!-- d-lg-block -->
-                                  <li class="d-none">
-                                      <a href="<?php echo get_bloginfo( 'url' )?>/videos" title="Videos">
-                                          Videos
-                                      </a>
-                                  </li>
+                                
+                                <li class="d-none d-lg-block fs-md">
+
+                                    <a class="text-primary has-icon text-info" href="<?php echo get_bloginfo( 'url' )?>/videos">
+                                        <span class="fas fa-video"></span>
+                                        <span class="title">Videos</span>
+                                    </a>
+                                    
+                                </li>
 
                                 <?php endif; ?>
                                 
