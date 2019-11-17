@@ -1,5 +1,9 @@
 <?php
 
+/*
+Template Name: Videos
+*/
+
 get_header();
 
 ?>
@@ -38,13 +42,13 @@ if ($image): ?>
     </div>
     <!-- .banner-with-background -->
 
-    <div class="container">
+    <div class="container py-4">
 
 
         <div class="mx-n2">
             <div class="row matrix-gutter">
               
-                <?php if (have_posts()) : while (have_posts()) : the_post(); 
+                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); 
 
                 $video_url = get_field('video_url');
                 $video_id = substr( strrchr( $video_url, '/' ), 1 );
@@ -54,7 +58,7 @@ if ($image): ?>
                 <div class="col-lg-6">
                   <div class="embed-responsive embed-responsive-16by9">
                       <?php if (strpos($video_url, 'vimeo') !== false) : ?>
-                          <iframe src="https://player.vimeo.com/video/<?php echo $video_id; ?>" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                          <iframe src="https://player.vimeo.com/video/<?php echo $video_url; ?>" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                       <?php else : ?>
                           <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?php echo $video_id; ?>" frameborder="0" allowTransparency="true" allowfullscreen="true"></iframe>
                       <?php endif; ?>
