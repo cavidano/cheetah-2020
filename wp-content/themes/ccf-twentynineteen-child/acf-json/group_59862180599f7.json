@@ -1,33 +1,20 @@
 {
     "key": "group_59862180599f7",
     "title": "Video - Post Type",
-    "fields": [
-        {
-            "key": "field_598621dd9e29e",
-            "label": "Video URL",
-            "name": "video_url",
-            "type": "text",
-            "instructions": "Example YouTube: https:\/\/youtu.be\/XQu8TTBmGhA<br>\r\nExample Vimeo: https:\/\/vimeo.com\/87110435<br>\r\nUse the \"Share\" URL, not the \"embed\" code.",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        }
-    ],
+    "fields": [],
     "location": [
         [
             {
                 "param": "post_type",
                 "operator": "==",
                 "value": "videos"
+            }
+        ],
+        [
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "resource-category:lectures-and-presentations"
             }
         ]
     ],
@@ -51,7 +38,7 @@
         "tags",
         "send-trackbacks"
     ],
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1573589630
+    "modified": false
 }
