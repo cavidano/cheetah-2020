@@ -257,9 +257,7 @@
           
           <div class="row matrix-gutter justify-content-center">
 
-          <?php
-        
-          while ( $videos->have_posts() ) :
+          <?php while ( $videos->have_posts() ) :
 
           $videos->the_post();
           $video_url = get_field('video_url');
