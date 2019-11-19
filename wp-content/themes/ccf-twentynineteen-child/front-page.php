@@ -168,7 +168,7 @@
           
           <div class="row matrix-gutter justify-content-center">
 
-      <?php endif; /* $events_header */ ?>
+              <?php endif; /* $events_header */ ?>
 
               <div class="col-md-4">
 
@@ -265,7 +265,7 @@
 
           ?>
 
-          <div class="col-md-4">
+          <div class="col-md-6">
             <div class="embed-responsive embed-responsive-16by9">
                 <?php if (strpos($video_url, 'vimeo') !== false) : ?>
                     <iframe src="https://player.vimeo.com/video/<?php echo $video_id; ?>" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
@@ -276,13 +276,10 @@
           </div>
           <!-- .col -->
 
-          <?php
-
-          endwhile;
-
-          ?>
+          <?php endwhile; ?>
 
           </div>
+          <!-- .matrix-gutter -->
 
       </section>
 

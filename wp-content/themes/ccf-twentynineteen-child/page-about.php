@@ -103,7 +103,7 @@ get_header();
 
     ?>
 
-    <section class="py-6">
+    <section class="py-5">
 
         <div class="container">
 

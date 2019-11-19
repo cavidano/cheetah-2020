@@ -600,13 +600,14 @@ $images = get_sub_field('images');
     <hr class="narrow my-4">
 
     <?php elseif ($color === 'Dark') : ?>
-
+    
     <hr class="narrow my-4 border-dark">
+    
+    <?php elseif ($color === 'Pattern') : ?>
 
-    <?php endif; ?>
+    <hr class="african-hr mx-n2 mb-4">
 
-
-
+    <?php endif; /* divider_block */ ?>
 
 <?php elseif( get_row_layout() == 'cards_block' ):
     
