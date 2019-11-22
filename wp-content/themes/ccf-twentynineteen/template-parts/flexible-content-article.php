@@ -609,63 +609,16 @@ $images = get_sub_field('images');
 
     <?php endif; /* divider_block */ ?>
 
-<?php elseif( get_row_layout() == 'cards_block' ):
+<?php elseif( get_row_layout() == 'embed_script_block' ):
     
-    $card_count = count(get_sub_field('cards'));
+    $width = strtolower(get_sub_field('width'));
+    $script = get_sub_field('script');
 
     ?>
 
-    <?php if( have_rows('cards') ): ?>
-
-    <div class="cards-block medium my-4">
-        
-        <div class="row matrix-gutter">
-        
-            <?php while (have_rows('cards')) : the_row();
-
-            $header = get_sub_field('header');
-            $title = get_sub_field('title');
-            $text = get_sub_field('text');
-            $link = get_sub_field('link');
-
-            ?>
-
-            <?php if ($card_count > 1) : ?>
-            
-            <div class="col-md-6">
-
-            <?php else : ?>
-            
-            <div class="col-md">
-            
-            <?php endif; ?>
-
-                <div class="card h-100 bg-primary">
-                    <div class="card-header border-bottom border-dark">
-                        <p class="fs-md f-sans-serif"><?php echo $header; ?><?php echo $count; ?></p>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="h3 card-title"><?php echo $title; ?></h5>
-                        <div class="card-text">
-                            <?php echo $text; ?>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a class="btn btn-lg btn-white" href="<?php echo $link['url'] ?>"><?php echo $link['title'] ?></a>
-                    </div>
-                </div>
-            </div>
-            <!-- .col -->
-            
-            <?php endwhile; ?>
-
-        </div>
-        <!-- .row -->
-
+    <div class="embed-script-block <?php echo $width; ?> my-4">
+        <?php echo $script; ?>
     </div>
-    <!-- .cards-block -->
-
-    <?php endif; ?>
 
 <?php endif; /* text_block | video_block | banner_block | figure_block | two_figure_block | gallery_carousel_block | thumnail_links_block | gallery_thumbnail_block */ ?>
 
