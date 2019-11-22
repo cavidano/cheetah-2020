@@ -892,28 +892,14 @@
             {
                 "param": "page",
                 "operator": "==",
-                "value": "10"
-            }
-        ],
-        [
-            {
-                "param": "page",
-                "operator": "==",
                 "value": "47"
             }
         ],
         [
             {
-                "param": "page",
+                "param": "post_template",
                 "operator": "==",
-                "value": "219"
-            }
-        ],
-        [
-            {
-                "param": "page",
-                "operator": "==",
-                "value": "240"
+                "value": "default"
             }
         ]
     ],
@@ -934,5 +920,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1574424624
+    "modified": 1574431767
 }

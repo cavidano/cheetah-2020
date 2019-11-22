@@ -60,30 +60,6 @@
             "button_label": "Add Person",
             "sub_fields": [
                 {
-                    "key": "field_5cffba5189f24",
-                    "label": "Avatar",
-                    "name": "avatar",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "preview_size": "medium",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                },
-                {
                     "key": "field_5cffba4489f22",
                     "label": "Name",
                     "name": "name",
@@ -120,6 +96,30 @@
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
+                },
+                {
+                    "key": "field_5cffba5189f24",
+                    "label": "Avatar",
+                    "name": "avatar",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
                 }
             ]
         },
@@ -138,6 +138,21 @@
             },
             "layout": "block",
             "sub_fields": [
+                {
+                    "key": "field_5cffe6b88122a",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                },
                 {
                     "key": "field_5cffba7a89f26",
                     "label": "Headline",
@@ -175,21 +190,6 @@
                     "toolbar": "very_simple",
                     "media_upload": 0,
                     "delay": 0
-                },
-                {
-                    "key": "field_5cffe6b88122a",
-                    "label": "Link",
-                    "name": "link",
-                    "type": "link",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array"
                 }
             ]
         }
@@ -224,5 +224,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1573594043
+    "modified": 1574430220
 }
