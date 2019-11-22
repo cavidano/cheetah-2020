@@ -70,8 +70,16 @@
 
 				// Container for selection change.
 				$this.$selection_change_container = $( '<div />' )
-					.addClass( 'clear selection_change_container howto' )
-					.appendTo( $this.$blogs_container );
+					.addClass( 'clear selection_change_container howto' );
+
+				switch( broadcast_blog_selector_position )
+				{
+					case 'top':
+						$this.$selection_change_container.prependTo( $this.$blogs_container );
+					break;
+					default:
+						$this.$selection_change_container.appendTo( $this.$blogs_container );
+				}
 
 				// Append "Select all / none" text.
 				$this.$select_all = $( '<span />' )
@@ -121,7 +129,7 @@
 				{
 					$this.$show_hide = $( '<div />' )
 						.addClass( 'show_hide howto' )
-						.appendTo( $this.$blogs_container )
+						.prependTo( $this.$blogs_container )
 						.click( function()
 						{
 							if ( $this.$blogs_container.hasClass( 'opened' ) )

@@ -3,8 +3,8 @@ Contributors: edo888
 Author: Translate AI Multilingual Solutions
 Tags: translate wordpress, multilingual, translate, translation, language, bilingual, localization, translation proxy, i18n, l10n, localisation, multilanguage, google translate
 Requires at least: 2.8.1
-Tested up to: 5.2
-Stable tag: 2.8.49
+Tested up to: 5.3
+Stable tag: 2.8.50
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://gtranslate.io/?xyz=998#pricing
@@ -156,6 +156,9 @@ Multilingual SEO is a SEO strategy which uses new content generation technique b
 = Is URL Translation available? =
 In our paid versions we have a feature to translate URL of your website which will give you more SEO advantage. For example http://example.com/*about-us* &rarr; http://example.com/*sobre-nosotros*
 
+= Does it translate emails too? =
+Email translation feature is in testing stage for our paid version. Please contact our live chat to test email translation now.
+
 = How the free version differs from the paid versions? =
 Free vesion is a nice looking language selector you can place on your website. It has a built in Javascript engine which allows to translate your website automatically to multiple languages. With free version your website URL doesn't change and the translations are not stored. While paid versions are a translation proxy also known as Translation Delivery Network. We host the translated versions of your website on our cloud network under a language specific domain. In that case every language will have a separate domain and be indexed in search engines, which will help you to increase international traffic and sales.
 
@@ -221,6 +224,11 @@ You need to go to the language you want to edit, for instance, French: http://do
 8. User Dashboard
 
 == Changelog ==
+= 2.8.50 =
+* Solved issue with wp_get_referer checks not passing on translated sub-domains
+* Solved issue with http Refresh header which was not redirecting to correct URL in translated version
+* Email translation is coming: we need volunteers to test translation of emails, please contact live chat
+
 = 2.8.49 =
 * Added translate support for MyHome IDX Broker plugin
 

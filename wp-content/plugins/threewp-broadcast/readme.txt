@@ -4,7 +4,7 @@ Donate link: https://broadcast.plainviewplugins.com
 License: GPLv3
 Requires at least: 4.6
 Requires PHP: 5.4
-Stable tag: 45.05
+Stable tag: 45.06
 Tags: multipost, sharing, duplicate, franchise, syndication, marketing, news, hub
 Tested up to: 5.3
 
@@ -163,6 +163,7 @@ These add-ons give you extra control of what you broadcast and how.
 * <a href="https://broadcast.plainviewplugins.com/addon/shortcode-terms/">Shortcode Terms</a> automatically translates taxonomy term IDs found in shortcodes when broadcasting.
 * <a href="https://broadcast.plainviewplugins.com/addon/thumbnail-sizes/">Thumbnail Sizes</a> allows for different additional thumbnail sizes on a per-blog basis.
 * <a href="https://broadcast.plainviewplugins.com/addon/update-attachments/">Update Attachments</a> updates existing attachments by copying over the files to the child blogs.
+* <a href="https://broadcast.plainviewplugins.com/addon/update-family/">Update Family</a> updates the parent post and siblings when editing a child post.
 * <a href="https://broadcast.plainviewplugins.com/addon/unlink-on-edit/">Unlink On Edit</a> unlinks child posts when they are modified.
 * <a href="https://broadcast.plainviewplugins.com/addon/user-blog-settings/">User &amp; Blog Settings</a> (UBS) can hide the broadcast meta box and/or menu, modify the meta box to force/prevent broadcast to blogs, with separate settings for users / blogs / roles.
 * <a href="https://broadcast.plainviewplugins.com/addon/user-blog-settings-post/">User &amp; Blog Settings Post</a> uses the modifications from the UBS plugin to broadcast posts with one click.
@@ -335,6 +336,13 @@ This will broadcast all normal product settings: SKU, price, etc.
 If your products have variations, a product image gallery, you want to sync stock, you want to sync orders, need the attribute taxonomies to be synced, you'll be wanting the <a href="https://broadcast.plainviewplugins.com/addon/woocommerce/">WooCommerce add-on</a>.
 
 == Changelog ==
+
+= 45.06 20191116 =
+
+* New add-on: <a href="https://broadcast.plainviewplugins.com/addon/update-family/">Update Family</a>: Update the parent post and siblings when editing a child post.
+* New: Add option to select where to show the select all / none blog selector. Admin > Broadcast > Settings > Misc
+* Fix: Do not resync already syncing taxonomies. Prevents looping in some cases.
+* Fix: Save equivalent taxonomy terms earlier. This fixes a syncing bug when taxonomies refer to other taxonomies.
 
 = 45.05 20191016 =
 

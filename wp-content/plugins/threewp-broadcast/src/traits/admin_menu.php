@@ -237,6 +237,14 @@ trait admin_menu
 			->size( 3, 3 )
 			->value( $this->get_site_option( 'blogs_hide_overview' ) );
 
+		$blog_selector_position = $fs->select( 'blog_selector_position' )
+			->description( __( 'Where to place the invert / select all / none blog selection control.', 'threewp-broadcast' ) )
+			// Input label.
+			->label( __( 'Blog selection position', 'threewp-broadcast' ) )
+			->opt( 'top', __( 'Above the list of blogs', 'threewp-broadcast' ) )
+			->opt( 'bottom', __( 'Below the list of blogs', 'threewp-broadcast' ) )
+			->value( $this->get_site_option( 'blog_selector_position' ) );
+
 		$get_existing_attachment_actions = $this->new_action( 'get_existing_attachment_actions' );
 		$get_existing_attachment_actions->execute();
 		$actions = $get_existing_attachment_actions->get_actions();
@@ -415,6 +423,7 @@ trait admin_menu
 			$this->update_site_option( 'save_post_decoys', $save_post_decoys->get_post_value() );
 			$this->update_site_option( 'blogs_to_hide', $blogs_to_hide->get_post_value() );
 			$this->update_site_option( 'blogs_hide_overview', $blogs_hide_overview->get_post_value() );
+			$this->update_site_option( 'blog_selector_position', $blog_selector_position->get_post_value() );
 			$this->update_site_option( 'existing_attachments', $existing_attachments->get_post_value() );
 
 			$taxonomy_term_blacklist = $taxonomy_term_blacklist->get_post_value();

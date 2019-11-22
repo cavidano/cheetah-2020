@@ -221,7 +221,7 @@ $headers_sent = '';
 foreach($response_headers as $header) {
     if(!empty($header) and !preg_match('/Content\-Length:|Transfer\-Encoding:|Content\-Encoding:|Link:/i', $header)) {
 
-        if(preg_match('/^Location:/i', $header)) {
+        if(preg_match('/^(Location|Refresh):/i', $header)) {
             $header = str_ireplace($host, $_SERVER['HTTP_HOST'] . '/' . $glang, $header);
             $header = str_ireplace('Location: /', 'Location: /' . $glang . '/', $header);
             $header = str_replace('/' . $glang . '/' . $glang . '/', '/' . $glang . '/', $header);

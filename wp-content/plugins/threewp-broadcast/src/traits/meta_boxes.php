@@ -292,6 +292,7 @@ trait meta_boxes
 		$meta_box_data->convert_form_input_later( 'unchecked_child_blogs' );
 
 		$js = sprintf( '<script type="text/javascript">var broadcast_blogs_to_hide = %s;</script>', $this->get_site_option( 'blogs_to_hide', 5 ) );
+		$js .= sprintf( '<script type="text/javascript">var broadcast_blog_selector_position = "%s";</script>', $this->get_site_option( 'blog_selector_position' ) );
 		$meta_box_data->html->put( 'blogs_js', $js );
 
 		// We require some js.

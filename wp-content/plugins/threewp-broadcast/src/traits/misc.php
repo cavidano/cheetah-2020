@@ -492,6 +492,7 @@ trait misc
 			'all_networks' => false,
 			'blogs_to_hide' => 5,								// How many blogs to auto-hide
 			'blogs_hide_overview' => 5,							// Use a summary in the overview if more than this amount of children / siblings.
+			'blog_selector_position' => 'bottom',				// Where to place the blog selector line in the meta box.
 			'canonical_url' => true,							// Override the canonical URLs with the parent post's.
 			'clear_post' => true,								// Clear the post before broadcasting.
 			'custom_field_blacklist' => '',						// Internal custom fields that should not be broadcasted.

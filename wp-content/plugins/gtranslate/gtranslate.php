@@ -3,7 +3,7 @@
 Plugin Name: GTranslate
 Plugin URI: https://gtranslate.io/?xyz=998
 Description: Makes your website <strong>multilingual</strong> and available to the world using Google Translate. For support visit <a href="https://wordpress.org/support/plugin/gtranslate">GTranslate Support</a>.
-Version: 2.8.49
+Version: 2.8.50
 Author: Translate AI Multilingual Solutions
 Author URI: https://gtranslate.io
 Text Domain: gtranslate
@@ -2216,4 +2216,17 @@ if($data['pro_version'] or $data['enterprise_version']) {
     add_filter('woocommerce_get_script_data', 'gt_filter_woocommerce_scripts_data', 10, 2 );
 
     add_filter('woocommerce_geolocate_ip', 'gt_woocommerce_geolocate_ip', 10, 4);
+}
+
+if($data['enterprise_version']) {
+    // solve wp_get_referer issue
+    function gt_allowed_redirect_hosts($hosts) {
+        $gt_hosts = array();
+        if(isset($_SERVER['HTTP_X_GT_LANG']))
+            $gt_hosts[] = $_SERVER['HTTP_X_GT_LANG'] . '.' . str_replace('www.', '', $_SERVER['HTTP_HOST']);
+
+        return array_merge($hosts, $gt_hosts);
+    }
+
+    add_filter('allowed_redirect_hosts', 'gt_allowed_redirect_hosts');
 }

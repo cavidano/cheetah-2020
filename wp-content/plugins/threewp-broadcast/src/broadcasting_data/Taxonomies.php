@@ -97,6 +97,9 @@ class Taxonomies
 		// Objects are easier to reference.
 		$options = (object) $options;
 
+		if ( isset( $this->broadcasting_data->parent_blog_taxonomies[ $options->taxonomy ] ) )
+			return ThreeWP_Broadcast()->debug( 'Not bothering to sync taxonomy <em>%s</em> for post type <em>%s</em> because it is already being synced.', $options->taxonomy, $options->post_type );
+
 		// Fetch the post.
 		if ( $options->post_id > 0 )
 		{

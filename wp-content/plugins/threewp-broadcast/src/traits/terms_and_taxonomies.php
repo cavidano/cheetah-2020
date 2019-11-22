@@ -261,6 +261,10 @@ trait terms_and_taxonomies
 			}
 		}
 
+		// Save the equivalent sources for later use.
+		$blog_id = get_current_blog_id();
+		$bcd->parent_blog_taxonomies[ $taxonomy ][ 'equivalent_terms' ][ $blog_id ] = $found_sources;
+
 		// Now we know which of the terms on our target blog exist on the source blog.
 		// Next step: see if the parents are the same on the target as they are on the source.
 		// "Same" meaning pointing to the same slug.
@@ -283,6 +287,8 @@ trait terms_and_taxonomies
 			// ... but the IDs have to be switched around, since the target term has the new ID.
 			$action->switch_data();
 
+			$new_parent = 0;
+
 			// Does the source term even have a parent?
 			if ( $source_term->parent > 0 )
 			{
@@ -292,8 +298,6 @@ trait terms_and_taxonomies
 				if ( isset( $found_sources[ $parent_of_equivalent_source_term ] ) )
 					$new_parent = $found_sources[ $parent_of_equivalent_source_term ];
 			}
-			else
-				$new_parent = 0;
 
 			$action->switch_data( 'parent' );
 			$action->new_term->parent = $new_parent;
@@ -301,10 +305,6 @@ trait terms_and_taxonomies
 			$action->execute();
 			$refresh_cache |= $action->updated;
 		}
-
-		// Save the equivalent sources for later use.
-		$blog_id = get_current_blog_id();
-		$bcd->parent_blog_taxonomies[ $taxonomy ][ 'equivalent_terms' ][ $blog_id ] = $found_sources;
 
 		// wp_update_category alone won't work. The "cache" needs to be cleared.
 		// see: http://wordpress.org/support/topic/category_children-how-to-recalculate?replies=4

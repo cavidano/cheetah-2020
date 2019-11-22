@@ -512,8 +512,11 @@ trait broadcasting
 					foreach( $terms as $term )
 					{
 						$new_term_id = $bcd->terms()->get( $term->term_id );
-						$taxonomies_to_add_to[] = $new_term_id;
-						$this->debug( 'Found term %d for original term %d.', $new_term_id, $term->term_id );
+						if ( $new_term_id > 0 )
+						{
+							$taxonomies_to_add_to[] = $new_term_id;
+							$this->debug( 'Found term %d for original term %d.', $new_term_id, $term->term_id );
+						}
 					}
 
 					if ( count( $taxonomies_to_add_to ) > 0 )

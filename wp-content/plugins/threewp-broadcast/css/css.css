@@ -398,9 +398,7 @@ img.mfp-img {
     position: relative; }
     #threewp_broadcast.postbox .blogs.html_section .show_hide {
       cursor: pointer;
-      position: absolute;
-      top: 0;
-      right: 0; }
+      text-align: right; }
     #threewp_broadcast.postbox .blogs.html_section legend {
       margin-bottom: 0.5em;
       font-style: italic; }
