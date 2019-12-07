@@ -17,7 +17,7 @@ $featured_image_caption = $featured_image_post->post_excerpt;
 
     <?php if (have_posts()) : while ( have_posts() ) : the_post(); ?>
 
-    <article class="container-fluid blog py-6" id="primary-content">
+    <article class="container-fluid blog py-5" id="primary-content">
 
         <header class="narrow mb-5">
 

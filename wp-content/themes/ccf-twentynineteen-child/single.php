@@ -12,7 +12,7 @@ get_header(); ?>
 
     <article class="container-fluid wide blog overflow-hidden" id="primary-content">
 
-      <div class="my-6">
+      <div class="my-5">
 
         <header class="narrow my-5">
 
