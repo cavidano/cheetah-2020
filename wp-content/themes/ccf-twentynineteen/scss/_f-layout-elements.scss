@@ -165,6 +165,8 @@ $global-header-toggle-button-color: $primary-nav-link-color;
         &.active {
             color: $primary-nav-link-active-color;
         }
+
+
     }
 
     // Primary Nav (.nav-pills)
@@ -244,7 +246,7 @@ $global-header-toggle-button-color: $primary-nav-link-color;
         top: 100% !important;
     }
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(lg) {
         .nav-item {
             border-top: 1px solid $global-header-border-color;
             width: 100%;
@@ -298,6 +300,16 @@ $global-header-toggle-button-color: $primary-nav-link-color;
 
 /* #global-header */
 
+// main menu lang styles
+
+html:not([lang="en"]):not([lang="auto"]) {
+
+    #global-header .nav-link {
+        font-size: $fs-rg;
+    }
+
+}
+
 ////////////////////////////////////////
 // B. Skip Menu
 ////////////////////////////////////////
@@ -306,7 +318,6 @@ $global-header-toggle-button-color: $primary-nav-link-color;
 
 .skip-menu {
     @extend .position-absolute;
-
     @extend .shadow;
 
     z-index: 20000;

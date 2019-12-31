@@ -1993,6 +1993,22 @@
 		"oAP": "/wp-admin/edit.php",
 		"oF": 0
 		},
+	"/wp-admin/erase-personal-data.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/erase-personal-data.php",
+		"oF": 0
+		},
+	"/wp-admin/export-personal-data.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/export-personal-data.php",
+		"oF": 0
+		},
 	"/wp-admin/export.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2761,6 +2777,22 @@
 		"oAP": "/wp-admin/includes/class-core-upgrader.php",
 		"oF": 0
 		},
+	"/wp-admin/includes/class-custom-background.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/includes/class-custom-background.php",
+		"oF": 0
+		},
+	"/wp-admin/includes/class-custom-image-header.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/includes/class-custom-image-header.php",
+		"oF": 0
+		},
 	"/wp-admin/includes/class-file-upload-upgrader.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -3073,6 +3105,38 @@
 		"oAP": "/wp-admin/includes/class-wp-posts-list-table.php",
 		"oF": 0
 		},
+	"/wp-admin/includes/class-wp-privacy-data-export-requests-list-table.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/includes/class-wp-privacy-data-export-requests-list-table.php",
+		"oF": 0
+		},
+	"/wp-admin/includes/class-wp-privacy-data-removal-requests-list-table.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/includes/class-wp-privacy-data-removal-requests-list-table.php",
+		"oF": 0
+		},
+	"/wp-admin/includes/class-wp-privacy-policy-content.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/includes/class-wp-privacy-policy-content.php",
+		"oF": 0
+		},
+	"/wp-admin/includes/class-wp-privacy-requests-table.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/includes/class-wp-privacy-requests-table.php",
+		"oF": 0
+		},
 	"/wp-admin/includes/class-wp-screen.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -3367,6 +3431,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/wp-admin/includes/post.php",
+		"oF": 0
+		},
+	"/wp-admin/includes/privacy-tools.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/includes/privacy-tools.php",
 		"oF": 0
 		},
 	"/wp-admin/includes/revision.php": {
@@ -4186,6 +4258,28 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/wp-admin/js/postbox.min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/wp-admin/js/privacy-tools.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-admin/js/privacy-tools-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/wp-admin/js/privacy-tools.min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-admin/js/privacy-tools.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -5182,6 +5276,14 @@
 		"oAP": "/wp-admin/options-permalink.php",
 		"oF": 0
 		},
+	"/wp-admin/options-privacy.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/options-privacy.php",
+		"oF": 0
+		},
 	"/wp-admin/options-reading.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -5252,6 +5354,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/wp-admin/press-this.php",
+		"oF": 0
+		},
+	"/wp-admin/privacy-policy-guide.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-admin/privacy-policy-guide.php",
 		"oF": 0
 		},
 	"/wp-admin/privacy.php": {
@@ -11136,6 +11246,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/wp-content/plugins/gravityforms/includes/class-gf-download.php",
+		"oF": 0
+		},
+	"/wp-content/plugins/gravityforms/includes/class-gf-osdxp.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/gravityforms/includes/class-gf-osdxp.php",
 		"oF": 0
 		},
 	"/wp-content/plugins/gravityforms/includes/class-gf-upgrade.php": {
@@ -21805,16 +21923,6 @@
 		"oAP": "/wp-content/plugins/pdf-embedder/readme.txt",
 		"oF": 0
 		},
-	"/wp-content/plugins/safe-svg/assets/safe-svg-min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/safe-svg/assets/safe-svg-min-min.css",
-		"oF": 0,
-		"oS": 3
-		},
 	"/wp-content/plugins/safe-svg/assets/safe-svg.css": {
 		"aP": 1,
 		"bl": 0,
@@ -21824,6 +21932,14 @@
 		"oAP": "/wp-content/plugins/safe-svg/assets/safe-svg-min.css",
 		"oF": 0,
 		"oS": 3
+		},
+	"/wp-content/plugins/safe-svg/composer.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp-content/plugins/safe-svg/composer-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
 		},
 	"/wp-content/plugins/safe-svg/includes/safe-svg-attributes.php": {
 		"cB": 0,
@@ -22073,14 +22189,6 @@
 		"oO": 0,
 		"oS": 1
 		},
-	"/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/composer.lock": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/composer.lock",
-		"oF": 0
-		},
 	"/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/LICENSE": {
 		"cB": 0,
 		"ft": 8192,
@@ -22089,20 +22197,12 @@
 		"oAP": "/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/LICENSE",
 		"oF": 0
 		},
-	"/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/phpunit.xml.dist": {
+	"/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/phpunit.xml": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/phpunit.xml.dist",
-		"oF": 0
-		},
-	"/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/README.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/README.html",
+		"oAP": "/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/phpunit.xml",
 		"oF": 0
 		},
 	"/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/README.md": {
@@ -22156,12 +22256,60 @@
 		"oAP": "/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/src/data/TagInterface.php",
 		"oF": 0
 		},
+	"/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/src/data/XPath.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/src/data/XPath.php",
+		"oF": 0
+		},
+	"/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/src/ElementReference/Resolver.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/src/ElementReference/Resolver.php",
+		"oF": 0
+		},
+	"/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/src/ElementReference/Subject.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/src/ElementReference/Subject.php",
+		"oF": 0
+		},
+	"/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/src/ElementReference/Usage.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/src/ElementReference/Usage.php",
+		"oF": 0
+		},
+	"/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/src/Helper.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/src/Helper.php",
+		"oF": 0
+		},
 	"/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/src/Sanitizer.php": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/src/Sanitizer.php",
+		"oF": 0
+		},
+	"/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/src/svg-scanner.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/src/svg-scanner.php",
 		"oF": 0
 		},
 	"/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/tests/AllowedAttributesTest.php": {
@@ -22280,22 +22428,6 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/tests/data/TestAllowedAttributes.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/tests/data/TestAllowedAttributes.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/tests/data/TestAllowedTags.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/tests/data/TestAllowedTags.php",
-		"oF": 0
-		},
 	"/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/tests/data/useClean.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -22311,6 +22443,46 @@
 		"miP": 0,
 		"oA": 2,
 		"oAP": "/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/tests/data/useTest.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/tests/data/xlinkLaughsClean.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/tests/data/xlinkLaughsClean.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/tests/data/xlinkLaughsTest.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/tests/data/xlinkLaughsTest.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/tests/data/xlinkLoopClean.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/tests/data/xlinkLoopClean.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/tests/data/xlinkLoopTest.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/tests/data/xlinkLoopTest.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
@@ -22332,12 +22504,36 @@
 		"oAP": "/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/tests/data/xmlTestOne.xml",
 		"oF": 0
 		},
+	"/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/tests/Fixtures/TestAllowedAttributes.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/tests/Fixtures/TestAllowedAttributes.php",
+		"oF": 0
+		},
+	"/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/tests/Fixtures/TestAllowedTags.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/tests/Fixtures/TestAllowedTags.php",
+		"oF": 0
+		},
 	"/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/tests/SanitizerTest.php": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/tests/SanitizerTest.php",
+		"oF": 0
+		},
+	"/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/tests/SubjectTest.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/tests/SubjectTest.php",
 		"oF": 0
 		},
 	"/wp-content/plugins/safe-svg/licence.txt": {
@@ -26398,12 +26594,28 @@
 		"oAP": "/wp-content/plugins/threewp-broadcast/vendor/composer/autoload_real.php",
 		"oF": 0
 		},
+	"/wp-content/plugins/threewp-broadcast/vendor/composer/autoload_static.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/threewp-broadcast/vendor/composer/autoload_static.php",
+		"oF": 0
+		},
 	"/wp-content/plugins/threewp-broadcast/vendor/composer/ClassLoader.php": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/wp-content/plugins/threewp-broadcast/vendor/composer/ClassLoader.php",
+		"oF": 0
+		},
+	"/wp-content/plugins/threewp-broadcast/vendor/composer/LICENSE": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/threewp-broadcast/vendor/composer/LICENSE",
 		"oF": 0
 		},
 	"/wp-content/plugins/wordpress-seo/admin/admin-settings-changed-listener.php": {
@@ -27126,14 +27338,6 @@
 		"oAP": "/wp-content/plugins/wordpress-seo/admin/config-ui/class-configuration-translations.php",
 		"oF": 0
 		},
-	"/wp-content/plugins/wordpress-seo/admin/config-ui/components/class-component-connect-google-search-console.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/admin/config-ui/components/class-component-connect-google-search-console.php",
-		"oF": 0
-		},
 	"/wp-content/plugins/wordpress-seo/admin/config-ui/components/class-component-mailchimp-signup.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -27214,28 +27418,12 @@
 		"oAP": "/wp-content/plugins/wordpress-seo/admin/config-ui/fields/class-field-company-or-person.php",
 		"oF": 0
 		},
-	"/wp-content/plugins/wordpress-seo/admin/config-ui/fields/class-field-connect-google-search-console.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/admin/config-ui/fields/class-field-connect-google-search-console.php",
-		"oF": 0
-		},
 	"/wp-content/plugins/wordpress-seo/admin/config-ui/fields/class-field-environment.php": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/wp-content/plugins/wordpress-seo/admin/config-ui/fields/class-field-environment.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/admin/config-ui/fields/class-field-google-search-console-intro.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/admin/config-ui/fields/class-field-google-search-console-intro.php",
 		"oF": 0
 		},
 	"/wp-content/plugins/wordpress-seo/admin/config-ui/fields/class-field-mailchimp-signup.php": {
@@ -27508,118 +27696,6 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/wp-content/plugins/wordpress-seo/admin/formatter/interface-metabox-formatter.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-ajax.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-ajax.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-bulk-action.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-bulk-action.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-category-filters.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-category-filters.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-config.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-config.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-count.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-count.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-issue.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-issue.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-issues.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-issues.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-mapper.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-mapper.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-marker.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-marker.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-modal.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-modal.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-platform-tabs.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-platform-tabs.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-service.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-service.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-settings.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-settings.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-table.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc-table.php",
 		"oF": 0
 		},
 	"/wp-content/plugins/wordpress-seo/admin/google_search_console/class-gsc.php": {
@@ -29166,223 +29242,223 @@
 		"oAP": "/wp-content/plugins/wordpress-seo/config/php-scoper/ruckusing.inc.php",
 		"oF": 0
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/admin-global-1240-rtl.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/admin-global-1251-rtl.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/admin-global-1240-rtl.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/admin-global-1251-rtl.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/admin-global-1240.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/admin-global-1251.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/admin-global-1240.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/admin-global-1251.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/adminbar-1240-rtl.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/adminbar-1251-rtl.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/adminbar-1240-rtl.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/adminbar-1251-rtl.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/adminbar-1240.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/adminbar-1251.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/adminbar-1240.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/adminbar-1251.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/alerts-1240-rtl.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/alerts-1251-rtl.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/alerts-1240-rtl.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/alerts-1251-rtl.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/alerts-1240.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/alerts-1251.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/alerts-1240.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/alerts-1251.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/dashboard-1240-rtl.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/dashboard-1251-rtl.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/dashboard-1240-rtl.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/dashboard-1251-rtl.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/dashboard-1240.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/dashboard-1251.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/dashboard-1240.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/dashboard-1251.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/edit-page-1240-rtl.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/edit-page-1251-rtl.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/edit-page-1240-rtl.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/edit-page-1251-rtl.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/edit-page-1240.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/edit-page-1251.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/edit-page-1240.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/edit-page-1251.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/featured-image-1240-rtl.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/featured-image-1251-rtl.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/featured-image-1240-rtl.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/featured-image-1251-rtl.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/featured-image-1240.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/featured-image-1251.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/featured-image-1240.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/featured-image-1251.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/filter-explanation-1240-rtl.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/filter-explanation-1251-rtl.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/filter-explanation-1240-rtl.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/filter-explanation-1251-rtl.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/filter-explanation-1240.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/filter-explanation-1251.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/filter-explanation-1240.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/filter-explanation-1251.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/inside-editor-1240-rtl.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/inside-editor-1251-rtl.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/inside-editor-1240-rtl.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/inside-editor-1251-rtl.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/inside-editor-1240.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/inside-editor-1251.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/inside-editor-1240.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/inside-editor-1251.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/metabox-1240-rtl.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/metabox-1251-rtl.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/metabox-1240-rtl.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/metabox-1251-rtl.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/metabox-1240.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/metabox-1251.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/metabox-1240.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/metabox-1251.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/metabox-primary-category-1240-rtl.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/metabox-primary-category-1251-rtl.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/metabox-primary-category-1240-rtl.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/metabox-primary-category-1251-rtl.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/metabox-primary-category-1240.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/metabox-primary-category-1251.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/metabox-primary-category-1240.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/metabox-primary-category-1251.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/search-appearance-1240-rtl.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/search-appearance-1251-rtl.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/search-appearance-1240-rtl.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/search-appearance-1251-rtl.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/search-appearance-1240.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/search-appearance-1251.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/search-appearance-1240.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/search-appearance-1251.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -29406,143 +29482,143 @@
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/structured-data-blocks-1240-rtl.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/structured-data-blocks-1251-rtl.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/structured-data-blocks-1240-rtl.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/structured-data-blocks-1251-rtl.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/structured-data-blocks-1240.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/structured-data-blocks-1251.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/structured-data-blocks-1240.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/structured-data-blocks-1251.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/toggle-switch-1240-rtl.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/toggle-switch-1251-rtl.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/toggle-switch-1240-rtl.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/toggle-switch-1251-rtl.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/toggle-switch-1240.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/toggle-switch-1251.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/toggle-switch-1240.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/toggle-switch-1251.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/wpseo-dismissible-1240-rtl.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/wpseo-dismissible-1251-rtl.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/wpseo-dismissible-1240-rtl.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/wpseo-dismissible-1251-rtl.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/wpseo-dismissible-1240.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/wpseo-dismissible-1251.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/wpseo-dismissible-1240.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/wpseo-dismissible-1251.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/yoast-components-1240-rtl.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/yoast-components-1251-rtl.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/yoast-components-1240-rtl.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/yoast-components-1251-rtl.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/yoast-components-1240.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/yoast-components-1251.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/yoast-components-1240.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/yoast-components-1251.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/yoast-extensions-1240-rtl.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/yoast-extensions-1251-rtl.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/yoast-extensions-1240-rtl.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/yoast-extensions-1251-rtl.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/yoast-extensions-1240.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/yoast-extensions-1251.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/yoast-extensions-1240.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/yoast-extensions-1251.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/yst_plugin_tools-1240-rtl.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/yst_plugin_tools-1251-rtl.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/yst_plugin_tools-1240-rtl.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/yst_plugin_tools-1251-rtl.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/yst_plugin_tools-1240.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/yst_plugin_tools-1251.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/yst_plugin_tools-1240.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/yst_plugin_tools-1251.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/yst_seo_score-1240-rtl.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/yst_seo_score-1251-rtl.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/yst_seo_score-1240-rtl.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/yst_seo_score-1251-rtl.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/wp-content/plugins/wordpress-seo/css/dist/yst_seo_score-1240.min.css": {
+	"/wp-content/plugins/wordpress-seo/css/dist/yst_seo_score-1251.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/yst_seo_score-1240.min-min.css",
+		"oAP": "/wp-content/plugins/wordpress-seo/css/dist/yst_seo_score-1251.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -29562,12 +29638,148 @@
 		"oAP": "/wp-content/plugins/wordpress-seo/deprecated/admin/class-metabox-tab-section.php",
 		"oF": 0
 		},
+	"/wp-content/plugins/wordpress-seo/deprecated/admin/config-ui/components/class-component-connect-google-search-console.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/wordpress-seo/deprecated/admin/config-ui/components/class-component-connect-google-search-console.php",
+		"oF": 0
+		},
+	"/wp-content/plugins/wordpress-seo/deprecated/admin/config-ui/fields/class-field-connect-google-search-console.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/wordpress-seo/deprecated/admin/config-ui/fields/class-field-connect-google-search-console.php",
+		"oF": 0
+		},
+	"/wp-content/plugins/wordpress-seo/deprecated/admin/config-ui/fields/class-field-google-search-console-intro.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/wordpress-seo/deprecated/admin/config-ui/fields/class-field-google-search-console-intro.php",
+		"oF": 0
+		},
 	"/wp-content/plugins/wordpress-seo/deprecated/admin/config-ui/fields/class-field-profile-url-googleplus.php": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/wp-content/plugins/wordpress-seo/deprecated/admin/config-ui/fields/class-field-profile-url-googleplus.php",
+		"oF": 0
+		},
+	"/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-ajax.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-ajax.php",
+		"oF": 0
+		},
+	"/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-bulk-action.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-bulk-action.php",
+		"oF": 0
+		},
+	"/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-category-filters.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-category-filters.php",
+		"oF": 0
+		},
+	"/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-config.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-config.php",
+		"oF": 0
+		},
+	"/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-count.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-count.php",
+		"oF": 0
+		},
+	"/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-issue.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-issue.php",
+		"oF": 0
+		},
+	"/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-issues.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-issues.php",
+		"oF": 0
+		},
+	"/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-mapper.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-mapper.php",
+		"oF": 0
+		},
+	"/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-marker.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-marker.php",
+		"oF": 0
+		},
+	"/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-modal.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-modal.php",
+		"oF": 0
+		},
+	"/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-platform-tabs.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-platform-tabs.php",
+		"oF": 0
+		},
+	"/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-service.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-service.php",
+		"oF": 0
+		},
+	"/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-settings.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-settings.php",
+		"oF": 0
+		},
+	"/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-table.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/plugins/wordpress-seo/deprecated/admin/google-search-console/class-gsc-table.php",
 		"oF": 0
 		},
 	"/wp-content/plugins/wordpress-seo/deprecated/class-cornerstone.php": {
@@ -29898,16 +30110,6 @@
 		"oAP": "/wp-content/plugins/wordpress-seo/frontend/schema/interface-wpseo-graph-piece.php",
 		"oF": 0
 		},
-	"/wp-content/plugins/wordpress-seo/images/all-round-SEO.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/wp-content/plugins/wordpress-seo/images/all-round-SEO.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
 	"/wp-content/plugins/wordpress-seo/images/brushstroke_background.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -29937,61 +30139,6 @@
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
-		},
-	"/wp-content/plugins/wordpress-seo/images/extensions-local.png": {
-		"ft": 32768,
-		"iS": 8092,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/images/extensions-local.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/wp-content/plugins/wordpress-seo/images/extensions-news.png": {
-		"ft": 32768,
-		"iS": 4593,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/images/extensions-news.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/wp-content/plugins/wordpress-seo/images/extensions-premium-ribbon.png": {
-		"ft": 32768,
-		"iS": 12733,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/images/extensions-premium-ribbon.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/wp-content/plugins/wordpress-seo/images/extensions-video.png": {
-		"ft": 32768,
-		"iS": 10215,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/images/extensions-video.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/wp-content/plugins/wordpress-seo/images/extensions-woo.png": {
-		"ft": 32768,
-		"iS": 8332,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/images/extensions-woo.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
 		},
 	"/wp-content/plugins/wordpress-seo/images/index.php": {
 		"cB": 0,
@@ -30031,11 +30178,11 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"/wp-content/plugins/wordpress-seo/images/Local_SEO_Icon.svg": {
+	"/wp-content/plugins/wordpress-seo/images/local_plugin_assistant.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "/wp-content/plugins/wordpress-seo/images/Local_SEO_Icon.svg",
+		"oAP": "/wp-content/plugins/wordpress-seo/images/local_plugin_assistant.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
@@ -30051,11 +30198,11 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"/wp-content/plugins/wordpress-seo/images/News_SEO_Icon.svg": {
+	"/wp-content/plugins/wordpress-seo/images/news_plugin_assistant.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "/wp-content/plugins/wordpress-seo/images/News_SEO_Icon.svg",
+		"oAP": "/wp-content/plugins/wordpress-seo/images/news_plugin_assistant.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
@@ -30093,16 +30240,6 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"/wp-content/plugins/wordpress-seo/images/SEO_for_beginners.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/wp-content/plugins/wordpress-seo/images/SEO_for_beginners.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
 	"/wp-content/plugins/wordpress-seo/images/support-team.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -30113,21 +30250,21 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"/wp-content/plugins/wordpress-seo/images/Video_SEO_Icon.svg": {
+	"/wp-content/plugins/wordpress-seo/images/video_plugin_assistant.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "/wp-content/plugins/wordpress-seo/images/Video_SEO_Icon.svg",
+		"oAP": "/wp-content/plugins/wordpress-seo/images/video_plugin_assistant.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"/wp-content/plugins/wordpress-seo/images/Woo_SEO_Icon.svg": {
+	"/wp-content/plugins/wordpress-seo/images/woo_plugin_assistant.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "/wp-content/plugins/wordpress-seo/images/Woo_SEO_Icon.svg",
+		"oAP": "/wp-content/plugins/wordpress-seo/images/woo_plugin_assistant.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
@@ -30157,16 +30294,6 @@
 		"miP": 0,
 		"oA": 2,
 		"oAP": "/wp-content/plugins/wordpress-seo/images/Yoast_icon_kader.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"/wp-content/plugins/wordpress-seo/images/yoast_seo_for_wp_2.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/wp-content/plugins/wordpress-seo/images/yoast_seo_for_wp_2.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
@@ -30800,68 +30927,68 @@
 		"oAP": "/wp-content/plugins/wordpress-seo/index.php",
 		"oF": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/analysis-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/analysis-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/analysis-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/analysis-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/babel-polyfill-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/babel-polyfill-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/babel-polyfill-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/babel-polyfill-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/commons-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/commons-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/commons-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/commons-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/components-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/components-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/components-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/components-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/configuration-wizard-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/configuration-wizard-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/configuration-wizard-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/configuration-wizard-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/search-appearance-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/search-appearance-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/search-appearance-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/search-appearance-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -31471,365 +31598,365 @@
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/styled-components-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/styled-components-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/styled-components-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/styled-components-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-apiFetch-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-apiFetch-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-apiFetch-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-apiFetch-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-components-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-components-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-components-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-components-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-compose-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-compose-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-compose-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-compose-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-data-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-data-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-data-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-data-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-element-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-element-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-element-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-element-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-i18n-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-i18n-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-i18n-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-i18n-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-richText-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-richText-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-richText-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-richText-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-admin-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-admin-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-admin-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-admin-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-admin-global-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-admin-global-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-admin-global-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-admin-global-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-admin-gsc-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-admin-gsc-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-admin-gsc-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-admin-gsc-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-admin-media-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-admin-media-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-admin-media-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-admin-media-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-analysis-worker-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-analysis-worker-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-analysis-worker-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-analysis-worker-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-api-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-api-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-api-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-api-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-bulk-editor-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-bulk-editor-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-bulk-editor-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-bulk-editor-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-dashboard-widget-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-dashboard-widget-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-dashboard-widget-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-dashboard-widget-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-edit-page-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-edit-page-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-edit-page-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-edit-page-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-featured-image-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-featured-image-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-featured-image-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-featured-image-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-filter-explanation-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-filter-explanation-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-filter-explanation-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-filter-explanation-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-help-center-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-help-center-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-help-center-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-help-center-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-metabox-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-metabox-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-metabox-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-metabox-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-metabox-category-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-metabox-category-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-metabox-category-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-metabox-category-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-modal-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-modal-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-modal-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-modal-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-network-admin-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-network-admin-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-network-admin-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-network-admin-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-post-scraper-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-post-scraper-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-post-scraper-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-post-scraper-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-quick-edit-handler-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-quick-edit-handler-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-quick-edit-handler-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-quick-edit-handler-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-recalculate-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-recalculate-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-recalculate-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-recalculate-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-reindex-links-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-reindex-links-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-reindex-links-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-reindex-links-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-replacevar-plugin-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-replacevar-plugin-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-replacevar-plugin-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-replacevar-plugin-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-shortcode-plugin-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-shortcode-plugin-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-shortcode-plugin-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-shortcode-plugin-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-structured-data-blocks-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-structured-data-blocks-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-structured-data-blocks-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-structured-data-blocks-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-term-scraper-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-term-scraper-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-term-scraper-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-term-scraper-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-used-keywords-assessment-1240.min.js": {
+	"/wp-content/plugins/wordpress-seo/js/dist/wp-seo-used-keywords-assessment-1251.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-used-keywords-assessment-1240.min-min.js",
+		"oAP": "/wp-content/plugins/wordpress-seo/js/dist/wp-seo-used-keywords-assessment-1251.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -31986,6 +32113,14 @@
 		"ft": 524288,
 		"oA": 1,
 		"oAP": "/wp-content/plugins/wordpress-seo/languages/wordpress-seo-es_AR-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp-content/plugins/wordpress-seo/languages/wordpress-seo-es_CR.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp-content/plugins/wordpress-seo/languages/wordpress-seo-es_CR-min.json",
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
@@ -32338,6 +32473,14 @@
 		"ft": 524288,
 		"oA": 1,
 		"oAP": "/wp-content/plugins/wordpress-seo/languages/wordpress-seojs-es_AR-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp-content/plugins/wordpress-seo/languages/wordpress-seojs-es_CR.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp-content/plugins/wordpress-seo/languages/wordpress-seojs-es_CR-min.json",
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
@@ -32706,6 +32849,14 @@
 		"ft": 524288,
 		"oA": 1,
 		"oAP": "/wp-content/plugins/wordpress-seo/languages/yoast-components-es_AR-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp-content/plugins/wordpress-seo/languages/yoast-components-es_CR.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp-content/plugins/wordpress-seo/languages/yoast-components-es_CR-min.json",
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
@@ -33468,236 +33619,6 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/wp-content/plugins/wordpress-seo/vendor/xrstf/composer-php52/LICENSE",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/class-api-google-client.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/class-api-google-client.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/class-api-google.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/class-api-google.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/class-api-libs.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/class-api-libs.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/auth/Google_AssertionCredentials.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/auth/Google_AssertionCredentials.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/auth/Google_Auth.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/auth/Google_Auth.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/auth/Google_AuthNone.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/auth/Google_AuthNone.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/auth/Google_LoginTicket.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/auth/Google_LoginTicket.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/auth/Google_OAuth2.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/auth/Google_OAuth2.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/auth/Google_P12Signer.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/auth/Google_P12Signer.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/auth/Google_PemVerifier.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/auth/Google_PemVerifier.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/auth/Google_Signer.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/auth/Google_Signer.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/auth/Google_Verifier.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/auth/Google_Verifier.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/cache": {
-		"ft": 65536,
-		"oA": 1,
-		"oAP": "/build/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/cache",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/config.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/config.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/external/URITemplateParser.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/external/URITemplateParser.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/Google_Client.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/Google_Client.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/io/cacerts.pem": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/io/cacerts.pem",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/io/Google_CacheParser.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/io/Google_CacheParser.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/io/Google_CurlIO.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/io/Google_CurlIO.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/io/Google_HttpRequest.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/io/Google_HttpRequest.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/io/Google_IO.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/io/Google_IO.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/io/Google_REST.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/io/Google_REST.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/io/Google_WPIO.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/io/Google_WPIO.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/service/Google_BatchRequest.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/service/Google_BatchRequest.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/service/Google_MediaFileUpload.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/service/Google_MediaFileUpload.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/service/Google_Model.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/service/Google_Model.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/service/Google_Service.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/service/Google_Service.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/service/Google_ServiceResource.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/service/Google_ServiceResource.php",
-		"oF": 0
-		},
-	"/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/service/Google_Utils.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/wp-content/plugins/wordpress-seo/vendor/yoast/api-libs/google/service/Google_Utils.php",
 		"oF": 0
 		},
 	"/wp-content/plugins/wordpress-seo/vendor/yoast/i18n-module/CHANGELOG.md": {
@@ -35168,14 +35089,6 @@
 		"oO": 0,
 		"oS": 1
 		},
-	"/wp-content/themes/ccf-twentynineteen-child/acf-json/group_5cfa99293954a.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "/wp-content/themes/ccf-twentynineteen-child/acf-json/group_5cfa99293954a-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
 	"/wp-content/themes/ccf-twentynineteen-child/acf-json/group_5cffb952d6e9a.json": {
 		"ft": 524288,
 		"oA": 1,
@@ -35188,14 +35101,6 @@
 		"ft": 524288,
 		"oA": 1,
 		"oAP": "/wp-content/themes/ccf-twentynineteen-child/acf-json/group_5cffbf3205076-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
-	"/wp-content/themes/ccf-twentynineteen-child/acf-json/group_5cffcd71b5ae3.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "/wp-content/themes/ccf-twentynineteen-child/acf-json/group_5cffcd71b5ae3-min.json",
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
@@ -35287,6 +35192,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/wp-content/themes/ccf-twentynineteen-child/page-about.php",
+		"oF": 0
+		},
+	"/wp-content/themes/ccf-twentynineteen-child/page-donate.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/ccf-twentynineteen-child/page-donate.php",
 		"oF": 0
 		},
 	"/wp-content/themes/ccf-twentynineteen-child/page.php": {
@@ -36960,6 +36873,26 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"/wp-content/themes/ccf-twentynineteen/images/cheetah-conservation-fund-30-logo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/wp-content/themes/ccf-twentynineteen/images/cheetah-conservation-fund-30-logo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/wp-content/themes/ccf-twentynineteen/images/cheetah-conservation-fund-logo-30.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/wp-content/themes/ccf-twentynineteen/images/cheetah-conservation-fund-logo-30.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"/wp-content/themes/ccf-twentynineteen/images/cheetah-conservation-fund-logo.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -38129,6 +38062,14 @@
 		"oAP": "/wp-content/themes/ccf-twentynineteen/template-parts/featured-video-group.php",
 		"oF": 0
 		},
+	"/wp-content/themes/ccf-twentynineteen/template-parts/flexible-content-article copy.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/ccf-twentynineteen/template-parts/flexible-content-article copy.php",
+		"oF": 0
+		},
 	"/wp-content/themes/ccf-twentynineteen/template-parts/flexible-content-article.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -38241,6 +38182,548 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/wp-content/themes/index.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/.stylelintrc.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp-content/themes/twentytwenty/.stylelintrc-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp-content/themes/twentytwenty/404.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/404.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/assets/css/editor-style-block-rtl.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/assets/css/editor-style-block-rtl-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-content/themes/twentytwenty/assets/css/editor-style-block.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/assets/css/editor-style-block-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-content/themes/twentytwenty/assets/css/editor-style-classic-rtl.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/assets/css/editor-style-classic-rtl-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-content/themes/twentytwenty/assets/css/editor-style-classic.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/assets/css/editor-style-classic-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-content/themes/twentytwenty/assets/fonts/inter/Inter-italic-var.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/assets/fonts/inter/Inter-italic-var.woff2",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/assets/fonts/inter/Inter-upright-var.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/assets/fonts/inter/Inter-upright-var.woff2",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/assets/images/2020-landscape-1.png": {
+		"ft": 32768,
+		"iS": 1211,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/assets/images/2020-landscape-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/themes/twentytwenty/assets/images/2020-landscape-2.png": {
+		"ft": 32768,
+		"iS": 6248,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/assets/images/2020-landscape-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/themes/twentytwenty/assets/images/2020-square-1.png": {
+		"ft": 32768,
+		"iS": 4201,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/assets/images/2020-square-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/themes/twentytwenty/assets/images/2020-square-2.png": {
+		"ft": 32768,
+		"iS": 3366,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/assets/images/2020-square-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/themes/twentytwenty/assets/images/2020-three-quarters-1.png": {
+		"ft": 32768,
+		"iS": 2333,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/assets/images/2020-three-quarters-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/themes/twentytwenty/assets/images/2020-three-quarters-2.png": {
+		"ft": 32768,
+		"iS": 2708,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/assets/images/2020-three-quarters-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/themes/twentytwenty/assets/images/2020-three-quarters-3.png": {
+		"ft": 32768,
+		"iS": 26106,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/assets/images/2020-three-quarters-3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/themes/twentytwenty/assets/images/2020-three-quarters-4.png": {
+		"ft": 32768,
+		"iS": 2185,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/assets/images/2020-three-quarters-4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/themes/twentytwenty/assets/js/color-calculations.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/assets/js/color-calculations-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/wp-content/themes/twentytwenty/assets/js/customize-controls.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/assets/js/customize-controls-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/wp-content/themes/twentytwenty/assets/js/customize-preview.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/assets/js/customize-preview-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/wp-content/themes/twentytwenty/assets/js/customize.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/assets/js/customize-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/wp-content/themes/twentytwenty/assets/js/editor-script-block.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/assets/js/editor-script-block-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/wp-content/themes/twentytwenty/assets/js/index.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/assets/js/index-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/wp-content/themes/twentytwenty/assets/js/skip-link-focus-fix.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/assets/js/skip-link-focus-fix-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/wp-content/themes/twentytwenty/classes/class-twentytwenty-customize.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/classes/class-twentytwenty-customize.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/classes/class-twentytwenty-non-latin-languages.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/classes/class-twentytwenty-non-latin-languages.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/classes/class-twentytwenty-script-loader.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/classes/class-twentytwenty-script-loader.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/classes/class-twentytwenty-separator-control.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/classes/class-twentytwenty-separator-control.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/classes/class-twentytwenty-svg-icons.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/classes/class-twentytwenty-svg-icons.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/classes/class-twentytwenty-walker-comment.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/classes/class-twentytwenty-walker-comment.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/classes/class-twentytwenty-walker-page.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/classes/class-twentytwenty-walker-page.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/comments.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/comments.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/footer.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/footer.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/functions.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/functions.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/header.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/header.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/inc/custom-css.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/inc/custom-css.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/inc/starter-content.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/inc/starter-content.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/inc/svg-icons.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/inc/svg-icons.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/inc/template-tags.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/inc/template-tags.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/index.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/index.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/package-lock.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp-content/themes/twentytwenty/package-lock-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp-content/themes/twentytwenty/package.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp-content/themes/twentytwenty/package-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp-content/themes/twentytwenty/print.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/print-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-content/themes/twentytwenty/readme.txt": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/readme.txt",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/screenshot.png": {
+		"ft": 32768,
+		"iS": 53066,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/screenshot.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/themes/twentytwenty/searchform.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/searchform.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/singular.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/singular.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/style-rtl.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/style-rtl-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-content/themes/twentytwenty/style.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/style-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp-content/themes/twentytwenty/template-parts/content-cover.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/template-parts/content-cover.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/template-parts/content.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/template-parts/content.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/template-parts/entry-author-bio.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/template-parts/entry-author-bio.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/template-parts/entry-header.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/template-parts/entry-header.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/template-parts/featured-image.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/template-parts/featured-image.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/template-parts/footer-menus-widgets.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/template-parts/footer-menus-widgets.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/template-parts/modal-menu.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/template-parts/modal-menu.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/template-parts/modal-search.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/template-parts/modal-search.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/template-parts/navigation.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/template-parts/navigation.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/template-parts/pagination.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/template-parts/pagination.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/templates/template-cover.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/templates/template-cover.php",
+		"oF": 0
+		},
+	"/wp-content/themes/twentytwenty/templates/template-full-width.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/themes/twentytwenty/templates/template-full-width.php",
 		"oF": 0
 		},
 	"/wp-content/uploads/2004/01/dental-anomalies-and-incidence-of-palatal-erosion-in-namibian-cheetahs-acinonyx-jubatus-jubatus.pdf": {
@@ -77729,6 +78212,50 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/wp-content/uploads/2019/11/2019_ICDPressRelease2_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 25791,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/11/2019_ICDPressRelease2_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/11/2019_ICDPressRelease2_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 236087,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/11/2019_ICDPressRelease2_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/11/2019_ICDPressRelease_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 23815,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/11/2019_ICDPressRelease_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/11/2019_ICDPressRelease_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 202300,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/11/2019_ICDPressRelease_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/wp-content/uploads/2019/11/2019_OnlineAuction_FeaturedImage_1000x563-250x250.jpg": {
 		"ft": 16384,
 		"iS": 16380,
@@ -77949,6 +78476,28 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/wp-content/uploads/2019/11/ColorCalloutBlock_800x600-250x250.png": {
+		"ft": 32768,
+		"iS": 5681,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/11/ColorCalloutBlock_800x600-250x250.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/11/ColorCalloutBlock_800x600.png": {
+		"ft": 32768,
+		"iS": 15815,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/11/ColorCalloutBlock_800x600.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/wp-content/uploads/2019/11/Conservation-Genetics-Laboratory-Technician-pdf-193x250.jpg": {
 		"ft": 16384,
 		"iS": 11556,
@@ -78038,6 +78587,160 @@
 		"oA": 0,
 		"oAP": "/wp-content/uploads/2019/11/Conservation-Scientist-Policies.pdf",
 		"oF": 0
+		},
+	"/wp-content/uploads/2019/11/ErindiRelease_Kamin1_NewsBlog_Figures_1000-600-1-250x250.jpg": {
+		"ft": 16384,
+		"iS": 23679,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/11/ErindiRelease_Kamin1_NewsBlog_Figures_1000-600-1-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/11/ErindiRelease_Kamin1_NewsBlog_Figures_1000-600-1.jpg": {
+		"ft": 16384,
+		"iS": 201120,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/11/ErindiRelease_Kamin1_NewsBlog_Figures_1000-600-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/11/ErindiRelease_Kamin2_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 22390,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/11/ErindiRelease_Kamin2_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/11/ErindiRelease_Kamin2_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 269574,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/11/ErindiRelease_Kamin2_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/11/ErindiRelease_Miers_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 30232,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/11/ErindiRelease_Miers_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/11/ErindiRelease_Miers_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 301646,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/11/ErindiRelease_Miers_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/11/ErindiRelease_StaffandKamin_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 25649,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/11/ErindiRelease_StaffandKamin_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/11/ErindiRelease_StaffandKamin_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 259030,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/11/ErindiRelease_StaffandKamin_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/11/ErindiRelease_Tatjana_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 24296,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/11/ErindiRelease_Tatjana_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/11/ErindiRelease_Tatjana_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 139855,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/11/ErindiRelease_Tatjana_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/11/ErindiUpdate_Georgia_ReleaseFeaturedImage_1000x563-250x250.jpg": {
+		"ft": 16384,
+		"iS": 21492,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/11/ErindiUpdate_Georgia_ReleaseFeaturedImage_1000x563-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/11/ErindiUpdate_Georgia_ReleaseFeaturedImage_1000x563.jpg": {
+		"ft": 16384,
+		"iS": 115136,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/11/ErindiUpdate_Georgia_ReleaseFeaturedImage_1000x563.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/11/GivingTuesday_FeaturedImage_1000x563-250x250.jpg": {
+		"ft": 16384,
+		"iS": 22136,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/11/GivingTuesday_FeaturedImage_1000x563-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/11/GivingTuesday_FeaturedImage_1000x563.jpg": {
+		"ft": 16384,
+		"iS": 159209,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/11/GivingTuesday_FeaturedImage_1000x563.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"/wp-content/uploads/2019/11/Head-Carnivore-Keeper-.pdf": {
 		"cB": 0,
@@ -78332,6 +79035,884 @@
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/wp-content/uploads/2019/11/Volunteer_FrontPage_800x400.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour10_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 21153,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour10_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour10_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 129687,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour10_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour11_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 21687,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour11_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour11_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 131148,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour11_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour12_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 27254,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour12_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour12_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 196397,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour12_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour13_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 20972,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour13_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour13_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 110865,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour13_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour14_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 19630,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour14_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour14_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 114363,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour14_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour15_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 20499,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour15_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour15_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 121569,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour15_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour16_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 14578,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour16_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour16_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 82839,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour16_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour17_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 19187,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour17_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour17_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 104043,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour17_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour18_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 19415,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour18_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour18_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 108057,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour18_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour19_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 20082,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour19_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour19_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 129233,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour19_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour1_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 23983,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour1_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour1_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 137416,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour1_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour20_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 23272,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour20_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour20_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 134046,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour20_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour21_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 18356,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour21_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour21_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 103586,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour21_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour22_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 18997,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour22_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour22_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 104216,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour22_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour23_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 15374,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour23_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour23_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 92491,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour23_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour24_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 18497,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour24_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour24_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 112238,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour24_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour25_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 16568,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour25_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour25_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 100410,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour25_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour26_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 22879,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour26_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour26_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 137784,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour26_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour27_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 20900,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour27_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour27_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 120600,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour27_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour28_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 18462,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour28_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour28_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 105088,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour28_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour29_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 23441,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour29_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour29_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 166853,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour29_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour2_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 18129,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour2_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour2_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 115333,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour2_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour30_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 20038,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour30_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour30_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 136825,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour30_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour31_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 15067,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour31_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour31_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 90544,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour31_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour32_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 18368,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour32_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour32_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 122022,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour32_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour3_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 17859,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour3_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour3_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 124493,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour3_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour4_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 24528,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour4_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour4_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 147764,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour4_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour5_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 22047,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour5_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour5_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 144800,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour5_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour6_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 18069,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour6_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour6_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 104459,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour6_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour7_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 19943,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour7_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour7_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 128410,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour7_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour8_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 15543,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour8_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour8_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 87803,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour8_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour9_NewsBlog_Figures_1000-600-250x250.jpg": {
+		"ft": 16384,
+		"iS": 25338,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour9_NewsBlog_Figures_1000-600-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour9_NewsBlog_Figures_1000-600.jpg": {
+		"ft": 16384,
+		"iS": 170667,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour9_NewsBlog_Figures_1000-600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour_FeaturedImage_1000x563-250x250.jpg": {
+		"ft": 16384,
+		"iS": 24522,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour_FeaturedImage_1000x563-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/2019_FallTour_FeaturedImage_1000x563.jpg": {
+		"ft": 16384,
+		"iS": 198755,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/2019_FallTour_FeaturedImage_1000x563.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/CCF-Guest-Experience-Coordinator-pdf-177x250.jpg": {
+		"ft": 16384,
+		"iS": 13488,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/CCF-Guest-Experience-Coordinator-pdf-177x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/CCF-Guest-Experience-Coordinator-pdf.jpg": {
+		"ft": 16384,
+		"iS": 322113,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/CCF-Guest-Experience-Coordinator-pdf.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/CCF-Guest-Experience-Coordinator.pdf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/CCF-Guest-Experience-Coordinator.pdf",
+		"oF": 0
+		},
+	"/wp-content/uploads/2019/12/CCF1999YrEndReport-pdf-177x250.jpg": {
+		"ft": 16384,
+		"iS": 4877,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/CCF1999YrEndReport-pdf-177x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/CCF1999YrEndReport-pdf.jpg": {
+		"ft": 16384,
+		"iS": 50636,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/CCF1999YrEndReport-pdf.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/CCF1999YrEndReport.pdf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/CCF1999YrEndReport.pdf",
+		"oF": 0
+		},
+	"/wp-content/uploads/2019/12/CCF_1995_Conservation_strategy_for_the_long-term_survival_of_cheetah_in_Namibia-pdf-175x250.jpg": {
+		"ft": 16384,
+		"iS": 9714,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/CCF_1995_Conservation_strategy_for_the_long-term_survival_of_cheetah_in_Namibia-pdf-175x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/CCF_1995_Conservation_strategy_for_the_long-term_survival_of_cheetah_in_Namibia-pdf.jpg": {
+		"ft": 16384,
+		"iS": 183983,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/CCF_1995_Conservation_strategy_for_the_long-term_survival_of_cheetah_in_Namibia-pdf.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/CCF_1995_Conservation_strategy_for_the_long-term_survival_of_cheetah_in_Namibia.pdf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/CCF_1995_Conservation_strategy_for_the_long-term_survival_of_cheetah_in_Namibia.pdf",
+		"oF": 0
+		},
+	"/wp-content/uploads/2019/12/cheetah-conservation-fund-logo-30.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/wp-content/uploads/2019/12/cheetah-conservation-fund-logo-30.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/wp-content/uploads/2019/12/Complete-Studbook-2018-pdf-177x250.jpg": {
+		"ft": 16384,
+		"iS": 9382,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/Complete-Studbook-2018-pdf-177x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/Complete-Studbook-2018-pdf.jpg": {
+		"ft": 16384,
+		"iS": 170751,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/Complete-Studbook-2018-pdf.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/Complete-Studbook-2018.pdf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/Complete-Studbook-2018.pdf",
+		"oF": 0
+		},
+	"/wp-content/uploads/2019/12/GiraffeStudyUpdate_FeaturedImage_1000x563-250x250.jpg": {
+		"ft": 16384,
+		"iS": 23783,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/GiraffeStudyUpdate_FeaturedImage_1000x563-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/2019/12/GiraffeStudyUpdate_FeaturedImage_1000x563.jpg": {
+		"ft": 16384,
+		"iS": 174667,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/2019/12/GiraffeStudyUpdate_FeaturedImage_1000x563.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -83836,6 +85417,28 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/wp-content/uploads/sites/2/2019/11/cheetah-conservation-fund-usa-videos-250x250.jpg": {
+		"ft": 16384,
+		"iS": 29137,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/11/cheetah-conservation-fund-usa-videos-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/11/cheetah-conservation-fund-usa-videos.jpg": {
+		"ft": 16384,
+		"iS": 310907,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/11/cheetah-conservation-fund-usa-videos.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/wp-content/uploads/sites/2/2019/11/ChillinforCheetahs_FeaturedImage_1000x563-250x250.jpg": {
 		"ft": 16384,
 		"iS": 16050,
@@ -83985,6 +85588,61 @@
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/wp-content/uploads/sites/2/2019/11/StoreUSA_Page-Featured-1500-x-500.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/12/image1-1536x1098.jpeg": {
+		"ft": 16384,
+		"iS": 314499,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/12/image1-1536x1098.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/12/image1-2048x1464.jpeg": {
+		"ft": 16384,
+		"iS": 563109,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/12/image1-2048x1464.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/12/image1-250x250.jpeg": {
+		"ft": 16384,
+		"iS": 30670,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/12/image1-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/12/image1-scaled.jpeg": {
+		"ft": 16384,
+		"iS": 874344,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/12/image1-scaled.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/2/2019/12/image1.jpeg": {
+		"ft": 16384,
+		"iS": 2052341,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/2/2019/12/image1.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -86252,6 +87910,226 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/wp-content/uploads/sites/5/2019/04/cheetah_chasing_lure-250x250.png": {
+		"ft": 32768,
+		"iS": 121898,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/04/cheetah_chasing_lure-250x250.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/04/cheetah_chasing_lure.png": {
+		"ft": 32768,
+		"iS": 300497,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/04/cheetah_chasing_lure.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/04/Honey-Badger_Ratel-250x250.png": {
+		"ft": 32768,
+		"iS": 110904,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/04/Honey-Badger_Ratel-250x250.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/04/Honey-Badger_Ratel.png": {
+		"ft": 32768,
+		"iS": 138594,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/04/Honey-Badger_Ratel.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/04/Illegal-Pet-Trade-250x250.jpg": {
+		"ft": 16384,
+		"iS": 22479,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/04/Illegal-Pet-Trade-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/04/Illegal-Pet-Trade.jpg": {
+		"ft": 16384,
+		"iS": 236365,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/04/Illegal-Pet-Trade.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/04/kids-and-cheetahs_1A-250x225.jpg": {
+		"ft": 16384,
+		"iS": 26854,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/04/kids-and-cheetahs_1A-250x225.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/04/kids-and-cheetahs_1A.jpg": {
+		"ft": 16384,
+		"iS": 45231,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/04/kids-and-cheetahs_1A.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/04/kids-and-cheetahs_2A-250x250.jpg": {
+		"ft": 16384,
+		"iS": 19603,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/04/kids-and-cheetahs_2A-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/04/kids-and-cheetahs_2A.jpg": {
+		"ft": 16384,
+		"iS": 52725,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/04/kids-and-cheetahs_2A.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/04/kids-and-cheetahs_3A-250x199.jpg": {
+		"ft": 16384,
+		"iS": 20675,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/04/kids-and-cheetahs_3A-250x199.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/04/kids-and-cheetahs_3A.jpg": {
+		"ft": 16384,
+		"iS": 37250,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/04/kids-and-cheetahs_3A.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/04/kids-and-cheetahs_4A-250x250.jpg": {
+		"ft": 16384,
+		"iS": 21483,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/04/kids-and-cheetahs_4A-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/04/kids-and-cheetahs_4A.jpg": {
+		"ft": 16384,
+		"iS": 57535,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/04/kids-and-cheetahs_4A.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/04/kids-and-cheetahs_5A-250x169.jpg": {
+		"ft": 16384,
+		"iS": 16835,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/04/kids-and-cheetahs_5A-250x169.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/04/kids-and-cheetahs_5A.jpg": {
+		"ft": 16384,
+		"iS": 27568,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/04/kids-and-cheetahs_5A.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/05/Dr-Marker-in-Ottawa-250x250.jpg": {
+		"ft": 16384,
+		"iS": 18746,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/05/Dr-Marker-in-Ottawa-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/05/Dr-Marker-in-Ottawa.jpg": {
+		"ft": 16384,
+		"iS": 190991,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/05/Dr-Marker-in-Ottawa.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/05/Future-Farmer-of-Africa-Workshops-Slide-250x250.png": {
+		"ft": 32768,
+		"iS": 109440,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/05/Future-Farmer-of-Africa-Workshops-Slide-250x250.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/05/Future-Farmer-of-Africa-Workshops-Slide.png": {
+		"ft": 32768,
+		"iS": 216295,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/05/Future-Farmer-of-Africa-Workshops-Slide.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/wp-content/uploads/sites/5/2019/10/1500_1000_CalltoActionFooter-250x250.jpg": {
 		"ft": 16384,
 		"iS": 18635,
@@ -86960,6 +88838,58 @@
 		"oAP": "/wp-content/uploads/sites/5/2019/11/2017-Impact-Report-v7.pdf",
 		"oF": 0
 		},
+	"/wp-content/uploads/sites/5/2019/11/2018-CCF-Annual-Report-pdf-250x162.jpg": {
+		"ft": 16384,
+		"iS": 15413,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/2018-CCF-Annual-Report-pdf-250x162.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/2018-CCF-Annual-Report-pdf.jpg": {
+		"ft": 16384,
+		"iS": 164103,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/2018-CCF-Annual-Report-pdf.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/2018-CCF-Annual-Report.pdf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/2018-CCF-Annual-Report.pdf",
+		"oF": 0
+		},
+	"/wp-content/uploads/sites/5/2019/11/2018-CCF-Impact-Report_2-250x250.png": {
+		"ft": 32768,
+		"iS": 118009,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/2018-CCF-Impact-Report_2-250x250.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/2018-CCF-Impact-Report_2.png": {
+		"ft": 32768,
+		"iS": 305437,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/2018-CCF-Impact-Report_2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/wp-content/uploads/sites/5/2019/11/2019_BlogCanadaVetStudents-250x250.jpg": {
 		"ft": 16384,
 		"iS": 24650,
@@ -87100,6 +89030,611 @@
 		"oAP": "/wp-content/uploads/sites/5/2019/11/Attachment-4-2018-CCF-Annual-Report.pdf",
 		"oF": 0
 		},
+	"/wp-content/uploads/sites/5/2019/11/BlondeMan_3_Eli.Walker-1536x1024.jpg": {
+		"ft": 16384,
+		"iS": 265749,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/BlondeMan_3_Eli.Walker-1536x1024.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/BlondeMan_3_Eli.Walker-2048x1365.jpg": {
+		"ft": 16384,
+		"iS": 432264,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/BlondeMan_3_Eli.Walker-2048x1365.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/BlondeMan_3_Eli.Walker-250x250.jpg": {
+		"ft": 16384,
+		"iS": 23710,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/BlondeMan_3_Eli.Walker-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/BlondeMan_3_Eli.Walker-scaled.jpg": {
+		"ft": 16384,
+		"iS": 626816,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/BlondeMan_3_Eli.Walker-scaled.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/BlondeMan_3_Eli.Walker.jpg": {
+		"ft": 16384,
+		"iS": 2469360,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/BlondeMan_3_Eli.Walker.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/Canada-Namibia-Flag-1.jpg": {
+		"ft": 16384,
+		"iS": 5378,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/Canada-Namibia-Flag-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/Canada-Namibia-Flag.jpg": {
+		"ft": 16384,
+		"iS": 5378,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/Canada-Namibia-Flag.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CanadaHouse-approach-close_NEW2-250x250.jpg": {
+		"ft": 16384,
+		"iS": 17141,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CanadaHouse-approach-close_NEW2-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CanadaHouse-approach-close_NEW2.jpg": {
+		"ft": 16384,
+		"iS": 150970,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CanadaHouse-approach-close_NEW2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CanadaHouse-approach_NEW-250x250.jpg": {
+		"ft": 16384,
+		"iS": 18406,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CanadaHouse-approach_NEW-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CanadaHouse-approach_NEW.jpg": {
+		"ft": 16384,
+		"iS": 187403,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CanadaHouse-approach_NEW.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CanadaHouse-bathroom_NEW-250x250.jpg": {
+		"ft": 16384,
+		"iS": 8851,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CanadaHouse-bathroom_NEW-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CanadaHouse-bathroom_NEW.jpg": {
+		"ft": 16384,
+		"iS": 52016,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CanadaHouse-bathroom_NEW.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CanadaHouse-hall_NEW-250x250.jpg": {
+		"ft": 16384,
+		"iS": 11873,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CanadaHouse-hall_NEW-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CanadaHouse-hall_NEW.jpg": {
+		"ft": 16384,
+		"iS": 94112,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CanadaHouse-hall_NEW.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CanadaHouse-interior-A_NEW-250x250.jpg": {
+		"ft": 16384,
+		"iS": 10123,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CanadaHouse-interior-A_NEW-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CanadaHouse-interior-A_NEW.jpg": {
+		"ft": 16384,
+		"iS": 65873,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CanadaHouse-interior-A_NEW.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CanadaHouse-interior-B_NEW-250x250.jpg": {
+		"ft": 16384,
+		"iS": 13704,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CanadaHouse-interior-B_NEW-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CanadaHouse-interior-B_NEW.jpg": {
+		"ft": 16384,
+		"iS": 92016,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CanadaHouse-interior-B_NEW.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CanadaHouse-logo2_NEW-250x250.jpg": {
+		"ft": 16384,
+		"iS": 8673,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CanadaHouse-logo2_NEW-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CanadaHouse-logo2_NEW.jpg": {
+		"ft": 16384,
+		"iS": 103364,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CanadaHouse-logo2_NEW.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CCF-14-250x250.jpeg": {
+		"ft": 16384,
+		"iS": 11557,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CCF-14-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CCF-14.jpeg": {
+		"ft": 16384,
+		"iS": 56559,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CCF-14.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CCF-1A-250x250.jpeg": {
+		"ft": 16384,
+		"iS": 6405,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CCF-1A-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CCF-1A.jpeg": {
+		"ft": 16384,
+		"iS": 37889,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CCF-1A.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CCF-2C-640x348-250x250.jpg": {
+		"ft": 16384,
+		"iS": 13367,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CCF-2C-640x348-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CCF-2C-640x348.jpg": {
+		"ft": 16384,
+		"iS": 80358,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CCF-2C-640x348.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CCF-31_640x348-250x250.jpeg": {
+		"ft": 16384,
+		"iS": 19942,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CCF-31_640x348-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CCF-31_640x348.jpeg": {
+		"ft": 16384,
+		"iS": 102886,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CCF-31_640x348.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CCF-39-1024x576-250x250.jpg": {
+		"ft": 16384,
+		"iS": 12209,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CCF-39-1024x576-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CCF-39-1024x576.jpg": {
+		"ft": 16384,
+		"iS": 73580,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CCF-39-1024x576.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CCF-3D-640x348-250x250.jpg": {
+		"ft": 16384,
+		"iS": 12339,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CCF-3D-640x348-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CCF-3D-640x348.jpg": {
+		"ft": 16384,
+		"iS": 57574,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CCF-3D-640x348.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CCF-41A_640x348-250x250.jpg": {
+		"ft": 16384,
+		"iS": 14563,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CCF-41A_640x348-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/CCF-41A_640x348.jpg": {
+		"ft": 16384,
+		"iS": 70904,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/CCF-41A_640x348.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/Cheetah_and_cubs-1000x593_72-250x250.png": {
+		"ft": 32768,
+		"iS": 138602,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/Cheetah_and_cubs-1000x593_72-250x250.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/Cheetah_and_cubs-1000x593_72.png": {
+		"ft": 32768,
+		"iS": 1034072,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/Cheetah_and_cubs-1000x593_72.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/Cheetah_champioins_9061-250x250.jpeg": {
+		"ft": 16384,
+		"iS": 16828,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/Cheetah_champioins_9061-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/Cheetah_champioins_9061.jpeg": {
+		"ft": 16384,
+		"iS": 59629,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/Cheetah_champioins_9061.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/Cheetah_champions_8868-250x250.jpeg": {
+		"ft": 16384,
+		"iS": 13818,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/Cheetah_champions_8868-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/Cheetah_champions_8868.jpeg": {
+		"ft": 16384,
+		"iS": 50869,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/Cheetah_champions_8868.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/Cheetah_champions_bottles-250x250.jpeg": {
+		"ft": 16384,
+		"iS": 19187,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/Cheetah_champions_bottles-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/Cheetah_champions_bottles.jpeg": {
+		"ft": 16384,
+		"iS": 75304,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/Cheetah_champions_bottles.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/Cheetah_champions_IMG_9066-250x250.jpg": {
+		"ft": 16384,
+		"iS": 19367,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/Cheetah_champions_IMG_9066-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/Cheetah_champions_IMG_9066.jpg": {
+		"ft": 16384,
+		"iS": 49081,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/Cheetah_champions_IMG_9066.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/Cheetah_champtions_803-250x250.jpg": {
+		"ft": 16384,
+		"iS": 18545,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/Cheetah_champtions_803-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/Cheetah_champtions_803.jpg": {
+		"ft": 16384,
+		"iS": 45413,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/Cheetah_champtions_803.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/cheetahs_eyes-closed_437x600-250x250.png": {
+		"ft": 32768,
+		"iS": 139318,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/cheetahs_eyes-closed_437x600-250x250.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/cheetahs_eyes-closed_437x600.png": {
+		"ft": 32768,
+		"iS": 198904,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/cheetahs_eyes-closed_437x600.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/Cheetahs_Maggy-Meyer-250x250.png": {
+		"ft": 32768,
+		"iS": 135618,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/Cheetahs_Maggy-Meyer-250x250.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/Cheetahs_Maggy-Meyer.png": {
+		"ft": 32768,
+		"iS": 569774,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/Cheetahs_Maggy-Meyer.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/Conservation-Areas-Map-250x250.jpg": {
+		"ft": 16384,
+		"iS": 18768,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/Conservation-Areas-Map-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/Conservation-Areas-Map.jpg": {
+		"ft": 16384,
+		"iS": 170223,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/Conservation-Areas-Map.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/conservency-250x250.png": {
+		"ft": 32768,
+		"iS": 109232,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/conservency-250x250.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/conservency.png": {
+		"ft": 32768,
+		"iS": 277103,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/conservency.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/wp-content/uploads/sites/5/2019/11/Events_2019_SpringTour_Canada-250x250.jpg": {
 		"ft": 16384,
 		"iS": 13835,
@@ -87144,6 +89679,182 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/wp-content/uploads/sites/5/2019/11/Flag_of_Namibia-250x250.png": {
+		"ft": 32768,
+		"iS": 7961,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/Flag_of_Namibia-250x250.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/Flag_of_Namibia.png": {
+		"ft": 32768,
+		"iS": 37250,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/Flag_of_Namibia.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/kids-and-cheetahs_1-250x250.jpg": {
+		"ft": 16384,
+		"iS": 21119,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/kids-and-cheetahs_1-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/kids-and-cheetahs_1.jpg": {
+		"ft": 16384,
+		"iS": 136311,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/kids-and-cheetahs_1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/kids-and-cheetahs_2-250x250.jpg": {
+		"ft": 16384,
+		"iS": 15650,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/kids-and-cheetahs_2-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/kids-and-cheetahs_2.jpg": {
+		"ft": 16384,
+		"iS": 80910,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/kids-and-cheetahs_2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/kids-and-cheetahs_3-250x250.jpg": {
+		"ft": 16384,
+		"iS": 17484,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/kids-and-cheetahs_3-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/kids-and-cheetahs_3.jpg": {
+		"ft": 16384,
+		"iS": 126427,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/kids-and-cheetahs_3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/kids-and-cheetahs_4-250x250.jpg": {
+		"ft": 16384,
+		"iS": 17125,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/kids-and-cheetahs_4-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/kids-and-cheetahs_4.jpg": {
+		"ft": 16384,
+		"iS": 133966,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/kids-and-cheetahs_4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/kids-and-cheetahs_5-250x250.jpg": {
+		"ft": 16384,
+		"iS": 20294,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/kids-and-cheetahs_5-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/kids-and-cheetahs_5.jpg": {
+		"ft": 16384,
+		"iS": 89162,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/kids-and-cheetahs_5.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/leopardvscheetah-250x250.jpg": {
+		"ft": 16384,
+		"iS": 19986,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/leopardvscheetah-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/leopardvscheetah.jpg": {
+		"ft": 16384,
+		"iS": 62050,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/leopardvscheetah.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/Levi_2017-250x250.jpg": {
+		"ft": 16384,
+		"iS": 16414,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/Levi_2017-250x250.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/Levi_2017.jpg": {
+		"ft": 16384,
+		"iS": 91960,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/Levi_2017.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/wp-content/uploads/sites/5/2019/11/MITCheetahatEvent_FeaturedImage_1000x563-250x250.jpg": {
 		"ft": 16384,
 		"iS": 19556,
@@ -87164,6 +89875,50 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/Snip20190521_3-250x250.png": {
+		"ft": 32768,
+		"iS": 90394,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/Snip20190521_3-250x250.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/Snip20190521_3.png": {
+		"ft": 32768,
+		"iS": 209009,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/Snip20190521_3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/Thriving-Together-250x250.png": {
+		"ft": 32768,
+		"iS": 27245,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/Thriving-Together-250x250.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp-content/uploads/sites/5/2019/11/Thriving-Together.png": {
+		"ft": 32768,
+		"iS": 87834,
+		"oA": 0,
+		"oAP": "/wp-content/uploads/sites/5/2019/11/Thriving-Together.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"/wp-content/uploads/sites/6/2019/11/1500_1000_CalltoActionFooter-250x250.jpg": {
@@ -88309,6 +91064,14 @@
 		"oAP": "/wp-includes/class-wp-block-parser.php",
 		"oF": 0
 		},
+	"/wp-includes/class-wp-block-styles-registry.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-includes/class-wp-block-styles-registry.php",
+		"oF": 0
+		},
 	"/wp-includes/class-wp-block-type-registry.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -88395,6 +91158,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/wp-includes/class-wp-customize-widgets.php",
+		"oF": 0
+		},
+	"/wp-includes/class-wp-date-query.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-includes/class-wp-date-query.php",
 		"oF": 0
 		},
 	"/wp-includes/class-wp-dependency.php": {
@@ -88629,6 +91400,14 @@
 		"oAP": "/wp-includes/class-wp-oembed-controller.php",
 		"oF": 0
 		},
+	"/wp-includes/class-wp-oembed.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-includes/class-wp-oembed.php",
+		"oF": 0
+		},
 	"/wp-includes/class-wp-paused-extensions-storage.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -88835,6 +91614,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/wp-includes/class-wp-user-query.php",
+		"oF": 0
+		},
+	"/wp-includes/class-wp-user-request.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-includes/class-wp-user-request.php",
 		"oF": 0
 		},
 	"/wp-includes/class-wp-user.php": {
@@ -92017,6 +94804,28 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"/wp-includes/js/dist/data-controls.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-includes/js/dist/data-controls-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/wp-includes/js/dist/data-controls.min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-includes/js/dist/data-controls.min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"/wp-includes/js/dist/data.js": {
 		"bF": 0,
 		"ft": 64,
@@ -92369,6 +95178,28 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"/wp-includes/js/dist/media-utils.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-includes/js/dist/media-utils-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/wp-includes/js/dist/media-utils.min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-includes/js/dist/media-utils.min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"/wp-includes/js/dist/notices.js": {
 		"bF": 0,
 		"ft": 64,
@@ -92497,6 +95328,28 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/wp-includes/js/dist/rich-text.min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/wp-includes/js/dist/server-side-render.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-includes/js/dist/server-side-render-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/wp-includes/js/dist/server-side-render.min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-includes/js/dist/server-side-render.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -92827,6 +95680,17 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/wp-includes/js/heartbeat.min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/wp-includes/js/hoverintent-js.min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp-includes/js/hoverintent-js.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -95213,17 +98077,6 @@
 		"sC": 1,
 		"tS": 0
 		},
-	"/wp-includes/js/wp-a11y.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/wp-includes/js/wp-a11y-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
 	"/wp-includes/js/wp-a11y.min-min.js": {
 		"bF": 0,
 		"ft": 64,
@@ -95231,17 +98084,6 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/wp-includes/js/wp-a11y.min-min-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"/wp-includes/js/wp-a11y.min.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/wp-includes/js/wp-a11y.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -97030,6 +99872,14 @@
 		"oAP": "/wp-includes/sodium_compat/lib/php72compat.php",
 		"oF": 0
 		},
+	"/wp-includes/sodium_compat/lib/php72compat_const.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-includes/sodium_compat/lib/php72compat_const.php",
+		"oF": 0
+		},
 	"/wp-includes/sodium_compat/lib/sodium_compat.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -97262,6 +100112,30 @@
 		"oAP": "/wp-includes/sodium_compat/src/Compat.php",
 		"oF": 0
 		},
+	"/wp-includes/sodium_compat/src/Core/Base64/Common.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-includes/sodium_compat/src/Core/Base64/Common.php",
+		"oF": 0
+		},
+	"/wp-includes/sodium_compat/src/Core/Base64/Original.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-includes/sodium_compat/src/Core/Base64/Original.php",
+		"oF": 0
+		},
+	"/wp-includes/sodium_compat/src/Core/Base64/UrlSafe.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-includes/sodium_compat/src/Core/Base64/UrlSafe.php",
+		"oF": 0
+		},
 	"/wp-includes/sodium_compat/src/Core/BLAKE2b.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -97423,6 +100297,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/wp-includes/sodium_compat/src/Core/Salsa20.php",
+		"oF": 0
+		},
+	"/wp-includes/sodium_compat/src/Core/SecretStream/State.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-includes/sodium_compat/src/Core/SecretStream/State.php",
 		"oF": 0
 		},
 	"/wp-includes/sodium_compat/src/Core/SipHash.php": {
@@ -97644,6 +100526,14 @@
 		"oAP": "/wp-includes/sodium_compat/src/Core32/Salsa20.php",
 		"oF": 0
 		},
+	"/wp-includes/sodium_compat/src/Core32/SecretStream/State.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-includes/sodium_compat/src/Core32/SecretStream/State.php",
+		"oF": 0
+		},
 	"/wp-includes/sodium_compat/src/Core32/SipHash.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -97706,6 +100596,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/wp-includes/sodium_compat/src/File.php",
+		"oF": 0
+		},
+	"/wp-includes/sodium_compat/src/PHP52/SplFixedArray.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp-includes/sodium_compat/src/PHP52/SplFixedArray.php",
 		"oF": 0
 		},
 	"/wp-includes/sodium_compat/src/SodiumException.php": {

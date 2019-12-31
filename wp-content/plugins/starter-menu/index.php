@@ -177,7 +177,7 @@ function starterMenu($menu_name) {
           endif;
 
           if ($menuitem->item_type == 'grandparent') {
-            echo '<div class="nav-item dropdown '.$classes.'"><a class="nav-link dropdown-toggle '.$current.'" href="#" id="nav-'.$id.'" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="'.$attr_title.'" role="button">'.$label.'</a><div class="dropdown-menu" aria-labelledby="nav-'.$id.'"><div class="d-lg-flex">';
+            echo '<div class="nav-item dropdown '.$classes.'"><a class="nav-link dropdown-toggle '.$current.'" href="#" id="nav-'.$id.'" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="'.$attr_title.'" role="button">'.$label.'</a><div class="dropdown-menu" aria-labelledby="nav-'.$id.'"><div class="d-xl-flex">';
             $grandparent_closing_tags = '</div></div></div>';
             $count++;
             continue;

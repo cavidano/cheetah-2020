@@ -61,7 +61,7 @@ $inside_news = strpos($url, 'news');
 
         <div class="container-fluid shadow-sm z-index-900">
         
-            <div class="row justify-content-between">
+            <div class="row justify-content-between align-items-center">
 
                 <div class="col-md-auto py-2">
 
@@ -74,7 +74,7 @@ $inside_news = strpos($url, 'news');
                 
                 <!-- Mobile Only Buttons -->
                 
-                <div class="col-md-auto d-md-flex d-lg-none align-self-center border-top border-md-0">
+                <div class="col-md-auto d-md-flex d-xl-none align-self-center border-top border-md-0">
 
                     <div class="row align-items-center justify-content-between py-2">
 
@@ -112,19 +112,19 @@ $inside_news = strpos($url, 'news');
                 </div>
                 <!-- .col -->
 
-                <div class="col-lg-auto d-lg-flex">
+                <div class="col-xl-auto d-xl-flex">
 
                     <!-- Primary Navigation -->
 
-                    <div class="collapse d-lg-flex flex-column align-self-stretch mx-n2 mx-lg-0 border-top border-lg-0" id="nav-primary">
+                    <div class="collapse d-xl-flex flex-column align-self-stretch mx-n2 mx-xl-0 border-top border-xl-0" id="nav-primary">
 
                         <nav class="py-2">
 
-                            <ul class="extensible-list horizontal justify-content-center justify-content-lg-end">
+                            <ul class="extensible-list horizontal justify-content-center justify-content-xl-end">
 
                                 <?php if (is_child_theme() === false) : ?>
 
-                                <li class="d-none d-lg-block">
+                                <li class="d-none d-xl-block">
                                     <a href="/kids" title="For Kids">
                                         <img src="<?php echo get_template_directory_uri(); ?>/images/ccf-kids-logo.svg" alt="Placeholder">
                                     </a>
@@ -132,7 +132,7 @@ $inside_news = strpos($url, 'news');
 
                                 <?php elseif (get_posts(['post_type' => 'videos'])): ?>
                                 
-                                <li class="d-none d-lg-block fs-md">
+                                <li class="d-none d-xl-block fs-md">
 
                                     <a class="text-primary has-icon text-info" href="<?php echo get_bloginfo( 'url' )?>/videos">
                                         <span class="fas fa-video"></span>
