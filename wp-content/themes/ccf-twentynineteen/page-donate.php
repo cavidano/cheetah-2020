@@ -6,17 +6,46 @@ Template Name: Donate
 
 get_header();
 
+?>
+
+<?php if (have_rows('form_types', 'options')):
+
+  while (have_rows('form_types', 'options')): the_row();
+
+  $once_code = get_sub_field('once_code');
+  $recurring_code = get_sub_field('recurring_code');
+  $sponsor_code = get_sub_field('sponsor_code');
+
+  ?>
+
+<?php endwhile; endif; /* form_types */ ?>
+
+<?php
+
 $donate_url = $_SERVER[REQUEST_URI];
+
+// if (strpos($donate_url, '/donate/sponsor') !== false) :
+//     $type = 'sponsor';
+//     $form = '6fb04bf9-dd82-4dff-ad14-ee935828dd70';
+// elseif (strpos($donate_url, '/donate/recurring') !== false) :
+//     $type = 'recurring';
+//     $form = 'b9cdbd87-026a-4f39-b5f4-a3aed39adfab';
+// else :
+//     $type = 'once';
+//     $form = '42099271-19f3-4544-b7b9-97ab9196c0fe';
+// endif;
+
+//
 
 if (strpos($donate_url, '/donate/sponsor') !== false) :
     $type = 'sponsor';
-    $form = '6fb04bf9-dd82-4dff-ad14-ee935828dd70';
+    $form = $sponsor_code;
 elseif (strpos($donate_url, '/donate/recurring') !== false) :
     $type = 'recurring';
-    $form = 'b9cdbd87-026a-4f39-b5f4-a3aed39adfab';
+    $form = $recurring_code;
 else :
     $type = 'once';
-    $form = '42099271-19f3-4544-b7b9-97ab9196c0fe';
+    $form = $once_code;
 endif;
 
 ?>
