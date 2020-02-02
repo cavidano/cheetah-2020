@@ -61,11 +61,11 @@ $inside_news = strpos($url, 'news');
 
         <div class="container-fluid shadow-sm z-index-900">
         
-            <div class="row justify-content-between align-items-center">
+            <div class="row justify-content-between align-items-stretch">
 
                 <div class="col-md-auto py-2">
 
-                    <div class="d-flex justify-content-center justify-content-md-start align-items-center">
+                    <div class="d-flex justify-content-center justify-content-md-start align-items-center h-100">
                         <?php the_custom_logo(); ?>
                     </div>
                     
