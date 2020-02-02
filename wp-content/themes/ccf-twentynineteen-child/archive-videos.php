@@ -45,7 +45,7 @@ if ($image): ?>
 
     <div class="container py-4">
 
-        <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
+        <?php
 
         $args = array(
             'post_type' => 'videos',
@@ -83,8 +83,6 @@ if ($image): ?>
         <!-- .row -->
 
         <?php endif; /* videos */?>
-
-        <?php endwhile; endif; ?>
 
         <div class="pagination justify-content-center">
 
