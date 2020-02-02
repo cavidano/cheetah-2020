@@ -51,7 +51,9 @@ if ($image): ?>
                 <div class="sticky-top">
 
                     <div class="px-2 py-lg-4">
+
                         <ul class="extensible-list fs-md">
+                        
                         <li><a class="<?php echo($current_category == $category->cat_ID ? 'text-body font-weight-bold' : 'text-muted') ?>" href="<?php  echo get_post_type_archive_link('post'); ?>">All Topics</a></li>
                             
                         <?php
