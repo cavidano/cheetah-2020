@@ -61,10 +61,12 @@ get_header();
                 $title = get_sub_field('title');
                 $avatar = get_sub_field('avatar');
 
+                $link = get_sub_field('link');
+
                 ?>
 
                 <div class="col-md-4">
-                
+
                     <?php if ($avatar) : ?>
                         <img class="rounded-circle mb-1" src="<?php echo $avatar['url']; ?>" width="200px" height="200px" alt="<?php echo $name; ?>">
                     <?php else : ?>
@@ -73,7 +75,17 @@ get_header();
 
                     <p class="f-sans-serif mb-0"><strong><?php echo $name; ?></strong></p>
                     <p class="f-sans-serif mb-0"><?php echo $title; ?></p>
-                
+
+                    <?php if ($link) : ?>
+
+                    <a class="stretched-link text-info" href="<?php echo $link['url']; ?>"> 
+                        <strong>
+                            <?php echo $link['title'];?>
+                        </strong>
+                    </a>
+                    
+                    <?php endif; /* link */ ?>
+                    
                 </div>
                 <!-- .col -->
 
