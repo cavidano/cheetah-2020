@@ -42,36 +42,45 @@ if ($image): ?>
     </div>
     <!-- .banner-with-background -->
 
+    <div class="btn-toggle d-lg-none">
+        <button class="btn btn-block btn-lg btn-primary" data-toggle="collapse" data-target="#toggle-target"
+            aria-expanded="false" aria-controls="toggle-target">
+            <span class="title">Topics</span>
+        </button>
+    </div>
+
     <div class="container">
 
         <div class="row">
 
             <div class="col-lg-3 mt-5 border-lg-left mt-lg-0 order-lg-last">
 
+               
                 <div class="sticky-top">
 
-                    <div class="px-2 py-lg-4">
+                    <nav class="collapse d-lg-block px-2 py-lg-4" id="toggle-target" role="navigation">
 
                         <ul class="extensible-list fs-md">
-                        
-                        <li><a class="<?php echo($current_category == $category->cat_ID ? 'text-body font-weight-bold' : 'text-muted') ?>" href="<?php  echo get_post_type_archive_link('post'); ?>">All Topics</a></li>
+
+                            <li><a class="<?php echo($current_category == $category->cat_ID ? 'text-body font-weight-bold' : 'text-muted') ?>" href="<?php  echo get_post_type_archive_link('post'); ?>">All Topics</a></li>
                             
-                        <?php
+                            <?php
 
-                        $categories = get_categories();
-                        foreach ($categories as $category): ?>
+                            $categories = get_categories();
 
-                        <?php if($category->slug !== 'ccf-blog'): ?> 
+                            foreach ($categories as $category): ?>
 
-                        <li><a class="<?php echo($current_category == $category->cat_ID ? 'text-body font-weight-bold' : 'text-muted') ?>" href="<?php echo get_category_link($category->cat_ID); ?>"><?php echo $category->name; ?></a></li>
-                        
-                        <?php endif; ?>
-                        
-                        <?php endforeach; ?>
+                            <?php if($category->slug !== 'ccf-blog'): ?> 
+
+                            <li><a class="<?php echo($current_category == $category->cat_ID ? 'text-body font-weight-bold' : 'text-muted') ?>" href="<?php echo get_category_link($category->cat_ID); ?>"><?php echo $category->name; ?></a></li>
+                            
+                            <?php endif; ?>
+                            
+                            <?php endforeach; ?>
 
                         </ul>
                     
-                    </div>
+                    </nav>
                     <!-- .bg-light -->
 
                 </div>
