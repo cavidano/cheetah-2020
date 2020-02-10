@@ -53,9 +53,8 @@ if ($image): ?>
 
         <div class="row">
 
-            <div class="col-lg-3 mt-5 border-lg-left mt-lg-0 order-lg-last">
+            <div class="col-lg-3 mt-4 border-lg-left mt-lg-0 order-lg-last">
 
-               
                 <div class="sticky-top">
 
                     <nav class="collapse d-lg-block px-2 py-lg-4" id="toggle-target" role="navigation">
