@@ -22,9 +22,9 @@ $parent_title = get_the_title($post->post_parent);
             <div class="gradient-overlay-y-black">
 
                 <?php
-                $featured_image_id = get_post_thumbnail_id($post->ID);
-                $featured_image = wp_get_attachment_image_src($featured_image_id, 'full', false, '');
-                $featured_image_alt = get_post_meta($featured_image_id, '_wp_attachment_image_alt', true);
+                    $featured_image_id = get_post_thumbnail_id($post->ID);
+                    $featured_image = wp_get_attachment_image_src($featured_image_id, 'full', false, '');
+                    $featured_image_alt = get_post_meta($featured_image_id, '_wp_attachment_image_alt', true);
                 ?>
 
                 <?php if ($featured_image): ?>
