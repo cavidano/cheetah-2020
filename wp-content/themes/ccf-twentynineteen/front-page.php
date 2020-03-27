@@ -385,7 +385,7 @@
                           <span class="mx-1">Cheetah range today</span>
                         <li>
                           <span class="fas fa-star fa-fw text-white"></span>
-                          <span class="mx-1">CCF Headquarters, Namibia</span>
+                          <span class="mx-1">CCF Headquarters</span>
                       </ul>
 
                       <div class="row matrix-border d-md-none">
