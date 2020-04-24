@@ -48,7 +48,8 @@ if ($image): ?>
 
         $args = array(
             'post_type' => 'videos',
-            'order' => 'ASC'
+            'order' => 'ASC',
+            'paged' => $paged
         );
 
         $videos = new WP_Query( $args );
