@@ -89,7 +89,7 @@ $inside_news = strpos($url, 'news');
                         <div class="col-auto">
                             <ul class="extensible-list horizontal">
                                 
-                                <?php if (is_child_theme() === false) : ?>
+                                <?php if ( is_child_theme() === false ) : ?>
                                 
                                 <li>
                                     <a href="/kids" title="For Kids">
@@ -98,10 +98,20 @@ $inside_news = strpos($url, 'news');
                                 </li>
                                 
                                 <?php endif; ?>
-                                
+
+                                <?php if ( get_current_blog_id() === 2 ) : ?>
+
                                 <li>
                                     <a class="btn btn-primary" href="/donate" title="Donate">Donate</a>
                                 </li>
+
+                                <?php else : ?>
+                                
+                                <li>
+                                    <a class="btn btn-primary" href="<?php echo home_url(); ?>/donate" title="Donate">Donate</a>
+                                </li>
+
+                                <?php endif; ?>
 
                             </ul>
                         </div>
