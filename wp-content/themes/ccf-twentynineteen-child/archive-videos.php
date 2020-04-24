@@ -25,7 +25,6 @@ if ($image): ?>
 
 <main id="content" role="main">
     
-    
     <div class="bg-dark banner-with-background featured-image d-flex flex-column">
 
         <div class="container my-auto">
@@ -53,7 +52,7 @@ if ($image): ?>
         );
 
         $videos = new WP_Query( $args );
-
+        
         if ( $videos->have_posts() ) : ?>
 
         <div class="row matrix-gutter">
