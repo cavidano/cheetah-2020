@@ -87,13 +87,29 @@ add_action( 'init', 'create_child_post_types' );
 
     function custom_get_posts( $query ) {
 
-      if( (is_post_type_archive('events')) && $query->is_main_query() ) {    
-        $query->query_vars['order'] = 'ASC';
-        $query->query_vars['meta_key'] = 'start_date';
-        $query->query_vars['meta_type'] = 'DATETIME';
-        $query->query_vars['meta_value'] = date("Y-m-d");
-        $query->query_vars['meta_compare'] = '>';
-        $query->query_vars['orderby'] = 'meta_value';
+      if( ( !is_admin() && is_post_type_archive('events')) && $query->is_main_query() ) { 
+
+        $meta_query = array(
+            'relation' => 'OR',
+            array(
+              'key'   => 'end_date',
+              'value'   => date("Y-m-d"),
+              'type'    => 'DATETIME',
+              'compare' => '>',
+            ),
+            array(
+              'key'   => 'start_date',
+              'value'   => date("Y-m-d"),
+              'type'    => 'DATETIME',
+              'compare' => '>',
+            ),
+          );
+
+          $query->query_vars['order'] = 'ASC';
+          $query->query_vars['orderby'] = 'meta_value';
+
+          $query->set('meta_query', $meta_query);
+
       }
 
     }
