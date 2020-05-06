@@ -118,10 +118,14 @@ $parent_title = get_the_title($post->post_parent);
                         date_default_timezone_set('America/New_York');
 
                         $today = DateTime::createFromFormat("U", time());
-                        
                         $date = new DateTime(get_field('start_date'));
+                        $end_date = get_field('end_date');
+
+                        if ($end_date) {
+                          $end_date = new DateTime(get_field('end_date'));                          
+                        }
                         
-                        if ($date > $today) :
+                        if ($date > $today || $end_date > $today) :
                             $year = $date->format("Y");
                             $month = $date->format("F");
                             if (!in_array($month . ' ' . $year, $date_groups)) :
