@@ -95,13 +95,13 @@ add_action( 'init', 'create_child_post_types' );
               'key'   => 'end_date',
               'value'   => date("Y-m-d"),
               'type'    => 'DATETIME',
-              'compare' => '>',
+              'compare' => '>=',
             ),
             array(
               'key'   => 'start_date',
               'value'   => date("Y-m-d"),
               'type'    => 'DATETIME',
-              'compare' => '>',
+              'compare' => '>=',
             ),
           );
 
