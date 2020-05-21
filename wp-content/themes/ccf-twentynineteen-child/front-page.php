@@ -140,25 +140,26 @@
       $events_header = false;
       $loop = new WP_Query($args);
       $count = 1;
-      $start_date = null;
-      $end_date = null;
 
       while ($loop->have_posts()) : $loop->the_post();
 
-      if (get_field('start_date')) :
+      $start_date = get_field('start_date');
+      $end_date = get_field('end_date');
+
+      if ($start_date) :
         $start_date = new DateTime(get_field('start_date'));
       endif;
 
-      if (get_field('end_date')) :
+      if ($end_date) :
         $end_date = new DateTime(get_field('end_date'));
       endif;
 
       $today = DateTime::createFromFormat("U", time());
       
-      if (($start_date > $today && $count <= 3) || ($end_date > $today && $count <= 3)) :
+      if (($start_date >= $today && $count <= 3) || ($end_date >= $today && $count <= 3)) :
 
         $count++;
-      
+
         $show_events = true;
         $featured_image_id = get_post_thumbnail_id($post->ID);
         $featured_image = wp_get_attachment_image_src($featured_image_id, 'full', false, '');
