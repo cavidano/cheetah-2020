@@ -299,13 +299,16 @@ $images = get_sub_field('images');
 $count_a = 0;
 $count_b = 0;
 
+$row_count = get_row_index();
+$carousel_id = "carousel-gallery_" . $row_count;
+
 ?>
 
 <?php if( $images ): ?>
 
 <div class="gallery-carousel-block my-5 mx-n2">
 
-    <div class="carousel slide carousel-fade" data-ride="carousel" data-keyboard="true" data-interval="false" id="carousel-gallery" dir="ltr">
+    <div class="carousel slide carousel-fade" data-ride="carousel" data-keyboard="true" data-interval="false" id="<?php echo $carousel_id; ?>" dir="ltr">
 
         <div class="carousel-outer">
 
@@ -313,12 +316,12 @@ $count_b = 0;
 
                 <ul>
                     <li>
-                        <a class="half-circle right" href="#carousel-gallery" role="button" data-slide="prev">
+                        <a class="half-circle right" href="#<?php echo $carousel_id; ?>" role="button" data-slide="prev">
                             <span class="fas fa-arrow-left m-auto" title="Previous"></span>
                         </a>
                     </li>
                     <li>
-                        <a class="half-circle left text-white d-flex" href="#carousel-gallery" role="button" data-slide="next">
+                        <a class="half-circle left text-white d-flex" href="#<?php echo $carousel_id; ?>" role="button" data-slide="next">
                             <span class="fas fa-arrow-right m-auto" title="Next"></span>
                         </a>
                     </li>
@@ -358,7 +361,7 @@ $count_b = 0;
         <div class="row no-gutters align-items-center justify-content-between py-1">
 
             <div class="col-auto text-left px-2 d-md-none">
-                <a class="no-btn-style" href="#carousel-gallery" role="button" data-slide="prev">
+                <a class="no-btn-style" href="#<?php echo $carousel_id; ?>" role="button" data-slide="prev">
                     <span class="fas fa-arrow-left" title="Previous"></span>
                     <span class="sr-only">Previous</span>
                 </a>
@@ -371,7 +374,7 @@ $count_b = 0;
 
                     <?php foreach( $images as $image ): ?>
 
-                    <li class="<?php if($count_b == 0){ echo 'active'; } ?>" data-target="#carousel-gallery"
+                    <li class="<?php if($count_b == 0){ echo 'active'; } ?>" data-target="#<?php echo $carousel_id; ?>"
                         data-slide-to="<?php echo $count_b; ?>" role="button">
                         <button class="no-btn-style">
                             <?php echo ($count_b + 1); ?></button>
@@ -385,7 +388,7 @@ $count_b = 0;
             <!-- .col -->
 
             <div class="col-auto text-right px-2 d-md-none">
-                <a class="no-btn-style" href="#carousel-gallery" role="button" data-slide="next">
+                <a class="no-btn-style" href="#<?php echo $carousel_id; ?>" role="button" data-slide="next">
                     <span class="fas fa-arrow-right" title="Next"></span>
                 </a>
             </div>
