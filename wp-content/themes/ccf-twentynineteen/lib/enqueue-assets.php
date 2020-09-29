@@ -19,8 +19,9 @@
 
             wp_enqueue_style(
                 'cheetah-tracks',
-                'https://fonts.fontself.com/naod8qQ/cheetah-tracks-regular.css'
+                'https://cheetah.org/cheetah-2019/wp-content/themes/ccf-twentynineteen/cheetah-tracks-regular/cheetah-tracks-regular.css'
             );
+            
         }
 
         if (is_page_template('page-donate.php') || is_page_template('page-general.php' || is_page_template('protected-page.php'))){
