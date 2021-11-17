@@ -1,0 +1,202 @@
+<strong>47.07</strong> 20210513
+
+New add-on: <a href="https://broadcast.plainviewplugins.com/addon/custom-field-cleanup/">Custom Field Cleanup</a>: Cleans up the custom fields of a post.
+
+<a href="https://broadcast.plainviewplugins.com/addon/menus/">Menus</a>: Fix fatal error if menu icons plugin is not active.
+<a href="https://broadcast.plainviewplugins.com/addon/user-role-sync/">User Role Sync</a>: Allow syncing of roles and users separately.
+
+<strong>47.01</strong> 20210210
+
+<a href="https://broadcast.plainviewplugins.com/addon/bulk-cloner/">Bulk Cloner</a>: Fix copying of site files.
+
+<strong>46.19</strong> 20210127
+
+<a href="https://broadcast.plainviewplugins.com/addon/bulk-cloner/">Bulk Cloner</a>: Do not copy the files in the sites directory when cloning blog 1.
+
+<strong>46.18</strong> 20201229
+
+<a href="https://broadcast.plainviewplugins.com/addon/bulk-cloner/">Bulk Cloner</a>: Add support for later linking using the queue add-on, which allows for big clones.
+
+<strong>46.09</strong> 2020708
+
+<a href="https://broadcast.plainviewplugins.com/addon/menus/">Menus</a>: Allow custom menu items to be manipulated.
+<a href="https://broadcast.plainviewplugins.com/addon/page-content-shortcode/">Page Content Shortcode</a>: Better searching for content. Ignore nav_menu_items.
+
+<strong>46.08</strong> 2020608
+
+<a href="https://broadcast.plainviewplugins.com/addon/menus/">Menus</a>: Replacing the URL will not convert the items to custom items.
+
+<strong>46.06</strong> 20200429
+
+<a href="https://broadcast.plainviewplugins.com/addon/bulk-cloner/">Bulk Cloner</a>: Options modifications can now handle options with dashes in them. Please double check any existing modifications you have.
+<a href="https://broadcast.plainviewplugins.com/addon/menus/">Menus</a>: When creating a menu item during manipulation, if the parent menu item is not a post but a custom link, try to find the equivalent custom link.
+
+<strong>46.04</strong> 20200323
+
+<a href="https://broadcast.plainviewplugins.com/addon/bulk-cloner/">Bulk Cloner</a>: Added ability to clone to a specific blog ID if the ID is free. Specify the ID in the blog_id column.
+<a href="https://broadcast.plainviewplugins.com/addon/copy-options/">Copy options</a>: Add function to call the add-on programmatically. See <a href="https://broadcast.plainviewplugins.com/snippet/copy-options-automatically-copy-when-options-are-updated/">this snippet</a>.
+
+<strong>46.02</strong> 20200212
+
+<a href="https://broadcast.plainviewplugins.com/addon/shortcodes/">Shortcodes</a>: Add setting (and filter: broadcast_shortcodes_access) to allow non-superadmin users to access the shortcodes.
+
+<strong>46.01</strong> 20200116
+
+<a href="https://broadcast.plainviewplugins.com/addon/bulk-cloner/">Bulk Cloner</a>: Added ability to modify options during cloning with new option modifications function.
+
+<strong>45.01</strong> 20190828
+
+<a href="https://broadcast.plainviewplugins.com/addon/shortcodes/">Shortcodes</a>: Remove extra slashes from the shortcodes.
+
+<strong>44.04</strong> 20190621
+
+<a href="https://broadcast.plainviewplugins.com/addon/manual-post-actions/">Manual Post Actions</a>: Fix warning when "Find Some Unlinked Children" or "Send To Many" add-ons active.
+
+<strong>44.03</strong> 20190515
+
+<a href="https://broadcast.plainviewplugins.com/addon/bulk-cloner/">Bulk Cloner</a>: Link only post types that we know about, ignoring attachments and menu items.
+
+<strong>44.01</strong> 20190415
+
+<a href="https://broadcast.plainviewplugins.com/addon/cdn-workaround/">CDN Workaround</a>: Added option to locally download remote files, in order to upload them on each blog.
+
+<strong>43.17</strong> 20190402
+
+<a href="https://broadcast.plainviewplugins.com/addon/bulk-cloner/">Bulk Cloner</a>: Fix cloning. Some WP version introduced a bug that preventing the complete cloning of blog options.
+<a href="https://broadcast.plainviewplugins.com/addon/bulk-cloner/">Bulk Cloner</a>: Force new siteurl and home options for clones, to fix weirdness with some installs that create dupes in the url.
+New add-on. <a href="https://broadcast.plainviewplugins.com/addon/manual-post-actions/">Manual Post Actions</a>: Manually run bulk post actions on posts.
+<a href="https://broadcast.plainviewplugins.com/addon/user-role-sync/">User Role Sync</a>: Create role is it doesn't exist on the child blog.
+<a href="https://broadcast.plainviewplugins.com/addon/user-role-sync/">User Role Sync</a>: Also sync data for Ultimate Member custom roles.
+
+<strong>43.14</strong> 20190102
+
+<a href="https://broadcast.plainviewplugins.com/addon/bulk-cloner/">Bulk Cloner</a>: Automatic parsing of serialized options that contain the old blog URL. Can fix widgets that contain links to the source blog.
+<a href="https://broadcast.plainviewplugins.com/addon/widgets/">Widgets</a>: Add more debug info.
+
+43.7 20180724
+
+<a href="https://broadcast.plainviewplugins.com/addon/bulk-cloner/">Bulk Cloner</a>: Fix fatal error during activation when only the utilities pack is installed.
+<a href="https://broadcast.plainviewplugins.com/addon/menus/">Menus</a>: Also copy menu item custom fields, which adds support for some UberMenu types: section and custom content.
+<a href="https://broadcast.plainviewplugins.com/addon/php-code/">PHP Code</a>: Modify Gravity Forms Rename example to use new GF table prefix (gf_).
+
+43.5 20180530
+
+<a href="https://broadcast.plainviewplugins.com/addon/bulk-cloner/">Bulk Cloner</a>: Fix: When cloning already linked posts, their parent post will link to the newly-cloned site.
+<a href="https://broadcast.plainviewplugins.com/addon/cdn-workaround/">CDN Workaround</a>: Fix: Override broken filename with Cloudinary URL if found in the filename.
+New add-on: <a href="https://broadcast.plainviewplugins.com/addon/copy-options/">Copy options</a>: Copies blog options / settings between blogs.
+
+43.4 20180506
+
+<a href="https://broadcast.plainviewplugins.com/addon/shortcodes/">Shortcodes</a>: Fix duplicating shortcodes when broadcasting them and some of them already exist.
+
+43.2 20180403
+
+New add-on. <a href="https://broadcast.plainviewplugins.com/addon/sitemaps/">Sitemaps</a>: Generates network-aware sitemaps and robots.txt.
+
+43 20180226
+
+New add-on. <a href="https://broadcast.plainviewplugins.com/addon/bulk-cloner/">Bulk Cloner</a>: Create clones of existing blogs on the network.
+<a href="https://broadcast.plainviewplugins.com/addon/php-code/">PHP Code</a>: Added a Wizard for renaming Gravity Forms.
+
+42.2 20171213
+
+<a href="https://broadcast.plainviewplugins.com/addon/menus/">Menus</a>: Added cleanup tools.
+
+42 20171130
+
+New add-on. <a href="https://broadcast.plainviewplugins.com/addon/media-cleanup/">Media Cleanup</a>: cleans up unused media by looking for unused items in the database and on disk.
+
+41 20171030
+
+New add-on. <a href="https://broadcast.plainviewplugins.com/addon/shortcodes/">Shortcodes</a> provides arbitrary admin-defined global or local shortcodes.
+
+40.1 20171004
+
+New add-on. <a href="https://broadcast.plainviewplugins.com/addon/widgets/">Widgets</a> copies widget and sidebar settings between blogs.
+
+40 20170922
+
+<a href="https://broadcast.plainviewplugins.com/addon/php-code/">PHP Code</a>: Developer update. Dynamic loading of wizards and added actions to run the code programatically.
+
+39.1 20170903
+
+<a href="https://broadcast.plainviewplugins.com/addon/menus/">Menus</a>: Disable time limit during menu copying.
+
+39 20170802
+
+<a href="https://broadcast.plainviewplugins.com/addon/user-role-sync/">User Role Sync</a>: Allow selection of roles and specific users when syncing.
+
+38.3 20170523
+
+<a href="https://broadcast.plainviewplugins.com/addon/user-role-sync/">User Role Sync</a>: New addon. Copy user roles between blogs.
+
+38.2 20170428
+
+<a href="https://broadcast.plainviewplugins.com/addon/page-content-shortcode/">Page Content Shortcode</a>: New addon. Provides a <code>[bc_page_content slug="pageslug"]</code> shortcode to display the contents of a page.
+
+38 20170406
+
+Finally dropped the "ThreeWP" prefix from the plugin name! The code remains the same, just the name has become simpler: Broadcast...
+
+Version bump to maintain compatibility with base Broadcast plugin.
+
+37 20170316
+
+Version bump to maintain compatibility with base Broadcast plugin.
+
+36 20170303
+
+<a href="https://broadcast.plainviewplugins.com/addon/php-code/">PHP Code</a>: Added "show blog language" wizard.
+
+35.1 20161220
+
+<a href="https://broadcast.plainviewplugins.com/addon/menus/">Menus</a>: Added item manipulation function.
+
+35 20161206
+
+Version bump to maintain compatibility with base Broadcast plugin.
+
+34.3 20161027
+
+<a href="https://broadcast.plainviewplugins.com/addon/lock-post/">Lock Post</a>: Added global lock override roles, to allow specific roles to ignore lock status of posts.
+<a href="https://broadcast.plainviewplugins.com/addon/lock-post/">Lock Post</a>: Added filterable action to allow developers to override post locking.
+<a href="https://broadcast.plainviewplugins.com/addon/menus/">Menus</a>: Integrate blog selection with Blog Groups 2 add-on.
+
+34 20160925
+
+Version bump to maintain compatibility with base Broadcast plugin.
+
+33 20160817
+
+Version bump to maintain compatibility with base Broadcast plugin.
+
+32 20160715
+
+Version bump to maintain compatibility with base Broadcast plugin.
+
+31 20160705
+
+Version bump to maintain compatibility with base Broadcast plugin.
+
+30 20160606
+
+Version bump to maintain compatibility with base Broadcast plugin.
+
+29 20160405
+
+Version bump to keep up with Broadcast v29.
+
+All packs now have RedHat / CentOS SSL workaround for updates automatically enabled.
+
+28 20160118
+
+Version bump to maintain compatibility with base Broadcast plugin.
+
+27 20151124
+
+CDN Workaround: Plugin added.
+PHP Code: Plugin added.
+
+26 20151102
+
+Initial version.

@@ -190,7 +190,7 @@ class SmartSlider3
 
 			// Found the id. Tell BCD.
 			$this->debug( 'Found attachment %s for slide %s', $row->post_id, $result->title );
-			$bcd->add_attachment( $row->post_id );
+			$bcd->try_add_attachment( $row->post_id );
 
 			// Not this url to quickly be able to quickly replace it when recopying the slides during copy_item.
 			$bcd->smartslider3->collection( 'image_urls' )->set( $image_url, $row->post_id );

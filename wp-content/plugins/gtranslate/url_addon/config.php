@@ -111,5 +111,5 @@ fy -> Frisian
 xh -> Xhosa
 */
 
-$servers = array('van', 'kars', 'sis', 'dvin', 'ani', 'evn');
+$servers = array('van', 'kars', 'sis', 'dvin', 'ani', 'evn', 'vagh', 'step', 'sis', 'tigr', 'ani', 'tigr');
 $debug = false;

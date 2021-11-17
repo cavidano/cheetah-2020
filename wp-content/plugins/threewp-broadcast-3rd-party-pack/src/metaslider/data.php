@@ -120,7 +120,7 @@ class data
 			foreach( $slides as $slide )
 			{
 				Metaslider::instance()->debug( 'Adding slide %s', $slide->ID );
-				$broadcasting_data->add_attachment( $slide->ID );
+				$broadcasting_data->try_add_attachment( $slide->ID );
 			}
 	}
 }

@@ -100,8 +100,8 @@ class SiteOrigin_Page_Builder
 			if ( isset( $widget[ 'image' ] ) )
 			{
 				$id = $widget[ 'image' ];
-				$this->debug( 'Found image %s', $id );
-				$bcd->add_attachment( $id );
+				if ( $bcd->try_add_attachment( $id ) )
+					$this->debug( 'Found image %s', $id );
 			}
 
 			if ( isset( $widget[ 'features' ] ) )
@@ -112,7 +112,7 @@ class SiteOrigin_Page_Builder
 					{
 						$id = $feature[ 'icon_image' ];
 						$this->debug( 'Found feature icon image %s', $id );
-						$bcd->add_attachment( $id );
+						$bcd->try_add_attachment( $id );
 					}
 				}
 			}

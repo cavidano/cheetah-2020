@@ -14,6 +14,7 @@ class Event_Organiser
 	{
 		$this->add_action( 'threewp_broadcast_broadcasting_before_restore_current_blog' );
 		$this->add_action( 'threewp_broadcast_broadcasting_started' );
+		$this->add_action( 'threewp_broadcast_collect_post_type_taxonomies' );
 		$this->add_action( 'threewp_broadcast_get_post_types' );
 		$this->add_action( 'threewp_broadcast_sync_taxonomies_get_info' );
 		$this->add_action( 'threewp_broadcast_wp_insert_term' );
@@ -36,7 +37,7 @@ class Event_Organiser
 			return;
 
 		// Conv
-		$eo = $bcd->event_organiser;
+		$eo = $bcd->event_organiser->get( 'data' );
 
 		if ( $eo->is_event )
 		{
@@ -96,6 +97,28 @@ class Event_Organiser
 		}
 	}
 
+	/**
+		@brief		Save venue meta if necessary.
+		@since		2019-07-18 21:04:49
+	**/
+	public function threewp_broadcast_collect_post_type_taxonomies( $action )
+	{
+		$bcd = $action->broadcasting_data;
+
+		if ( ! isset( $bcd->event_organiser ) )
+			$bcd->event_organiser = ThreeWP_Broadcast()->collection();
+
+		if ( ! isset( $bcd->parent_post_taxonomies[ 'event-venue' ] ) )
+			return;
+
+		foreach( $bcd->parent_post_taxonomies[ 'event-venue' ] as $term )
+		{
+			$term_id = $term->term_id;
+			$this->debug( 'Saving venue_meta for %s', $term_id );
+			$bcd->event_organiser->collection( 'venue_meta' )->set( $term_id, eo_get_venue_meta( $term_id ) );
+		}
+	}
+
 	public function threewp_broadcast_get_post_types( $action )
 	{
 		$action->post_types[ 'event' ] = 'event';
@@ -110,7 +133,6 @@ class Event_Organiser
 		}
 
 		$bcd = $action->broadcasting_data;
-		$eo = new \stdClass;
 
 		if ( ! $this->post_is_event( $bcd->post ) )
 		{
@@ -118,6 +140,7 @@ class Event_Organiser
 			return;
 		}
 
+		$eo = new \stdClass;
 		$eo->is_event = true;
 
 		// Save the event data
@@ -139,7 +162,10 @@ class Event_Organiser
 		else
 			$this->debug( 'The event has no venue.' );
 
-		$bcd->event_organiser = $eo;
+		if ( ! isset( $bcd->event_organiser ) )
+			$bcd->event_organiser = ThreeWP_Broadcast()->collection();
+
+		$bcd->event_organiser->set( 'data', $eo );
 	}
 
 	public function threewp_broadcast_sync_taxonomies_get_info( $action )
@@ -201,6 +227,17 @@ class Event_Organiser
 				eo_update_venue_meta( $venue_id, $key, $value );
 			}
 		}
+
+		$bcd = $action->broadcasting_data;
+
+		if ( isset( $bcd->event_organiser ) )
+			foreach( $bcd->event_organiser->collection( 'venue_meta' )->get( $action->old_term->term_id, [] ) as $key => $value )
+			{
+				$venue_id = $action->new_term->term_id;
+				$value = $value[ 0 ];
+				$this->debug( 'Updating venue %s: %s = %s', $venue_id, $key, $value );
+				eo_update_venue_meta( $venue_id, $key, $value );
+			}
 
 		$term_id = $action->new_term->term_id;
 		$venue_id = intval( $term_id );

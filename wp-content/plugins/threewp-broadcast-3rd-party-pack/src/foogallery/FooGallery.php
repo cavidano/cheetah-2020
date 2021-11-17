@@ -103,8 +103,9 @@ extends \threewp_broadcast\premium_pack\base
 		$attachments = maybe_unserialize( $attachments );
 		foreach( $attachments as $attachment_id )
 		{
+			if ( ! $bcd->try_add_attachment( $attachment_id ) )
+				continue;
 			$this->debug( 'Saving attachment %s', $attachment_id );
-			$bcd->add_attachment( $attachment_id );
 			$bcd->foogallery->attachments->append( $attachment_id );
 		}
 	}

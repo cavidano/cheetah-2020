@@ -1,10 +1,10 @@
 === Translate Wordpress with GTranslate ===
 Contributors: edo888
 Author: Translate AI Multilingual Solutions
-Tags: translate wordpress, multilingual, translate, translation, language, bilingual, localization, translation proxy, i18n, l10n, localisation, multilanguage, google translate
+Tags: translate, translate wordpress, multilingual, translation, translate language, bilingual, localization, translation proxy, localisation, multilanguage, google translate
 Requires at least: 2.8.1
-Tested up to: 5.3
-Stable tag: 2.8.50
+Tested up to: 5.8
+Stable tag: 2.9.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://gtranslate.io/?xyz=998#pricing
@@ -14,9 +14,11 @@ Translate WordPress with Google Translate multilanguage plugin to make your webs
 
 == Description ==
 
-GTranslate plugin uses Google Translate automatic translation service to **translate wordpress** site with Google power and make it **multilingual**. With 103 available languages your site will be available to more than 99% of internet users. Our paid versions are **fully SEO compatible** which will **increase your international traffic and sales**. This translate plugin is a budget multilingual WordPress solution which combines automatic and human translations to save money and is easy to implement.
+Translate WordPress with GTranslate plugin uses Google Translate automatic translation service to **translate wordpress** site with Google power and make it **multilingual**. With 103 available languages your site will be available to more than 99% of internet users. Our paid versions are **fully SEO compatible** which will **increase your international traffic and sales**. This translate plugin is a budget multilingual WordPress solution which combines automatic and human translations to save money and is easy to implement.
 
-GTranslate is a leading website translation services provider since 2008 and powers more than 500.000 multilingual websites worldwide.
+GTranslate is a leading website translation services provider since 2008, it moves away the language barriers.
+
+Compared to other translation plugins for WordPress, we use cloud based approach which does not slow down your website. In addition to that, we can offer complete SEO features based on sub-domains with our paid options, which can make your website appear in search engines in different languages which will increase your international traffic and sales. In our paid versions we DO NOT limit the number of words or the number of translated pageviews. You DO NOT pay additionally for automatic translations.
 
 Please use [GTranslate Support](https://wordpress.org/support/plugin/gtranslate) for your questions and support requests! We are multilingual!
 
@@ -29,9 +31,9 @@ Please check our [FAQ](https://gtranslate.io/?xyz=998#faq) to get quick answers.
 * Hides Google top frame after translation
 * Mouse over effect
 * Google Analytics integration
-* Translates the site on the fly
-* Posts and pages translation
-* Categories and tags translation
+* Translate website on the fly
+* Translate posts and pages
+* Translate categories and tags
 * Menus and widgets translation
 * Themes and plugins translation
 * Right to left language support
@@ -46,6 +48,7 @@ Please check our [FAQ](https://gtranslate.io/?xyz=998#faq) to get quick answers.
 * Multilingual interface
 * Alternative flags for Quebec, Canada, USA, Brazil, Mexico, Argentina, Colombia
 * Lazy loading for language flags to boost performance
+* Live Chat Support
 
 **Paid Features**
 
@@ -53,8 +56,8 @@ Please check our [FAQ](https://gtranslate.io/?xyz=998#faq) to get quick answers.
 * Neural machine translations with human level translation quality
 * Increase traffic and AdSense revenue
 * Search engine friendly (SEF) URLs
-* Yoast SEO compatible
-* WooCommerce compatible
+* Yoast SEO compatible - translate meta keywords, meta description, schema.org data structures, translate sitemaps
+* WooCommerce compatible - translate products, schema.org data structures
 * You can have sub-directory (example.com/**es**/) or sub-domain (**es.**example.com) URL structure
 * URL Translation aka slug translation is possible (example.com/about-us &rarr; example.es/sobre-nosotros)
 * Add hreflang tags for translated alternatives
@@ -64,6 +67,7 @@ Please check our [FAQ](https://gtranslate.io/?xyz=998#faq) to get quick answers.
 * Translating schema.org microdata for better search engine appearance
 * Seamless updates (cloud service updated on our side - SaaS, you do not need to worry about backups on your side)
 * JSON format translation
+* Translate WooCommerce emails
 * AMP translation (Accelerated Mobile Pages translation)
 * Image localization - Media translation
 * Translation Proxy (aka Translation Delivery Network)
@@ -82,8 +86,6 @@ Please check our [FAQ](https://gtranslate.io/?xyz=998#faq) to get quick answers.
 
 **Edit Translations Demo (paid)**
 [youtube https://www.youtube.com/watch?v=YwSy3VtQx3I]
-
-List of supported languages: Afrikaans, Albanian, Amharic, Arabic, Armenian, Azerbaijani, Basque, Belarusian, Bengali, Bosnian, Bulgarian, Catalan, Cebuano, Chichewa, Chinese (Simplified), Chinese (Traditional), Corsican, Croatian, Czech, Danish, Dutch, English, Esperanto, Estonian, Filipino, Finnish, French, Frisian, Galician, Georgian, German, Greek, Gujarati, Haitian Creole, Hausa, Hawaiian, Hebrew, Hindi, Hmong, Hungarian, Icelandic, Igbo, Indonesian, Irish, Italian, Japanese, Javanese, Kannada, Kazakh, Khmer, Korean, Kurdish (Kurmanji), Kyrgyz, Lao, Latin, Latvian, Lithuanian, Luxembourgish, Macedonian, Malagasy, Malay, Malayalam, Maltese, Maori, Marathi, Mongolian, Myanmar (Burmese), Nepali, Norwegian, Pashto, Persian, Polish, Portuguese, Punjabi, Romanian, Russian, Samoan, Scottish Gaelic, Serbian, Sesotho, Shona, Sindhi, Sinhala, Slovak, Slovenian, Somali, Spanish, Sudanese, Swahili, Swedish, Tajik, Tamil, Telugu, Thai, Turkish, Ukrainian, Urdu, Uzbek, Vietnamese, Welsh, Xhosa, Yiddish, Yoruba, Zulu
 
 == Installation ==
 
@@ -115,52 +117,68 @@ If you have any issues, please do not hesitate to use our [Support Forum](https:
 
 == Frequently Asked Questions ==
 
-= It doesn't work, what to do? =
+= It doesn't translate, what to do? =
 Please check [GTranslate Support Forum](https://wordpress.org/support/plugin/gtranslate) and feel free to create a new topic if you cannot find answers.
 
 = What is GTranslate? =
-GTranslate is a multilingual solution for your website.
+GTranslate can translate your website into multiple languages and make it multilingual.
 
 * Multilingual solution makes your website available to the world
 * One click translation helps visitors to read your site in their native language
 * Free automatic translation translates your site instantly upon installation
 * Professional translation by a human being is available 24/7
-* Customizable layout lets you choose the suitable layout for your site
+* Customizable language switcher lets you choose the suitable layout for your site
 * Analytics with Google provides insight into your audience and user activity
 
 [vimeo http://vimeo.com/30132555]
 
 = Is it FREE? =
 Yes! We have free version and paid versions with [advanced features](https://gtranslate.io/?xyz=998#pricing).
+Unlike other translate plugins, which require you to pay for Google Translate API usage or other translate API usage, we also provide automatic translations for free.
 
 = What is the quality of translation? =
-We use Google neural machine translations which are very accurate for popular language pairs. In the paid versions you can refine the translations manually and order professional translations directly from your site.
-
-You can read this blog post for more info: https://gtranslate.io/blog/translation-quality-got-better-with-neural-machine-translations
+In our free version we use Phrase Based Machine Translations provided by Google Translate, while in our paid versions use Google Translate Neural Translations which are very accurate for popular language pairs.
+In the paid versions you can refine the automatic translations yourself or order professional translations or proofreading of a translated content.
+You can get a translation cost estimate by using our [Website Translation Cost Calculator](https://gtranslate.io/website-translation-quote)
 
 = Are the translations provided free of charge? =
-Yes, we use Google Translate widget for website which provides free machine translations which makes it possible to make your wordpress website multilingual instantly upon installation.
+Yes, we use Google Translate widget for website which provides free phrase based machine translations, which makes it possible to make your wordpress website multilingual instantly upon installation.
+In our paid versions we use Google Translate state of the art Neural Translations which are included in the service price and there are no limits on the word count.
+
+Besides we offer cost effective automatic translation proofreading service and also professional translation service.
+You can get an estimate from our [Website Translation Price Calculator](https://gtranslate.io/website-translation-quote)
 
 = Can I modify the translations? =
-That feature is available in our paid version. You will be able to make edits directly on the page without losing the context.
+That feature is available only in our paid version. You will be able to make edits directly on the page without losing the context.
+
+By the way, we can help you to translate your website with a cost effective approach by post-editing your automatic translated content.
+The proofreading service will be done by a native speakers and if you want to take the quality to another service, we also have a professional website translation service available.
+You can get an instant website translation estimate by using our [Website Word Counter](https://gtranslate.io/website-translation-quote) tool.
 
 = Which languages are supported? =
 Here is the list: Afrikaans, Albanian, Amharic, Arabic, Armenian, Azerbaijani, Basque, Belarusian, Bengali, Bosnian, Bulgarian, Catalan, Cebuano, Chichewa, Chinese (Simplified), Chinese (Traditional), Corsican, Croatian, Czech, Danish, Dutch, English, Esperanto, Estonian, Filipino, Finnish, French, Frisian, Galician, Georgian, German, Greek, Gujarati, Haitian Creole, Hausa, Hawaiian, Hebrew, Hindi, Hmong, Hungarian, Icelandic, Igbo, Indonesian, Irish, Italian, Japanese, Javanese, Kannada, Kazakh, Khmer, Korean, Kurdish (Kurmanji), Kyrgyz, Lao, Latin, Latvian, Lithuanian, Luxembourgish, Macedonian, Malagasy, Malay, Malayalam, Maltese, Maori, Marathi, Mongolian, Myanmar (Burmese), Nepali, Norwegian, Pashto, Persian, Polish, Portuguese, Punjabi, Romanian, Russian, Samoan, Scottish Gaelic, Serbian, Sesotho, Shona, Sindhi, Sinhala, Slovak, Slovenian, Somali, Spanish, Sudanese, Swahili, Swedish, Tajik, Tamil, Telugu, Thai, Turkish, Ukrainian, Urdu, Uzbek, Vietnamese, Welsh, Xhosa, Yiddish, Yoruba, Zulu
 
-= Is it SEO compatible? =
-Our free version doesn't give any SEO advantage. For SEO features and multilingual SEO you need to use our paid versions which have all the SEO advantages.
+= Is GTranslate SEO compatible? =
+Our free version doesn't give any SEO advantage.
+
+For SEO features and multilingual SEO you need to go with a paid version which have all the SEO advantages. Our paid version will translate your website and allow search engines to discover and index the translated content.
+Unlike other translate plugins, we provide you all the possible tools to match with your multilingual SEO strategy.
+For example you can have your translated content available via sub-directories (https://example.com/es, https://example.com/fr) or sub-domains (https://it.example.com, https://fr.example.com) or even you can host the translated versions on a top level country specific domain or any other domain like (https://example.fr, https://example.de), which will increase your chances to rank higher in local search engine's results pages.
 
 = What is multilingual SEO? =
-Multilingual SEO is a SEO strategy which uses new content generation technique by translating your original content and making your website multilingual. By translating your website into many languages you are creating many new multilingual keywords targeted for international market. It helps to increase your search appearnce on search engines results pages (SERPs), which can generate more traffic, increase sales and rise the conversion rate.
+Multilingual SEO is a SEO strategy which uses new content generation technique by translating your original content and making your website multilingual. When you translate your website into many languages you actually create many new multilingual keywords targeted for international market. It helps to increase your search appearnce or impressions count on search engines results pages (SERPs), which can generate more traffic, increase sales and rise the conversion rate, because when the wording is in the correct language it is more effective.
 
 = Is URL Translation available? =
-In our paid versions we have a feature to translate URL of your website which will give you more SEO advantage. For example http://example.com/*about-us* &rarr; http://example.com/*sobre-nosotros*
+In our paid versions we have a feature to translate URL of your website which will give you more SEO advantage.
+For example http://example.com/*about-us* &rarr; http://example.com/*sobre-nosotros*
+
+This is an important part of multilingual SEO strategy. When you have URL Translate option and translate also your website URLs also known us slugs, you are creating more keywords, which count as an improvement in your page rank for that keywords.
 
 = Does it translate emails too? =
-Email translation feature is in testing stage for our paid version. Please contact our live chat to test email translation now.
+Yes, with our paid version we can also translate WooCommerce emails.
 
 = How the free version differs from the paid versions? =
-Free vesion is a nice looking language selector you can place on your website. It has a built in Javascript engine which allows to translate your website automatically to multiple languages. With free version your website URL doesn't change and the translations are not stored. While paid versions are a translation proxy also known as Translation Delivery Network. We host the translated versions of your website on our cloud network under a language specific domain. In that case every language will have a separate domain and be indexed in search engines, which will help you to increase international traffic and sales.
+Free vesion is a nice looking language selector you can place on your website. It has a built in Javascript engine which allows to translate your website automatically to multiple languages. With our free translate plugin your website URL doesn't change and the translations are not stored. While paid versions are a translation proxy also known as Translation Delivery Network. We host the translated versions of your website on our cloud network under a language specific domain. In that case every language will have a separate domain or separate URL and be indexed in search engines, which will help you to increase international traffic and sales.
 
 = What is a Translation Delivery Network? =
 Translation Delivery Network is a translation proxy which mirrors your website in different languages.
@@ -169,18 +187,27 @@ GTranslate TDN technology is a cloud-based approach to the website translation t
 
 We will translate your content and host your translations in our cloud network. All the visits to your translated versions will be proxied through our network to your original website, so you will have a translated mirror of your website.
 
+This keeps away the need to use additional resources on your server like storage to store translations, compute time to render the translated pages or network bandwidth to deliver the translated pages to your website visitors. All is done through our network.
+
 = Can I exclude some parts from being translated? =
 Yes, you need to wrap the text you don't want to be translated with &lt;span class=&quot;notranslate&quot;&gt;&lt;/span&gt;.
+With our paid versions you will have more control on the content which you do not want to translate. We have Skip Phrases, Skip Translations by CSS selectors and also Skip Pages features available.
+You can read more about skipping translations on [How to skip translations?](https://docs.gtranslate.io/en/articles/1349930-how-to-skip-translations)
 
-= Which websites are supported? =
-All the HTML websites are supported. However the contents of media files like images and flash will not be translated. You can upload a different image for each translation.
+= Which plugins can it translate? =
+All plugins are supported including popular plugins like WooCommerce, Yoast SEO.
+
+Our technology allows us to translate what is visible on the page, since we are parsing the end result when your website is already generated and it doesn't matter how the content is generated and by which plugin. We can translate all HTML websites.
+If you notice that something is not translated, please contact our live chat and we will be happy to solve any issues. Usually the not translated content is being loaded on your website from 3rd party sources.
+
+We also offer you to change the images and media content on the translated versions and by doing that you can also translate the texts inside images and videos.
 
 [vimeo http://vimeo.com/38686858]
 
 = How Translation Delivery Network works? =
 You just need to change your DNS records to add sub-domains or domains dedicated to your languages to our Translation Delivery Network.
 
-So when someone visits the new added sub-domain it will show the translated clone of your website.
+So when someone visits the new added sub-domain we will show the translated clone of your website.
 
 After that you can just configure and place the GTranslate Free widget on your site to enable language selection.
 
@@ -193,25 +220,25 @@ Updates are done seamlessly. Since the translations are hosted on our server we 
 = Do I need to pay for Google Translate API key usage? =
 No, we provide the automatic translations for free.
 
+In our free version we provide Phrase Based machine translations from Google Translate. While in our paid versions we provide you state of the art Neural Translations from Google Translate. We also do not have limits on the number of words on your website unlike other translate plugins.
+
+Unlike other plugins like TranslatePress or Weglot you do not pay for automatic translations additionally.
+
+By the way we alse offer a cost effective approach for improving the website translations. You can get a automatic translation post-editing service from us, which will be done by a native speaker or order a professional translation. You can get an instant estimate for your website on [Website Translation Quote](https://gtranslate.io/website-translation-quote)
+
 = Can I test before making a payment? =
 Yes, we have a 15 days free trial for our new customers.
 
-= Can I use it on SSL / HTTPS website? =
-Absolutely! You can use it for our free and paid versions.
-
-Recently we have added support for Let's Encrypt certificates which are provided for free if you use sub-domain URL structure.
-
-= Can I exclude some parts from being translated? =
-Yes, you need to wrap the text you don't want to be translated with &lt;span class="notranslate"&gt;&lt;/span&gt;. You can add class="nturl" to the "a" tag if you don't want the destination URL to contain the language code.
-
-= How does the 15 day free trial work? =
+= How does the 15 day free trial work for your paid version? =
 Trial is available for new customers only. If you do not wish to continue you may cancel any time during the trial period and you will not be charged anything.
 
-= How can I be sure that search engines will index my website? =
+= How can I be sure that search engines will index my website translations? =
 You can check that this website is indexed in Google by searching for site:gtranslate.io.
 
 = How I can edit the translations or order professional human translations? =
-You need to go to the language you want to edit, for instance, French: http://domain.com/fr/ and add ?language_edit=1 to the end of the URL: http://domain.com/fr/?language_edit=1 and you will see the Edit and Add to Cart buttons near each text.
+You need to go to the language you want to edit, for instance, French: http://domain.com/fr/ and add ?language_edit=1 to the end of the URL: http://domain.com/fr/?language_edit=1 and you will see the Edit buttons near each text. Read more at [How to edit translations?](https://docs.gtranslate.io/en/articles/1348921-how-to-edit-translations)
+
+If you want us to translate your website professionally or provide you a proofreading service for automatic translated content, you can get an instant estimate from [Website Translation Quote](https://gtranslate.io/website-translation-quote), where you will get a detailed document with the list of pages, unique word count and prices to translate them.
 
 == Screenshots ==
 1. Dropdown with flags
@@ -224,6 +251,78 @@ You need to go to the language you want to edit, for instance, French: http://do
 8. User Dashboard
 
 == Changelog ==
+= 2.9.3 =
+* Avoid minification of Google Translate javascript library by LiteSpeed Cache and WP Rocket cache plugins in the free version
+
+= 2.9.2 =
+* Smoother scrolling for Nice dropdown with flags language selector widget look
+
+= 2.9.1 =
+* New server added into our Translation Delivery Network
+
+= 2.8.65 =
+* Possible Cross-site scripting (XSS) vulnerability fixed, only possible for sub-domain, sub-directory paid options:
+An attacker can generate a malicious link and if followed by a victim with an old browser without proper URL encoding support (<= IE 9) then javascript code can be executed on victim's computer.
+Kudos to Ram Gall @ Wordfence for notifying
+
+= 2.8.64 =
+* New server added into our Translation Delivery Network
+
+= 2.8.63 =
+* Minor change: prefer IPv4 in paid version server communication as some hosts have issues with IPv6
+
+= 2.8.62 =
+* Tested with new WordPress 5.7 version
+* Fix for email translation debug
+* Avoid PHP warning suppression code
+* Autoswitch to browser language issue related to Chinese language code is fixed
+* Auto redirect to browser language issue related to Hebrew language code (he, iw) fixed
+
+= 2.8.61 =
+* Tested with new WordPress 5.6 version
+* Ground up rebuild of our Translation Proxy cloud network for paid customers, now page translations are 3x faster on average.
+    - New proprietary spec-compliant HTML parser which is 8x faster than PHP SimpleHTMLDom library used by TranslatePress Multilingual and Weglot Translate plugins
+    - In case of invalid HTML, it will be fixed after page translation
+    - New caching layer to cache translated pages, previously only original pages were cached
+    - Optimized caching with option to clear all original and translated page caches
+    - Better error reporting
+    - New top of the line hardware with Intel Xeon multi-core processors with up to 5 Ghz clock speed
+
+= 2.8.60 =
+* Added debug option for WooCommerce Email translation
+
+= 2.8.59 =
+* Fix for redirect loop in sub-directory translate mode caused by empty get parameters: ?a=&b= -> ?a&b
+
+= 2.8.58 =
+* New monochrome flags option
+* Avoids using /RegEx/ in JavaScript to not cause conflicts with WP Rocket optimizer
+
+= 2.8.57 =
+* New control options for flag size and colors of the "Nice dropdown with flags" language switcher
+* Removed old PNG images for dropdown arrow and gradient background, now using SVG and CSS instead
+
+= 2.8.56 =
+* Translate WooCommerce Emails feature is fixed and is out of beta
+
+= 2.8.55 =
+* Fixed blank settings page issue when settings data is in corrupted state in database
+
+= 2.8.54 =
+* Added more servers into the list of our growing Translation Delivery Network
+
+= 2.8.53 =
+* Fixed issue in Translate Woocommerce emails feature related to wordpress magic quotes
+
+= 2.8.52 =
+* Cross-site scripting (XSS) vulnerability fixed: Only possible for sub-domain, sub-directory paid options with hreflang tags enabled:
+An attacker can generate a malicious link and if followed by a victim then javascript code can be executed on victim's computer
+
+= 2.8.51 =
+* Translate WooCommerce Emails feature added, now we are in beta testing stage.
+* Minor issue solved related to http request headers in Sub-directory URL structure
+* FAQ updated
+
 = 2.8.50 =
 * Solved issue with wp_get_referer checks not passing on translated sub-domains
 * Solved issue with http Refresh header which was not redirecting to correct URL in translated version

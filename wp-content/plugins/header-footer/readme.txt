@@ -1,10 +1,11 @@
 === Head, Footer and Post Injections ===
 Tags: header, footer, blog, page, single, post, head, tracking, facebook, og meta tag, open graph, ads, adsense, injections, analytics, amp, pixel
-Requires at least: 3.0
-Tested up to: 5.2
-Stable tag: 3.1.3
+Requires at least: 4.0
+Tested up to: 5.7
+Stable tag: 3.2.2
 Donate link: http://www.satollo.net/donations
 Contributors: satollo
+Requires PHP: 5.6
 
 Header and Footer plugin let you to add html code to the head and footer sections of your blog... and more!
 
@@ -34,7 +35,7 @@ without loosing the code injected!
 = AMP =
 
 A new AMP dedicated section compatible with [AMP plugin](https://wordpress.org/plugins/amp) lets you to inject specific codes in
-AMP pages.
+AMP pages. Should be ok even with other AMP plugins. 
 
 = Post Top and Bottom Codes =
 
@@ -62,16 +63,19 @@ The specific bbPress injections are going to be removed. Switch to my
 
 This plugin cannot change the menu or the footer layout, those features must be covered by your theme!
 
-Official page: [Header and Footer](http://www.satollo.net/plugins/header-footer).
+Official page: [Header and Footer](https://www.satollo.net/plugins/header-footer).
 
 Other plugins by Stefano Lissa:
 
-* [Hyper Cache](http://www.satollo.net/plugins/hyper-cache)
-* [Newsletter](http://www.thenewsletterplugin.com)
-* [Include Me](http://www.satollo.net/plugins/include-me)
-* [Comment Plus](http://www.satollo.net/plugins/comment-plus)
-* [Thumbnails](http://www.satollo.net/plugins/thumbnails)
-* [Ads for bbPress](http://www.satollo.net/plugins/ads-bbpress)
+* [Hyper Cache](https://www.satollo.net/plugins/hyper-cache)
+* [Newsletter](https://www.thenewsletterplugin.com)
+* [Include Me](https://www.satollo.net/plugins/include-me)
+* [Thumbnails](https://www.satollo.net/plugins/thumbnails)
+* [Ads for bbPress](https://wordpress.org/plugins/ads-bbpress/)
+
+= Translation =
+
+You can contribute to translate this plugin in your language on [WordPress Translate](https://translate.wordpress.org)
 
 == Installation ==
 
@@ -83,14 +87,38 @@ Other plugins by Stefano Lissa:
 
 FAQs are answered on [Header and Footer](http://www.satollo.net/plugins/header-footer) page.
 
-== Screenshots ==
-
-1. Configuration panel for blog HEAD and footer sections
-2. Configuration panel for post content
-3. Configuration panel for Facebook "og" tags
-4. Configurable snippets of code to be recalled on other configurations (to save time)
 
 == Changelog ==
+
+= 3.2.2 =
+
+* Fixed a couple of links in readme.txt
+* Updated compatibility with WP 5.7
+
+= 3.2.1 =
+
+* Fixed a PHP notice on admin side when creating a new page
+
+= 3.2.0 =
+
+* Restored controls of per post injection
+* Compatibility check with latest WP
+* Moved to PHP 5.6 syntax
+
+= 3.1.6 =
+
+* Fixed check_admin_referrer action
+
+= 3.1.5 =
+
+* Fixed wrong injection in amp pages
+
+= 3.1.4 =
+
+* Performance optimization
+* Removed obsolete code
+* Improved AMP support
+* (Temporary) removed metaboxes (they were not working anyway)
 
 = 3.1.3 =
 

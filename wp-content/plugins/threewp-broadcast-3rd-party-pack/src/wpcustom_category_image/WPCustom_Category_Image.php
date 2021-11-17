@@ -43,12 +43,14 @@ class WPCustom_Category_Image
 				if ( $image_id < 1 )
 					continue;
 
+				if ( ! $bcd->try_add_attachment( $image_id ) )
+					continue;
+
 				$this->debug( 'Found image %d for term %s (%d)',
 					$image_id,
 					$term->slug,
 					$term_id
 				);
-				$bcd->add_attachment( $image_id );
 
 				$bcd->wpcustom_category_image->collection( 'categoryimage' )->set( $term_id, $image_id );
 			}

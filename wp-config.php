@@ -40,7 +40,7 @@
 
 /** The name of the database for WordPress */
 
-define('DB_NAME', 'ccf_2020');
+define('DB_NAME', 'cheetah_ORG');
 
 /** MySQL database username */
 

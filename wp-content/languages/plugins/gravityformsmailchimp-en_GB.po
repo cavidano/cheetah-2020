@@ -1,0 +1,85 @@
+# Translation of RocketGenius - Gravity Forms Mailchimp Add-On in English (UK)
+# This file is distributed under the same license as the RocketGenius - Gravity Forms Mailchimp Add-On package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2019-12-10 13:04:45+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: en_GB\n"
+"Project-Id-Version: RocketGenius - Gravity Forms Mailchimp Add-On\n"
+
+#: class-gf-mailchimp.php:632 class-gf-mailchimp.php:638
+#: class-gf-mailchimp.php:993
+msgid "Name"
+msgstr "Name"
+
+#: class-gf-mailchimp.php:639
+msgid "Enter a feed name to uniquely identify this setup."
+msgstr "Enter a feed name to uniquely identify this setup."
+
+#: class-gf-mailchimp.php:660 class-gf-mailchimp.php:665
+msgid "Map Fields"
+msgstr "Map Fields"
+
+#: class-gf-mailchimp.php:671 class-gf-mailchimp.php:676
+msgid "Groups"
+msgstr "Groups"
+
+#: class-gf-mailchimp.php:682
+msgid "Options"
+msgstr "Options"
+
+#: class-gf-mailchimp.php:687 class-gf-mailchimp.php:692
+msgid "Double Opt-In"
+msgstr "Double Opt-In"
+
+#: class-gf-mailchimp.php:698
+msgid "Mark subscriber as VIP"
+msgstr "Mark subscriber as VIP"
+
+#: class-gf-mailchimp.php:717
+msgid "Note"
+msgstr "Note"
+
+#: class-gf-mailchimp.php:721 class-gf-mailchimp.php:725
+msgid "Conditional Logic"
+msgstr "Conditional Logic"
+
+#: class-gf-mailchimp.php:902
+msgid "Email Address"
+msgstr "Email Address"
+
+#: class-gf-mailchimp.php:1136
+msgid "Assign to group:"
+msgstr "Assign to group:"
+
+#: class-gf-mailchimp.php:1145
+msgid "Always"
+msgstr "Always"
+
+#: class-gf-mailchimp.php:1149
+msgid "If"
+msgstr "If"
+
+#: class-gf-mailchimp.php:1413
+msgid "Unable to process feed because API could not be initialized."
+msgstr "Unable to process feed because API could not be initialised."
+
+#: class-gf-mailchimp.php:1429
+msgid "A valid Email address must be provided."
+msgstr "A valid Email address must be provided."
+
+#: class-gf-mailchimp.php:1541
+msgid "Unable to check if email address is already used by a member: %s"
+msgstr "Unable to check if email address is already used by a member: %s"
+
+#: class-gf-mailchimp.php:1819
+msgid "Unable to add/update subscriber: %s"
+msgstr "Unable to add/update subscriber: %s"
+
+#: class-gf-mailchimp.php:1862
+msgid "Unable to add note to subscriber: %s"
+msgstr "Unable to add note to subscriber: %s"

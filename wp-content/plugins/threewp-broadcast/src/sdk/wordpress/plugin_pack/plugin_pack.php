@@ -184,6 +184,7 @@ abstract class plugin_pack
 		}
 
 		$old_group = '';
+		$group_slug = '';
 		foreach( $plugins->by_groups() as $group => $plugins )
 			foreach( $plugins as $plugin )
 			{

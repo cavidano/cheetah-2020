@@ -16,15 +16,6 @@ class Avia_Layout_Builder
 	extends \threewp_broadcast\premium_pack\base
 {
 	/**
-		@brief		The shortcode add-ons through which to send the Avia builder content.
-		@since		2016-07-19 19:32:09
-	**/
-	public static $shortcode_addons = [
-		'\\threewp_broadcast\premium_pack\shortcode_attachments\\Shortcode_Attachments',
-		'\\threewp_broadcast\premium_pack\shortcode_menus\\Shortcode_Menus',
-	];
-
-	/**
 		@brief		The meta key in which Avia stores its data.
 		@since		2016-07-19 19:33:53
 	**/
@@ -55,22 +46,11 @@ class Avia_Layout_Builder
 		$bcd->avia_layout_builder = ThreeWP_Broadcast()->collection();
 		$bcd->avia_layout_builder->set( static::$meta_key, $content );
 
-		foreach( static::$shortcode_addons as $class )
-		{
-			if ( ! class_exists( $class ) )
-				return $this->debug('The %s add-on is not enabled. Not doing anything.', $class );
-
-			// Ask it to preparse this content.
-			$i = $class::instance();
-
-			$preparse = new actions\preparse_content();
-			$preparse->broadcasting_data = $bcd;
-			$preparse->content = $content;
-			$preparse->id = static::$meta_key;
-
-			$this->debug( 'Asking %s to preparse the Avia data.', $class );
-			$i->threewp_broadcast_preparse_content( $preparse );
-		}
+		$preparse_content = ThreeWP_Broadcast()->new_action( 'preparse_content' );
+		$preparse_content->broadcasting_data = $bcd;
+		$preparse_content->content = $content;
+		$preparse_content->id = static::$meta_key;
+		$preparse_content->execute();
 	}
 
 	/**
@@ -86,24 +66,13 @@ class Avia_Layout_Builder
 
 		$content = $bcd->avia_layout_builder->get( static::$meta_key, '' );
 
-		foreach( static::$shortcode_addons as $class )
-		{
-			if ( ! class_exists( $class ) )
-				return $this->debug('The %s add-on is not enabled. Not doing anything.', $class );
+		$parse_content = ThreeWP_Broadcast()->new_action( 'parse_content' );
+		$parse_content->broadcasting_data = $bcd;
+		$parse_content->content = $content;
+		$parse_content->id = static::$meta_key;
+		$parse_content->execute();
 
-			// Ask it to parse this content.
-			$i = $class::instance();
-
-			$preparse = new actions\parse_content();
-			$preparse->broadcasting_data = $bcd;
-			$preparse->content = $content;
-			$preparse->id = static::$meta_key;
-
-			$this->debug( 'Asking %s to parse the Avia data.', $class );
-			$i->threewp_broadcast_parse_content( $preparse );
-
-			$content = $preparse->content;
-		}
+		$content = $parse_content->content;
 
 		$this->debug( 'New Avia Layout Builder data: %s', htmlspecialchars( $content ) );
 

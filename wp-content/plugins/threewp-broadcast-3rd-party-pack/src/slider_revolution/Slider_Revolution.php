@@ -275,8 +275,8 @@ class Slider_Revolution
 			if ( isset( $params->image_id ) )
 				if ( $params->image_id > 0 )
 				{
-					$this->debug( 'Found image %s in slide %s', $params->image_id, $index );
-					$bcd->add_attachment( $params->image_id );
+					if ( $bcd->try_add_attachment( $params->image_id ) )
+						$this->debug( 'Found image %s in slide %s', $params->image_id, $index );
 				}
 		}
 	}

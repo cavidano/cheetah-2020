@@ -128,18 +128,14 @@ class Beaver_Builder
 		if ( is_object( $data ) )
 		{
 			if ( isset( $data->photo ) )
-			{
-				$this->debug( 'Found photo %s', $data->photo );
-					$bcd->add_attachment( $data->photo );
-			}
+				if ( $bcd->try_add_attachment( $data->photo ) )
+					$this->debug( 'Found photo %s', $data->photo );
 
 			if ( isset( $data->photos ) )
 			{
 				$this->debug( 'Found photos %s', $data->photos );
 				foreach( $data->photos as $media_id )
-				{
-					$bcd->add_attachment( $media_id );
-				}
+					$bcd->try_add_attachment( $media_id );
 			}
 
 			// Does this object contain a tax_post_category field?
@@ -218,6 +214,8 @@ class Beaver_Builder
 			if ( ! is_array( $data ) )
 				continue;
 
+			$this->debug( 'BB data is: %s', $data );
+
 			foreach( $data as $data_key => $data_value )
 				$data[ $data_key ] = $this->parse_data( $bcd, $data_value );
 
@@ -237,6 +235,14 @@ class Beaver_Builder
 							'broadcasting_data' => $bcd,
 							'content' => $section->settings->text,
 							'id' => $key . $block_id . 'text',
+						] );
+					}
+					if ( isset( $section->settings->link ) )
+					{
+						$section->settings->link = $this->parse_content( [
+							'broadcasting_data' => $bcd,
+							'content' => $section->settings->link,
+							'id' => $key . $block_id . 'link',
 						] );
 					}
 
@@ -343,7 +349,10 @@ class Beaver_Builder
 
 			$data = maybe_unserialize( $data );
 			foreach( $data as $data_key => $data_value )
+			{
+				$this->debug( 'Preparsing key %s', $data_key );
 				$this->preparse_data( $bcd, $data_value );
+			}
 
 			$this->debug( 'Preparsing Beaver Builder %s', $key );
 			// Go through all of the data.
@@ -363,6 +372,14 @@ class Beaver_Builder
 							'broadcasting_data' => $bcd,
 							'content' => $section->settings->text,
 							'id' => $key . $block_id . 'text',
+						] );
+					}
+					if ( isset( $section->settings->link ) )
+					{
+						$this->preparse_content( [
+							'broadcasting_data' => $bcd,
+							'content' => $section->settings->link,
+							'id' => $key . $block_id . 'link',
 						] );
 					}
 

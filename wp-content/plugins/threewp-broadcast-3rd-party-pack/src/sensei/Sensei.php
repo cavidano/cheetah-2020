@@ -67,15 +67,25 @@ class Sensei
 	**/
 	public function maybe_save_question( $bcd )
 	{
-		if ( $bcd->post->post_type != 'question' )
+		if ( ! in_array( $bcd->post->post_type, [ 'multiple_question', 'question' ] ) )
 			return;
+
+		$key = 'category';
+		$old_value = $bcd->custom_fields()->get_single( $key );
+		if ( $old_value > 0 )
+			// We will be needing the equivalent category later.
+			$bcd->taxonomies()->also_sync_taxonomy( [
+				'post_type' => 'question',
+				'taxonomy' => 'question-category',
+			] );
 
 		$key = '_question_media';
 		$id = $bcd->custom_fields()->get_single( $key );
 		if ( $id > 0 )
 		{
+			if ( ! $bcd->try_add_attachment( $id ) )
+				return;
 			$this->debug( 'Found question media %d.', $id );
-			$bcd->add_attachment( $id );
 			$bcd->sensei->collection( 'questions' )
 				->collection( 'media' )
 				->collection( $bcd->post->ID )
@@ -188,7 +198,7 @@ class Sensei
 	**/
 	public function maybe_restore_question( $bcd )
 	{
-		if ( $bcd->post->post_type != 'question' )
+		if ( ! in_array( $bcd->post->post_type, [ 'multiple_question', 'question' ] ) )
 			return;
 
 		// Translate the quiz ID.
@@ -211,6 +221,16 @@ class Sensei
 		$bcd->custom_fields()
 			->child_fields()
 			->update_meta( $new_key, $new_order );
+
+		$key = 'category';
+		$old_value = $bcd->custom_fields()->get_single( $key );
+		if ( $old_value > 0 )
+		{
+			$new_value = $bcd->terms()->get( $old_value );
+			$this->debug( 'Setting new question category: %s', $new_value );
+			$bcd->custom_fields()->child_fields()
+				->update_meta( $key, $new_value );
+		}
 
 		// Translate the media ID, if any.
 		$key = '_question_media';

@@ -15,7 +15,9 @@ class Polylang
 		$this->add_filter( 'threewp_broadcast_broadcasting_finished' );
 		$this->add_filter( 'threewp_broadcast_broadcasting_started' );
 		$this->add_action( 'threewp_broadcast_broadcasting_after_switch_to_blog' );
+		$this->add_action( 'threewp_broadcast_broadcasting_after_update_post' );
 		$this->add_action( 'threewp_broadcast_broadcasting_before_restore_current_blog' );
+		$this->add_action( 'threewp_broadcast_collect_post_type_taxonomies', 'threewp_broadcast_collect_post_type_taxonomies_3', 3 );
 		$this->add_action( 'threewp_broadcast_collect_post_type_taxonomies', 8 );
 		$this->add_action( 'threewp_broadcast_menu' );
 		$this->add_action( 'threewp_broadcast_synced_taxonomy' );
@@ -28,10 +30,31 @@ class Polylang
 	// --------------------------------------------------------------------------------------------
 
 	/**
-		@brief		menu_settings
+		@brief		Show the tabs for the menu item.
+		@since		2020-10-03 17:49:22
+	**/
+	public function admin_menu_tabs()
+	{
+		$tabs = $this->tabs();
+
+		$tabs->tab( 'settings' )
+			->callback_this( 'admin_settings' )
+			->heading( __( 'Broadcast Polylang Settings', 'threewp_broadcast' ) )
+			->name( __( 'Polylang Settings', 'threewp_broadcast' ) );
+
+		$tabs->tab( 'string_translations' )
+			->callback_this( 'admin_string_translations' )
+			->heading( __( 'Broadcast Polylang String Translations', 'threewp_broadcast' ) )
+			->name( __( 'Polylang String Translations', 'threewp_broadcast' ) );
+
+		echo $tabs->render();
+	}
+
+	/**
+		@brief		admin_settings
 		@since		2016-12-13 15:47:29
 	**/
-	public function menu_settings()
+	public function admin_settings()
 	{
 		$form = $this->form();
 		$r = '';
@@ -74,8 +97,85 @@ class Polylang
 		$r .= $form->display_form_table();
 		$r .= $form->close_tag();
 
-		// Settings page header
-		echo $this->wrap( $r, __( 'Broadcast Polylang Settings', 'threewp_broadcast' ) );
+		echo $r;
+	}
+
+	/**
+		@brief		Copy the string translations.
+		@since		2020-10-03 17:52:03
+	**/
+	public function admin_string_translations()
+	{
+		$form = $this->form();
+		$r = '';
+
+		$langs = [];
+		$languages_list = $this->get_languages_list();
+		foreach( $languages_list as $data )
+			$langs[ $data->term_id ] = $data->name;
+		$languages_select = $form->select( 'languages' )
+			->description( __( 'Select the string translations you wish to broadcast.', 'threewp_broadcast' ) )
+			->label( __( 'Languages', 'threewp_broadcast' ) )
+			->multiple()
+			->opts( $langs )
+			->required()
+			->autosize();
+
+		$blogs_select = $this->add_blog_list_input( [
+			// Blog selection input description
+			'description' => __( 'Select one or more blogs to which to broadcast the string translations.', 'threewp_broadcast' ),
+			'form' => $form,
+			// Blog selection input label
+			'label' => __( 'Blogs', 'threewp_broadcast' ),
+			'multiple' => true,
+			'name' => 'blogs',
+			'required' => false,
+		] );
+
+		$save = $form->primary_button( 'broadcast' )
+			->value( __( 'Broadcast string translations', 'threewp_broadcast' ) );
+
+		if ( $form->is_posting() )
+		{
+			$form->post();
+			$form->use_post_values();
+
+			$blogs = $blogs_select->get_post_value();
+			foreach( $languages_select->get_post_value() as $lang_id )
+			{
+				$lang = $languages_list[ $lang_id ];
+				$parent_slug = $lang->slug;
+				// Find the polylang_mo post for this lang.
+				$post_id = \PLL_MO::get_id( $languages_list[ $lang_id ] );
+				$meta_key = '_pll_strings_translations';
+				$meta_value = get_post_meta( $post_id, $meta_key, true );
+				foreach( $blogs as $blog_id )
+				{
+					switch_to_blog( $blog_id );
+					$this->clear_polylang_languages_cache();
+
+					// Find the equivalent language using the slug.
+					$languages_list = $this->get_languages_list();
+					foreach( $languages_list as $lang )
+					{
+						if ( $lang->slug != $parent_slug )
+							continue;
+						$child_post_id = \PLL_MO::get_id( $lang );
+						$this->debug( 'Updating child_post %s for language %s with %s', $child_post_id, $lang->term_id, $meta_value );
+						update_post_meta( $child_post_id, $meta_key, $meta_value );
+					}
+					restore_current_blog();
+				}
+			}
+
+			$r .= $this->info_message_box()->_( __( 'String translations broadcasted!', 'threewp_broadcast' ) );
+		}
+
+		$r .= $form->open_tag();
+		$r .= $form->display_form_table();
+		$r .= $form->close_tag();
+
+		echo $r;
 	}
 
 	// --------------------------------------------------------------------------------------------
@@ -92,6 +192,12 @@ class Polylang
 			return;
 
 		$bcd = $action->broadcasting_data;
+
+		if ( ! isset( $bcd->polylang ) )
+			return;
+
+		if ( ! isset( $bcd->polylang->pll_is_translated_post_type ) )
+			return;
 
 		if ( ! $bcd->polylang->pll_is_translated_post_type )
 			return $this->debug( 'Not a translated post type.' );
@@ -140,6 +246,33 @@ class Polylang
 		}
 
 		$this->debug( 'Current child translations: %s', $bcd->polylang->child_translations );
+	}
+
+	/**
+		@brief		threewp_broadcast_broadcasting_after_update_post
+		@since		2019-10-02 22:05:39
+	**/
+	public function threewp_broadcast_broadcasting_after_update_post( $action )
+	{
+		$bcd = $action->broadcasting_data;
+
+		if ( ! $bcd->new_child_created )
+			return;
+
+		// Is this a translated post?
+		if ( ! isset( $bcd->polylang ) )
+			return;
+
+		if ( ! isset( $bcd->polylang->same_post_name ) )
+			return;
+
+		if ( ! $bcd->polylang->same_post_name )
+			return;
+
+		// Clone the post_name.
+		global $wpdb;
+		$this->debug( 'Forcing renaming of translated post name to the same as the parent: %s', $bcd->post->post_name );
+		$wpdb->update( $wpdb->posts, [ 'post_name' => $bcd->post->post_name ], [ 'ID' => $bcd->new_post( 'ID' ) ] );
 	}
 
 	/**
@@ -263,6 +396,7 @@ class Polylang
 		$this->prepare_bcd( $bcd );
 
 		$post = $bcd->post;
+
 		$bcd->polylang->pll_is_translated_post_type = pll_is_translated_post_type( $post->post_type );
 
 		if ( ! $bcd->polylang->pll_is_translated_post_type )
@@ -276,8 +410,37 @@ class Polylang
 			remove_action( 'save_post', array( PLL()->filters_post, 'save_post' ), 21, 3 );
 		}
 
+		if ( isset( $pll->posts ) )
+		{
+			$this->debug( 'Removing posts set_object_terms' );
+			remove_action( 'set_object_terms', array( $pll->posts, 'set_object_terms' ), 10, 4 );
+		}
+
+		if ( isset( $pll->sync ) )
+		{
+			// PLL interferes when setting object terms when processing the queue via HTTP
+			if ( isset( $pll->sync->taxonomies ) )
+			{
+				$this->debug( 'Removing sync taxonomies set_object_terms' );
+				remove_action( 'set_object_terms', array( $pll->sync->taxonomies, 'set_object_terms' ), 10, 5 );
+				remove_action( 'set_object_terms', array( $pll->sync->taxonomies, 'set_object_terms' ), 10, 6 );
+			}
+		}
+
 		$bcd->polylang->language = pll_get_post_language( $post->ID );
 		$bcd->polylang->translations = PLL()->model->post->get_translations( $post->ID );
+
+		if ( count( $bcd->polylang->translations ) > 1 )
+		{
+			// Polylang allows the slug to be the same sometimes (WooCommerce products).
+			$same_post_name = true;
+			foreach( $bcd->polylang->translations as $post_id )
+			{
+				$translated_post = get_post( $post_id );
+				$same_post_name = $same_post_name && ( $translated_post->post_name == $post->post_name );
+			}
+			$bcd->polylang->same_post_name = $same_post_name;
+		}
 
 		global $polylang;
 		// Preferred language term ID is incorrect, so get the slug.
@@ -289,6 +452,24 @@ class Polylang
 		$bcd->polylang->bcds = [];
 		foreach( $bcd->polylang->translations as $translated_post_id )
 			$bcd->polylang->bcds[ $translated_post_id ] = ThreeWP_Broadcast()->get_post_broadcast_data( $blog_id, $translated_post_id );
+	}
+
+
+	/**
+		@brief		We need to disable filters before collecting types.
+		@since		2017-11-20 12:21:39
+	**/
+	public function threewp_broadcast_collect_post_type_taxonomies_3( $action )
+	{
+		if ( ! $this->has_polylang() )
+			return;
+
+		// PLL interferes when getting all blog terms when processing the queue via HTTP
+		if ( isset( PLL()->terms ) )
+		{
+			$this->debug( 'Removing terms term_clauses filter' );
+			remove_filter( 'terms_clauses', array( PLL()->terms, 'terms_clauses' ), 10, 3 );
+		}
 	}
 
 	/**
@@ -334,15 +515,17 @@ class Polylang
 		{
 			$this->__collecting_more_terms = true;
 			// Remove the filter that prevents ALL terms from being shown. This filter causes havoc in several places.
-			remove_filter( 'terms_clauses', array( PLL()->filters_term, 'terms_clauses' ), 10, 3 );
+			if ( isset( PLL()->filters_term ) )
+				remove_filter( 'terms_clauses', array( PLL()->filters_term, 'terms_clauses' ), 10, 3 );
+
+			/**
 			$bcd->taxonomies()->also_sync_taxonomy( [
 				'post' => $bcd->post,
 				'post_id' => $bcd->post->ID,
 				'taxonomy' => $parent_post_taxonomy
 			] );
-			/**
-			$bcd->taxonomies()->also_sync( $bcd->post->post_type, $parent_post_taxonomy );
 			**/
+			$bcd->taxonomies()->also_sync( $bcd->post->post_type, $parent_post_taxonomy );
 			//add_filter( 'terms_clauses', array( PLL()->filters_term, 'terms_clauses' ), 10, 3 );
 			unset( $this->__collecting_more_terms );
 
@@ -418,7 +601,7 @@ class Polylang
 
 		$action->menu_page
 			->submenu( 'threewp_broadcast_polylang' )
-			->callback_this( 'menu_settings' )
+			->callback_this( 'admin_menu_tabs' )
 			// Menu item name
 			->menu_title( 'Polylang' )
 			// Page title
@@ -454,6 +637,8 @@ class Polylang
 			$parent_term_id = $term->term_id;
 			$parent_translations = $bcd->polylang->collection( 'term_translations' )
 				->get( $parent_term_id );
+
+			$this->debug( 'Term parent translations for %s is %s', $parent_term_id, $parent_translations );
 
 			// Are there translations for this term?
 			if ( ! $parent_translations )
@@ -530,7 +715,9 @@ class Polylang
 		if ( ! $polylang )
 			return;
 		// Else it thinks we have the languages from the previous blog.
+		$this->debug( 'Clean languages cache.' );
 		$polylang->model->clean_languages_cache();
+		wp_cache_delete( 'polylang_mo_ids' );
 	}
 
 	/**
@@ -540,7 +727,9 @@ class Polylang
 	public function get_languages_list()
 	{
 		global $polylang;
-		return $polylang->model->get_languages_list();
+		$r = $polylang->model->get_languages_list();
+		$r = $this->array_rekey( $r, 'term_id' );
+		return $r;
 	}
 
 	/**

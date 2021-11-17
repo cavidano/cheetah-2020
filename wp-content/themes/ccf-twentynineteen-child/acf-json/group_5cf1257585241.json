@@ -360,7 +360,7 @@
         },
         {
             "key": "field_5cf124f448a42",
-            "label": "Events, News, and Videos Headers",
+            "label": "Custom Post Type Headers",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -423,7 +423,7 @@
             "mime_types": ""
         },
         {
-            "key": "field_5dcb1c9f0a235",
+            "key": "field_5dd1398566d65",
             "label": "Videos Header Image",
             "name": "videos_header_image",
             "type": "image",
@@ -464,5 +464,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1573592246
+    "modified": 1574164078
 }

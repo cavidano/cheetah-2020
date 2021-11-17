@@ -3,9 +3,9 @@ Contributors: volkmar-kantor
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=volkmar%2ekantor%40gmx%2ede&lc=DE&item_name=Volkmar%20Kantor%20%2d%20totalmedial%2ede&item_number=crop%2dthumbnails&no_note=0&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest
 Tags: post-thumbnails, images, media library
 Requires at least: 4.6
-Requires PHP: 5.3.0
-Tested up to: 5.2
-Stable tag: 1.2.5
+Tested up to: 5.8.0
+Requires PHP: 5.6.0
+Stable tag: 1.4.0
 License: GPL v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -124,8 +124,36 @@ If you fork and planning to publish the forked plugin, please contact me.
 5. Quicktest on settings-page, to check if your system is correct setup.
 
 == Changelog ==
+= 1.4.0 =
+* its possible to crop webp files with the plugin
+* library updates
+* code cleanup
+* add fix for using replacement MIME-type specified for sub-sizes (thanks to https://github.com/benjibee - https://github.com/vollyimnetz/crop-thumbnails/issues/55)
+
+= 1.3.1 =
+* crop-editor: if grouped, the notification for not yet cropped image-sizes now is visible if at least one of the images in the group is not yet cropped
+* fix bug on settings page (noticible only on strict configured php environments)
+* fix bug in file saving (noticible only on strict configured php environments)
+
+= 1.3.0 =
+* remove support for Code below PHP 5.4: ( the construct dirname(__FILE) become __DIR__, arrays will also be initialized using [] )
+* remove legacy language translation (in pot/po/mo files) - if you want to have the plugin in your language you can use https://translate.wordpress.org/projects/wp-plugins/crop-thumbnails/
+* change app deployment to vue-cli
+* add functionality for grouping of image-sizes in crop editor
+* add the actions "crop_thumbnails_before_crop" and "crop_thumbnails_after_crop" to hook directly before and after the cropping
+* add the filter "crop_thumbnails_do_crop" to make an exchange of the cropping function possible
+* fix broken link (thanks to TangRufus - https://github.com/TangRufus)
+* add code contribution of TangRufus to make plugin compatibility with "Crop Thumbnails CDN Cache Busting" (thanks to TangRufus - https://github.com/TangRufus)
+* add the filter "crop_thumbnails_should_delete_old_file" to make an exchange of the check for file-deleting possible
+
+= 1.2.6 =
+* update dependencies
+* fix typo
+* fix a bug where the image name of the thumbnail changed to "imagename-scaled-..." cause of the new features of WordPress 5.3
+* extend the filter "crop_thumbnails_filename" by the image-metadata-array
+
 = 1.2.5 =
-* fix a bug that may occure on utf8-filenames
+* fix a bug that may occur on utf8-filenames
 * update vue.js and the other libraries to current version
 * refactoring vue-code and build
 
@@ -270,7 +298,7 @@ If you fork and planning to publish the forked plugin, please contact me.
 * fix the missing crop-thumbnail-button in the attachment-list-view
 
 = 0.8.4 =
-* fix a bug that may occure on some systems with xdebug enabled and low xdebug.max_nesting_level (see: http://wordpress.org/support/topic/error-when-trying-to-crop-a-certain-image)
+* fix a bug that may occur on some systems with xdebug enabled and low xdebug.max_nesting_level (see: http://wordpress.org/support/topic/error-when-trying-to-crop-a-certain-image)
 * add dutch language (thanks to Max Gruson)
 
 = 0.8.3 =

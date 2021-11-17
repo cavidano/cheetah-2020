@@ -83,6 +83,8 @@ class Yoast_SEO
 	{
 		$bcd = $action->broadcasting_data;
 
+		$this->clear_yoast_indexable( 'post', $bcd->new_post( 'ID' ) );
+
 		// Handle the primary category.
 		$key = '_yoast_wpseo_primary_category';
 		$old_term_id = $bcd->custom_fields()->get_single( $key );
@@ -95,6 +97,24 @@ class Yoast_SEO
 				->child_fields()
 				->update_meta( $key, $new_term_id );
 		}
+
+		$key = '_yoast_wpseo_opengraph-image-id';
+		$old_image_id = $bcd->custom_fields()->get_single( $key );
+		if ( $old_image_id > 0 )
+		{
+			$new_image_id = $bcd->copied_attachments()->get( $old_image_id );
+			$this->debug( 'Replacing %s with %s', $key, $new_image_id );
+			$bcd->custom_fields()
+				->child_fields()
+				->update_meta( $key, $new_image_id );
+
+			$key = '_yoast_wpseo_opengraph-image';
+			$new_url = wp_get_attachment_url( $new_image_id );
+			$this->debug( 'Replacing %s with %s', $key, $new_url );
+			$bcd->custom_fields()
+				->child_fields()
+				->update_meta( $key, $new_url );
+		}
 	}
 
 	/**
@@ -103,28 +123,18 @@ class Yoast_SEO
 	**/
 	public function threewp_broadcast_broadcasting_started( $action )
 	{
-		// Remove Canonical Link Added By Yoast WordPress SEO Plugin
-		if ( ! class_exists( '\\WPSEO_Link_Watcher' ) )
-			return;
-		// Go through everything hooked into save_post to find the link watcher.
-		global $wp_filter;
-		$filters = $wp_filter[ 'save_post' ];
-		foreach( $filters->callbacks as $callbacks )
-			foreach( $callbacks as $callback )
-			{
-				$function = $callback[ 'function' ];
-				if ( ! is_array( $function ) )
-					continue;
-				$class = $function[ 0 ];
-				if ( ! is_object( $class ) )
-					continue;
-				$classname = get_class( $class );
-				if ( $classname != 'WPSEO_Link_Watcher' )
-					continue;
-				// We've found it! Nuke it from orbit.
-				$this->debug( 'Disabling %s', $classname );
-				remove_action( 'save_post', [ $class, 'save_post' ], 10, 2 );
-			}
+		$this->maybe_disable_link_watcher();
+
+		$bcd = $action->broadcasting_data;
+
+		$key = '_yoast_wpseo_opengraph-image-id';
+		$image_id = $bcd->custom_fields()->get_single( $key );
+		if ( $image_id > 0 )
+		{
+			$this->debug( 'Found %s image: %s', $key, $image_id );
+			$bcd->try_add_attachment( $image_id );
+		}
+
 	}
 
 	/**
@@ -166,6 +176,7 @@ class Yoast_SEO
 				$bcd->yoast_seo->set( $term_id, $the_meta );
 			}
 		}
+		$this->debug( 'Yoast SEO data: %s', $bcd->yoast_seo );
 	}
 
 	/**
@@ -230,8 +241,71 @@ class Yoast_SEO
 			$meta[ $action->taxonomy ][ $action->new_term->term_id ][ $meta_key ] = $meta_value;
 		}
 
-		$this->debug( 'Saving new meta for term %s', $action->old_term->slug );
+		$this->debug( 'Saving new meta for term %s: %s', $action->old_term->slug, $meta );
 		update_option( 'wpseo_taxonomy_meta', $meta );
+		$this->clear_yoast_indexable( 'term', $action->new_term->term_id );
+	}
+
+	// -------------------------------------------------------------------------------------------------------------------
+	// --- MISC
+	// -------------------------------------------------------------------------------------------------------------------
+
+	/**
+		@brief		Disable the Link Watcher, if possible.
+		@since		2020-05-07 19:17:05
+	**/
+	public function maybe_disable_link_watcher()
+	{
+		// Remove Canonical Link Added By Yoast WordPress SEO Plugin
+		if ( ! class_exists( '\\WPSEO_Link_Watcher' ) )
+			return;
+		// Go through everything hooked into save_post to find the link watcher.
+		global $wp_filter;
+		if ( ! isset( $wp_filter[ 'save_post' ] ) )
+			return;
+		$filters = $wp_filter[ 'save_post' ];
+		foreach( $filters->callbacks as $callbacks )
+			foreach( $callbacks as $callback )
+			{
+				$function = $callback[ 'function' ];
+				if ( ! is_array( $function ) )
+					continue;
+				$class = $function[ 0 ];
+				if ( ! is_object( $class ) )
+					continue;
+				$classname = get_class( $class );
+				if ( $classname != 'WPSEO_Link_Watcher' )
+					continue;
+				// We've found it! Nuke it from orbit.
+				$this->debug( 'Disabling %s', $classname );
+				remove_action( 'save_post', [ $class, 'save_post' ], 10, 2 );
+			}
+	}
+
+	/**
+		@brief		Set up the bcd for ourselves.
+		@since		2020-12-16 20:48:37
+	**/
+	public function prepare_bcd( $bcd )
+	{
+		if ( isset( $bcd->yoast_seo ) )
+			return;
+		$bcd->yoast_seo = ThreeWP_Broadcast()->collection();
+	}
+
+	/**
+		@brief		Clear the yoast indexable of this object.
+		@since		2020-12-16 20:52:13
+	**/
+	public function clear_yoast_indexable( $type, $post_id )
+	{
+		global $wpdb;
+		$table = $wpdb->prefix . 'yoast_indexable';
+		$this->debug( 'Clearing yoast_indexable' );
+		$wpdb->delete( $table, [
+			'object_type' => $type,
+			'object_id' => $post_id,
+		] );
 	}
 
 	/**

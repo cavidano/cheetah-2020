@@ -1,0 +1,590 @@
+# Copyright (C) 2020 Give - Gift Aid
+# This file is distributed under the same license as the Give - Gift Aid package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Give - Gift Aid\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
+"Language-Team: GiveWP <info@givewp.com>\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: give-gift-aid.php:189
+msgid "<strong>Activation Error:</strong> You must have the <a href=\"%s\" target=\"_blank\">Give</a> plugin installed and activated for Give - Gift Aid to activate."
+msgstr ""
+
+#: give-gift-aid.php:216
+msgid "<strong>Activation Error:</strong> You must have the <a href=\"%s\" target=\"_blank\">Give</a> core version %s for the Give - Gift Aid add-on to activate."
+msgstr ""
+
+#: give-gift-aid.php:237, give-gift-aid.php:250
+msgid "Cheatin&#8217; huh?"
+msgstr ""
+
+#: give-gift-aid.php:379
+msgid "Give - Gift Aid"
+msgstr ""
+
+#: give-gift-aid.php:405
+msgid "Settings"
+msgstr ""
+
+#: give-gift-aid.php:435
+msgid "Documentation"
+msgstr ""
+
+#: give-gift-aid.php:440
+msgid "Add-ons"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:100
+msgid "You must choose at least one or more gift aid donations to delete."
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:101
+msgid "Are you sure you want to delete this gift aid donation?"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:102
+msgid "Are you sure you want to delete the selected {gift_aid_donation_count} gift aid donations?"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:105
+msgid "You must choose at least one or more gift aid donations to download declaration form."
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:106
+msgid "Are you sure you want to download the gift aid declaration form?"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:107
+msgid "Are you sure you want to download {gift_aid_donation_count} gift aid declaration forms?"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:148, includes/admin/class-give-gift-aid-admin.php:230, includes/admin/class-give-gift-aid-admin.php:471, includes/admin/class-give-gift-aid-admin.php:740, includes/admin/class-give-gift-aid-reports.php:46, includes/admin/class-give-gift-aid-reports.php:97, includes/admin/class-give-gift-aid-settings.php:30, includes/frontend/class-give-gift-aid-frontend.php:586, includes/give-gift-aid-helpers.php:63, src/Receipts/UpdateDonationReceipt.php:55
+msgid "Gift Aid"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:240
+msgid "Opt-in Donation"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:252
+msgid "Declaration"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:258
+msgid "Opt-in Date"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:272
+msgid "Opt-in Time"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:295, includes/admin/class-give-gift-aid-admin.php:758, includes/admin/class-give-gift-aid-reports-table.php:242, includes/frontend/class-give-gift-aid-frontend.php:255, includes/frontend/class-give-gift-aid-frontend.php:341
+msgid "Gift Aid Address"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:299, includes/give-gift-aid-helpers.php:743
+msgid "Country"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:319, includes/admin/class-give-gift-aid-admin.php:326
+msgid "Address Line 1"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:334, includes/admin/class-give-gift-aid-admin.php:341
+msgid "Address Line 2"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:349, includes/admin/class-give-gift-aid-admin.php:356, includes/give-gift-aid-helpers.php:886, includes/give-gift-aid-helpers.php:896
+msgid "City"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:364, includes/admin/class-give-gift-aid-admin.php:372, includes/give-gift-aid-helpers.php:837, includes/give-gift-aid-helpers.php:867
+msgid "County"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:380, includes/admin/class-give-gift-aid-admin.php:387, includes/give-gift-aid-helpers.php:916, includes/give-gift-aid-helpers.php:927
+msgid "Postal Code"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:399
+msgid "Update Gift Aid"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:400
+msgid "Cancel"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:472
+msgid "Details"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:520
+msgid "You do not have permission to edit this donor."
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:520, includes/admin/class-give-gift-aid-admin.php:530
+msgid "Error"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:530
+msgid "Cheatin&#8217; uh?"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:583, includes/admin/class-give-gift-aid-reports-table.php:72, includes/admin/class-give-gift-aid-reports-table.php:149, includes/admin/class-give-gift-aid-reports.php:130
+msgid "Gift Aid Donations"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:585
+msgid "Download a CSV file containing information that you can use for bulk submitting Gift Aid declarations to the HMRC online using you account."
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:594
+msgid "Start date"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:602
+msgid "End date"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:614
+msgid "All Statuses"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:626
+msgid "Generate CSV"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:749, includes/give-gift-aid-helpers.php:299
+msgid "Gift Aid Status"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:751, includes/give-gift-aid-helpers.php:228
+msgid "Yes, I would like to claim Gift Aid"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:766
+msgid "Edit Details"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:770
+msgid "Edit Gift Aid Details"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:779, includes/admin/class-give-gift-aid-reports-table.php:244, includes/give-gift-aid-helpers.php:150
+msgid "Declaration Form"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:819
+msgid "Successfully deleted one Gift Aid donation entry."
+msgid_plural "Successfully deleted %d Gift Aid donations entries."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/admin/class-give-gift-aid-admin.php:841
+msgid "The United Kingdom must be set as the base country within Give's <a href=\"%s\">General Settings</a> in order to collect Gift Aid."
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-admin.php:857
+msgid "The currency must be set as \"Pounds Sterling (£)\" within Give's <a href=\"%s\">Currency Settings</a> in order to collect Gift Aid."
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-export.php:91
+msgid "Donation ID"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-export.php:92, includes/give-gift-aid-helpers.php:296
+msgid "First Name"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-export.php:93, includes/give-gift-aid-helpers.php:297
+msgid "Last Name"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-export.php:94
+msgid "Gift Aid Address 1"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-export.php:95
+msgid "Gift Aid Address 2"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-export.php:96
+msgid "Gift Aid City"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-export.php:97
+msgid "Gift Aid Country"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-export.php:98
+msgid "Gift Aid County"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-export.php:99
+msgid "Gift Aid Postal Code"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-export.php:100
+msgid "Total Donation Amount"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-export.php:101
+msgid "Last Donation Date"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-reports-table.php:71
+msgid "Gift Aid Donation"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-reports-table.php:157
+msgid "Export to CSV"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-reports-table.php:165
+msgid "Search"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-reports-table.php:196
+msgid "View Donation #%s"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-reports-table.php:196
+msgid "by"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-reports-table.php:241
+msgid "Donation"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-reports-table.php:243
+msgid "Donation Date and Time"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-reports-table.php:276
+msgid "Delete Entries"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-reports-table.php:277
+msgid "Download Declaration Forms"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-reports-table.php:550
+msgid "(donor missing)"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-reports-table.php:571
+msgid "(unknown)"
+msgstr ""
+
+#: includes/admin/class-give-gift-aid-reports-table.php:574
+msgid "Email donor"
+msgstr ""
+
+#: includes/frontend/class-give-gift-aid-frontend.php:221, includes/frontend/class-give-gift-aid-frontend.php:306
+msgid "Tell me more &raquo;"
+msgstr ""
+
+#: includes/frontend/class-give-gift-aid-frontend.php:269, includes/frontend/class-give-gift-aid-frontend.php:355
+msgid "Please use the billing details address"
+msgstr ""
+
+#: includes/frontend/class-give-gift-aid-frontend.php:282, includes/frontend/class-give-gift-aid-frontend.php:368
+msgid "I'd like to use another address"
+msgstr ""
+
+#: includes/frontend/class-give-gift-aid-frontend.php:334
+msgid "Take me to my donation &raquo;"
+msgstr ""
+
+#: includes/frontend/class-give-gift-aid-frontend.php:410
+msgid "Please enter your address 1."
+msgstr ""
+
+#: includes/frontend/class-give-gift-aid-frontend.php:418
+msgid "Please enter your city."
+msgstr ""
+
+#: includes/frontend/class-give-gift-aid-frontend.php:426
+msgid "Please enter your state."
+msgstr ""
+
+#: includes/frontend/class-give-gift-aid-frontend.php:434
+msgid "Please enter your zip/postal code."
+msgstr ""
+
+#: includes/frontend/class-give-gift-aid-frontend.php:444
+msgid "Please enter correct zip code."
+msgstr ""
+
+#: includes/frontend/class-give-gift-aid-frontend.php:588, src/Receipts/UpdateDonationReceipt.php:44
+msgid "Yes, opted in."
+msgstr ""
+
+#: includes/frontend/class-give-gift-aid-frontend.php:616
+msgid "Download Declaration Form link"
+msgstr ""
+
+#: includes/frontend/class-give-gift-aid-frontend.php:621, includes/give-gift-aid-helpers.php:405
+msgid "Donor's Address Specified for Gift Aid redemption."
+msgstr ""
+
+#: includes/frontend/class-give-gift-aid-frontend.php:626, includes/give-gift-aid-helpers.php:409
+msgid "Donor's Donation Gift Aid Status."
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:53, includes/give-gift-aid-helpers.php:106
+msgid "Enabled"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:54, includes/give-gift-aid-helpers.php:59, includes/give-gift-aid-helpers.php:107, includes/give-gift-aid-helpers.php:1054
+msgid "Disabled"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:57
+msgid "Global Option"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:58
+msgid "Customize"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:64
+msgid "This enables the Gift Aid feature for all your website's donation forms. Note: You can disable the global options and enable and customize options per form as well."
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:64
+msgid "This allows you to customize the Gift Aid settings for just this donation form. You can disable Gift Aid for just this form as well or simply use the global settings."
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:76
+msgid "Gift Aid Fieldset Title"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:79
+msgid "This is the title that appears above the Gift Aid fieldset within the donation form."
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:88
+msgid "Gift Aid Explanation"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:99
+msgid "Long Explanation"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:100
+msgid "This allows you to provide a more in depth explanation of Gift Aid for your donors. The content will appear within a modal window."
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:114
+msgid "Gift Aid Long Explanation"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:125
+msgid "Gift Aid Checkbox Label"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:128
+msgid "This is the agreement text that appears next to the checkbox optin to Gift Aid."
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:137
+msgid "Gift Aid Agreement"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:167
+msgid "Give - Gift Aid Settings Docs Link"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:170
+msgid "Give - Gift Aid Settings"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:195
+msgid "Reclaim Gift Aid"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:212
+msgid "Gift Aid It!"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:213
+msgid "Add 25% more to your donation at no cost to you."
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:214
+msgid "A Gift Aid declaration allows {sitename} to claim tax back on eligible donations. It means that for every £1 you donate to {sitename} we can claim back 25p, at no extra cost to you."
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:239
+msgid "By ticking the \"Yes\" box, I agree I would like {sitename} to reclaim the tax on all qualifying donations I have made, as well as any future donations, until I notify them otherwise. I understand that if I pay less Income Tax and/or Capital Gains Tax than the amount of Gift Aid claimed on all my donations in that tax year I may be asked to pay any difference. I understand that {sitename} will reclaim 25p of tax on every £1 that I give."
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:251
+msgid "What is Gift Aid?"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:252
+msgid "Gift Aid does not cost you a penny more, but can add an additional 25p to every £1 you donate. When {sitename} receives a donation from a UK taxpayer, we're entitled to claim an amount of tax (calculated at the basic rate of income tax in that year) paid on that donation. Once you have given your permission for us to do this on your behalf, there is no need for you to do anything else."
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:253
+msgid "All that is required is that you must be a taxpayer and that would have paid or will pay sufficient Income and/or Capital Gains Tax to cover all the Gift Aid claimed on all your donations in that tax year. Please note that it is your responsibility to pay any difference."
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:254
+msgid "The amount of tax we claim will be 25% of the total value of your donations in that tax year. Furthermore, if you are a higher taxpayer, you are also entitled to claim the difference between the basic rate which we will claim and the amount of tax you have actually paid. For further details on how you can do this, please contact your tax office. If your tax situation changes and your gifts will no longer be eligible for the Gift Aid scheme please contact us and we will amend your record accordingly."
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:279
+msgid "Charity Gift Aid Declaration"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:286
+msgid " I want to Gift Aid my donation of {amount} and any donations I make in the future or have made in the past 4 years to {sitename}."
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:287
+msgid "Name of Charity"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:288
+msgid "I am a UK taxpayer and understand that if I pay less Income Tax and/or Capital Gains tax than the amount of Gift Aid claimed on all my donations in that tax year it is my responsibility to pay any difference."
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:295
+msgid "Donor Details"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:298
+msgid "Address"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:300
+msgid "Date"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:379
+msgid "United Kingdom"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:397
+msgid "Donor First name."
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:401
+msgid "Donor Last name."
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:413
+msgid "Date of the donor's last Gift Aid donation"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:635
+msgid "The content that appears above the Gift Aid opt-in checkbox. This text should briefly describe the benefits of claiming Gift Aid."
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:652
+msgid "The content that appears below the Gift Aid opt-in checkbox. Individual donors should be aware of unexpected tax demands if their tax is insufficient to cover their Gift Aid donations. This text is a requirement of the Gift Aid declaration required to be displayed to the donor."
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:669
+msgid "Enter content for the Gift Aid explanation that is provided to the donor. which opens in a model window. HTML is accepted."
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:698
+msgid "Customize the Gift Aid Declaration form used for record and tax purposes. Please review the"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:700
+msgid "requirements"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:701
+msgid "on the GOV.UK website for requirements. The content here will be available via PDF"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:702
+msgid "download under"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:704
+msgid "Reports > Gift Aid"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:705
+msgid "Images, HTML and the following template tags are supported:"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:718
+msgid "Available template tags:"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:729
+msgid "- The name of your website."
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:746
+msgid "The country for your Gift Aid claim must be the UK."
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:778
+msgid "Address 1"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:781
+msgid "The primary address of your Gift Aid claim."
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:788
+msgid "Address line 1"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:808
+msgid "Address 2"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:810
+msgid "(optional) The secondary address for your Gift Aid claim. Typically an apartment or unit number."
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:817
+msgid "Address line 2"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:840
+msgid "The county for your Gift Aid address."
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:889
+msgid "The city for your Gift Aid claim."
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:919
+msgid "The postal code for your Gift Aid claim."
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:1057
+msgid "Rejected"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:1060
+msgid "Accepted"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:1085
+msgid "Download Declaration Form"
+msgstr ""
+
+#: includes/give-gift-aid-helpers.php:1107
+msgid "You are trying to download invalid Gift Aid Declaration Form. Please try again."
+msgstr ""

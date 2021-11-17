@@ -1,0 +1,337 @@
+# Translation of Plugins - Enable Media Replace - Stable (latest release) in English (UK)
+# This file is distributed under the same license as the Plugins - Enable Media Replace - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-10-11 16:59:11+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: en_GB\n"
+"Project-Id-Version: Plugins - Enable Media Replace - Stable (latest release)\n"
+
+#: views/upsell.php:130
+msgid "Get Pro"
+msgstr "Get Pro"
+
+#: views/upsell.php:123
+msgid "Envira Gallery activated!"
+msgstr "Envira Gallery activated!"
+
+#: views/upsell.php:121
+msgid "Activate"
+msgstr "Activate"
+
+#: views/upsell.php:119
+msgid "Install now"
+msgstr "Install now"
+
+#: views/upsell.php:110
+msgid "Create beautiful, fast-loading photo & video galleries for your site in minutes."
+msgstr "Create beautiful, fast-loading photo and video galleries for your site in minutes."
+
+#: views/upsell.php:99
+msgid "GET AN ASSESSMENT FOR %s YOUR WEBSITE %s AND %s %s FIND OUT HOW TO MAKE IT FASTER %s"
+msgstr "GET AN ASSESSMENT FOR %s YOUR WEBSITE %s AND %s %s FIND OUT HOW TO MAKE IT FASTER %s"
+
+#: views/upsell.php:89
+msgid "Shortpixel Adaptive Images activated!"
+msgstr "ShortPixel Adaptive Images activated!"
+
+#: views/upsell.php:75
+msgid "In Minutes"
+msgstr "In minutes"
+
+#: views/upsell.php:74
+msgid "Start Serving %s Optimized, %s Nextgen images %s From a global CDN"
+msgstr "Start serving %s optimised %s NextGEN images %s from a global CDN"
+
+#: views/upsell.php:70
+msgid "ShortPixel Adaptive Images"
+msgstr "ShortPixel Adaptive Images"
+
+#: views/upsell.php:55
+msgid "Shortpixel activated!"
+msgstr "ShortPixel activated!"
+
+#: views/upsell.php:52 views/upsell.php:86
+msgid "ACTIVATE"
+msgstr "ACTIVATE"
+
+#: views/upsell.php:48 views/upsell.php:82
+msgid "INSTALL NOW"
+msgstr "INSTALL NOW"
+
+#: views/upsell.php:41
+msgid "Optimize all images %s automatically"
+msgstr "Optimise all images %s automatically"
+
+#: views/upsell.php:39
+msgid "Is your website slow?"
+msgstr "Is your website slow?"
+
+#: views/upsell.php:37
+msgid "ShortPixel Image Optimizer"
+msgstr "ShortPixel Image Optimizer"
+
+#: views/upload.php:31
+msgid "Error in request. Please try again"
+msgstr "Error in request. Please try again"
+
+#: views/popup.php:205
+msgid "Now"
+msgstr "Now"
+
+#: views/popup.php:189
+msgid "Replace the date with current date %s(%s)%s"
+msgstr "Replace the date with current date %s(%s)%s"
+
+#: views/popup.php:148
+msgid "If you replace the file with a different filetype, this file might become unreadable and / or cause unexpected issues"
+msgstr "If you replace the file with a different filetype, this file might become unreadable and/or cause unexpected issues"
+
+#: views/popup.php:35 views/upload.php:36
+msgid "You do not have permission to upload files for this author."
+msgstr "You do not have permission to upload files for this author."
+
+#: classes/external/upgrader_skin.php:81
+msgid "There was an error installing the addon. Please try again."
+msgstr "There was an error installing the add-on. Please try again."
+
+#: classes/emr-plugin.php:203
+msgid "Installing ..."
+msgstr "Installing ..."
+
+#: views/popup.php:217
+msgid "Put new Upload in Updated Folder: "
+msgstr "Put new Upload in Updated Folder: "
+
+#: views/popup.php:162
+msgid "Note: If you check this option, the name and type of the file you are about to upload will replace the old file. All links pointing to the current file (%s) will be updated to point to the new file name. (If any other websites link to the file directly, those links will no longer work. Be careful.)"
+msgstr "Note: if you check this option, the name and type of the file you are about to upload will replace the old file. All links pointing to the current file (%s) will be updated to point to the new file name. (If any other websites link to the file directly, those links will no longer work. Be careful.)"
+
+#: views/popup.php:100
+msgid "Drop File Here"
+msgstr "Drop File Here"
+
+#: build/shortpixel/notices/src/NoticeModel.php:218
+msgid "Hide Details"
+msgstr "Hide Details"
+
+#: build/shortpixel/notices/src/NoticeModel.php:214
+msgid "See Details"
+msgstr "See Details"
+
+#: classes/emr-plugin.php:455
+msgid "Replaced By"
+msgstr "Replaced By"
+
+#: classes/replacer.php:365
+msgid "EMR could not establish a proper destination for replacement"
+msgstr "EMR could not establish a proper destination for replacement"
+
+#: classes/replacer.php:335
+msgid "In specificied directory there is already a file with the same name. Can't replace."
+msgstr "In specified directory there is already a file with the same name. Can't replace."
+
+#: classes/replacer.php:312
+msgid "Specificed new directory does not exist. Path must be a relative path from the upload directory and exist"
+msgstr "Specified new directory does not exist. Path must be a relative path from the upload directory and exist"
+
+#: views/upsell.php:101
+msgid "FIND OUT MORE"
+msgstr "FIND OUT MORE"
+
+#: views/popup.php:195
+msgid "Custom Date"
+msgstr "Custom Date"
+
+#: views/popup.php:191
+msgid "Set a Custom Date"
+msgstr "Set a Custom Date"
+
+#: views/popup.php:190
+msgid "Keep the date %s(%s)%s"
+msgstr "Keep the date %s(%s)%s"
+
+#: views/popup.php:187
+msgid "When replacing the media, do you want to:"
+msgstr "When replacing the media, do you want to:"
+
+#: views/popup.php:171
+msgid "Date Options"
+msgstr "Date Options"
+
+#: views/popup.php:130
+msgid "Replacement Options"
+msgstr "Replacement Options"
+
+#: views/popup.php:94
+msgid "Replacement file type doesn't seem to be allowed by WordPress. This might cause unexpected issues"
+msgstr "Replacement file type doesn't seem to be allowed by WordPress. This might cause unexpected issues"
+
+#: views/popup.php:90
+msgid "Replacement file is not the same filetype. This might cause unexpected issues ( %s )"
+msgstr "Replacement file is not the same filetype. This might cause unexpected issues (%s)"
+
+#: views/popup.php:87
+msgid "%s f %s exceeds the maximum upload size for this site."
+msgstr "%s f %s exceeds the maximum upload size for this site."
+
+#: views/popup.php:86
+msgid "Maximum file size: <strong>%s</strong>"
+msgstr "Maximum file size: <strong>%s</strong>"
+
+#: views/popup.php:79
+msgid "Choose Replacement Media"
+msgstr "Choose Replacement Media"
+
+#: views/upload.php:186
+msgid "File successfully replaced"
+msgstr "File successfully replaced"
+
+#: views/upload.php:181
+msgid "File Upload seems to have failed. No files were returned by system"
+msgstr "File upload seems to have failed. No files were returned by system"
+
+#: views/upload.php:82
+msgid "Invalid Custom Date. Please custom date values (%s)"
+msgstr "Invalid Custom Date. Please custom date values (%s)"
+
+#: build/shortpixel/log/src/DebugItem.php:35
+msgid "[Data]"
+msgstr "[Data]"
+
+#: views/popup.php:227
+msgid "Cancel"
+msgstr "Cancel"
+
+#: views/popup.php:226
+msgid "Upload"
+msgstr "Upload"
+
+#: views/popup.php:164
+msgid "Please note that if you upload a new image, only embeds/links of the original size image will be replaced in your posts."
+msgstr "Please note that if you upload a new image, only embeds/links of the original size image will be replaced in your posts."
+
+#: views/popup.php:159
+msgid "Replace the file, use new file name and update all links"
+msgstr "Replace the file, use new file name and update all links"
+
+#: views/popup.php:145
+msgid "Note: This option requires you to upload a file of the same type (%s) as the one you are replacing. The name of the attachment will stay the same (%s) no matter what the file you upload is called."
+msgstr "Note: This option requires you to upload a file of the same type (%s) as the one you are replacing. The name of the attachment will stay the same (%s) no matter what the file you upload is called."
+
+#: views/popup.php:141
+msgid "Just replace the file"
+msgstr "Just replace the file"
+
+#: views/popup.php:85
+msgid "Choose a file to upload from your computer"
+msgstr "Choose a file to upload from your computer"
+
+#: views/popup.php:81
+msgid "NOTE: You are about to replace the media file \"%s\". There is no undo. Think about it!"
+msgstr "NOTE: You are about to replace the media file \"%s\". There is no undo. Think about it!"
+
+#: views/popup.php:64
+msgid "Replace Media Upload"
+msgstr "Replace Media Upload"
+
+#: classes/emr-plugin.php:443
+msgid "Revised"
+msgstr "Revised"
+
+#: classes/emr-plugin.php:440
+msgid "M j, Y @ H:i"
+msgstr "M j, Y @ H:i"
+
+#: classes/emr-plugin.php:319 views/popup.php:207
+msgid "Original"
+msgstr "Original"
+
+#: classes/emr-plugin.php:307
+msgid "Thumbnails were not generated"
+msgstr "Thumbnails were not generated"
+
+#: classes/emr-plugin.php:294 classes/emr-plugin.php:356
+msgid "To replace the current file, click the link and upload a replacement."
+msgstr "To replace the current file, click the link and upload a replacement."
+
+#: classes/emr-plugin.php:294 classes/emr-plugin.php:356
+msgid "Upload a new file"
+msgstr "Upload a new file"
+
+#: classes/emr-plugin.php:110 classes/emr-plugin.php:354
+#: classes/emr-plugin.php:393
+msgid "Replace media"
+msgstr "Replace media"
+
+#: classes/emr-plugin.php:274
+msgid "Replaced Thumbnails Preview"
+msgstr "Replaced Thumbnails Preview"
+
+#: classes/emr-plugin.php:270
+msgid "Replace Media"
+msgstr "Replace Media"
+
+#: classes/replacer.php:555
+msgid "There was an issue with updating your image URLS: Search and replace have different amount of values. Aborting updating thumbnails"
+msgstr "There was an issue with updating your image URLs: Search and replace have different amount of values. Aborting updating thumbnails"
+
+#: classes/replacer.php:478
+msgid "Fail Safe :: Source Location returned empty string. Not replacing content"
+msgstr "Fail Safe :: Source location returned empty string. Not replacing content"
+
+#: classes/replacer.php:471
+msgid "Fail Safe :: Source Location seems to be a directory."
+msgstr "Fail Safe :: Source location seems to be a directory."
+
+#: classes/replacer.php:131
+msgid "The uploaded file could not be moved to %1$s. This is most likely an issue with permissions, or upload failed."
+msgstr "The uploaded file could not be moved to %1$s. This is most likely an issue with permissions, or upload failed."
+
+#: views/upload.php:137
+msgid "File type does not meet security guidelines. Try another."
+msgstr "File type does not meet security guidelines. Try another."
+
+#: views/popup.php:23 views/upload.php:11
+msgid "You do not have permission to upload files."
+msgstr "You do not have permission to upload files."
+
+#: views/notice.php:11
+msgid "More info"
+msgstr "More info"
+
+#: views/notice.php:8
+msgid "<a href=\"https://shortpixel.com/wp/af/VKG6LYN28044\" target=\"_blank\">ShortPixel</a> is an image optimization plugin and if you have it activated, upon replacing an image in Enable Media Replace, the image will be also automatically optimized."
+msgstr "<a href=\"https://shortpixel.com/wp/af/VKG6LYN28044\" target=\"_blank\">ShortPixel</a> is an image optimisation plugin and if you have it activated, upon replacing an image in Enable Media Replace, the image will be also automatically optimised."
+
+#: views/notice.php:6
+msgid "Enable Media Replace is now compatible with ShortPixel!"
+msgstr "Enable Media Replace is now compatible with ShortPixel!"
+
+#: views/notice.php:2
+msgid "Dismiss"
+msgstr "Dismiss"
+
+#. Author URI of the plugin
+msgid "https://shortpixel.com"
+msgstr "https://shortpixel.com"
+
+#. Author of the plugin
+msgid "ShortPixel"
+msgstr "ShortPixel"
+
+#. Description of the plugin
+msgid "Enable replacing media files by uploading a new file in the \"Edit Media\" section of the WordPress Media Library."
+msgstr "Enable replacing media files by uploading a new file in the \"Edit Media\" section of the WordPress Media Library."
+
+#. Plugin URI of the plugin
+msgid "https://wordpress.org/plugins/enable-media-replace/"
+msgstr "https://en-gb.wordpress.org/plugins/enable-media-replace/"
+
+#. Plugin Name of the plugin
+msgid "Enable Media Replace"
+msgstr "Enable Media Replace"

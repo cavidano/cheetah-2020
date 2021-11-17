@@ -4,7 +4,7 @@
  * Plugin URI: https://wordpress.org/extend/plugins/crop-thumbnails/
  * Author: Volkmar Kantor
  * Author URI: https://www.totalmedial.de
- * Version: 1.2.5
+ * Version: 1.4.0
  * Description: The easy way to adjust your cropped image sizes.
  * 
  * 
@@ -26,26 +26,10 @@
  */
 
 
-define('CROP_THUMBNAILS_VERSION','1.2.5');
+define('CROP_THUMBNAILS_VERSION','1.4.0');
 
-
-function cptLoadLanguage() {
-	load_plugin_textdomain( 'crop-thumbnails', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
-}
-add_action( 'init', 'cptLoadLanguage' );
-
-
-/**
- * returns the WpVersion in as a float
- */
-function cptGetWpVersion() {
-	$version = get_bloginfo('version');
-	$version = floatval(substr($version,0,3));
-	return $version;
-}
-
-include_once(dirname(__FILE__).'/functions/helper.php');
-include_once(dirname(__FILE__).'/functions/settingsscreen.php');
-include_once(dirname(__FILE__).'/functions/editor.php');
-include_once(dirname(__FILE__).'/functions/backendpreparer.php');
-include_once(dirname(__FILE__).'/functions/save.php');
+include_once __DIR__.'/functions/helper.php';
+include_once __DIR__.'/functions/settingsscreen.php';
+include_once __DIR__.'/functions/editor.php';
+include_once __DIR__.'/functions/backendpreparer.php';
+include_once __DIR__.'/functions/save.php';

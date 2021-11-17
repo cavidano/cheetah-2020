@@ -34,7 +34,7 @@ function create_child_post_types() {
     );
 
 }
-
+	
 add_action( 'init', 'create_child_post_types' );
 
     ////////////////////////////////////////
@@ -127,3 +127,4 @@ add_action( 'init', 'create_child_post_types' );
 
         return ;
     }
+

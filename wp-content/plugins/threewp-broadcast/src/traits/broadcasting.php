@@ -43,13 +43,13 @@ trait broadcasting
 	{
 		$bcd = $broadcasting_data;
 
+		if ( ! $bcd->post )
+			return $this->debug( 'Warning! Refusing to broadcast non-existent post %s on %s.', $bcd->post, get_current_blog_id() );
+
 		// To prevent recursion
 		array_push( $this->broadcasting, $bcd );
 
 		$this->debug( 'System info: %s', $this->get_system_info_table() . '' );
-
-		if ( ! $bcd->post )
-			return $this->debug( 'Warning! Refusing to broadcast non-existent post.' );
 
 		$this->debug( 'Broadcasting the post %s <pre>%s</pre>', $bcd->post->ID, $bcd->post );
 
@@ -98,11 +98,27 @@ trait broadcasting
 		{
 			$this->debug( 'Will broadcast taxonomies.' );
 			$bcd->add_new_taxonomies = true;
-			$bcd->taxonomies();
+			$bcd_taxonomies = $bcd->taxonomies();
 			$this->collect_post_type_taxonomies( $bcd );
+
 			$this->debug( 'Taxonomy data dump: %s', $bcd->taxonomy_data );
-			$this->debug( 'Parent blog taxonomies dump: %s', $bcd->parent_blog_taxonomies );
-			$this->debug( 'Parent post taxonomies dump: %s', $bcd->parent_post_taxonomies );
+
+			foreach( $bcd->parent_post_taxonomies as $taxonomy => $taxonomy_terms )
+				$this->debug( 'Parent post taxonomy %s dump: %s', $taxonomy, $bcd->taxonomies()->build_nice_terms_list( $taxonomy_terms ) );
+
+			foreach( $bcd->parent_blog_taxonomies as $taxonomy => $taxonomy_data )
+				$this->debug( 'Parent blog taxonomy %s dump: %s', $taxonomy, $bcd->taxonomies()->build_nice_terms_list( $taxonomy_data[ 'terms' ] ) );
+
+			// Make a note of these terms, since they are very important to syncing the post.
+			foreach( $bcd->parent_post_taxonomies as $taxonomy => $terms )
+			{
+				$term_ids = array_keys( $terms );
+				if ( count( $term_ids ) < 1 )
+					continue;
+				$this->debug( 'For taxonomy %s using terms: %s', $taxonomy, json_encode( $term_ids ) );
+				foreach( $term_ids as $term_id )
+					$bcd_taxonomies->use_term( $term_id );
+			}
 		}
 		else
 			$this->debug( 'Will not broadcast taxonomies.' );
@@ -271,6 +287,13 @@ trait broadcasting
 		$action->broadcasting_data = $bcd;
 		$action->execute();
 
+		// Prune the unused parent blog terms.
+		if ( $bcd->taxonomies )
+		{
+			$bcd->taxonomies()->mark_parent_terms_used();
+			$bcd->taxonomies()->prune_parent_blog_terms();
+		}
+
 		$this->debug( 'The attachment data is: %s', $bcd->attachment_data );
 
 		$this->debug( 'Beginning child broadcast loop to blogs %s', $bcd->blogs );
@@ -296,6 +319,9 @@ trait broadcasting
 			// Create new post data from the original stuff.
 			$bcd->new_post = clone( $bcd->post );
 			$bcd->new_child_created = false;
+
+			// This is for scheduled post_statuses to work.
+			$bcd->new_post->edit_date = true;
 
 			foreach( [ 'guid', 'ID' ] as $key )
 				unset( $bcd->new_post->$key );
@@ -388,6 +414,9 @@ trait broadcasting
 				$this->debug( 'Creating a new post: %s', $temp_post_data );
 				unset( $temp_post_data->ID );
 
+				// WP likes to unslash...
+				$temp_post_data->post_content = wp_slash( $temp_post_data->post_content );
+
 				$this->debug( 'Running wp_insert_post with %s', $temp_post_data );
 				$result = wp_insert_post( $temp_post_data, true );
 
@@ -424,9 +453,8 @@ trait broadcasting
 			if ( ! is_a( $bcd->new_post, 'WP_Post' ) )
 				wp_die( 'Broadcast fatal error! After creating / updating the child post, it has disappeared. Try enabling Broadcast debug mode to help diagnose the error.' );
 
-			global $wpdb;
-			$this->debug( 'Forcing post_status to %s', $bcd->post->post_status );
-			$wpdb->update( $wpdb->posts, [ 'post_status' => $bcd->post->post_status ], [ 'ID' => $bcd->new_post( 'ID' ) ] );
+			$this->set_post_status( $bcd->new_post( 'ID' ), $bcd->post->post_status );
+			$bcd->new_post = get_post( $bcd->new_post( 'ID' ) );
 
 			$action = $this->new_action( 'broadcasting_after_update_post' );
 			$action->broadcasting_data = $bcd;
@@ -452,6 +480,8 @@ trait broadcasting
 
 			// Force setting of the correct post dates.
 			$this->set_post_date( $dated_post );
+			// Ask WP to schedule a publish transient.
+			check_and_publish_future_post( $dated_post->ID );
 
 			$bcd->equivalent_posts()->set( $bcd->parent_blog_id, $bcd->post->ID, $bcd->current_child_blog_id, $bcd->new_post( 'ID' ) );
 			$this->debug( 'Equivalent of %s/%s is %s/%s', $bcd->parent_blog_id, $bcd->post->ID, $bcd->current_child_blog_id, $bcd->new_post( 'ID' )  );
@@ -502,9 +532,6 @@ trait broadcasting
 					$this->debug( 'Taxonomies: Syncing terms for %s.', $parent_taxonomy );
 					$this->sync_terms( $bcd, $parent_taxonomy );
 					$this->debug( 'Taxonomies: Synced terms for %s.', $parent_taxonomy );
-
-					// Get a list of terms that the target blog has.
-					$target_blog_terms = $this->get_current_blog_taxonomy_terms( $parent_taxonomy );
 
 					// Go through the original post's terms and compare each slug with the slug of the target terms.
 					$taxonomies_to_add_to = [];
@@ -575,6 +602,12 @@ trait broadcasting
 			}
 			else
 				$this->debug( 'No need to modify the post.' );
+
+			$bcd->modified_post = $modified_post;
+			$action = $this->new_action( 'broadcasting_after_modify_post' );
+			$action->broadcasting_data = $bcd;
+			$action->post_modified = $post_modified;
+			$action->execute();
 
 			if ( $bcd->custom_fields )
 			{
@@ -692,18 +725,23 @@ trait broadcasting
 		// Finished broadcasting.
 		array_pop( $this->broadcasting );
 
+		$_POST = $bcd->_POST;
+
 		if ( $this->debugging_to_browser() )
 		{
 			if ( ! $this->is_broadcasting() )
 			{
-				if ( isset( $bcd->stop_after_broadcast ) && ! $bcd->stop_after_broadcast )
+				if ( isset( $bcd->stop_after_broadcast ) )
 				{
-					$this->debug( 'Finished broadcasting.' );
-				}
-				else
-				{
-					$this->debug( 'Finished broadcasting. Now stopping Wordpress.' );
-					exit;
+					if ( $bcd->stop_after_broadcast )
+					{
+						$this->debug( 'Finished broadcasting. Now stopping Wordpress.' );
+						exit;
+					}
+					else
+					{
+						$this->debug( 'Finished broadcasting.' );
+					}
 				}
 			}
 			else
@@ -711,6 +749,8 @@ trait broadcasting
 				$this->debug( 'Still broadcasting.' );
 			}
 		}
+
+		$this->debug( "Broadcasting finished. On blog %s.", get_current_blog_id() );
 
 		return $bcd;
 	}
@@ -769,7 +809,7 @@ trait broadcasting
 
 		// No post?
 		if ( count( $_POST ) < 1 )
-			return $this->debug( 'No _POST available. Not broadcasting.' );
+			return;
 
 		// Does this post_id match up with the one in the post?
 		if ( isset( $_POST[ 'ID' ] ) )
@@ -782,11 +822,12 @@ trait broadcasting
 		// Is this post a child?
 		$broadcast_data = $this->get_post_broadcast_data( get_current_blog_id(), $post_id );
 		if ( $broadcast_data->get_linked_parent() !== false )
-			return $this->debug( 'Post is a child. Not broadcasting.' );
+			return;
 
 		// No permission.
-		if ( ! static::user_has_roles( $this->get_site_option( 'role_broadcast' ) ) )
-			return $this->debug( 'User does not have permission to use Broadcast. Not broadcasting.' );
+		if ( get_current_user_id() > 0 )		// Cron is 0.
+			if ( ! static::user_has_roles( $this->get_site_option( 'role_broadcast' ) ) )
+				return $this->debug( 'User does not have permission to use Broadcast. Not broadcasting.' );
 
 		// Save the user's last settings.
 		if ( isset( $_POST[ 'broadcast' ] ) )
@@ -902,16 +943,26 @@ trait broadcasting
 		// Remove the parent blog
 		$bcd->blogs->forget( $bcd->parent_blog_id );
 
-		$bcd->custom_fields = $form->checkbox( 'custom_fields' )->get_post_value()
-			&& ( is_super_admin() || static::user_has_roles( $this->get_site_option( 'role_custom_fields' ) ) );
-		if ( $bcd->custom_fields )
-			$bcd->custom_fields = (object)[];
-
 		$bcd->link = $form->checkbox( 'link' )->get_post_value()
 			&& ( is_super_admin() || static::user_has_roles( $this->get_site_option( 'role_link' ) ) );
 
-		$bcd->taxonomies = $form->checkbox( 'taxonomies' )->get_post_value()
-			&& ( is_super_admin() || static::user_has_roles( $this->get_site_option( 'role_taxonomies' ) ) );
+		if ( $this->get_site_option( 'show_custom_fields_taxonomies' ) )
+		{
+			$this->debug( 'show_custom_fields_taxonomies is false.' );
+			$bcd->custom_fields = $form->checkbox( 'custom_fields' )->get_post_value()
+				&& ( is_super_admin() || static::user_has_roles( $this->get_site_option( 'role_custom_fields' ) ) );
+			if ( $bcd->custom_fields )
+				$bcd->custom_fields = (object)[];
+
+			$bcd->taxonomies = $form->checkbox( 'taxonomies' )->get_post_value()
+				&& ( is_super_admin() || static::user_has_roles( $this->get_site_option( 'role_taxonomies' ) ) );
+		}
+		else
+		{
+			$this->debug( 'Assuming custom fields and taxonomies are to be broadcasted.' );
+			$bcd->custom_fields = true;
+			$bcd->taxonomies = true;
+		}
 
 		$keep_attachments = $this->get_site_option( 'keep_attachments' );
 		if ( $keep_attachments )

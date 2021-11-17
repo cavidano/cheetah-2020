@@ -128,8 +128,8 @@ class Unyson
 			// Attachment ID
 			if ( isset( $data->attachment_id ) )
 			{
-				$this->debug( 'Attachment found: %d', $data->attachment_id );
-				$this->__bcd->add_attachment( $data->attachment_id );
+				if ( $this->__bcd->try_add_attachment( $data->attachment_id ) )
+					$this->debug( 'Attachment found: %d', $data->attachment_id );
 			}
 			// Background image
 			if ( isset( $data->background_image ) )
@@ -140,7 +140,7 @@ class Unyson
 						{
 							$image_id = $data->background_image->custom;
 							$this->debug( 'Background image: %d', $image_id );
-							$this->__bcd->add_attachment( $image_id );
+							$this->__bcd->try_add_attachment( $image_id );
 						}
 			}
 			foreach( (array) $data as $key => $underthing )

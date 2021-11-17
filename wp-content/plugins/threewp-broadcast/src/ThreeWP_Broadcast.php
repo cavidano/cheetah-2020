@@ -84,7 +84,12 @@ class ThreeWP_Broadcast
 	public static $incompatible_plugins = [
 		'intuitive-custom-post-order/intuitive-custom-post-order.php',
 		'post-type-switcher/post-type-switcher.php',
-		'taxonomy-terms-order/taxonomy-terms-order.php',
+		/**
+			@brief		Causes Queue data to expand exponentially.
+			@since		2020-07-02 08:28:38
+		**/
+		'query-monitor/query-monitor.php',
+		'theia-smart-thumbnails-premium/main.php',
 		/**
 			@brief		Breaks UBS by inserting things into the _POST during normal getting.
 			@since		2018-01-22 16:02:22
@@ -119,6 +124,7 @@ class ThreeWP_Broadcast
 		}
 
 		$this->add_action( 'add_meta_boxes', 100 );
+		$this->add_action( 'wp_uninitialize_site' );
 
 		if ( $this->get_site_option( 'override_child_permalinks' ) )
 		{
@@ -152,7 +158,6 @@ class ThreeWP_Broadcast
 		$this->add_filter( 'threewp_broadcast_prepare_meta_box', 5 );
 		$this->add_filter( 'threewp_broadcast_prepare_meta_box', 'threewp_broadcast_prepared_meta_box', 100 );
 		$this->add_filter( 'threewp_broadcast_preparse_content' );
-
 
 		if ( $this->get_site_option( 'canonical_url' ) )
 			$this->add_action( 'wp_head', 1 );
@@ -355,10 +360,14 @@ class ThreeWP_Broadcast
 		if ( ! is_object( $post ) )
 			$post = get_post( $post );
 
+		if ( ! $post )
+			return $link;
+
 		$child_post = $post;
 
 		// Have we already checked this post ID for a link?
-		$key = 'b' . $blog_id . '_p' . $post->ID;
+		// The $link is to ensure uniqueness, since TranslatePress uses the same blog + post ID, but different /fr/ /de/ links.
+		$key = 'b' . $blog_id . '_p' . $post->ID . $link;
 		if ( property_exists( $this->permalink_cache, $key ) )
 		{
 			unset( $this->_is_getting_permalink );
@@ -445,7 +454,10 @@ class ThreeWP_Broadcast
 			{
 				// Do not bother eaching this child if we started here.
 				if ( $blog_id == $action->blog_id )
-					continue;
+				{
+					if ( ! $action->on_source_child )
+						continue;
+				}
 				if ( ! $this->blog_exists( $blog_id ) )
 					continue;
 				switch_to_blog( $blog_id );

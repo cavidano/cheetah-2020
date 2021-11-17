@@ -128,7 +128,7 @@ class base
 				'filename_from_plugin_directory' => str_replace( WP_PLUGIN_DIR, '', $__FILE__ ),
 				'path_from_plugin_directory' => str_replace( WP_PLUGIN_DIR, '', dirname( $__FILE__ ) ),
 				'path_from_base_directory' => dirname( str_replace( ABSPATH, '', $__FILE__ ) ),
-				'url' => plugins_url() . str_replace( WP_PLUGIN_DIR, '', dirname( $__FILE__ ) ),
+				'url' => plugin_dir_url( $__FILE__ ),
 			];
 		}
 
@@ -1174,9 +1174,13 @@ class base
 	public static function mail()
 	{
 		// This ensures that the PHPmailer class is loaded and ready.
-		if ( ! class_exists( '\\PHPMailer' ) )
-			require_once( ABSPATH . WPINC . '/class-phpmailer.php' );
-		return parent::mail();
+		if ( ! class_exists( '\\PHPMailer\\PHPMailer' ) )
+			require_once( ABSPATH . WPINC . '/PHPMailer/PHPMailer.php' );
+
+		$phpmailer = new mail\mail();
+		$phpmailer->CharSet = 'UTF-8';
+		do_action_ref_array( 'phpmailer_init', [ & $phpmailer ] );
+		return $phpmailer;
 	}
 
 	/**

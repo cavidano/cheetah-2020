@@ -149,15 +149,8 @@ class GoodLayers
 		if ( isset( $item[ 'image' ] ) )
 		{
 			$image_id = $item[ 'image' ];
-			$this->debug( 'Adding attachment %s found in image.', $image_id );
-			try
-			{
-				$bcd->add_attachment( $image_id );
-			}
-			catch ( Exception $e )
-			{
-				$this->debug( 'Warning! Unable to add image %d.', $image_id );
-			}
+			if ( $bcd->try_add_attachment( $image_id ) )
+				$this->debug( 'Adding attachment %s found in image.', $image_id );
 		}
 
 		// From the page options.
@@ -174,15 +167,8 @@ class GoodLayers
 			if ( isset( $item[ 'value' ][ 'background-image' ] ) )
 			{
 				$image_id = $item[ 'value' ][ 'background-image' ];
-				$this->debug( 'Adding background image %d', $image_id );
-				try
-				{
-					$bcd->add_attachment( $image_id );
-				}
-				catch ( Exception $e )
-				{
-					$this->debug( 'Warning! Unable to add background image %d.', $image_id );
-				}
+				if ( $bcd->try_add_attachment( $image_id ) )
+					$this->debug( 'Adding background image %d', $image_id );
 			}
 
 			// Generic image handler.
@@ -192,7 +178,7 @@ class GoodLayers
 				$this->debug( 'Adding attachment %s found in image.', $image_id );
 				try
 				{
-					$bcd->add_attachment( $image_id );
+					$bcd->try_add_attachment( $image_id );
 				}
 				catch ( Exception $e )
 				{
@@ -215,7 +201,7 @@ class GoodLayers
 			$this->debug( 'Adding page title background image %d', $image_id );
 			try
 			{
-				$bcd->add_attachment( $image_id );
+				$bcd->try_add_attachment( $image_id );
 			}
 			catch ( Exception $e )
 			{
@@ -233,7 +219,7 @@ class GoodLayers
 						$this->debug( 'Adding attachment %s found in image.', $image_id );
 						try
 						{
-							$bcd->add_attachment( $image_id );
+							$bcd->try_add_attachment( $image_id );
 						}
 						catch ( Exception $e )
 						{

@@ -1,5 +1,4 @@
 <?php
-
 namespace threewp_broadcast\premium_pack\learndash;
 
 /**
@@ -10,6 +9,9 @@ namespace threewp_broadcast\premium_pack\learndash;
 class LearnDash
 	extends \threewp_broadcast\premium_pack\base
 {
+	use \threewp_broadcast\premium_pack\classes\database_trait;
+	use \threewp_broadcast\premium_pack\classes\files_trait;
+
 	/**
 		@brief		When broadcasting courses, keep the existing course access list.
 		@since		2019-02-09 19:35:23
@@ -25,10 +27,15 @@ class LearnDash
 	{
 		$this->add_action( 'threewp_broadcast_broadcasting_after_update_post' );
 		$this->add_action( 'threewp_broadcast_broadcasting_before_restore_current_blog' );
+		$this->add_filter( 'threewp_broadcast_broadcasting_modify_post' );
 		$this->add_action( 'threewp_broadcast_broadcasting_started' );
 		$this->add_action( 'threewp_broadcast_get_post_types' );
 		$this->add_action( 'threewp_broadcast_menu' );
+		$this->add_action( 'threewp_broadcast_parse_content' );
+		$this->add_action( 'threewp_broadcast_preparse_content' );
 		$this->quiz = new Quiz();
+		$this->LDAdvQuiz = new LDAdvQuiz();
+		$this->LDAdvQuiz_toplist = new LDAdvQuiz_toplist();
 	}
 
 	/**
@@ -313,6 +320,13 @@ class LearnDash
 			// Tab name
 			->name( __( 'Course tool', 'threewp_broadcast' ) );
 
+		$tabs->tab( 'settings' )
+			->callback_this( 'settings' )
+			// Tab heading
+			->heading( __( 'LearnDash Settings', 'threewp_broadcast' ) )
+			// Tab name
+			->name( __( 'Settings', 'threewp_broadcast' ) );
+
 		echo $tabs->render();
 	}
 
@@ -344,6 +358,18 @@ class LearnDash
 	}
 
 	/**
+		@brief		threewp_broadcast_broadcasting_after_switch_to_blog
+		@since		2021-04-04 20:14:53
+	**/
+	public function threewp_broadcast_broadcasting_modify_post( $action )
+	{
+		$bcd = $action->broadcasting_data;
+		$this->prepare_bcd( $bcd );
+
+		$this->maybe_save_course_groups( $bcd );
+	}
+
+	/**
 		@brief		Save the nutritional information and ingredient metadata.
 		@since		2015-04-09 19:29:30
 	**/
@@ -358,6 +384,7 @@ class LearnDash
 		else
 			$this->maybe_save_quiz_25( $bcd );
 		$this->maybe_save_lesson( $bcd );
+		$this->maybe_save_topic( $bcd );
 	}
 
 	/**
@@ -366,7 +393,18 @@ class LearnDash
 	**/
 	public function threewp_broadcast_get_post_types( $action )
 	{
-		$action->add_types( 'sfwd-courses', 'sfwd-lessons', 'sfwd-quiz', 'sfwd-essays', 'sfwd-assignment', 'groups', 'sfwd-topic', 'sfwd-certificates', 'sfwd-transactions' );
+		$action->add_types(
+			'sfwd-courses',
+			'sfwd-lessons',
+			'sfwd-question',
+			'sfwd-quiz',
+			'sfwd-essays',
+			'sfwd-assignment',
+			'groups',
+			'sfwd-topic',
+			'sfwd-certificates',
+			'sfwd-transactions'
+		);
 	}
 
 	/**
@@ -387,9 +425,140 @@ class LearnDash
 			->page_title( 'LearnDash' );
 	}
 
+	/**
+	 	@brief		Support non-trivial hosting setups
+	  @return 	string $abspath
+	**/
+	public function get_root_path(){
+		// We don't want to use ABSPATH as that might not have the correct base path for uploads
+
+		$upload_dir_parts  = wp_upload_dir();
+		$upload_path       = $upload_dir_parts['basedir'];
+		$upload_path_parts = explode( 'wp-content', $upload_path );
+
+		$rootpath = rtrim( $upload_path_parts[0], '/' );
+
+		return $rootpath;
+	}
+
+	/**
+		@brief		Parse content for Uncanny Content Blocks.
+		@since		2020-12-10 18:35:02
+	**/
+	public function threewp_broadcast_parse_content( $action )
+	{
+		$bcd = $action->broadcasting_data;		// Convenience.
+
+		if ( ! isset( $bcd->learndash ) )
+			return;
+
+		foreach( $bcd->learndash->collection( 'preparse_tincanny_content' ) as $action_id => $collections )
+		{
+			foreach( $collections->collection( 'blocks' ) as $block )
+			{
+				$content_id             = $block[ 'attrs' ][ 'contentId' ];
+				$original_snc_file_info = $collections->collection( 'snc_file_info' )->get( $content_id );
+				$content_title          = $original_snc_file_info->file_name;
+				$snc_file_info          = $this->get_snc_file_info_by( 'file_name', $content_title );
+
+				if ( ! $snc_file_info )
+					$snc_file_info = $this->insert_snc_file_info( $bcd, $original_snc_file_info );
+
+
+				// Delete and recopy all of the files.
+				$abspath = $this->get_root_path();
+
+				$source = $abspath . $original_snc_file_info->url;
+				$source = dirname( $source );
+				$target = $abspath . $snc_file_info->url;
+				$target = dirname( $target );
+
+				$this->debug( 'Deleting %s', $target );
+				if ( is_dir( $target ) )
+					static::delete_recursive( $target );
+
+				$this->debug( 'Copying %s to %s', $source, $target );
+
+				static::copy_recursive( $source, $target );
+
+				// Replace the block with the new info.
+				$block[ 'attrs' ][ 'contentId' ] = $snc_file_info->ID . '';
+				$block[ 'attrs' ][ 'contentUrl' ] = $snc_file_info->url;
+				$action->content = ThreeWP_Broadcast()->gutenberg()->replace_text_with_block( $block[ 'original' ], $block, $action->content, [
+					'json_options' => JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_UNESCAPED_SLASHES,
+				] );
+			}
+		}
+	}
+
+	/**
+		@brief		Preparse content for Uncanny Content Blocks.
+		@since		2020-12-10 18:35:02
+	**/
+	public function threewp_broadcast_preparse_content( $action )
+	{
+		$bcd = $action->broadcasting_data;		// Convenience.
+		$content = $action->content;			// Also very convenient.
+
+		$this->prepare_bcd( $bcd );
+
+			$tc = $bcd->learndash
+				->collection( 'preparse_tincanny_content' )
+				->collection( $action->id );
+
+		// Find any blocks in the content.
+		$blocks = ThreeWP_Broadcast()->gutenberg()->parse_blocks( $content, [ 'stripslashes' => false ] );
+		foreach( $blocks as $block )
+		{
+			if ( $block[ 'blockName' ] !== 'tincanny/content' )
+				continue;
+			$content_id = $block[ 'attrs' ][ 'contentId' ];
+			$this->debug( 'tincanny/content block found! %s / %s / %s',
+				$content_id,
+				$block[ 'attrs' ][ 'contentTitle' ],
+				$block[ 'attrs' ][ 'contentUrl' ]
+			);
+
+			$tc->collection( 'blocks' )
+				->set( $content_id, $block );
+
+			$snc_file_info = $this->get_snc_file_info_by( 'ID', $content_id );
+			$tc->collection( 'snc_file_info' )
+				->set( $content_id, $snc_file_info );
+ 		}
+
+ 		$bcd->wp_upload_dir = wp_upload_dir();
+	}
+
 	// --------------------------------------------------------------------------------------------
 	// ----------------------------------------- Save
 	// --------------------------------------------------------------------------------------------
+
+	/**
+		@brief		Save any course groups.
+		@since		2021-04-04 20:15:25
+	**/
+	public function maybe_save_course_groups( $bcd )
+	{
+		if ( $bcd->post->post_type != 'sfwd-courses' )
+			return;
+
+		if ( $this->get_site_option( 'course_groups' ) != 'keep' )
+			return;
+
+		// Find all the child fields that start with learndash_group_enrolled_
+		$key = 'learndash_group_enrolled_';
+		$cf = $bcd->custom_fields()->child_fields();
+		$course_groups = [];
+		foreach( $cf as $field_name => $field_data )
+		{
+			if ( strpos( $field_name, $key ) !== 0 )
+				continue;
+			$course_groups[ $field_name ] = reset( $field_data );
+		}
+		$this->debug( 'Saved course groups: %s', $course_groups );
+		$bcd->learndash->set( 'course_groups', $course_groups );
+	}
 
 	/**
 		@brief		Save the lesson data.
@@ -397,18 +566,7 @@ class LearnDash
 	**/
 	public function maybe_save_lesson( $bcd )
 	{
-		// Find the most valid course ID.
-
-		// First, in the course custom field.
-		$course_id = $bcd->custom_fields()->get_single( 'course_id' );
-
-		// Second, sometimes course info is stored in ld_course_xxx custom fields.
-		foreach( $bcd->custom_fields() as $key => $data )
-			if ( strpos( $key, 'ld_course_' ) === 0 )
-				$course_id = max( $course_id, reset( $data ) );
-
-		$this->debug( 'Saved course_id as %s', $course_id );
-		$bcd->learndash->set( 'course_id', $course_id );
+		$this->find_ld_course( $bcd );
 	}
 
 	/**
@@ -422,6 +580,7 @@ class LearnDash
 
 		// Save the quiz.
 		$quiz = $this->get_quiz( $bcd->post->ID );
+		$this->debug( 'Saved quiz: %s', $quiz );
 		$bcd->learndash->set( 'quiz', $quiz );
 
 		// Save the questions.
@@ -437,6 +596,8 @@ class LearnDash
 		// Save all of the categories from the parent blog for syncing later.
 		foreach( $this->get_categories() as $category_id => $category )
 			$bcd->learndash->collection( 'categories' )->set( $category_id, $category );
+
+		$this->find_ld_course( $bcd );
 	}
 
 	/**
@@ -460,6 +621,16 @@ class LearnDash
 		// Save all of the categories from the parent blog for syncing later.
 		foreach( $this->get_categories() as $category_id => $category )
 			$bcd->learndash->collection( 'categories' )->set( $category_id, $category );
+	}
+
+	/**
+		@brief		Topic have to be handled also.
+		@details	Is similar to lessons.
+		@since		2019-12-09 21:50:23
+	**/
+	public function maybe_save_topic( $bcd )
+	{
+		$this->find_ld_course( $bcd );
 	}
 
 	// --------------------------------------------------------------------------------------------
@@ -498,61 +669,14 @@ class LearnDash
 		$ld_course_steps = maybe_unserialize( $ld_course_steps );
 		if ( is_array( $ld_course_steps ) )
 		{
-			// I have no idea what these characters mean.
+            if ( isset( $ld_course_steps[ 'steps' ] ) )
+                $ld_course_steps[ 'steps' ] = $this->restore_course_steps( $bcd, $ld_course_steps[ 'steps' ] );
 
-			// h
-			$h = $this->handle_ld_h_course_steps( $bcd, $ld_course_steps[ 'h' ] );
-			$ld_course_steps[ 'h' ] = $h;
+            if ( isset( $ld_course_steps[ 'h' ] ) )
+                $ld_course_steps = $this->restore_course_steps_hrt( $bcd, $ld_course_steps );
 
-			// l
-			$l_data = $ld_course_steps[ 'l' ];
-			foreach( $l_data as $index => $item )
-			{
-				// Split out the item into the type and ID.
-				$parts = explode( ':', $item );
-				// Broadcast the post.
-				$old_post_id = $parts[ 1 ];
-				$new_post_id = $bcd->equivalent_posts()->get_or_broadcast( $bcd->parent_blog_id, $old_post_id, get_current_blog_id() );
-				$l_data[ $index ] = sprintf( '%s:%s', $parts[ 0 ], $new_post_id );
-			}
-			$ld_course_steps[ 'l' ] = $l_data;
-
-			// r
-			$r = [];
-			foreach( $ld_course_steps[ 'r' ] as $key => $children )
-			{
-				// Assemble the new key first.
-				$parts = explode( ':', $key );
-				$old_post_id = $parts[ 1 ];
-				$new_post_id = $bcd->equivalent_posts()->get_or_broadcast( $bcd->parent_blog_id, $old_post_id, get_current_blog_id() );
-				$new_key = sprintf( '%s:%s', $parts[ 0 ], $new_post_id );
-
-				$new_children = [];
-				// And now we can handle each child.
-				foreach( $children as $child )
-				{
-					$parts = explode( ':', $child );
-					$old_post_id = $parts[ 1 ];
-					$new_post_id = $bcd->equivalent_posts()->get_or_broadcast( $bcd->parent_blog_id, $old_post_id, get_current_blog_id() );
-					$new_child = sprintf( '%s:%s', $parts[ 0 ], $new_post_id );
-					$new_children []= $new_child;
-				}
-
-				$r[ $new_key ] = $new_children;
-			}
-			$ld_course_steps[ 'r' ] = $r;
-
-			// t
-			foreach( $ld_course_steps[ 't' ] as $type => $posts )
-			{
-				$new_post_ids = [];
-				foreach( $posts as $old_post_id )
-				{
-					$new_post_id = $bcd->equivalent_posts()->get_or_broadcast( $bcd->parent_blog_id, $old_post_id, get_current_blog_id() );
-					$new_post_ids []= $new_post_id;
-				}
-				$ld_course_steps[ 't' ][ $type ] = $new_post_ids;
-			}
+            if ( isset( $ld_course_steps[ 'course_id' ] ) )
+                $ld_course_steps[ 'course_id' ] = $bcd->new_post( 'ID' );
 
 			$bcd->custom_fields()->child_fields()->update_meta( 'ld_course_steps', $ld_course_steps );
 		}
@@ -563,7 +687,24 @@ class LearnDash
 			'meta_values' => [ 'sfwd-courses_course_prerequisite', 'sfwd-courses_certificate' ],
 		] );
 
-		$this->update_association( $bcd, 'learndash_group_enrolled_' );
+		if ( $this->get_site_option( 'course_groups' ) == 'replace' )
+		{
+			// Default behaviour is to carry over the groups from the parent course.
+			$this->update_association( $bcd, 'learndash_group_enrolled_' );
+		}
+
+		if ( $this->get_site_option( 'course_groups' ) == 'keep' )
+		{
+			// This will restore the groups on the child.
+			$course_groups = $bcd->learndash->get( 'course_groups' );
+			if ( is_array( $course_groups ) )
+			{
+				$this->debug( 'Restoring course groups...' );
+				$cf = $bcd->custom_fields()->child_fields();
+				foreach( $course_groups as $key => $value )
+					$cf->update_meta( $key, $value );
+			}
+		}
 	}
 
 	/**
@@ -590,24 +731,7 @@ class LearnDash
 			'meta_values' => [ 'sfwd-lessons_course' ],
 		] );
 
-		// Delete all course keys.
-		foreach( $bcd->custom_fields()->child_fields() as $key => $ignore )
-			if ( strpos( $key, 'ld_course_' ) === 0 )
-			{
-				$this->debug( 'Deleting key %s', $key );
-				$bcd->custom_fields()->child_fields()->delete_meta( $key );
-			}
-		$course_id = $bcd->learndash->get( 'course_id' );
-		if ( $course_id > 0 )
-		{
-			$new_course_id = $bcd->equivalent_posts()->get( $bcd->parent_blog_id, $course_id, get_current_blog_id() );
-			$bcd->custom_fields()->child_fields()->update_meta( 'course_id', $new_course_id );
-			$key = 'ld_course_' . $new_course_id;
-			$this->debug( 'Updating %s', $key );
-			$bcd->custom_fields()
-				->child_fields()
-				->update_meta( $key, $new_course_id );
-		}
+		$this->update_ld_course( $bcd );
 	}
 
 	/**
@@ -628,7 +752,7 @@ class LearnDash
 
 		$quiz = $bcd->learndash->get( 'quiz' );
 		if ( ! $quiz )
-			return;
+			return $this->debug( 'No quiz found.' );
 
 		$child_quiz_post_id = $bcd->new_post( 'ID' );
 		$this->debug( 'Child quiz post ID is %s', $child_quiz_post_id );
@@ -759,6 +883,22 @@ class LearnDash
 					$this->debug( 'Updating question_pro_id for post %s to %s', $new_post_id, $child_question_id );
 					update_post_meta( $new_post_id, 'question_pro_id', $child_question->id );
 					update_post_meta( $new_post_id, 'quiz_id', $child_quiz_post_id );
+					// Delete all quiz keys.
+					$ld_quiz = false;
+					foreach( get_post_meta( $new_post_id ) as $key => $value )
+						if ( strpos( $key, 'ld_quiz_' ) === 0 )
+						{
+							$this->debug( 'Deleting key %s', $key );
+							$ld_quiz = true;
+							delete_post_meta( $new_post_id, $key );
+						}
+
+					// Only add the ld_quiz custom field if it has been used.
+					if ( $ld_quiz )
+					{
+						$this->debug( 'update_post_meta ' . 'ld_quiz_' . $child_quiz_post_id );
+						update_post_meta( $new_post_id, 'ld_quiz_' . $child_quiz_post_id, $child_quiz_post_id );
+					}
 
 					$question_data = [
 						'sfwd-question_quiz' => $child_quiz_post_id
@@ -766,7 +906,7 @@ class LearnDash
 					$this->debug( 'Updating question data _sfwd-question with %s', $question_data );
 					update_post_meta( $new_post_id, '_sfwd-question', $question_data );
 
-					$equivalent_questions[ $post_id ] = [ $new_post_id, $parent_question_id ];
+					$equivalent_questions[ $post_id ] = [ $new_post_id, $child_question_id ];
 					break;
 				}
 			}
@@ -811,6 +951,15 @@ class LearnDash
 			$this->debug( 'Updating question_pro_id for post %s to %s', $new_post_id, $child_question_id );
 			update_post_meta( $new_post_id, 'question_pro_id', $child_question_id );
 			update_post_meta( $new_post_id, 'quiz_id', $child_quiz_id );
+
+			// Delete all quiz keys.
+			foreach( get_post_meta( $new_post_id ) as $key => $value )
+				if ( strpos( $key, 'ld_quiz_' ) === 0 )
+				{
+					$this->debug( 'Deleting key %s', $key );
+					delete_post_meta( $new_post_id, $key );
+				}
+			update_post_meta( $new_post_id, 'ld_quiz_' . $child_quiz_post_id, $child_quiz_post_id );
 			update_post_meta( $new_post_id, '_sfwd-question', [
 				'sfwd-question_quiz' => $child_quiz_id
 			] );
@@ -822,11 +971,12 @@ class LearnDash
 		foreach( $ld_quiz_questions as $parent_post_id => $ignore )
 		{
 			$equivalent = $equivalent_questions[ $parent_post_id ];
-			$child_ld_quiz_questions[ $equivalent[ 0 ] ] = $equivalent[ 1 ];
+			$child_ld_quiz_questions[ $equivalent[ 0 ] ] = intval( $equivalent[ 1 ] );
 		}
 		// Save the new data.
-		$this->debug( 'Saving new questions array: %s', $child_ld_quiz_questions );
 		$bcd->custom_fields()->child_fields()->update_meta( 'ld_quiz_questions', $child_ld_quiz_questions );
+
+		$this->update_ld_course( $bcd );
 	}
 
 	/**
@@ -846,12 +996,14 @@ class LearnDash
 			'meta_values' => [ 'sfwd-quiz_course', 'sfwd-quiz_lesson', 'sfwd-quiz_certificate' ],
 		] );
 
-		$this->update_equivalent_post_id( $bcd, 'course_id' );
-		$this->update_equivalent_post_id( $bcd, 'lesson_id' );
+		if ( $bcd->custom_fields()->has( 'course_id' ) )
+			$this->update_equivalent_post_id( $bcd, 'course_id' );
+		if ( $bcd->custom_fields()->has( 'lesson_id' ) )
+			$this->update_equivalent_post_id( $bcd, 'lesson_id' );
 
 		$quiz = $bcd->learndash->get( 'quiz' );
 		if ( ! $quiz )
-			return;
+			return $this->debug( 'No quiz found.' );
 
 		global $wpdb;
 		$table = $this->get_table( 'wp_pro_quiz_master' );
@@ -979,6 +1131,8 @@ class LearnDash
 
 		$this->update_equivalent_post_id( $bcd, 'course_id' );
 		$this->update_equivalent_post_id( $bcd, 'lesson_id' );
+
+		$this->update_ld_course( $bcd );
 	}
 
 	// --------------------------------------------------------------------------------------------
@@ -994,21 +1148,25 @@ class LearnDash
 	{
 		$post_ids = $this->get_course_post_ids( $course_id );
 
-		$this->debug( 'Broadcasting whole course %s: %s', $course_id, $posts );
+		$this->debug( 'Broadcasting whole course %s: %s', $course_id, $post_ids );
 
 		foreach( $post_ids as $index => $post_id )
 		{
+			$this->debug( 'Broadcasting course part %d on blog %s.', $post_id, get_current_blog_id() );
 			// This is a workaround for the queue. As of 2019-02-13 there is a "bug" that makes the queue handle all instances of a post at the time.
 			// This makes it impossible to correctly broadcast a course: course, then lessons + topics etc, then the course again.
 			// Only the "first" course is high priority.
 			if ( $index < 1 )
 			{
 				ThreeWP_Broadcast()->api()->broadcast_children( $post_id, $blogs );
+				$this->debug( 'Finished broadcasting course %d on blog %d.', $post_id, get_current_blog_id() );
 				continue;
 			}
-			$bcd = \threewp_broadcast\broadcasting_data::make( $post_id, $blogs );
-			$bcd->high_priority = false;
-			apply_filters( 'threewp_broadcast_broadcast_post', $bcd );
+			ThreeWP_Broadcast()->
+				api()->
+				low_priority()->
+				broadcast_children( $post_id, $blogs );
+			$this->debug( 'Finished broadcasting course part %d on blog %d.', $post_id, get_current_blog_id() );
 		}
 	}
 
@@ -1248,6 +1406,43 @@ class LearnDash
 	}
 
 	/**
+		@brief		Find the ld_course custom field.
+		@since		2019-12-10 09:14:59
+	**/
+	public function find_ld_course( $bcd )
+	{
+
+		if ( $bcd->post->post_type == 'sfwd-courses' )
+		{
+			$course_id = $bcd->post->ID;
+			$course_ids = [ $course_id ];
+		}
+		else
+		{
+			// First, in the course custom field.
+			$course_id = $bcd->custom_fields()->get_single( 'course_id' );
+			$course_id = intval( $course_id );
+
+			$course_ids = [];
+			// Second, sometimes course info is stored in ld_course_xxx custom fields.
+			foreach( $bcd->custom_fields() as $key => $data )
+			{
+				if ( strpos( $key, 'ld_course_' ) === 0 )
+				{
+					$value = reset( $data );
+					$value = intval( $value );
+					if ( $value > 0 )
+						$course_ids[] = reset( $data );
+				}
+			}
+		}
+
+		$this->debug( 'Saved course_id as %s, and ids as %s', $course_id, $course_ids );
+		$bcd->learndash->set( 'course_id', $course_id );
+		$bcd->learndash->set( 'course_ids', $course_ids );
+	}
+
+	/**
 		@brief		Find the quiz with this name.
 		@since		2018-12-12 19:24:43
 	**/
@@ -1389,8 +1584,22 @@ class LearnDash
 		$quiz_id = get_post_meta( $post_id, 'quiz_pro_id', true );
 		global $wpdb;
 		$query = sprintf( "SELECT * FROM `%s` WHERE `id` = '%d'", $this->get_table( 'wp_pro_quiz_master' ), $quiz_id );
+		$this->debug( $query );
 		$quiz = $wpdb->get_row( $query );
 		return $quiz;
+	}
+
+	/**
+		@brief		Find the uncanny content info on this blog.
+		@since		2020-12-10 18:35:52
+	**/
+	public function get_snc_file_info_by( $key = 'ID', $value = '' )
+	{
+		global $wpdb;
+		$query = sprintf( "SELECT * FROM `%s` WHERE `%s` = '%s'", $this->get_table( 'snc_file_info' ), $key, $value );
+		$this->debug( $query );
+		$row = $wpdb->get_row( $query );
+		return $row;
 	}
 
 	/**
@@ -1400,6 +1609,21 @@ class LearnDash
 	public function get_table( $name )
 	{
 		global $wpdb;
+
+		// If this is a pro quiz table, see if the new tables exist.
+		if ( strpos( $name, 'wp_pro_quiz' ) !== false )
+		{
+			// First, look for the old tables.
+			$table = sprintf( '%s%s', $wpdb->prefix, $name );
+			if ( $this->database_table_exists( $table ) )
+				return $table;
+
+			// If they don't exist, hope that LD have only renamed the tables once, to ld_pro_quiz.
+			$name = str_replace( 'wp_pro_quiz', 'learndash_pro_quiz', $name );
+			$table = sprintf( '%s%s', $wpdb->prefix, $name );
+			return $table;
+		}
+
 		return sprintf( '%s%s', $wpdb->prefix, $name );
 	}
 
@@ -1419,6 +1643,38 @@ class LearnDash
 			$new_array[ $new_post_id ] = $this->handle_ld_h_course_steps( $bcd, $subarray );
 		}
 		return $new_array;
+	}
+
+	/**
+		@brief		Insert a new row in the snc_file_info table based on this existing $snc_file_info.
+		@since		2020-12-10 18:36:10
+	**/
+	public function insert_snc_file_info( $bcd, $snc_file_info )
+	{
+		global $wpdb;
+		$table = $this->get_table( 'snc_file_info' );
+		$data = (array)$snc_file_info;
+		unset( $data[ 'ID' ] );
+		$wpdb->insert( $table, $data );
+		$data[ 'ID' ] = $wpdb->insert_id;
+
+		// Now that we have the ID, we need to replace the URL.
+		$data[ 'url' ] = str_replace( '/uncanny-snc/' . $snc_file_info->ID . '/', '/uncanny-snc/' . $data[ 'ID' ] . '/', $data[ 'url' ] );
+
+		$abspath = $this->get_root_path();
+
+		// Replace the upload dir.
+		$old_wp_upload_dir = $bcd->wp_upload_dir[ 'basedir' ];
+		$old_wp_upload_dir = str_replace( $abspath, '', $old_wp_upload_dir );
+		$wp_upload_dir = wp_upload_dir();
+		$wp_upload_dir = $wp_upload_dir[ 'basedir' ];
+		$wp_upload_dir = str_replace( $abspath, '', $wp_upload_dir );
+		$data[ 'url' ] = str_replace( $old_wp_upload_dir, $wp_upload_dir, $data[ 'url' ] );
+
+		$wpdb->update( $table, [ 'url' => $data[ 'url' ] ], [ 'ID' => $data[ 'ID' ] ] );
+
+		$this->debug( 'Inserted snc_file_info %s: %s', $data[ 'ID' ], $data );
+		return (object) $data;
 	}
 
 	/**
@@ -1458,29 +1714,188 @@ class LearnDash
 	}
 
 	/**
+		@brief		Restore course steps that are in a steps array.
+		@since		2021-04-04 20:12:01
+	**/
+	public function restore_course_steps( $bcd, $steps )
+	{
+        if ( is_array( $steps ) )
+        {
+            // We have to parse the key and the value.
+            $new_steps = [];
+            foreach( $steps as $step_index => $step_data )
+            {
+                // Parse the key
+                if (
+                    ( strlen( intval( $step_index ) ) == strlen( $step_index ) )
+                    &&
+                    ( intval( $step_index ) > 0 )       // catch "h"
+                )
+                    $step_index = $bcd->equivalent_posts()->get_or_broadcast( $bcd->parent_blog_id, $step_index, get_current_blog_id() );
+
+                // Replace the value.
+                $new_steps[ $step_index ] = $this->restore_course_steps( $bcd, $step_data );
+            }
+            $steps = $new_steps;
+        }
+        else
+        {
+            // If this is an integer, it's a post ID.
+			if ( strlen( intval( $steps ) ) == strlen( $steps ) )
+				$steps = $bcd->equivalent_posts()->get_or_broadcast( $bcd->parent_blog_id, $steps, get_current_blog_id() );
+        }
+        return $steps;
+	}
+
+	/**
+		@brief		Restore course steps that are in an hrt array.
+		@since		2021-04-04 20:12:13
+	**/
+	public function restore_course_steps_hrt( $bcd, $ld_course_steps )
+	{
+        // I have no idea what these characters mean.
+
+        // h
+        $h = $this->handle_ld_h_course_steps( $bcd, $ld_course_steps[ 'h' ] );
+        $ld_course_steps[ 'h' ] = $h;
+
+        // l
+        $l_data = $ld_course_steps[ 'l' ];
+        foreach( $l_data as $index => $item )
+        {
+            // Split out the item into the type and ID.
+            $parts = explode( ':', $item );
+            // Broadcast the post.
+            $old_post_id = $parts[ 1 ];
+            $new_post_id = $bcd->equivalent_posts()->get_or_broadcast( $bcd->parent_blog_id, $old_post_id, get_current_blog_id() );
+            $l_data[ $index ] = sprintf( '%s:%s', $parts[ 0 ], $new_post_id );
+        }
+        $ld_course_steps[ 'l' ] = $l_data;
+
+        // r
+        $r = [];
+        foreach( $ld_course_steps[ 'r' ] as $key => $children )
+        {
+            // Assemble the new key first.
+            $parts = explode( ':', $key );
+            $old_post_id = $parts[ 1 ];
+            $new_post_id = $bcd->equivalent_posts()->get_or_broadcast( $bcd->parent_blog_id, $old_post_id, get_current_blog_id() );
+            $new_key = sprintf( '%s:%s', $parts[ 0 ], $new_post_id );
+
+            $new_children = [];
+            // And now we can handle each child.
+            foreach( $children as $child )
+            {
+                $parts = explode( ':', $child );
+                $old_post_id = $parts[ 1 ];
+                $new_post_id = $bcd->equivalent_posts()->get_or_broadcast( $bcd->parent_blog_id, $old_post_id, get_current_blog_id() );
+                $new_child = sprintf( '%s:%s', $parts[ 0 ], $new_post_id );
+                $new_children []= $new_child;
+            }
+
+            $r[ $new_key ] = $new_children;
+        }
+        $ld_course_steps[ 'r' ] = $r;
+
+        // t
+        foreach( $ld_course_steps[ 't' ] as $type => $posts )
+        {
+            $new_post_ids = [];
+            foreach( $posts as $old_post_id )
+            {
+                $new_post_id = $bcd->equivalent_posts()->get_or_broadcast( $bcd->parent_blog_id, $old_post_id, get_current_blog_id() );
+                $new_post_ids []= $new_post_id;
+            }
+            $ld_course_steps[ 't' ][ $type ] = $new_post_ids;
+        }
+
+        return $ld_course_steps;
+	}
+
+	/**
+		@brief		Settings interface
+		@since		2021-04-07 19:38:13
+	**/
+	public function settings()
+	{
+		$form = $this->form2();
+		$r = '';
+
+		$input_course_groups = $form->select( 'course_groups' )
+			// Input title
+			->description( __( 'How to handle the groups of a broadcasted course', 'threewp_broadcast' ) )
+			// Input label
+			->label( __( 'Course groups', 'threewp_broadcast' ) )
+			->opt( 'replace', "Replace the groups for the child course" )
+			->opt( 'keep', "Keep the groups the child course is assigned to" )
+			->value( $this->get_site_option( 'course_groups' ) );
+
+		$save = $form->primary_button( 'save' )
+			// Button
+			->value( __( 'Save settings', 'threewp_broadcast' ) );
+
+		if ( $form->is_posting() )
+		{
+			$form->post();
+			$form->use_post_values();
+
+			$value = $input_course_groups->get_post_value();
+			$this->update_site_option( 'course_groups', $value );
+
+			$r .= $this->info_message_box()->_( 'Options saved!' );
+		}
+
+		$r .= $form->open_tag();
+		$r .= $form->display_form_table();
+		$r .= $form->close_tag();
+
+		echo $r;
+	}
+
+	/**
+		@brief		The site options.
+		@since		2021-04-07 18:23:08
+	**/
+	public function site_options()
+	{
+		return array_merge( [
+			/**
+				@brief		How to handle the course groups: replace or keep
+				@since		2021-04-07 18:58:45
+			**/
+			'course_groups' => 'replace',
+		], parent::site_options() );
+	}
+
+	/**
 		@brief		Update the association to other parts of LearnDash.
 		@since		2017-02-26 17:04:36
 	**/
 	public function update_association( $bcd, $assoc_key )
 	{
-		foreach( $bcd->custom_fields()->child_fields() as $key => $value )
+		$cf = $bcd->custom_fields()->child_fields();
+		foreach( $cf as $key => $value )
 		{
 			// Look for the key.
 			if ( strpos( $key, $assoc_key ) === false )
 				continue;
 
+			// If this field is protected, leave it be.
+			if ( $bcd->custom_fields()->protectlist_has( $key ) )
+				continue;
+
 			// Extract the assoc ID.
 			$old_assoc_id = str_replace( $assoc_key, '', $key );
-			$new_assoc_id = $bcd->equivalent_posts()->get( $bcd->parent_blog_id, $old_assoc_id, get_current_blog_id() );
+			$new_assoc_id = $bcd->equivalent_posts()->get_or_broadcast( $bcd->parent_blog_id, $old_assoc_id, get_current_blog_id() );
 			if ( $new_assoc_id > 0 )
 			{
 				$new_assoc_key = $assoc_key . $new_assoc_id;
 				$this->debug( 'Assigning new association meta key: %s', $new_assoc_key );
-				$bcd->custom_fields()->child_fields()->update_meta( $new_assoc_key, $value );
+				$cf->update_meta( $new_assoc_key, $value );
 			}
 
 			// Delete the old key that isn't being used.
-			$bcd->custom_fields()->child_fields()->delete_meta( $key );
+			$cf->delete_meta( $key );
 		}
 	}
 
@@ -1495,6 +1910,45 @@ class LearnDash
 		$this->debug( 'Updating custom field %s with %d from blog %d, post %d', $meta_key, $new_post_id, $bcd->parent_blog_id, $old_post_id );
 		$bcd->custom_fields()->child_fields()->update_meta( $meta_key, $new_post_id );
 		return $new_post_id;
+	}
+
+	/**
+		@brief		Set the ld_course_xx custom field.
+		@since		2019-12-09 22:32:57
+	**/
+	public function update_ld_course( $bcd )
+	{
+		$course_id = $bcd->learndash->get( 'course_id' );
+		if ( $course_id > 0 )
+		{
+			$new_course_id = $bcd->equivalent_posts()->get( $bcd->parent_blog_id, $course_id, get_current_blog_id() );
+			$bcd->custom_fields()->child_fields()->update_meta( 'course_id', $new_course_id );
+		}
+
+		// Delete all course keys.
+		foreach( $bcd->custom_fields()->child_fields() as $key => $ignore )
+			if ( strpos( $key, 'ld_course_' ) === 0 )
+			{
+				$this->debug( 'Deleting key %s', $key );
+				$bcd->custom_fields()->child_fields()->delete_meta( $key );
+			}
+
+		$old_course_ids = $bcd->learndash->get( 'course_ids' );
+		if ( $old_course_ids )
+		{
+			foreach( $old_course_ids as $old_course_id )
+			{
+				$new_course_id = $bcd->equivalent_posts()->get( $bcd->parent_blog_id, $old_course_id, get_current_blog_id() );
+				if ( $new_course_id > 0 )
+				{
+					$key = 'ld_course_' . $new_course_id;
+					$this->debug( 'Updating %s', $key );
+					$bcd->custom_fields()
+						->child_fields()
+						->update_meta( $key, $new_course_id );
+				}
+			}
+		}
 	}
 
 	/**
@@ -1513,22 +1967,42 @@ class LearnDash
 		{
 			if ( ! isset( $data[ $key ] ) )
 				continue;
-			$equivalent = $options->broadcasting_data->equivalent_posts()->get( $options->broadcasting_data->parent_blog_id, $data[ $key ], get_current_blog_id() );
-			$this->debug( 'Updating meta value %s to %d', $key, $equivalent );
-			$data[ $key ] = intval( $equivalent );
+			if  ( is_array( $data[ $key ] ) )
+			{
+				$new_value = [];
+				foreach( $data[ $key ] as $value )
+					$new_value []= $options->broadcasting_data->equivalent_posts()->get( $options->broadcasting_data->parent_blog_id, $value, get_current_blog_id() );
+			}
+			else
+			{
+				$new_value = $options->broadcasting_data->equivalent_posts()->get( $options->broadcasting_data->parent_blog_id, $data[ $key ], get_current_blog_id() );
+			}
+			$this->debug( 'Updating meta value %s to %s', $key, $new_value );
+			$data[ $key ] = $new_value;
 		}
 
 		// Do we have to merge old meta? This is mostly for user enrollments.
 		if ( $options->meta_key == '_sfwd-courses' )
 		{
-			if ( static::$keep_sfwd_courses_course_access_list )
+			$old_meta = $options->broadcasting_data->learndash->get( 'existing_course_meta' );
+			if ( $old_meta )
 			{
-				$key = 'sfwd-courses_course_access_list';
-				$old_meta = $options->broadcasting_data->learndash->get( 'existing_course_meta' );
-				if ( $old_meta )
+				$action = $this->new_action( 'merge_existing_course_meta' );
+				$action->broadcasting_data = $options->broadcasting_data;
+				$action->keys = [];
+
+				if ( static::$keep_sfwd_courses_course_access_list )
+					$action->keys []= 'sfwd-courses_course_access_list';
+
+				$action->execute();
+
+				foreach( $action->keys as $key )
 				{
-					$this->debug( 'Merging old %s: %s', $key, $old_meta[ $key ] );
-					$data[ $key ] = $old_meta[ $key ];
+					if ( isset( $old_meta[ $key ] ) )
+					{
+						$this->debug( 'Merging old %s: %s', $key, $old_meta[ $key ] );
+						$data[ $key ] = $old_meta[ $key ];
+					}
 				}
 			}
 		}

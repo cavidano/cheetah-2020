@@ -133,6 +133,20 @@ class SanitizerTest extends TestCase
     }
 
     /**
+     * Make sure that hrefs get sanitized correctly when the xlink namespace is omitted.
+     */
+    public function testSanitizeHrefsNoXlinkNamespace()
+    {
+        $dataDirectory = __DIR__ . '/data';
+        $initialData = file_get_contents($dataDirectory . '/hrefTestTwo.svg');
+        $expected = file_get_contents($dataDirectory . '/hrefCleanTwo.svg');
+
+        $cleanData = $this->class->sanitize($initialData);
+
+        $this->assertXmlStringEqualsXmlString($expected, $cleanData);
+    }
+
+    /**
      * Make sure that external references get sanitized correctly
      */
     public function testSanitizeExternal()
@@ -233,6 +247,37 @@ class SanitizerTest extends TestCase
         $dataDirectory = __DIR__ . '/data';
         $initialData = file_get_contents($dataDirectory . '/xlinkLoopTest.svg');
         $expected = file_get_contents($dataDirectory . '/xlinkLoopClean.svg');
+
+        $this->class->minify(false);
+        $cleanData = $this->class->sanitize($initialData);
+
+        $this->assertXmlStringEqualsXmlString($expected, $cleanData);
+    }
+
+    /**
+     * Make sure that DOS attacks using the <use> element are detected.
+     */
+    public function testUseDOSattacksAreNullified()
+    {
+        $dataDirectory = __DIR__ . '/data';
+        $initialData = file_get_contents($dataDirectory . '/useDosTest.svg');
+        $expected = file_get_contents($dataDirectory . '/useDosClean.svg');
+
+        $this->class->minify(false);
+        $cleanData = $this->class->sanitize($initialData);
+
+        $this->assertXmlStringEqualsXmlString($expected, $cleanData);
+    }
+
+    /**
+     * Make sure that DOS attacks using the <use> element are detected,
+     * especially when the SVG is extremely large.
+     */
+    public function testLargeUseDOSattacksAreNullified()
+    {
+        $dataDirectory = __DIR__ . '/data';
+        $initialData = file_get_contents($dataDirectory . '/useDosTestTwo.svg');
+        $expected = file_get_contents($dataDirectory . '/useDosCleanTwo.svg');
 
         $this->class->minify(false);
         $cleanData = $this->class->sanitize($initialData);

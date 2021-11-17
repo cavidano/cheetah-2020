@@ -2,16 +2,15 @@
 /*
 Plugin Name: Cache Enabler
 Text Domain: cache-enabler
-Description: Simple and fast WordPress disk caching plugin.
+Description: Simple and fast WordPress caching plugin.
 Author: KeyCDN
 Author URI: https://www.keycdn.com
 License: GPLv2 or later
-Version: 1.3.4
+Version: 1.8.7
 */
 
 /*
-Copyright (C)  2017 KeyCDN
-Copyright (C)  2015 Sergej Müller
+Copyright (C) 2021 KeyCDN
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -28,61 +27,30 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 
-// exit
-defined('ABSPATH') OR exit;
+require __DIR__ . '/constants.php';
 
+add_action( 'plugins_loaded', array( 'Cache_Enabler', 'init' ) );
+register_activation_hook( CACHE_ENABLER_FILE, array( 'Cache_Enabler', 'on_activation' ) );
+register_deactivation_hook( CACHE_ENABLER_FILE, array( 'Cache_Enabler', 'on_deactivation' ) );
+register_uninstall_hook( CACHE_ENABLER_FILE, array( 'Cache_Enabler', 'on_uninstall' ) );
 
-// constants
-define('CE_FILE', __FILE__);
-define('CE_DIR', dirname(__FILE__));
-define('CE_BASE', plugin_basename(__FILE__));
-define('CE_CACHE_DIR', WP_CONTENT_DIR. '/cache/cache-enabler');
-define('CE_MIN_WP', '4.1');
+spl_autoload_register( 'cache_enabler_autoload' );
 
-// hooks
-add_action(
-    'plugins_loaded',
-    array(
-        'Cache_Enabler',
-        'instance'
-    )
-);
-register_activation_hook(
-    __FILE__,
-    array(
-        'Cache_Enabler',
-        'on_activation'
-    )
-);
-register_deactivation_hook(
-    __FILE__,
-    array(
-        'Cache_Enabler',
-        'on_deactivation'
-    )
-);
-register_uninstall_hook(
-    __FILE__,
-    array(
-        'Cache_Enabler',
-        'on_uninstall'
-    )
-);
-
-
-// autoload register
-spl_autoload_register('cache_autoload');
-
-// autoload function
-function cache_autoload($class) {
-    if ( in_array($class, array('Cache_Enabler', 'Cache_Enabler_Disk')) ) {
-        require_once(
-            sprintf(
-                '%s/inc/%s.class.php',
-                CE_DIR,
-                strtolower($class)
-            )
+function cache_enabler_autoload( $class_name ) {
+    if ( in_array( $class_name, array( 'Cache_Enabler', 'Cache_Enabler_Engine', 'Cache_Enabler_Disk' ), true ) ) {
+        require_once sprintf(
+            '%s/inc/%s.class.php',
+            CACHE_ENABLER_DIR,
+            strtolower( $class_name )
         );
     }
+}
+
+if ( defined( 'WP_CLI' ) && WP_CLI && class_exists( 'WP_CLI' ) ) {
+    require_once CACHE_ENABLER_DIR . '/inc/cache_enabler_cli.class.php';
+    WP_CLI::add_command( 'cache-enabler', 'Cache_Enabler_CLI' );
 }

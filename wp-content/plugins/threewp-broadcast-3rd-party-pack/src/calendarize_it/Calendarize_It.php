@@ -43,11 +43,20 @@ class Calendarize_It
 		if ( !function_exists( 'rhc_handle_delete_events_cache' ) )
 			return ;
 
-		global $rhc_plugin;
-		$postinfo_boxes = $rhc_plugin->get_option( 'postinfo_boxes', false, true );
-		$this->debug( 'Saving shortcode' );
-		\rhc_post_info_shortcode::save( $bcd->new_post( 'ID' ), $postinfo_boxes );
-		
+		$new_post_id = $bcd->new_post( 'ID' );
+		$key = 'postinfo_boxes';
+		$data = $bcd->custom_fields()->get_single( $key );
+		$data = maybe_unserialize( $data );
+		foreach( $data as $box => $subdata )
+		{
+			foreach( $subdata->data as $index => $box_data )
+				if ( isset( $box_data->post_ID ) )
+				{
+					$box_data->post_ID = $new_post_id;
+				}
+		}
+		$bcd->custom_fields()->child_fields()->update_meta( $key, $data );
+
 		// Clear the cache to make the blog display the events.
 		$this->debug( 'Clearing events cache.' );
 		apply_filters( 'generate_calendarize_meta', $bcd->new_post( 'ID' ), [] );
@@ -94,13 +103,13 @@ class Calendarize_It
 			$this->debug( '%s contains the ID %s', $key, $image_id );
 			if ( $image_id > 0 )
 			{
-				$bcd->add_attachment( $image_id );
-				$cit->collection( 'images' )
-					->set( $key, $image_id );
+				if ( $bcd->try_add_attachment( $image_id ) )
+					$cit->collection( 'images' )
+						->set( $key, $image_id );
 			}
 		}
 	}
-	
+
 	/**
 		@brief		Add our post type.
 		@since		2019-02-04 23:06:51

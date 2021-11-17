@@ -157,8 +157,8 @@ class WP_Ultimate_Recipe
 			$image_id = intval( $step[ 'image' ] );
 			if ( $image_id < 1 )
 				continue;
-			$this->debug( 'Adding image %s for recipe step %s', $image_id, $step_index );
-			$bcd->add_attachment( $image_id );
+			if ( $bcd->try_add_attachment( $image_id ) )
+				$this->debug( 'Adding image %s for recipe step %s', $image_id, $step_index );
 		}
 
 		$data = get_option( static::$wpurp_taxonomy_metadata_ingredient );

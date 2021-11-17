@@ -2,7 +2,7 @@
 
 namespace threewp_broadcast\premium_pack\contact_form_7;
 
-use \Exception;
+use Exception;
 
 /**
 	@brief			Adds support for <a href="https://wordpress.org/plugins/contact-form-7/">Takayuki Miyoshi's Contact Form 7</a> plugin.

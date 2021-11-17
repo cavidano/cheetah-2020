@@ -137,13 +137,13 @@ $bio = get_sub_field('bio');
                     <ul class="extensible-list staff-list my-2">
 
                         <?php if (have_rows('staff_person')): while (have_rows('staff_person')): the_row();
-
+                        
                         $name = get_sub_field('name');
                         $title = get_sub_field('title');
                         $start_year = get_sub_field('start_year');
 
                         ?>
-
+                        
                         <li class="mb-2">
 
                             <?php if ($name): ?>

@@ -224,6 +224,12 @@ class broadcasting_data
 	public $post_type_supports_thumbnails = false;
 
 	/**
+		@brief		Remembers which taxonomies we have synced.
+		@since		2020-01-08 22:10:11
+	**/
+	public $synced_taxonomies = false;
+
+	/**
 		@brief		[IN]: True if taxonomies are to be broadcasted to the child blogs.
 		@var		$taxonomies
 		@since		20130603
@@ -290,7 +296,18 @@ class broadcasting_data
 			throw new Exception( 'Specify the parent post ID property when creating the broadcasting_data object.' );
 
 		if ( $this->equivalent_posts === null )
-			$this->equivalent_posts = new equivalent_posts();
+		{
+			$broadcasts = ThreeWP_Broadcast()->broadcasting;
+			if ( count( $broadcasts ) < 1 )
+			{
+				$this->equivalent_posts = new broadcasting_data\Equivalent_Posts();
+			}
+			else
+			{
+				// Find the first available broadcasting_data, so that all subbroadcasts can use the existing equivalent posts.
+				$this->equivalent_posts = $broadcasts[ 0 ]->equivalent_posts;
+			}
+		}
 
 		if ( $this->_POST === null )
 			$this->_POST = $_POST;
@@ -346,6 +363,9 @@ class broadcasting_data
 	**/
 	public function add_attachment( $id )
 	{
+		if ( isset( $this->attachment_data[ $id ] ) )
+			return true;
+
 		if ( $id < 1 )
 			return false;
 
@@ -496,6 +516,17 @@ class broadcasting_data
 			$this->custom_fields->whitelist = array_filter( explode( ' ', ThreeWP_Broadcast()->get_site_option( 'custom_field_whitelist' ) ) );
 			ThreeWP_Broadcast()->debug( 'The custom field whitelist is: %s', $this->custom_fields->whitelist );
 		}
+	}
+
+	/**
+		@brief		Return the synced taxonomies object.
+		@since		2020-01-08 22:10:37
+	**/
+	public function synced_taxonomies()
+	{
+		if ( ! $this->synced_taxonomies )
+			$this->synced_taxonomies = new broadcasting_data\Synced_Taxonomies();
+		return $this->synced_taxonomies;
 	}
 
 	/**

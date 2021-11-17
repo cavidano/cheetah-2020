@@ -1,10 +1,20 @@
 <?php
-$cptSave = new CptSaveThumbnail();
-add_action( 'wp_ajax_cptSaveThumbnail', array($cptSave, 'saveThumbnailAjaxWrap') );
+
+add_action('after_setup_theme', function() {
+	//Add the ajax action for entring the cropping function.
+	add_action( 'wp_ajax_cptSaveThumbnail', [CptSaveThumbnail::class, 'saveThumbnailAjaxWrap'], 10);
+
+	//Add the crop_thumbnails_do_crop filter for the default behaiviour of the plugin.
+	//You may exchange it with your own function, by removing the default filter and store your own.
+	add_filter( 'crop_thumbnails_do_crop', [CptSaveThumbnail::class, 'filter_doWpCrop'], 10, 5);
+
+	//add the function to determine if an old file should be deleted
+	add_filter( 'crop_thumbnails_should_delete_old_file', [CptSaveThumbnail::class, 'filter_shouldDeleteOldFile'], 10, 4);
+}, 10);
 
 class CptSaveThumbnail {
 	
-	protected static $debug = array();
+	protected static $debug = [];
 	
 	/**
 	 * Handle-function called via ajax request.
@@ -16,15 +26,14 @@ class CptSaveThumbnail {
 	 * The main code is wraped via try-catch - the errorMessage will send back to JavaScript for displaying in an alert-box.
 	 * Called die() at the end.
 	 */
-	public function saveThumbnail() {
-		$jsonResult = array();
+	public static function saveThumbnail() {
+		$jsonResult = [];
 		$settings = $GLOBALS['CROP_THUMBNAILS_HELPER']->getOptions();
 		
 		try {
-			$input = $this->getValidatedInput();
+			$input = self::getValidatedInput();
 			self::addDebug('validated input data');
 			self::addDebug($input);
-			
 
 			$sourceImgPath = get_attached_file( $input->sourceImageId );
 			if(empty($sourceImgPath)) {
@@ -44,49 +53,45 @@ class CptSaveThumbnail {
 			 * will be filled with the new image-url if the image format isn't in the attachements metadata, 
 			 * and Wordpress doesn't know about the image file
 			 */
-			$changedImageName = array();
-			$_processing_error = array();
+			$changedImageName = [];
+			$_processing_error = [];
 			foreach($input->activeImageSizes as $activeImageSize) {
 				if(!self::isImageSizeValid($activeImageSize,$dbImageSizes)) {
 					self::addDebug("Image size not valid.");
 					continue;
 				}
-				
-				$oldFile_toDelete = '';
-				if(empty($imageMetadata['sizes'][$activeImageSize->name])) {
-					self::addDebug('Image filename has changed ('.$activeImageSize->name . ')');
-					$changedImageName[ $activeImageSize->name ] = true;
-				} else {
-					//the old size hasent got the right image-size/image-ratio --> delete it or nobody will ever delete it correct
-					if($imageMetadata['sizes'][$activeImageSize->name]['width'] != intval($activeImageSize->width) || $imageMetadata['sizes'][$activeImageSize->name]['height'] != intval($activeImageSize->height) ) {
-						$oldFile_toDelete = $imageMetadata['sizes'][$activeImageSize->name]['file'];
-						$changedImageName[ $activeImageSize->name ] = true;
-					}
-				}
-				
-				
+
 				$croppedSize = self::getCroppedSize($activeImageSize,$imageMetadata,$input);
 				
-				$currentFilePath = self::generateFilename($sourceImgPath, $croppedSize['width'], $croppedSize['height'], $activeImageSize->crop);
+				$currentFilePath = self::generateFilename($sourceImgPath, $imageMetadata, $croppedSize['width'], $croppedSize['height'], $activeImageSize->crop);
 				self::addDebug("filename: ".$currentFilePath);
 				$currentFilePathInfo = pathinfo($currentFilePath);
 				$currentFilePathInfo['basename'] = wp_basename($currentFilePath);//uses the i18n version of the file-basename
 				$temporaryCopyFile = $GLOBALS['CROP_THUMBNAILS_HELPER']->getUploadDir().DIRECTORY_SEPARATOR.$currentFilePathInfo['basename'];
 				
-				$result = wp_crop_image(							// * @return string|WP_Error|false New filepath on success, WP_Error or false on failure.
-					$input->sourceImageId,							// * @param string|int $src The source file or Attachment ID.
-					$input->selection->x,							// * @param int $src_x The start x position to crop from.
-					$input->selection->y,							// * @param int $src_y The start y position to crop from.
-					$input->selection->x2 - $input->selection->x,	// * @param int $src_w The width to crop.
-					$input->selection->y2 - $input->selection->y,	// * @param int $src_h The height to crop.
-					$croppedSize['width'],							// * @param int $dst_w The destination width.
-					$croppedSize['height'],							// * @param int $dst_h The destination height.
-					false,											// * @param int $src_abs Optional. If the source crop points are absolute.
-					$temporaryCopyFile								// * @param string $dst_file Optional. The destination file to write to.
-				);
+				do_action('crop_thumbnails_before_crop', $input, $croppedSize, $temporaryCopyFile, $currentFilePath);
+				$resultWpCropImage = apply_filters('crop_thumbnails_do_crop', null, $input, $croppedSize, $temporaryCopyFile, $currentFilePath);
+				do_action('crop_thumbnails_after_crop', $input, $croppedSize, $temporaryCopyFile, $currentFilePath, $resultWpCropImage);
 				
+
+				$oldFile_toDelete = '';
+				if(empty($imageMetadata['sizes'][$activeImageSize->name])) {
+					//image-size not yet existant
+					self::addDebug('Image filename has changed ('.$activeImageSize->name . ')');
+					$changedImageName[ $activeImageSize->name ] = true;
+				} elseif( apply_filters('crop_thumbnails_should_delete_old_file',
+								false,//default value
+								$imageMetadata['sizes'][$activeImageSize->name], 
+								$activeImageSize,
+								$currentFilePath
+						) ) {
+					//the old file of this image-size needs to be deleted
+					$oldFile_toDelete = $imageMetadata['sizes'][$activeImageSize->name]['file'];
+					$changedImageName[ $activeImageSize->name ] = true;
+				}
+
 				$_error = false;
-				if(empty($result)) {
+				if(empty($resultWpCropImage) || is_wp_error($resultWpCropImage)) {
 					$_processing_error[$activeImageSize->name][] = sprintf(__("Can't generate filesize '%s'.",'crop-thumbnails'), $activeImageSize->name);
 					$_error = true;
 				} else {
@@ -94,11 +99,11 @@ class CptSaveThumbnail {
 						self::addDebug("delete old image:".$oldFile_toDelete);
 						@unlink($currentFilePathInfo['dirname'].DIRECTORY_SEPARATOR.$oldFile_toDelete);
 					}
-					if(!@copy($result,$currentFilePath)) {
+					if(!@copy($resultWpCropImage, $currentFilePath)) {
 						$_processing_error[$activeImageSize->name][] = __("Can't copy temporary file to media library.", 'crop-thumbnails');
 						$_error = true;
 					}
-					if(!@unlink($result)) {
+					if(!@unlink($resultWpCropImage)) {
 						$_processing_error[$activeImageSize->name][] = __("Can't delete temporary file.", 'crop-thumbnails');
 						$_error = true;
 					}
@@ -106,7 +111,7 @@ class CptSaveThumbnail {
 				
 				if(!$_error) {
 					//update metadata --> otherwise new sizes will not be updated
-					$imageMetadata = self::updateMetadata($imageMetadata, $activeImageSize->name, $currentFilePathInfo, $croppedSize['width'], $croppedSize['height'], $input);
+					$imageMetadata = self::createNewMetadata($imageMetadata, $activeImageSize->name, $currentFilePathInfo, $croppedSize['width'], $croppedSize['height'], $input);
 				} else {
 					self::addDebug('error on '.$currentFilePathInfo['basename']);
 					self::addDebug($_processing_error);
@@ -142,6 +147,53 @@ class CptSaveThumbnail {
 			$jsonResult['error'] = $e->getMessage();
 			echo json_encode($jsonResult);
 		}
+	}
+
+	/**
+	 * Filter function to determine whether we should delete old thumbnail file.
+	 *
+	 * We should delete when any of these happens:
+	 *    - the old size hasn't got the right image-size/image-ratio
+	 *    - the new image has a different file path
+	 *
+	 * Otherwise, nobody will ever delete it correctly.
+	 *
+	 * @param  bool   $baseResult          Filter base value
+	 * @param  array  $oldSizeMetadata     The old image size from the database
+	 * @param  object $activeImageSize     The image size that should be used
+	 * @param  string $activeImageFilePath Full path to the new image
+	 * @return bool
+	 */
+	public static function filter_shouldDeleteOldFile($baseResult, $oldSizeMetadata, $activeImageSize, $activeImageFilePath) {
+		$result = absint($oldSizeMetadata['width']) !== absint($activeImageSize->width)
+			|| absint($oldSizeMetadata['height']) !== absint($activeImageSize->height)
+			|| wp_basename($activeImageFilePath) !== $oldSizeMetadata['file'];
+		//error_log('filter_shouldDeleteOldFile: '. ($result ? 'YES' : 'NO') );
+		return $result;
+	}
+
+	/**
+	 * This is the place where crop-thumbnails crops the images - using the wordpress default function.
+	 * 
+	 * @param bool   $baseResult          Filter base value
+	 * @param object $input               Input object
+	 * @param object $croppedSize         Target size of the result image
+	 * @param object $temporaryCopyFile   Target file-path
+	 * @param object $currentFilePath     Additional file-path of the current image
+	 * 
+	 */
+	public static function filter_doWpCrop($baseResult, $input, $croppedSize, $temporaryCopyFile, $currentFilePath) {
+		return wp_crop_image(								// * @return string|WP_Error|false New filepath on success, WP_Error or false on failure.
+			$input->sourceImageId,							// * @param string|int $src The source file or Attachment ID.
+			$input->selection->x,							// * @param int $src_x The start x position to crop from.
+			$input->selection->y,							// * @param int $src_y The start y position to crop from.
+			$input->selection->x2 - $input->selection->x,	// * @param int $src_w The width to crop.
+			$input->selection->y2 - $input->selection->y,	// * @param int $src_h The height to crop.
+			$croppedSize['width'],							// * @param int $dst_w The destination width.
+			$croppedSize['height'],							// * @param int $dst_h The destination height.
+			false,											// * @param int $src_abs Optional. If the source crop points are absolute.
+			$temporaryCopyFile								// * @param string $dst_file Optional. The destination file to write to.
+		);
 	}
 	
 	/**
@@ -182,17 +234,17 @@ class CptSaveThumbnail {
 			$croppedHeight = 10;
 		}
 		
-		return array('width' => $croppedWidth, 'height'=> $croppedHeight);
+		return ['width' => $croppedWidth, 'height'=> $croppedHeight];
 	}
 	
 	/**
-	 * This function is called by the wordpress-ajax-callback. Its only purpose is to call the
+	 * This function is called by the WordPress-ajax-callback. Its only purpose is to call the
 	 * saveThumbnail function and die().
-	 * All wordpress ajax-functions should call the "die()" function in the end. But this makes
+	 * All WordPress ajax-functions should call the "die()" function in the end. But this makes
 	 * phpunit tests impossible - so we have to wrap it.
 	 */
-	public function saveThumbnailAjaxWrap() {
-		$this->saveThumbnail();
+	public static function saveThumbnailAjaxWrap() {
+		self::saveThumbnail();
 		die();
 	}
 
@@ -204,7 +256,7 @@ class CptSaveThumbnail {
 		if(!empty(self::$debug)) {
 			return self::$debug;
 		}
-		return array();
+		return [];
 	}
 	
 	/**
@@ -218,28 +270,28 @@ class CptSaveThumbnail {
 	 * @param array $croppingInput the input data for the cropping (to store the crop-informations)
 	 * @return array the modified $imageMetadata
 	 */
-	protected static function updateMetadata($imageMetadata, $imageSizeName, $currentFilePathInfo, $croppedWidth, $croppedHeight, $croppingInput) {
+	protected static function createNewMetadata($imageMetadata, $imageSizeName, $currentFilePathInfo, $croppedWidth, $croppedHeight, $croppingInput) {
 		$fullFilePath = trailingslashit($currentFilePathInfo['dirname']) . $currentFilePathInfo['basename'];
 		
 		$fileTypeInformations = wp_check_filetype($fullFilePath);
 
-		$newValues = array();
+		$newValues = [];
 		$newValues['file'] = $currentFilePathInfo['basename'];
 		$newValues['width'] = intval($croppedWidth);
 		$newValues['height'] = intval($croppedHeight);
 		$newValues['mime-type'] = $fileTypeInformations['type'];
-		$newValues['cpt_last_cropping_data'] = array(
+		$newValues['cpt_last_cropping_data'] = [
 			'x' => $croppingInput->selection->x,
 			'y' => $croppingInput->selection->y,
 			'x2' => $croppingInput->selection->x2,
 			'y2' => $croppingInput->selection->y2,
 			'original_width' => $imageMetadata['width'],
 			'original_height' => $imageMetadata['height'],
-		);
+		];
 		
-		$oldValues = array();
+		$oldValues = [];
 		if(empty($imageMetadata['sizes'])) {
-			$imageMetadata['sizes'] = array();
+			$imageMetadata['sizes'] = [];
 		}
 		if(!empty($imageMetadata['sizes'][$imageSizeName])) {
 			$oldValues = $imageMetadata['sizes'][$imageSizeName];
@@ -276,7 +328,7 @@ class CptSaveThumbnail {
 	 * @return object JSON-Object with submitted data
 	 * @throw Exception if the security validation fails
 	 */
-	protected function getValidatedInput() {
+	protected static function getValidatedInput() {
 
 		if(!check_ajax_referer($GLOBALS['CROP_THUMBNAILS_HELPER']->getNonceBase(),'_ajax_nonce',false)) {
 			throw new Exception(__("ERROR: Security Check failed (maybe a timeout - please try again).",'crop-thumbnails'), 1);
@@ -323,22 +375,37 @@ class CptSaveThumbnail {
 
 
 	/**
-	 * Generate the Filename (and path) of the thumbnail based on width and height the same way as wordpress do.
+	 * Generate the Filename (and path) of the thumbnail based on width and height the same way as WordPress do.
 	 * @see generate_filename in wp-includes/class-wp-image-editor.php
-	 * @param string Path to the original (full-size) file.
-	 * @param int width of the new image
-	 * @param int height of the new image
-	 * @param boolean crop is this a cropped image-size
+	 * @param string $file Path to the original (full-size) file.
+	 * @param array $imageMetadata the WordPress image-metadata array
+	 * @param int $width width of the new image
+	 * @param int $height height of the new image
+	 * @param boolean $crop is this a cropped image-size
 	 * @return string path to the new image
 	 */
-	protected static function generateFilename( $file, $w, $h, $crop ){
+	protected static function generateFilename( $file, $imageMetadata, $w, $h, $crop ){
 		$info = pathinfo($file);
 		$dir = $info['dirname'];
 		$ext = $info['extension'];
+
+		/**
+		 * since WordPress 5.8 the image extension / MIME type may differ from that of the
+		 * original file so we'll use the below hook to check if any defaults are overwritten.
+		 */
+		$outputFormats = apply_filters('image_editor_output_format', [], $file);
+		$fileTypeInformations = wp_check_filetype($file);
+		if(isset($outputFormats[$fileTypeInformations['type']])) {
+			$ext = array_search($outputFormats[$fileTypeInformations['type']], wp_get_mime_types(), true);
+		}
+
 		$name = wp_basename($file, '.'.$ext);
+		if(!empty($imageMetadata['original_image'])) {
+			$name = wp_basename($imageMetadata['original_image'], '.'.$ext);
+		}
 		$suffix = $w.'x'.$h;
 		$destfilename = $dir.'/'.$name.'-'.$suffix.'.'.$ext;
-		return apply_filters('crop_thumbnails_filename', $destfilename, $file, $w, $h, $crop, $info);
+		return apply_filters('crop_thumbnails_filename', $destfilename, $file, $w, $h, $crop, $info, $imageMetadata);
 	}
 
 	/**

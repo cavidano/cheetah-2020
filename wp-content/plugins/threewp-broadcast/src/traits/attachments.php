@@ -167,13 +167,12 @@ trait attachments
 		// And now create the attachment stuff.
 		// This is taken almost directly from http://codex.wordpress.org/Function_Reference/wp_insert_attachment
 		$this->debug( 'Copy attachment: Checking filetype.' );
-		$wp_filetype = wp_check_filetype( $target, null );
 		$attachment = [
 			'guid' => $new_guid,
 			'menu_order' => $attachment_data->post->menu_order,
 			'post_author' => $attachment_data->post->post_author,
 			'post_excerpt' => $attachment_data->post->post_excerpt,
-			'post_mime_type' => $wp_filetype[ 'type' ],
+			'post_mime_type' => $attachment_data->post->post_mime_type,
 			'post_name' => $attachment_data->post->post_name,
 			'post_title' => $attachment_data->post->post_title,
 			'post_content' => $attachment_data->post->post_content,
@@ -311,7 +310,16 @@ trait attachments
 		// Try to find the filename in the GUID.
 		foreach( $attachment_posts as $attachment_post )
 		{
-			if ( $attachment_post->post_name !== $attachment_data->post->post_name )
+			$matches = ( $attachment_post->post_name == $attachment_data->post->post_name );
+
+			$attachment_matches_action = $this->new_action( 'attachment_matches' );
+			$attachment_matches_action->original_attachment_data = $attachment_data;
+			$attachment_matches_action->attachment_post = $attachment_post;
+			$attachment_matches_action->attachment_posts = $attachment_posts;
+			$attachment_matches_action->matches = $matches;
+			$attachment_matches_action->execute();
+
+			if ( ! $attachment_matches_action->matches )
 			{
 				$this->debug( "The attachment post name is %s, and we are looking for %s. Ignoring attachment.", $attachment_post->post_name, $attachment_data->post->post_name );
 				continue;
@@ -452,12 +460,22 @@ trait attachments
 					}
 				}
 
+				// Replace escaped URL
+				$content = str_replace( addslashes( $old_guid ), addslashes( $new_guid ), $content, $count );
+				if ( $count > 0 )
+					$this->debug( 'slashes: Modified slashed attachment guid in link: %s times', $count );
+
+				// Alternative escapes.
+				$slashed_old_guid = str_replace( '/', '\\/', $old_guid );
+				$slashed_new_guid = str_replace( '/', '\\/', $new_guid );
+				$content = str_replace( $slashed_old_guid, $slashed_new_guid, $content, $count );
+				if ( $count > 0 )
+					$this->debug( 'slashes: Modified alt-slashed attachment guid in link: %s times', $count );
+
 				// Replace whatever is left.
 				$content = str_replace( $old_guid, $new_guid, $content, $count );
 				if ( $count > 0 )
-				{
 					$this->debug( 'rest: Modified attachment guid in link: %s times', $count );
-				}
 			}
 		}
 		return $content;

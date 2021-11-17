@@ -83,7 +83,7 @@ class H5P
 		// Copy all files associated to this content.
 		$upload_dir = wp_upload_dir();
 		$path = sprintf( "%s/h5p/content/%s", $upload_dir[ 'basedir' ], $new_row_id );
-		$this->recursive_copy( $bcd->h5p->get( 'recursive_copy' ), $path );
+		$this->recursive_copy( $bcd->h5p->collection( 'recursive_copy' )->get( $item->id ), $path );
 
 		return $new_row_id;
 	}
@@ -137,7 +137,7 @@ class H5P
 
 		// Remember this path for later.
 		$path = sprintf( "%s/h5p/content/%s", $bcd->upload_dir[ 'basedir' ], $item->id );
-		$bcd->h5p->set( 'recursive_copy', $path );
+		$bcd->h5p->collection( 'recursive_copy' )->set( $item->id, $path );
 	}
 
 	// --------------------------------------------------------------------------------------------

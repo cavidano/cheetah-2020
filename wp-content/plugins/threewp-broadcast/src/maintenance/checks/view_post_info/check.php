@@ -66,11 +66,11 @@ class check
 
 		$text = sprintf( '<pre>%s</pre>', stripslashes( var_export( $post, true ) ) );
 		$o->r .= $this->broadcast()->message( htmlspecialchars( $text ) );
+		$o->r .= '<pre>' . htmlspecialchars( $post->post_content ) . '</pre>';
 
 		$metas = get_post_meta( $post_id );
 		foreach( $metas as $key => $value )
 		{
-			$value = reset( $value );
 			$value = maybe_unserialize( $value );
 			if ( ! is_string( $value ) )
 				$value = var_export( $value, true );
@@ -110,6 +110,13 @@ class check
 
 		// And comment info also.
 		$comments = get_comments( [ 'post_id' => $post->ID ] );
+		$comments = ThreeWP_Broadcast()->collection( $comments );
+		$comments = $comments->sort_by( function( $comment )
+		{
+			return $comment->comment_date;
+		} );
+		$text = wpautop( sprintf( '%s comments found.', count( $comments ) ) );
+		$o->r .= $this->broadcast()->message( $text );
 		foreach( $comments as $comment )
 		{
 			$meta = get_comment_meta( $comment->comment_ID );

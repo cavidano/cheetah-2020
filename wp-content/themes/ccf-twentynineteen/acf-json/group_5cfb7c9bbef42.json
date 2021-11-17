@@ -3,9 +3,9 @@
     "title": "Corporate Giving",
     "fields": [
         {
-            "key": "field_5cfb7ca7de8dc",
-            "label": "Top Tier",
-            "name": "top_tier",
+            "key": "field_60e49f408e2b9",
+            "label": "top_tier1",
+            "name": "top_tier1",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -15,10 +15,10 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
+            "layout": "row",
             "sub_fields": [
                 {
-                    "key": "field_5cfb7cecde8dd",
+                    "key": "field_60e5f8e581b12",
                     "label": "Headline",
                     "name": "headline",
                     "type": "text",
@@ -37,10 +37,10 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5cfb7d75de8de",
+                    "key": "field_60e5f8fd81b13",
                     "label": "Description",
                     "name": "description",
-                    "type": "wysiwyg",
+                    "type": "textarea",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -50,15 +50,15 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 0,
-                    "delay": 0
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
                 },
                 {
-                    "key": "field_5cfb7d95de8df",
+                    "key": "field_60e4a100647c5",
                     "label": "Donors",
-                    "name": "donors",
+                    "name": "donor",
                     "type": "repeater",
                     "instructions": "",
                     "required": 0,
@@ -69,13 +69,13 @@
                         "id": ""
                     },
                     "collapsed": "",
-                    "min": 1,
+                    "min": 2,
                     "max": 0,
                     "layout": "row",
                     "button_label": "",
                     "sub_fields": [
                         {
-                            "key": "field_5cfb7db5de8e1",
+                            "key": "field_60e4a217480ad",
                             "label": "Logo",
                             "name": "logo",
                             "type": "image",
@@ -99,7 +99,7 @@
                             "mime_types": ""
                         },
                         {
-                            "key": "field_5cfb7da7de8e0",
+                            "key": "field_60e4a1cd480ab",
                             "label": "Name",
                             "name": "name",
                             "type": "text",
@@ -118,7 +118,141 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_5cfb7dc1de8e2",
+                            "key": "field_60e4a1d4480ac",
+                            "label": "Link",
+                            "name": "link",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "field_60e5fa6a7b17f",
+            "label": "top_tier",
+            "name": "top_tier",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_60e5fa6a7b185",
+                    "label": "Headline",
+                    "name": "headline",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_60e5fa6a7b186",
+                    "label": "Description",
+                    "name": "description",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_60e5fa6a7b180",
+                    "label": "Donors",
+                    "name": "donor",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "",
+                    "min": 1,
+                    "max": 0,
+                    "layout": "row",
+                    "button_label": "",
+                    "sub_fields": [
+                        {
+                            "key": "field_60e5fa6a7b181",
+                            "label": "Logo",
+                            "name": "logo",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_60e5fa6a7b182",
+                            "label": "Name",
+                            "name": "name",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_60e5fa6a7b183",
                             "label": "Link",
                             "name": "link",
                             "type": "link",
@@ -152,47 +286,9 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_5cfb8643f879c",
-                    "label": "Headline",
-                    "name": "headline",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_5cfb8643f879d",
-                    "label": "Description",
-                    "name": "description",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 0,
-                    "delay": 0
-                },
-                {
                     "key": "field_5cfb8643f879e",
                     "label": "Donors",
-                    "name": "donors",
+                    "name": "donor",
                     "type": "repeater",
                     "instructions": "",
                     "required": 0,
@@ -262,47 +358,9 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_5cfb86697919e",
-                    "label": "Headline",
-                    "name": "headline",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_5cfb86697919f",
-                    "label": "Description",
-                    "name": "description",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 0,
-                    "delay": 0
-                },
-                {
                     "key": "field_5cfb8669791a0",
                     "label": "Donors",
-                    "name": "donors",
+                    "name": "donor",
                     "type": "repeater",
                     "instructions": "",
                     "required": 0,
@@ -357,7 +415,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1559988312
+    "modified": 1625753752
 }
