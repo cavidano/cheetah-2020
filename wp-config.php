@@ -141,7 +141,7 @@ $table_prefix  = 'ccf_';
  */
 
 /* Debug */
-define('WP_DEBUG', false);
+define('WP_DEBUG', true);
 
 /* Multisite */
 define('WP_ALLOW_MULTISITE', true);
