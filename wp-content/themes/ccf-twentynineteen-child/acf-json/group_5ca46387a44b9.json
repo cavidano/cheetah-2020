@@ -44,34 +44,14 @@
             "toolbar": "full",
             "media_upload": 0,
             "delay": 0
-        },
-        {
-            "key": "field_614d1e55b245a",
-            "label": "",
-            "name": "",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "",
-            "sub_fields": []
         }
     ],
     "location": [
         [
             {
-                "param": "user_role",
+                "param": "post_type",
                 "operator": "==",
-                "value": "administrator"
+                "value": "ccfcheetahs"
             }
         ]
     ],
@@ -97,5 +77,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1632503461
+    "modified": 1637171842
 }
