@@ -1,0 +1,10 @@
+2021-11-17T19:06:43+00:00 CRITICAL Cannot redeclare cheetahs() (previously declared in /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-content/themes/ccf-twentynineteen-child/functions.php:152) in /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-content/themes/ccf-twentynineteen/lib/theme-support.php on line 518
+
+2021-11-17T19:06:55+00:00 CRITICAL Cannot redeclare cheetahs() (previously declared in /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-content/themes/ccf-twentynineteen-child/functions.php:152) in /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-content/themes/ccf-twentynineteen/lib/theme-support.php on line 518
+
+2021-11-17T19:06:59+00:00 CRITICAL Cannot redeclare cheetahs() (previously declared in /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-content/themes/ccf-twentynineteen-child/functions.php:152) in /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-content/themes/ccf-twentynineteen/lib/theme-support.php on line 518
+
+2021-11-17T19:08:13+00:00 CRITICAL Cannot redeclare cheetahs() (previously declared in /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-content/themes/ccf-twentynineteen-child/functions.php:152) in /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-content/themes/ccf-twentynineteen/lib/theme-support.php on line 518
+
+2021-11-17T19:08:16+00:00 CRITICAL Cannot redeclare cheetahs() (previously declared in /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-content/themes/ccf-twentynineteen-child/functions.php:152) in /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-content/themes/ccf-twentynineteen/lib/theme-support.php on line 518
+
