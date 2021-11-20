@@ -1,0 +1,22 @@
+2021-11-20T10:41:49+00:00 CRITICAL Cannot redeclare cheetahs() (previously declared in /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-content/themes/ccf-twentynineteen-child/functions.php:150) in /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-content/themes/ccf-twentynineteen/lib/theme-support.php on line 518
+
+2021-11-20T10:41:54+00:00 CRITICAL Cannot redeclare cheetahs() (previously declared in /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-content/themes/ccf-twentynineteen-child/functions.php:150) in /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-content/themes/ccf-twentynineteen/lib/theme-support.php on line 518
+
+2021-11-20T10:41:55+00:00 CRITICAL Cannot redeclare cheetahs() (previously declared in /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-content/themes/ccf-twentynineteen-child/functions.php:150) in /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-content/themes/ccf-twentynineteen/lib/theme-support.php on line 518
+
+2021-11-20T10:41:57+00:00 CRITICAL Cannot redeclare cheetahs() (previously declared in /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-content/themes/ccf-twentynineteen-child/functions.php:150) in /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-content/themes/ccf-twentynineteen/lib/theme-support.php on line 518
+
+2021-11-20T10:42:44+00:00 CRITICAL Cannot redeclare cheetahs() (previously declared in /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-content/themes/ccf-twentynineteen-child/functions.php:150) in /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-content/themes/ccf-twentynineteen/lib/theme-support.php on line 518
+
+2021-11-20T10:42:47+00:00 CRITICAL Cannot redeclare cheetahs() (previously declared in /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-content/themes/ccf-twentynineteen-child/functions.php:150) in /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-content/themes/ccf-twentynineteen/lib/theme-support.php on line 518
+
+2021-11-20T10:43:10+00:00 CRITICAL Uncaught Error: Call to a member function have_posts() on null in /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-content/themes/ccf-twentynineteen-child/functions.php:181
+Stack trace:
+#0 /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-settings.php(546): include()
+#1 /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-config.php(170): require_once('/Users/carlavid...')
+#2 /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-load.php(50): require_once('/Users/carlavid...')
+#3 /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-admin/admin.php(34): require_once('/Users/carlavid...')
+#4 /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-admin/post.php(12): require_once('/Users/carlavid...')
+#5 {main}
+  thrown in /Users/carlavidano/Dropbox/_Avidano_Digital/_Websites/cheetah-2020/wp-content/themes/ccf-twentynineteen-child/functions.php on line 181
+

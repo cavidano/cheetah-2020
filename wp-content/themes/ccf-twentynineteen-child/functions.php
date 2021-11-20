@@ -1,56 +1,55 @@
 <?php
 
-
 // Child Post Types
 
-function create_child_post_types() {
+    function create_child_post_types() {
 
-    register_post_type(
-        'Events',
-        array(
-            'labels' => array(
-            'name' => __('Events'),
-            'singular_name' => __('Event')
-        ),
-        'supports' => array( 'title', 'thumbnail' ),
-        'public' => true,
-        'has_archive' => true,
-        'menu_icon' => 'dashicons-calendar'
-        )
-    );
+        register_post_type(
+            'Events',
+            array(
+                'labels' => array(
+                'name' => __('Events'),
+                'singular_name' => __('Event')
+            ),
+            'supports' => array( 'title', 'thumbnail' ),
+            'public' => true,
+            'has_archive' => true,
+            'menu_icon' => 'dashicons-calendar'
+            )
+        );
 
-    register_post_type(
-        'Videos',
-        array(
-            'labels' => array(
-            'name' => __('Videos'),
-            'singular_name' => __('Video')
-        ),
-        'supports' => array( 'title' ),
-        'public' => true,
-        'has_archive' => true,
-        'menu_icon' => 'dashicons-video-alt3'
-        )
-    );
-
-
-    register_post_type(
-        'CCF Cheetahs',
-        array(
-            'labels' => array(
-            'name' => __('CCF Cheetahs'),
-            'singular_name' => __('Cheetah')
-        ),
-
-        'public' => true,
-        'menu_icon' => get_template_directory_uri() . '/images/wp-icon-ccf-cheetahs.png'
-        )
-    );
+        register_post_type(
+            'Videos',
+            array(
+                'labels' => array(
+                'name' => __('Videos'),
+                'singular_name' => __('Video')
+            ),
+            'supports' => array( 'title' ),
+            'public' => true,
+            'has_archive' => true,
+            'menu_icon' => 'dashicons-video-alt3'
+            )
+        );
 
 
-}
-	
-add_action( 'init', 'create_child_post_types' );
+        register_post_type(
+            'CCF Cheetahs',
+            array(
+                'labels' => array(
+                'name' => __('CCF Cheetahs'),
+                'singular_name' => __('Cheetah')
+            ),
+
+            'public' => true,
+            'menu_icon' => get_template_directory_uri() . '/images/wp-icon-ccf-cheetahs.png'
+            )
+        );
+
+
+    }
+        
+    add_action( 'init', 'create_child_post_types' );
 
     ////////////////////////////////////////
     // Remove Parent Theme Features
