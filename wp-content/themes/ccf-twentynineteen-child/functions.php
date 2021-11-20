@@ -32,21 +32,6 @@
             )
         );
 
-
-        register_post_type(
-            'CCF Cheetahs',
-            array(
-                'labels' => array(
-                'name' => __('CCF Cheetahs'),
-                'singular_name' => __('Cheetah')
-            ),
-
-            'public' => true,
-            'menu_icon' => get_template_directory_uri() . '/images/wp-icon-ccf-cheetahs.png'
-            )
-        );
-
-
     }
         
     add_action( 'init', 'create_child_post_types' );

@@ -144,19 +144,6 @@
         );
 
         register_post_type(
-            'CCF Cheetahs',
-            array(
-                'labels' => array(
-                'name' => __('CCF Cheetahs'),
-                'singular_name' => __('Cheetah')
-            ),
-
-            'public' => true,
-            'menu_icon' => get_template_directory_uri() . '/images/wp-icon-ccf-cheetahs.png'
-            )
-        );
-
-        register_post_type(
             'Kid Artists',
             array(
                 'labels' => array(
@@ -173,6 +160,44 @@
     }
 
     add_action( 'init', 'create_parent_post_types' );
+
+    function cheetahs_post_type(){
+
+        register_post_type(
+            'CCF Cheetahs',
+            array(
+                'labels' => array(
+                'name' => __('CCF Cheetahs'),
+                'singular_name' => __('Cheetah')
+            ),
+
+            'public' => true,
+            'menu_icon' => get_template_directory_uri() . '/images/wp-icon-ccf-cheetahs.png'
+            )
+        );
+
+        register_taxonomy(
+            'cheetah-category',
+            'ccfcheetahs',
+            array(
+              'labels' => array(
+              'name' => __( 'Cheetah Categories' ),
+              'singular_name' => __( 'Cheetah Category' ),
+              'add_new_item' => 'Add New Cheetah Category',
+              'new_item_name' => 'New Category Name',
+              'edit_item' => 'Edit Cheetah Category',
+              'view_item' => 'View Cheetah Category',
+              'update_item' => 'Update Cheetah Category'
+            ),
+            'hierarchical' => true,
+            'show_in_nav_menus' => true,
+            'public' => true
+          )
+        );
+
+    }
+
+    add_action( 'init', 'cheetahs_post_type' );
 
     ////////////////////////////////////////
     // Change 'Posts' to 'News'
@@ -248,24 +273,24 @@
           )
         );
 
-        register_taxonomy(
-            'cheetah-category',
-            'ccfcheetahs',
-            array(
-              'labels' => array(
-              'name' => __( 'Cheetah Categories' ),
-              'singular_name' => __( 'Cheetah Category' ),
-              'add_new_item' => 'Add New Cheetah Category',
-              'new_item_name' => 'New Category Name',
-              'edit_item' => 'Edit Cheetah Category',
-              'view_item' => 'View Cheetah Category',
-              'update_item' => 'Update Cheetah Category'
-            ),
-            'hierarchical' => true,
-            'show_in_nav_menus' => true,
-            'public' => true
-          )
-        );
+        // register_taxonomy(
+        //     'cheetah-category',
+        //     'ccfcheetahs',
+        //     array(
+        //       'labels' => array(
+        //       'name' => __( 'Cheetah Categories' ),
+        //       'singular_name' => __( 'Cheetah Category' ),
+        //       'add_new_item' => 'Add New Cheetah Category',
+        //       'new_item_name' => 'New Category Name',
+        //       'edit_item' => 'Edit Cheetah Category',
+        //       'view_item' => 'View Cheetah Category',
+        //       'update_item' => 'Update Cheetah Category'
+        //     ),
+        //     'hierarchical' => true,
+        //     'show_in_nav_menus' => true,
+        //     'public' => true
+        //   )
+        // );
 
         register_taxonomy(
             'news-author',
