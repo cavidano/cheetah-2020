@@ -4,7 +4,7 @@ Author: Translate AI Multilingual Solutions
 Tags: translate, translate wordpress, multilingual, translation, translate language, bilingual, localization, translation proxy, localisation, multilanguage, google translate
 Requires at least: 2.8.1
 Tested up to: 5.8
-Stable tag: 2.9.3
+Stable tag: 2.9.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://gtranslate.io/?xyz=998#pricing
@@ -48,7 +48,7 @@ Please check our [FAQ](https://gtranslate.io/?xyz=998#faq) to get quick answers.
 * Multilingual interface
 * Alternative flags for Quebec, Canada, USA, Brazil, Mexico, Argentina, Colombia
 * Lazy loading for language flags to boost performance
-* Live Chat Support
+* Forum Support
 
 **Paid Features**
 
@@ -251,6 +251,23 @@ If you want us to translate your website professionally or provide you a proofre
 8. User Dashboard
 
 == Changelog ==
+= 2.9.7 =
+* Happy New Year! :)
+* Fixed language selector issue when using custom domains for different languages
+* Email translation logic updated to use base64 encoding to avoid potential firewall blocks
+
+= 2.9.6 =
+* New flat flags style in SVG format
+* Added check version to avoid double Google Translate library inclusion which may cause javascript "Uncaught RangeError" error in free version
+
+= 2.9.5 =
+* Fix for javascript error introduced in 2.9.4
+
+= 2.9.4 =
+* New interface for paid plans to easily configure custom domains for languages
+* Adding Vary: Accept-Language response header when auto redirecting to browser language
+* Google Analytics event tracking is on by default when analytics.js is present on the website, old ga.js support is removed
+
 = 2.9.3 =
 * Avoid minification of Google Translate javascript library by LiteSpeed Cache and WP Rocket cache plugins in the free version
 

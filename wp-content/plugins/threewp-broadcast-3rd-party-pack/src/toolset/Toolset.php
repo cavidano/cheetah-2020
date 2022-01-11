@@ -281,6 +281,9 @@ class Toolset
 		// And now save all relationships that are used.
 		$relationships = $this->get_relationships_by_ids( $relationship_ids );
 		$relationships = $this->array_rekey( $relationships, 'slug' );
+
+		$this->debug( 'Parent associations: %s', $associations );
+		$this->debug( 'Parent groups: %s', $groups );
 		$this->debug( 'Parent relationships: %s', $relationships );
 
 		$ts->set( 'associations', $associations );
@@ -383,6 +386,11 @@ class Toolset
 		$child_groups = ThreeWP_Broadcast()->collection();
 		foreach( $parent_groups as $parent_group )
 		{
+			if ( ! isset( $parent_group->group_id ) )
+			{
+				$this->debug( 'Parent group is not set properly: %s', $parent_group );
+				continue;
+			}
 			$parent_group_id = $parent_group->group_id;
 			$parent_element_id = $parent_group->element_id;
 			$this->debug( 'Getting equivalent element ID for %s', $parent_element_id );
@@ -390,18 +398,10 @@ class Toolset
 			if ( $parent_element_id == $bcd->post->ID )
 				$child_element_id = $bcd->new_post( 'ID' );
 			else
-			{
-				// Force rebroadcasting of the element since it could have been modified but not broadcasted.
-				switch_to_blog( $bcd->parent_blog_id );
-				$new_bcd = ThreeWP_Broadcast()->api()
-					->broadcast_children( $parent_element_id, [ $bcd->current_child_blog_id ] );
-				restore_current_blog();
-				$child_element_id = $new_bcd->new_post( 'ID' );
-			}
+				$child_element_id = $bcd->equivalent_posts()->broadcast_once( $bcd->parent_blog_id, $parent_element_id );
 
 			$this->debug( 'Got equivalent element ID for %s: %s', $parent_element_id, $child_element_id );
 
-			// $child_element_id = $bcd->equivalent_posts()->get_or_broadcast( $bcd->parent_blog_id, $parent_element_id, get_current_blog_id() );
 			$child_group = clone( $parent_group );
 			$child_group->element_id = $child_element_id;
 

@@ -97,7 +97,9 @@ class GeneratePress
 						$parts = explode( ':', $rule );
 						$taxonomy = $parts[ 2 ];
 						$this->debug( 'Also syncing %s', $taxonomy );
-						$bcd->taxonomies()->also_sync( null, $taxonomy );
+						$bcd->taxonomies()
+							->also_sync( null, $taxonomy )
+							->use_term( $object );
 					}
 				}
 

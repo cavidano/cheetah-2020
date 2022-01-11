@@ -7,7 +7,7 @@ Requires PHP: 5.2.17
 License: GPLv3
 
 == Description ==
-A free and beautiful way to get a Cookie Consent Banner for GDPR, CCPA, PIPEDA, LGPD, OAIC, DSGVO and more. Customize it to match your compliance requirements and website layout. This Banner is super responsive and highly customizable.
+A free and beautiful way to get a Cookie Banner without loading any external resources from 3rd parties. Customize it to match your compliance requirements and website layout. This Banner is super responsive and highly customizable.
 
 = Key Features =
  - fully customizable texts, colors, fonts and position of the banner and buttons. 
@@ -34,6 +34,9 @@ You can customize the cookie name, though.
  - **cookieconsent_status** -> stores the user setting, if cookies are allowed or not. If you choose "differentiated consent" it stores, if the user closed the banner.
  - **cookieconsent_status_{cookiesuffix}** -> only set in case of "differentiated consent". It stores the user setting for the cookie group. One cookie for each group is set.
  - **nsc_bar_cs_done** -> set if you activate ITP Protection (use backend cookies). Stores the information of when the cookie was set, to give them a duration.
+= Localstorage is used =
+If you have the premium add on and activate the stats module and activate the banner open counter, then a counter is written to localstorage. The key is "beautiful_cookie_banner_open_counter".
+
 
 = Features =
 1. Fully responsive.
@@ -99,6 +102,10 @@ You can use the filter hook "nsc_bar_cookie_bar_message" in your plugin or theme
 Just install this plugin and go to Settings > Cookie Consent Banner to change the default config and to activate the banner.
 
 == Changelog ==
+
+= 2.7.1 =
+* Bugfix: If the [cc_show_cookie_banner_nsc_bar] shortcode was used more then once per page it only worked for the first link.
+* Refactor: changes to JS library for an upcoming statistics module
 
 = 2.7.0 =
 * Feature: Disable the banner, if the page is loaded in an iFrame.

@@ -2,6 +2,8 @@
 
 namespace threewp_broadcast\premium_pack\classes\gutenberg_items;
 
+use Exception;
+
 /**
 	@brief		Base class for handling things that appear in Gutenberg blocks.
 	@since		2019-06-18 21:53:17
@@ -52,11 +54,14 @@ abstract class Gutenberg_Items
 					continue;
 				$old_ids = $value;
 				$new_ids = [];
-				foreach( $old_ids as $old_id )
+				foreach( $old_ids as $old_key => $old_id )
 				{
 					$new_id = $this->replace_id( $bcd, $find, $old_id );
 					if ( $new_id )
-						$new_ids[] = $new_id;
+						$new_ids[ $old_key ] = $new_id;
+					else
+						$new_ids[ $old_key ] = $old_id;
+
 				}
 
 				$array[ $attribute ] = $new_ids;
@@ -107,6 +112,7 @@ abstract class Gutenberg_Items
 		if ( isset( $bc->gutenberg_items_shared_finds ) )
 			return $bc->gutenberg_items_shared_finds;
 		$bc->gutenberg_items_shared_finds = new Shared_Finds();
+		$bc->gutenberg_items_shared_finds->parent = $this;
 		return $bc->gutenberg_items_shared_finds;
 	}
 
@@ -150,7 +156,10 @@ abstract class Gutenberg_Items
 				continue;
 			}
 
-			$item[ 'attrs' ] = $this->parse_values( $bcd, $item, $find, $item[ 'attrs' ] );
+			// If the user specified an "id" attribute, it will catch the block id also.
+			$old_id = $item[ 'attrs' ][ 'id' ];
+			$item[ 'attrs' ][ 'data' ] = $this->parse_values( $bcd, $item, $find, $item[ 'attrs' ][ 'data' ] );
+			$item[ 'attrs' ][ 'id' ] = $old_id;
 
 			// Update the shared find.
 			$shared_find->original[ 'attrs' ] = $item[ 'attrs' ];
@@ -225,7 +234,7 @@ abstract class Gutenberg_Items
 
 				$this->debug( 'Found item %s as <pre>%s</pre>', $item->get_slug(), htmlspecialchars( ThreeWP_Broadcast()->gutenberg()->render_block( $find->original ) ) );
 
-				$this->preparse_values( $find, $item, $block[ 'attrs' ] );
+				$this->preparse_values( $find, $item, $block[ 'attrs' ][ 'data' ] );
 
 				$parse_find_action = new actions\parse_find();
 				$parse_find_action->called_class = get_called_class();
@@ -241,10 +250,17 @@ abstract class Gutenberg_Items
 				if ( $value_count < 1 )
 					continue;
 
-				$find_collection = $this->shared_finds()->add_find( $find );
-				$this->debug( 'Adding this find to the array x %s: %s', $find_collection->get_counter(), $find );
+				try
+				{
+					$find_collection = $this->shared_finds()->add_find( $find );
+					$this->debug( 'Adding this find to the array x %s: %s', $find_collection->get_counter(), $find );
+					$finds []= $find;
+				}
+				catch( Exception $e )
+				{
+					$this->debug( $e->getMessage() );
+				}
 
-				$finds []= $find;
 			}
 
 		}

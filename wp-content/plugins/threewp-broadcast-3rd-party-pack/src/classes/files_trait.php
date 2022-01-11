@@ -17,7 +17,10 @@ trait files_trait
 	{
 		$directory_iterator = new \RecursiveDirectoryIterator( $source, \RecursiveDirectoryIterator::SKIP_DOTS );
 		$iterator = new \RecursiveIteratorIterator( $directory_iterator, \RecursiveIteratorIterator::SELF_FIRST );
-		mkdir( $dest, 0755, true );
+
+		if ( ! is_dir( $dest ) )
+			mkdir( $dest, 0755, true );
+
 		foreach ( $iterator as $item )
 		{
 			$filename = $iterator->getSubPathName();
@@ -25,7 +28,8 @@ trait files_trait
 			if ( $item->isDir() )
 			{
 				if ( static::copy_recursive_this_directory( $filename ) )
-					mkdir( $dest . DIRECTORY_SEPARATOR . $filename );
+					if ( ! is_dir( $dest . DIRECTORY_SEPARATOR . $filename ) )
+						mkdir( $dest . DIRECTORY_SEPARATOR . $filename );
 			}
 			else
 			{

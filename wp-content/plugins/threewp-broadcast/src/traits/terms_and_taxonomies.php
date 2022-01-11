@@ -174,6 +174,8 @@ trait terms_and_taxonomies
 		$action->taxonomy = $taxonomy;
 		$action->execute();
 
+		$bcd->synced_taxonomies()->add( $taxonomy );
+
 		// Clean up the terms.
 		foreach( $bcd->parent_blog_taxonomies[ $taxonomy ][ 'terms' ] as $index => $term )
 			if ( ! $term )
@@ -330,8 +332,6 @@ trait terms_and_taxonomies
 			delete_option( $taxonomy . '_children' );
 			clean_term_cache( '', $taxonomy );
 		}
-
-		$bcd->synced_taxonomies()->add( $taxonomy );
 
 		// Tell everyone we've just synced this taxonomy.
 		$action = $this->new_action( 'synced_taxonomy' );
@@ -587,8 +587,8 @@ trait terms_and_taxonomies
 					// Is this term protected?
 					if ( $bcd->taxonomies()->protectlist_has( $action->taxonomy, $action->new_term->slug, $key ) )
 					{
-						$current_value = get_term_meta( $new_term_id, $key, true);
-						if ( $current_value )
+						$values = get_term_meta( $new_term_id, $key );
+						if ( count( $values ) > 0 )
 						{
 							$this->debug( 'Taxonomy term %s (%s) already has a %s term meta value. Skipping.', $action->new_term->slug, $action->new_term->term_id, $key );
 							continue;

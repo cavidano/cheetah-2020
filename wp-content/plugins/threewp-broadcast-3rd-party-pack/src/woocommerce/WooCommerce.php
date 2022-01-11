@@ -63,7 +63,7 @@ extends \threewp_broadcast\premium_pack\base
 		$this->add_filter( 'wc_memberships_allowed_meta_box_ids' );
 		$this->add_action( 'woocommerce_admin_process_product_object' );
 		$this->add_action( 'woocommerce_api_edit_order', 'update_order' );
-		$this->add_action( 'woocommerce_order_edit_status', 'update_order' );
+		//$this->add_action( 'woocommerce_order_edit_status', 'update_order' );
 		$this->add_action( 'woocommerce_order_status_changed', 'update_order' );
 
 		$this->add_action( 'woocommerce_decrease_coupon_usage_count', 'woocommerce_update_coupon_usage_count', 10, 2 );
@@ -73,6 +73,7 @@ extends \threewp_broadcast\premium_pack\base
 		$this->add_action( 'woocommerce_variation_set_stock', 'woocommerce_product_set_stock' );
 
 		new Add_To_Cart_Shortcode();
+		new WCFM_Marketplace();
 	}
 
 	// -------------------------------------------------------------------------------------------------------------------
@@ -108,6 +109,15 @@ extends \threewp_broadcast\premium_pack\base
 			if ( in_array( $key, [ '_product_id', '_variation_id' ] ) )
 				if ( isset( $bcd->woocommerce->order_item_bcd->$value ) )
 					$value = $bcd->woocommerce->order_item_bcd->$value->get_linked_post_on_this_blog();
+			if ( $key == 'coupon_data' )
+			{
+				$data = maybe_unserialize( $value );
+				$old_id = $data[ 'id' ];
+				$new_id = $bcd->equivalent_posts()->get( $bcd->parent_blog_id, $old_id, get_current_blog_id() );
+				$this->debug( 'Coupon %s is now %s', $old_id, $new_id );
+				$data[ 'id' ] = $new_id;
+				$value = $data;
+			}
 			wc_update_order_item_meta( $action->new_item_id, $key, $value );
 			$this->debug( 'Updated item meta %s for item %s to %s', $key, $action->new_item_id, $value );
 		}
@@ -597,6 +607,12 @@ extends \threewp_broadcast\premium_pack\base
 			foreach( $items as $item_id => $item )
 			{
 				$product_id = $item->meta->_product_id;
+
+				if ( ! $product_id )
+				{
+					$this->debug( 'Item %s has no product. Ignoring.', $item_id );
+					continue;
+				}
 				$this->debug( 'Item %s has product %s.', $item_id, $product_id );
 
 				// Load the broadcast data for this product.
@@ -1020,6 +1036,10 @@ extends \threewp_broadcast\premium_pack\base
 		] );
 		$this->debug( '%d refunds found: %s', count( $refunds ), $refunds );
 		$bcd->woocommerce->order_refunds = $refunds;
+
+        $action = $this->new_action( 'after_save_order' );
+        $action->broadcasting_data = $bcd;
+        $action->execute();
 	}
 
 	/**
@@ -1609,22 +1629,32 @@ extends \threewp_broadcast\premium_pack\base
 
 		$order_id = $bcd->new_post( 'ID' );
 		$order = new \WC_Order( $order_id );
-		$order_items = $this->get_order_items( $order );
 
-		// Delete all order items.
-		foreach( $order_items as $order_item_id => $order_item )
-		{
-			$this->debug( 'Deleting order item %d', $order_item_id );
-			wc_delete_order_item( $order_item_id );
-		}
+		$action = $this->new_action( 'delete_order_items' );
+		$action->broadcasting_data = $bcd;
+		$action->order_id = $order_id;
+		$action->order_items = $this->get_order_items( $order );
+		$action->execute();
+
+		if ( ! $action->is_finished() )
+			foreach( $action->order_items as $order_item_id => $order_item )
+			{
+				$this->debug( 'Deleting order item %d', $order_item_id );
+				wc_delete_order_item( $order_item_id );
+			}
 
 		// Add the new items from the parent order that don't exist on the child order.
 		$this->debug( 'Adding items %s', $bcd->woocommerce->order_items );
-		foreach( $bcd->woocommerce->order_items as $parent_item )
+		$bcd->woocommerce->new_order_items = ThreeWP_Broadcast()->collection();
+		$noi = $bcd->woocommerce->new_order_items; // Conv
+		$noi = $noi->collection( 'blog' )->collection( get_current_blog_id() );
+		foreach( $bcd->woocommerce->order_items as $parent_item_id => $parent_item )
 		{
 			$new_item_id = wc_add_order_item( $order_id, [
 				'order_item_name' => $parent_item->name,
+				'order_item_type' => $parent_item->type,
 			] );
+			$noi->set( $parent_item_id, $new_item_id );
 			$this->debug( 'Added item %d to order.', $new_item_id );
 
 			$this->debug( 'Handling database meta: %s', $parent_item->meta );
@@ -1657,6 +1687,11 @@ extends \threewp_broadcast\premium_pack\base
 			$refund_bcd = ThreeWP_Broadcast()->api()->broadcast_children( $refund->ID, [ $bcd->current_child_blog_id ] );
 			restore_current_blog();
 		}
+
+        $action = $this->new_action( 'after_restore_order' );
+        $action->broadcasting_data = $bcd;
+        $action->new_order_items = $noi;
+        $action->execute();
 	}
 
 	/**
@@ -2319,7 +2354,7 @@ extends \threewp_broadcast\premium_pack\base
 
 		$r = (object) [];
 
-		$query = sprintf( "SELECT * FROM `%swoocommerce_order_items` WHERE `order_id` = '%d' AND `order_item_type` = 'line_item'",
+		$query = sprintf( "SELECT * FROM `%swoocommerce_order_items` WHERE `order_id` = '%d'",
 			$wpdb->prefix,
 			$order_id
 		);
@@ -2332,6 +2367,7 @@ extends \threewp_broadcast\premium_pack\base
 
 			$data->meta = (object) [];
 			$data->name = $item->order_item_name;
+			$data->type = $item->order_item_type;
 
 			$query = sprintf( "SELECT * FROM `%swoocommerce_order_itemmeta` WHERE `order_item_id` = '%d'",
 				$wpdb->prefix,

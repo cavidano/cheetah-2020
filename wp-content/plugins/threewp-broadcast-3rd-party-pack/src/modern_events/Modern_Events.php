@@ -84,6 +84,12 @@ class Modern_Events
 
 		$bcd->taxonomies()->also_sync( 'mec-events', 'mec_location' );
 		$bcd->taxonomies()->also_sync( 'mec-events', 'mec_organizer' );
+
+		foreach( [ 'mec_location_id', 'mec_organizer_id' ] as $key )
+		{
+			$term_id = $bcd->custom_fields()->get_single( $key );
+			$bcd->taxonomies()->use_term( $term_id );
+		}
 	}
 
 	/**

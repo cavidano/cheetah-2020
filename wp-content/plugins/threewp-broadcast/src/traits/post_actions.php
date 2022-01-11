@@ -111,6 +111,17 @@ trait post_actions
 
 		$post = get_post( $post_id );
 
+		$original_args = [
+			'cache_results' => false,
+			'name' => $post->post_name,
+			'post_type' => $post->post_type,
+			'post_status' => $post->post_status,
+		];
+
+		// If this post has a parent, see if the parent is linked also.
+		if ( $post->post_parent > 0 )
+			$parent_post_broadcast_data = ThreeWP_Broadcast()->get_parent_post_broadcast_data( $blog_id, $post->post_parent );
+
 		foreach( $blogs as $blog )
 		{
 			if ( $blog->id == $blog_id )
@@ -121,12 +132,14 @@ trait post_actions
 
 			switch_to_blog( $blog->id );
 
-			$args = [
-				'cache_results' => false,
-				'name' => $post->post_name,
-				'post_type' => $post->post_type,
-				'post_status' => $post->post_status,
-			];
+			$args = $original_args;
+
+			if ( $post->post_parent > 0 )
+			{
+				$parent_post_id = $parent_post_broadcast_data->get_linked_post_on_this_blog();
+				if ( $parent_post_id )
+					$args[ 'post_parent' ] = $parent_post_id;
+			}
 
 			$posts = get_posts( $args );
 			$post_ids = [];

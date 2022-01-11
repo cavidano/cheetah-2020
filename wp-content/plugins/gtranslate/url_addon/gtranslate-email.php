@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: application/json');
 error_reporting(0);
 
 include 'config.php';
@@ -6,8 +7,12 @@ include 'config.php';
 if(!isset($_GET['glang']) or !isset($_POST['body']))
     exit;
 
+// check if body is base64_encoded
+if(!preg_match('/^[a-zA-Z0-9+/]+={0,2}$/', $_POST['body']))
+    exit;
+
 $glang = $_GET['glang'];
-$body = $_POST['body'];
+$body = json_encode(array('email-body' => base64_encode(base64_decode($_POST['body'])), 'gt_translate_keys' => array(array('key' => 'email-body', 'format' => 'html-base64encoded'))));
 
 $main_lang = isset($data['default_language']) ? $data['default_language'] : $main_lang;
 

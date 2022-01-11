@@ -2,6 +2,8 @@
 
 namespace threewp_broadcast\premium_pack\classes\gutenberg_items;
 
+use Exception;
+
 /**
 	@brief		Handle the sharing of finds so that various add-ons can modify the same data.
 	@since		2020-01-31 08:14:38
@@ -17,11 +19,17 @@ class Shared_Finds
 	{
 		$key = static::get_key( $find );
 		$block_name = $find->original[ 'blockName' ];
-		$col = $this->collection( $block_name )
-			->collection( $key )
+		$block_collection = $this->collection( $block_name );
+
+		if ( $block_collection->has( $key ) )
+			throw new Exception( 'Not adding a duplicate block.' );
+
+		$col = $block_collection->collection( $key )
 			->collection( 'source' );
+
 		$col->set( 'find', $find )
 			->increase_counter();
+
 		return $col;
 	}
 

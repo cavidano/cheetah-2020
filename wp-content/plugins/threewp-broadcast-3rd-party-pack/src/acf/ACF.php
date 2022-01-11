@@ -948,7 +948,9 @@ class ACF
 		$post_type = reset( $taxonomy->object_type );
 
 		$acf_field = new acf\field( $field );
-		$action->broadcasting_data->taxonomies()->also_sync( $post_type, $field->taxonomy );
+		$action->broadcasting_data->taxonomies()
+			->also_sync( $post_type, $field->taxonomy )
+			->use_terms( $field->value );
 		$action->get_storage()->append( $acf_field );
 	}
 
@@ -1272,6 +1274,9 @@ class ACF
 	**/
 	public function has_acf_pro()
 	{
+		if ( defined( 'ACF_MAJOR_VERSION' ) )
+			if ( ACF_MAJOR_VERSION >= 5 )
+				return true;
 		return class_exists( 'acf_pro' );
 	}
 

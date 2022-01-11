@@ -518,13 +518,6 @@ class Polylang
 			if ( isset( PLL()->filters_term ) )
 				remove_filter( 'terms_clauses', array( PLL()->filters_term, 'terms_clauses' ), 10, 3 );
 
-			/**
-			$bcd->taxonomies()->also_sync_taxonomy( [
-				'post' => $bcd->post,
-				'post_id' => $bcd->post->ID,
-				'taxonomy' => $parent_post_taxonomy
-			] );
-			**/
 			$bcd->taxonomies()->also_sync( $bcd->post->post_type, $parent_post_taxonomy );
 			//add_filter( 'terms_clauses', array( PLL()->filters_term, 'terms_clauses' ), 10, 3 );
 			unset( $this->__collecting_more_terms );
@@ -543,8 +536,11 @@ class Polylang
 				}
 				else
 					foreach( $translations as $language => $term_id )
+					{
+						$bcd->taxonomies()->use_term( $term_id );
 						if ( ! isset( $bcd->parent_blog_taxonomies[ $parent_post_taxonomy ][ 'terms' ][ $term_id ] ) )
 							$bcd->parent_blog_taxonomies[ $parent_post_taxonomy ][ 'terms' ][ $term_id ] = get_term_by( 'id', $term_id, $parent_post_taxonomy );
+					}
 				$this->debug( 'Translations for taxonomy %s %s (%s): %s', $parent_post_taxonomy, $term->slug, $term->term_id, $translations );
 
 				// Save the translations for each of the term IDs, since we need the term ID for wp_insert_term for each lang.

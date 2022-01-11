@@ -19,15 +19,33 @@ trait Replace_Attachments_Trait
 			$id = intval( $id );
 			if ( $bcd->try_add_attachment( $id ) )
 				$this->debug( 'Adding single attachment %s', $id );
+			else
+				$this->debug( 'Unable to add single image %s', $id );
 		}
 
 		foreach( $find->values as $attribute => $array )
-				foreach( $array as $ids )
+		{
+			foreach( $array as $ids )
+			{
+				if ( is_array( $ids ) )
 				{
+					// An exploded array was found.
 					foreach( $ids as $id )
 						if ( $bcd->try_add_attachment( intval( $id ) ) )
 							$this->debug( 'Adding one of several attachments %s', $id );
+						else
+							$this->debug( 'Unable to add image %s from several.', $id );
 				}
+				else
+				{
+					// An array of single values was found.
+					if ( $bcd->try_add_attachment( intval( $ids ) ) )
+						$this->debug( 'Adding one of several single attachments %s', $ids );
+					else
+						$this->debug( 'Unable to add image %s', $ids );
+				}
+			}
+		}
 	}
 
 	/**

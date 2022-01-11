@@ -31,7 +31,9 @@ class Elementor
 		$this->add_action( 'broadcast_php_code_load_wizards' );
 		$this->add_action( 'threewp_broadcast_broadcasting_started' );
 		$this->add_action( 'threewp_broadcast_broadcasting_before_restore_current_blog' );
+		$this->add_action( 'threewp_broadcast_collect_post_type_taxonomies' );
 		$this->add_action( 'threewp_broadcast_get_post_types' );
+		$this->add_action( 'threewp_broadcast_wp_update_term' );
 		new Elementor_Template_Shortcode();
 	}
 
@@ -89,12 +91,83 @@ class Elementor
 	}
 
 	/**
+		@brief		Save the taxonomy thumbnail, as per the Elementor Powerpack.
+		@since		2021-10-07 21:40:30
+	**/
+	public function threewp_broadcast_collect_post_type_taxonomies( $action )
+	{
+		$bcd = $action->broadcasting_data;
+
+		$this->prepare_bcd( $bcd );
+
+		foreach( $bcd->parent_blog_taxonomies as $parent_post_taxonomy => $taxonomy_data )
+		{
+			$terms = $taxonomy_data[ 'terms' ];
+
+			$this->debug( 'Collecting termmeta for %s', $parent_post_taxonomy );
+			// Get all of the fields for all terms
+			foreach( $terms as $term )
+			{
+				$term_id = $term->term_id;
+
+				// Save the image.
+				$key = 'taxonomy_thumbnail_id';
+				$image_id = get_term_meta( $term_id, $key, true );
+
+				if ( $image_id > 0 )
+				{
+				  $this->debug( 'Found %s %s for term %s (%s)',
+				  	  $key,
+					  $image_id,
+					  $term->slug,
+					  $term_id
+				  );
+
+				  $bcd->try_add_attachment( $image_id );
+				  $bcd->elementor->collection( 'taxonomy_thumbnail_id' )->set( $term_id, $image_id );
+				}
+			}
+		}
+	}
+
+	/**
 		@brief		Add post types.
 		@since		2015-10-02 12:47:49
 	**/
 	public function threewp_broadcast_get_post_types( $action )
 	{
 		$action->add_type( 'elementor_library' );
+	}
+
+	/**
+		@brief		Restore the image.
+		@since		2021-10-07 21:43:27
+	**/
+	public function threewp_broadcast_wp_update_term( $action )
+	{
+		$bcd = $action->broadcasting_data;
+
+		if ( ! isset( $bcd->elementor ) )
+			return;
+
+		$old_term_id = $action->old_term->term_id;
+		$new_term_id = $action->new_term->term_id;
+
+		$old_image_id = $bcd->elementor->collection( 'taxonomy_thumbnail_id' )->get( $old_term_id );
+
+		if ( ! $old_image_id )
+			return;
+
+		ThreeWP_Broadcast()->copy_attachments_to_child( $bcd );
+
+		$key = 'taxonomy_thumbnail_id';
+		$new_image_id = $bcd->copied_attachments()->get( $old_image_id );
+
+		if ( $new_image_id > 0 )
+		{
+			$this->debug( 'Setting new %s %s for term %s.', $key, $new_image_id, $new_term_id );
+			update_term_meta( $new_term_id, $key, $new_image_id );
+		}
 	}
 
 	// --------------------------------------------------------------------------------------------
@@ -130,7 +203,9 @@ class Elementor
 				$taxonomy = $parts[ 2 ];
 				$taxonomy = str_replace( 'in_', '', $taxonomy );
 				$taxonomy = str_replace( '_children', '', $taxonomy );
-				$bcd->taxonomies()->also_sync( null, $taxonomy );
+				$bcd->taxonomies()
+					->also_sync( null, $taxonomy )
+					->use_term( $parts[ 3 ] );
 			}
 		}
 	}
@@ -362,6 +437,20 @@ class Elementor
 								$this->debug( 'Found image-gallery widget. Adding attachment %s', $image_id );
 					}
 					break;
+				case 'ProductIntroFullDetail':
+					foreach( [
+						'bg_image',
+						'bg_image_mobile',
+						'image',
+						'overlay_image',
+						'overlay_image_mobile',
+					] as $type )
+					{
+						$image_id = $element->settings->$type->id;
+						if ( $bcd->try_add_attachment( $image_id ) )
+							$this->debug( 'Found ProductIntroFullDetail %s. Adding attachment %s', $image_id );
+					}
+					break;
 				case 'smartslider':
 					// Fake a smartslider shortcode.
 					$item_id = $element->settings->smartsliderid;
@@ -538,6 +627,22 @@ class Elementor
 						$this->debug( 'Found gallery widget. Replacing %s with %s', $image_id, $new_image_id );
 						$element->settings->wp_gallery[ $gallery_index ]->id = $new_image_id;
 						$element->settings->wp_gallery[ $gallery_index ]->url = ThreeWP_Broadcast()->update_attachment_ids( $bcd, $element->settings->wp_gallery[ $gallery_index ]->url );
+					}
+					break;
+				case 'ProductIntroFullDetail':
+					foreach( [
+						'bg_image',
+						'bg_image_mobile',
+						'image',
+						'overlay_image',
+						'overlay_image_mobile',
+					] as $type )
+					{
+						$image_id = $element->settings->$type->id;
+						$new_image_id = $bcd->copied_attachments()->get( $image_id );
+						$this->debug( 'Found ProductIntroFullDetail %s. Replacing %s with %s.', $type, $image_id, $new_image_id );
+						$element->settings->$type->id = $new_image_id;
+						$element->settings->$type->url = ThreeWP_Broadcast()->update_attachment_ids( $bcd, $element->settings->$type->url );
 					}
 					break;
 				case 'template':

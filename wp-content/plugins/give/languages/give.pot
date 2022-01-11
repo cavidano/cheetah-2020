@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Give - Donation Plugin plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Give - Donation Plugin 2.15.0\n"
+"Project-Id-Version: Give - Donation Plugin 2.17.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/givewp\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-10-11T16:01:36+00:00\n"
+"POT-Creation-Date: 2021-11-23T23:44:43+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: give\n"
@@ -27,8 +27,9 @@ msgid "The most robust, flexible, and intuitive way to accept donations on WordP
 msgstr ""
 
 #. Author of the plugin
-#: src/Views/Admin/Form/Metabox-Settings.php:48
+#: src/Views/Admin/Form/Metabox-Settings.php:58
 #: assets/src/js/admin/onboarding-wizard/app/steps/introduction/index.js:25
+#: src/InPluginUpsells/resources/js/components/AddonsAdminPage.js:39
 msgid "GiveWP"
 msgstr ""
 
@@ -99,35 +100,35 @@ msgstr ""
 msgid "Give"
 msgstr ""
 
-#: give.php:334
+#: give.php:348
 msgid "Your site could be faster and more secure with a newer PHP version."
 msgstr ""
 
-#: give.php:338
+#: give.php:352
 msgid "Hey, we've noticed that you're running an outdated version of PHP. PHP is the programming language that WordPress and GiveWP are built on. The version that is currently used for your site is no longer supported. Newer versions of PHP are both faster and more secure. In fact, your version of PHP no longer receives security updates, which is why we're sending you this notice."
 msgstr ""
 
-#: give.php:342
+#: give.php:356
 msgid "Hosts have the ability to update your PHP version, but sometimes they don't dare to do that because they're afraid they'll break your site."
 msgstr ""
 
-#: give.php:346
+#: give.php:360
 msgid "To which version should I update?"
 msgstr ""
 
-#: give.php:347
+#: give.php:361
 msgid "You should update your PHP version to either 5.6 or to 7.0 or 7.1. On a normal WordPress site, switching to PHP 5.6 should never cause issues. We would however actually recommend you switch to PHP7. There are some plugins that are not ready for PHP7 though, so do some testing first. PHP7 is much faster than PHP 5.6. It's also the only PHP version still in active development and therefore the better option for your site in the long run."
 msgstr ""
 
-#: give.php:351
+#: give.php:365
 msgid "Can't update? Ask your host!"
 msgstr ""
 
-#: give.php:353
+#: give.php:367
 msgid "If you cannot upgrade your PHP version yourself, you can send an email to your host. If they don't want to upgrade your PHP version, we would suggest you switch hosts. Have a look at one of the recommended %1$sWordPress hosting partners%2$s."
 msgstr ""
 
-#: give.php:386
+#: give.php:401
 msgid "<strong>Attention:</strong> GiveWP 2.5.0+ requires the latest version of the Recurring Donations add-on to process payments properly with Stripe. Please update to the latest version add-on to resolve compatibility issues. If your license is active, you should see the update available in WordPress. Otherwise, you can access the latest version by <a href=\"%1$s\" target=\"_blank\">logging into your account</a> and visiting <a href=\"%1$s\" target=\"_blank\">your downloads</a> page on the GiveWP website."
 msgstr ""
 
@@ -357,8 +358,8 @@ msgstr[1] ""
 #: includes/admin/admin-actions.php:555
 #: includes/admin/tools/import/class-give-import-donations.php:251
 #: includes/admin/tools/import/class-give-import-donations.php:257
-#: src/Views/Form/Templates/Sequoia/sections/income-stats.php:50
-#: src/DonorDashboards/resources/js/block/index.js:24
+#: src/Views/Form/Templates/Sequoia/sections/income-stats.php:54
+#: src/DonorDashboards/resources/js/block/index.js:26
 msgid "donor"
 msgid_plural "donors"
 msgstr[0] ""
@@ -389,7 +390,7 @@ msgid "ERROR"
 msgstr ""
 
 #: includes/admin/admin-actions.php:926
-#: includes/class-give-scripts.php:516
+#: includes/class-give-scripts.php:503
 #: includes/process-donation.php:596
 #: includes/shortcodes.php:449
 msgid "Please enter your first name."
@@ -442,7 +443,7 @@ msgstr ""
 
 #: includes/admin/admin-actions.php:1163
 #: includes/admin/payments/view-payment-details.php:734
-#: src/Receipt/DonationReceipt.php:149
+#: src/Receipt/DonationReceipt.php:162
 msgid "Billing Address"
 msgstr ""
 
@@ -501,8 +502,8 @@ msgstr ""
 #: includes/admin/donors/class-donor-table.php:66
 #: includes/admin/reports/class-donor-reports-table.php:68
 #: includes/admin/tools/import/class-give-import-donations.php:590
-#: src/API/Endpoints/Reports/Income.php:96
-#: src/API/Endpoints/Reports/IncomeBreakdown.php:81
+#: src/API/Endpoints/Reports/Income.php:98
+#: src/API/Endpoints/Reports/IncomeBreakdown.php:83
 msgid "Donors"
 msgstr ""
 
@@ -524,23 +525,15 @@ msgstr ""
 msgid "Tools"
 msgstr ""
 
-#: includes/admin/admin-pages.php:104
-#: includes/admin/plugins.php:83
-#: includes/admin/settings/class-settings-addon.php:29
-#: src/Onboarding/Setup/templates/index.html.php:262
-#: assets/src/js/admin/onboarding-wizard/app/index.js:87
-msgid "Add-ons"
-msgstr ""
-
-#: includes/admin/admin-pages.php:398
+#: includes/admin/admin-pages.php:370
 msgid "Donation Success Page"
 msgstr ""
 
-#: includes/admin/admin-pages.php:402
+#: includes/admin/admin-pages.php:374
 msgid "Donation Failed Page"
 msgstr ""
 
-#: includes/admin/admin-pages.php:406
+#: includes/admin/admin-pages.php:378
 #: includes/admin/settings/class-settings-general.php:301
 #: includes/admin/tools/views/html-admin-page-system-info.php:644
 msgid "Donation History Page"
@@ -591,8 +584,8 @@ msgstr ""
 
 #: includes/admin/class-admin-settings.php:816
 #: includes/admin/give-metabox-functions.php:1044
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:51
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:163
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:109
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:259
 msgid "Image"
 msgstr ""
 
@@ -823,7 +816,7 @@ msgstr ""
 #: includes/admin/reports/class-form-reports-table.php:122
 #: includes/post-types.php:57
 #: includes/post-types.php:272
-#: src/DonorDashboards/resources/js/app/components/donation-row/index.js:18
+#: src/DonorDashboards/resources/js/app/components/donation-row/index.js:17
 msgid "Form"
 msgstr ""
 
@@ -877,10 +870,10 @@ msgstr ""
 #: includes/deprecated/deprecated-functions.php:68
 #: includes/post-types.php:68
 #: includes/post-types.php:124
-#: src/API/Endpoints/Reports/FormPerformance.php:70
-#: src/API/Endpoints/Reports/FormPerformance.php:101
-#: src/API/Endpoints/Reports/IncomeBreakdown.php:82
-#: src/DonorDashboards/resources/js/app/components/donation-table/index.js:75
+#: src/API/Endpoints/Reports/FormPerformance.php:73
+#: src/API/Endpoints/Reports/FormPerformance.php:103
+#: src/API/Endpoints/Reports/IncomeBreakdown.php:84
+#: src/DonorDashboards/resources/js/app/components/donation-table/index.js:62
 msgid "Donations"
 msgstr ""
 
@@ -915,8 +908,8 @@ msgstr ""
 #: includes/admin/payments/class-payments-table.php:639
 #: includes/admin/payments/class-payments-table.php:769
 #: includes/payments/functions.php:1452
-#: src/DonorDashboards/resources/js/app/tabs/edit-profile/address-controls/index.js:51
-#: src/DonorDashboards/resources/js/app/tabs/edit-profile/email-controls/index.js:50
+#: src/DonorDashboards/resources/js/app/tabs/edit-profile/address-controls/index.js:61
+#: src/DonorDashboards/resources/js/app/tabs/edit-profile/email-controls/index.js:53
 msgid "Delete"
 msgstr ""
 
@@ -941,8 +934,8 @@ msgstr ""
 #: includes/class-give-scripts.php:239
 #: includes/class-give-scripts.php:288
 #: includes/forms/template.php:1559
-#: src/Log/Admin/Logs/index.js:278
-#: src/MigrationLog/Admin/Migrations/index.js:198
+#: src/Log/Admin/Logs/index.js:297
+#: src/MigrationLog/Admin/Migrations/index.js:199
 msgid "Cancel"
 msgstr ""
 
@@ -1011,12 +1004,12 @@ msgstr ""
 #: includes/formatting.php:767
 #: includes/gateways/manual.php:80
 #: includes/gateways/stripe/includes/admin/admin-actions.php:183
-#: src/Log/ValueObjects/LogType.php:42
-#: src/DonorDashboards/resources/js/app/components/tab-content/index.js:22
-#: src/DonorDashboards/resources/js/app/tabs/annual-receipts/content.js:26
-#: src/DonorDashboards/resources/js/app/tabs/donation-history/content.js:36
-#: src/DonorDashboards/resources/js/app/tabs/donation-history/dashboard-content.js:30
-#: src/DonorDashboards/resources/js/app/tabs/recurring-donations/content.js:39
+#: src/Log/ValueObjects/LogType.php:45
+#: src/DonorDashboards/resources/js/app/components/tab-content/index.js:21
+#: src/DonorDashboards/resources/js/app/tabs/annual-receipts/content.js:25
+#: src/DonorDashboards/resources/js/app/tabs/donation-history/content.js:35
+#: src/DonorDashboards/resources/js/app/tabs/donation-history/dashboard-content.js:27
+#: src/DonorDashboards/resources/js/app/tabs/recurring-donations/content.js:40
 msgid "Error"
 msgstr ""
 
@@ -1145,7 +1138,7 @@ msgstr ""
 
 #: includes/admin/donors/donors.php:75
 #: includes/admin/donors/donors.php:826
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:318
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:371
 msgid "Remove"
 msgstr ""
 
@@ -1171,7 +1164,7 @@ msgstr ""
 #: includes/forms/template.php:805
 #: includes/forms/template.php:816
 #: templates/shortcode-profile-editor.php:52
-#: src/DonorDashboards/resources/js/app/tabs/edit-profile/content.js:153
+#: src/DonorDashboards/resources/js/app/tabs/edit-profile/content.js:152
 msgid "First Name"
 msgstr ""
 
@@ -1181,7 +1174,7 @@ msgstr ""
 #: includes/forms/template.php:825
 #: includes/forms/template.php:838
 #: templates/shortcode-profile-editor.php:60
-#: src/DonorDashboards/resources/js/app/tabs/edit-profile/content.js:159
+#: src/DonorDashboards/resources/js/app/tabs/edit-profile/content.js:158
 msgid "Last Name"
 msgstr ""
 
@@ -1251,8 +1244,8 @@ msgid "This donor does not have any addresses saved."
 msgstr ""
 
 #: includes/admin/donors/donors.php:621
-#: src/DonorDashboards/resources/js/app/tabs/edit-profile/address-controls/index.js:76
-#: src/DonorDashboards/resources/js/app/tabs/edit-profile/address-controls/index.js:85
+#: src/DonorDashboards/resources/js/app/tabs/edit-profile/address-controls/index.js:79
+#: src/DonorDashboards/resources/js/app/tabs/edit-profile/address-controls/index.js:86
 msgid "Add Address"
 msgstr ""
 
@@ -1308,14 +1301,14 @@ msgstr ""
 #: includes/admin/donors/donors.php:784
 #: includes/admin/donors/donors.php:876
 #: includes/admin/donors/donors.php:946
-#: src/MigrationLog/Admin/Migrations/index.js:257
+#: src/MigrationLog/Admin/Migrations/index.js:258
 msgid "Actions"
 msgstr ""
 
 #: includes/admin/donors/donors.php:824
 #: includes/admin/donors/donors.php:841
-#: src/DonorDashboards/resources/js/app/tabs/edit-profile/address-controls/index.js:47
-#: src/DonorDashboards/resources/js/app/tabs/edit-profile/email-controls/index.js:46
+#: src/DonorDashboards/resources/js/app/tabs/edit-profile/address-controls/index.js:54
+#: src/DonorDashboards/resources/js/app/tabs/edit-profile/email-controls/index.js:49
 msgid "Make Primary"
 msgstr ""
 
@@ -1325,7 +1318,7 @@ msgstr ""
 #: includes/admin/tools/import/class-give-import-donations.php:481
 #: includes/forms/template.php:876
 #: includes/forms/template.php:887
-#: src/Receipt/DonationReceipt.php:122
+#: src/Receipt/DonationReceipt.php:134
 #: templates/email-login-form.php:108
 #: templates/shortcode-profile-editor.php:118
 msgid "Email Address"
@@ -1333,8 +1326,8 @@ msgstr ""
 
 #: includes/admin/donors/donors.php:843
 #: includes/admin/emails/class-email-setting-field.php:335
-#: includes/admin/settings/class-settings-advanced.php:238
-#: src/DonorDashboards/resources/js/app/tabs/edit-profile/email-controls/index.js:67
+#: includes/admin/settings/class-settings-advanced.php:227
+#: src/DonorDashboards/resources/js/app/tabs/edit-profile/email-controls/index.js:70
 msgid "Add Email"
 msgstr ""
 
@@ -1343,7 +1336,7 @@ msgid "No Emails Found"
 msgstr ""
 
 #: includes/admin/donors/donors.php:859
-#: src/DonorDashboards/resources/js/app/tabs/donation-history/dashboard-content.js:46
+#: src/DonorDashboards/resources/js/app/tabs/donation-history/dashboard-content.js:38
 msgid "Recent Donations"
 msgstr ""
 
@@ -1351,7 +1344,7 @@ msgstr ""
 #: includes/admin/forms/class-metabox-form-data.php:258
 #: includes/admin/tools/export/class-export.php:81
 #: templates/history-donations.php:68
-#: src/DonorDashboards/resources/js/app/components/donation-row/index.js:41
+#: src/DonorDashboards/resources/js/app/components/donation-row/index.js:40
 msgid "ID"
 msgstr ""
 
@@ -1361,9 +1354,9 @@ msgstr ""
 #: includes/admin/import-functions.php:412
 #: includes/admin/payments/class-payments-table.php:416
 #: templates/history-donations.php:71
-#: src/DonorDashboards/resources/js/app/components/annual-receipt-table/index.js:53
-#: src/DonorDashboards/resources/js/app/components/donation-row/index.js:14
-#: src/DonorDashboards/resources/js/app/components/subscription-row/index.js:20
+#: src/DonorDashboards/resources/js/app/components/annual-receipt-table/index.js:48
+#: src/DonorDashboards/resources/js/app/components/donation-row/index.js:13
+#: src/DonorDashboards/resources/js/app/components/subscription-row/index.js:23
 msgid "Amount"
 msgstr ""
 
@@ -1374,11 +1367,11 @@ msgstr ""
 #: includes/admin/payments/view-payment-details.php:186
 #: includes/admin/tools/export/class-export-earnings.php:61
 #: includes/admin/tools/export/class-export.php:82
-#: src/API/Endpoints/Reports/IncomeBreakdown.php:80
+#: src/API/Endpoints/Reports/IncomeBreakdown.php:82
 #: templates/history-donations.php:69
 #: templates/shortcode-receipt.php:63
-#: src/DonorDashboards/resources/js/app/components/donation-row/index.js:22
-#: src/DonorDashboards/resources/js/app/components/donation-table/index.js:58
+#: src/DonorDashboards/resources/js/app/components/donation-row/index.js:21
+#: src/DonorDashboards/resources/js/app/components/donation-table/index.js:51
 msgid "Date"
 msgstr ""
 
@@ -1386,12 +1379,12 @@ msgstr ""
 #: includes/admin/import-functions.php:479
 #: includes/admin/payments/class-payments-table.php:414
 #: templates/history-donations.php:72
-#: src/DonorDashboards/resources/js/app/components/donation-row/index.js:27
-#: src/DonorDashboards/resources/js/app/components/donation-table/index.js:61
-#: src/DonorDashboards/resources/js/app/components/subscription-row/index.js:25
-#: src/DonorDashboards/resources/js/app/components/subscription-table/index.js:54
-#: src/Log/Admin/Logs/index.js:318
-#: src/MigrationLog/Admin/Migrations/index.js:210
+#: src/DonorDashboards/resources/js/app/components/donation-row/index.js:26
+#: src/DonorDashboards/resources/js/app/components/donation-table/index.js:52
+#: src/DonorDashboards/resources/js/app/components/subscription-row/index.js:32
+#: src/DonorDashboards/resources/js/app/components/subscription-table/index.js:51
+#: src/Log/Admin/Logs/index.js:337
+#: src/MigrationLog/Admin/Migrations/index.js:211
 msgid "Status"
 msgstr ""
 
@@ -1446,9 +1439,9 @@ msgid "You can not edit notification status from here."
 msgstr ""
 
 #: includes/admin/emails/abstract-email-notification.php:901
-#: src/Onboarding/Setup/templates/index.html.php:70
-#: src/PaymentGateways/PaypalSettingPage.php:64
-#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:26
+#: src/Onboarding/Setup/templates/index.html.php:78
+#: src/PaymentGateways/PaypalSettingPage.php:72
+#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:30
 msgid "PayPal"
 msgstr ""
 
@@ -1477,12 +1470,12 @@ msgstr ""
 #: includes/admin/emails/class-donation-receipt-email.php:49
 #: includes/admin/shortcodes/shortcode-give-receipt.php:27
 #: includes/admin/shortcodes/shortcode-give-receipt.php:28
-#: src/Onboarding/DefaultFormFactory.php:85
-#: src/Onboarding/DefaultFormFactory.php:86
-#: src/Views/Form/defaultFormReceiptTemplate.php:11
-#: src/Views/Form/Templates/Sequoia/views/receipt.php:107
+#: src/Onboarding/DefaultFormFactory.php:90
+#: src/Onboarding/DefaultFormFactory.php:91
+#: src/Views/Form/defaultFormReceiptTemplate.php:12
+#: src/Views/Form/Templates/Sequoia/views/receipt.php:118
 #: templates/shortcode-receipt.php:251
-#: src/DonorDashboards/resources/js/app/tabs/donation-history/content.js:60
+#: src/DonorDashboards/resources/js/app/tabs/donation-history/content.js:54
 msgid "Donation Receipt"
 msgstr ""
 
@@ -1628,66 +1621,66 @@ msgstr ""
 msgid "Plain"
 msgstr ""
 
-#: includes/admin/emails/class-email-notifications.php:121
+#: includes/admin/emails/class-email-notifications.php:123
 msgid "Email Notifications"
 msgstr ""
 
-#: includes/admin/emails/class-email-notifications.php:125
+#: includes/admin/emails/class-email-notifications.php:127
 msgid "Email Options"
 msgstr ""
 
-#: includes/admin/emails/class-email-notifications.php:130
+#: includes/admin/emails/class-email-notifications.php:132
 msgid "Global Options"
 msgstr ""
 
-#: includes/admin/emails/class-email-notifications.php:131
+#: includes/admin/emails/class-email-notifications.php:133
 #: includes/admin/emails/class-email-setting-field.php:176
 #: includes/admin/forms/class-metabox-form-data.php:563
 #: includes/gateways/offline-donations.php:285
 msgid "Customize"
 msgstr ""
 
-#: includes/admin/emails/class-email-notifications.php:136
+#: includes/admin/emails/class-email-notifications.php:138
 #: includes/admin/settings/class-settings-email.php:62
 msgid "Email Template"
 msgstr ""
 
-#: includes/admin/emails/class-email-notifications.php:137
+#: includes/admin/emails/class-email-notifications.php:139
 #: includes/admin/settings/class-settings-email.php:63
 msgid "Choose your template from the available registered template types."
 msgstr ""
 
-#: includes/admin/emails/class-email-notifications.php:144
+#: includes/admin/emails/class-email-notifications.php:146
 #: includes/admin/settings/class-settings-email.php:69
 msgid "Logo"
 msgstr ""
 
-#: includes/admin/emails/class-email-notifications.php:145
+#: includes/admin/emails/class-email-notifications.php:147
 #: includes/admin/settings/class-settings-email.php:70
 msgid "Upload or choose a logo to be displayed at the top of the donation receipt emails. Displayed on HTML emails only."
 msgstr ""
 
-#: includes/admin/emails/class-email-notifications.php:150
+#: includes/admin/emails/class-email-notifications.php:152
 #: includes/admin/settings/class-settings-email.php:75
 msgid "From Name"
 msgstr ""
 
-#: includes/admin/emails/class-email-notifications.php:151
+#: includes/admin/emails/class-email-notifications.php:153
 #: includes/admin/settings/class-settings-email.php:76
 msgid "The name which appears in the \"From\" field in all GiveWP donation emails."
 msgstr ""
 
-#: includes/admin/emails/class-email-notifications.php:157
+#: includes/admin/emails/class-email-notifications.php:159
 #: includes/admin/settings/class-settings-email.php:82
 msgid "From Email"
 msgstr ""
 
-#: includes/admin/emails/class-email-notifications.php:158
+#: includes/admin/emails/class-email-notifications.php:160
 #: includes/admin/settings/class-settings-email.php:83
 msgid "Email address from which all GiveWP emails are sent from. This will act as the \"from\" and \"reply-to\" email address."
 msgstr ""
 
-#: includes/admin/emails/class-email-notifications.php:166
+#: includes/admin/emails/class-email-notifications.php:168
 msgid "Email Notification"
 msgstr ""
 
@@ -1700,11 +1693,10 @@ msgstr ""
 #: includes/admin/forms/class-metabox-form-data.php:516
 #: includes/admin/settings/class-settings-advanced.php:77
 #: includes/admin/settings/class-settings-advanced.php:109
-#: includes/admin/settings/class-settings-advanced.php:131
-#: includes/admin/settings/class-settings-advanced.php:158
-#: includes/admin/settings/class-settings-advanced.php:180
-#: includes/admin/settings/class-settings-advanced.php:218
-#: includes/admin/settings/class-settings-advanced.php:266
+#: includes/admin/settings/class-settings-advanced.php:147
+#: includes/admin/settings/class-settings-advanced.php:169
+#: includes/admin/settings/class-settings-advanced.php:207
+#: includes/admin/settings/class-settings-advanced.php:255
 #: includes/admin/settings/class-settings-display.php:108
 #: includes/admin/settings/class-settings-display.php:119
 #: includes/admin/settings/class-settings-display.php:150
@@ -1734,15 +1726,16 @@ msgstr ""
 #: includes/gateways/stripe/includes/admin/class-give-stripe-admin-settings.php:418
 #: includes/gateways/stripe/includes/admin/class-give-stripe-admin-settings.php:461
 #: includes/gateways/stripe/includes/admin/class-give-stripe-admin-settings.php:489
-#: src/DonorDashboards/Admin/Settings.php:97
-#: src/Form/Template/Options.php:155
-#: src/Form/Template/Options.php:178
-#: src/PaymentGateways/PayPalCommerce/PayPalCommerce.php:102
-#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:69
-#: src/Tracking/AdminSettings.php:41
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:24
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:115
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:193
+#: src/DonorDashboards/Admin/Settings.php:114
+#: src/Form/Template/Options.php:170
+#: src/Form/Template/Options.php:194
+#: src/PaymentGateways/PayPalCommerce/PayPalCommerce.php:122
+#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:86
+#: src/Tracking/AdminSettings.php:47
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:58
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:76
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:224
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:304
 msgid "Enabled"
 msgstr ""
 
@@ -1758,11 +1751,10 @@ msgstr ""
 #: includes/admin/forms/class-metabox-form-data.php:517
 #: includes/admin/settings/class-settings-advanced.php:78
 #: includes/admin/settings/class-settings-advanced.php:110
-#: includes/admin/settings/class-settings-advanced.php:132
-#: includes/admin/settings/class-settings-advanced.php:159
-#: includes/admin/settings/class-settings-advanced.php:181
-#: includes/admin/settings/class-settings-advanced.php:219
-#: includes/admin/settings/class-settings-advanced.php:267
+#: includes/admin/settings/class-settings-advanced.php:148
+#: includes/admin/settings/class-settings-advanced.php:170
+#: includes/admin/settings/class-settings-advanced.php:208
+#: includes/admin/settings/class-settings-advanced.php:256
 #: includes/admin/settings/class-settings-display.php:62
 #: includes/admin/settings/class-settings-display.php:85
 #: includes/admin/settings/class-settings-display.php:109
@@ -1793,15 +1785,16 @@ msgstr ""
 #: includes/gateways/stripe/includes/admin/class-give-stripe-admin-settings.php:419
 #: includes/gateways/stripe/includes/admin/class-give-stripe-admin-settings.php:462
 #: includes/gateways/stripe/includes/admin/class-give-stripe-admin-settings.php:490
-#: src/DonorDashboards/Admin/Settings.php:98
-#: src/Form/Template/Options.php:156
-#: src/Form/Template/Options.php:179
-#: src/PaymentGateways/PayPalCommerce/PayPalCommerce.php:103
-#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:70
-#: src/Tracking/AdminSettings.php:42
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:25
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:114
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:194
+#: src/DonorDashboards/Admin/Settings.php:115
+#: src/Form/Template/Options.php:171
+#: src/Form/Template/Options.php:195
+#: src/PaymentGateways/PayPalCommerce/PayPalCommerce.php:123
+#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:87
+#: src/Tracking/AdminSettings.php:48
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:57
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:77
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:225
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:305
 msgid "Disabled"
 msgstr ""
 
@@ -1899,7 +1892,7 @@ msgstr ""
 
 #: includes/admin/emails/class-new-donation-email.php:44
 #: includes/post-types.php:117
-#: src/Onboarding/DefaultFormFactory.php:77
+#: src/Onboarding/DefaultFormFactory.php:82
 msgid "New Donation"
 msgstr ""
 
@@ -1912,7 +1905,7 @@ msgid "New Donation - #{payment_id}"
 msgstr ""
 
 #: includes/admin/emails/class-new-donation-email.php:51
-#: src/Onboarding/DefaultFormFactory.php:78
+#: src/Onboarding/DefaultFormFactory.php:83
 msgid "New Donation!"
 msgstr ""
 
@@ -2079,8 +2072,8 @@ msgstr ""
 #: includes/admin/tools/export/give-export-donations-exporter.php:427
 #: includes/forms/template.php:527
 #: includes/payments/functions.php:1542
-#: src/DonorDashboards/resources/js/app/components/subscription-manager/amount-control/index.js:123
-#: src/DonorDashboards/resources/js/app/components/subscription-manager/index.js:49
+#: src/DonorDashboards/resources/js/app/components/subscription-manager/amount-control/index.js:117
+#: src/DonorDashboards/resources/js/app/components/subscription-manager/index.js:47
 msgid "Custom Amount"
 msgstr ""
 
@@ -2163,7 +2156,7 @@ msgstr ""
 #: includes/admin/forms/class-metabox-form-data.php:562
 #: includes/forms/widget.php:245
 #: includes/gateways/offline-donations.php:284
-#: src/Form/Template/Options.php:154
+#: src/Form/Template/Options.php:169
 msgid "Global Option"
 msgstr ""
 
@@ -2173,7 +2166,7 @@ msgstr ""
 #: includes/admin/settings/class-settings-display.php:63
 #: includes/admin/settings/class-settings-display.php:86
 #: includes/admin/settings/class-settings-display.php:97
-#: src/Form/LegacyConsumer/templates/label-content.html.php:13
+#: src/Form/LegacyConsumer/templates/label-content.html.php:16
 msgid "Required"
 msgstr ""
 
@@ -2352,7 +2345,7 @@ msgid "Do you want to display a custom message when the goal is closed?"
 msgstr ""
 
 #: includes/admin/forms/class-metabox-form-data.php:526
-#: src/Onboarding/DefaultFormFactory.php:65
+#: src/Onboarding/DefaultFormFactory.php:67
 msgid "Thank you to all our donors, we have met our fundraising goal."
 msgstr ""
 
@@ -2389,7 +2382,7 @@ msgstr ""
 #: includes/admin/settings/class-settings-display.php:295
 #: includes/forms/template.php:1744
 #: includes/forms/template.php:1749
-#: includes/install.php:369
+#: includes/install.php:370
 #: tests/unit/legacy/tests-install.php:97
 msgid "Agree to Terms?"
 msgstr ""
@@ -2504,7 +2497,7 @@ msgid "Send Test Email"
 msgstr ""
 
 #: includes/admin/give-metabox-functions.php:1435
-#: src/FormAPI/Form/Group.php:34
+#: src/FormAPI/Form/Group.php:36
 msgid "Group"
 msgstr ""
 
@@ -2515,7 +2508,7 @@ msgid "Remove Group"
 msgstr ""
 
 #: includes/admin/give-metabox-functions.php:1568
-#: src/FormAPI/Form/Group.php:35
+#: src/FormAPI/Form/Group.php:37
 msgid "Add Row"
 msgstr ""
 
@@ -2543,14 +2536,15 @@ msgstr ""
 #: includes/admin/import-functions.php:411
 #: includes/admin/shortcodes/shortcode-give-donor-wall.php:56
 #: includes/admin/tools/import/class-give-import-donations.php:501
-#: src/Receipt/DonationReceipt.php:213
+#: src/Receipt/DonationReceipt.php:231
 msgid "Donation Amount"
 msgstr ""
 
 #: includes/admin/import-functions.php:413
 #: includes/admin/tools/export/give-export-donations-exporter.php:206
 #: includes/admin/tools/export/give-export-donations-functions.php:278
-#: src/Receipt/DonationReceipt.php:236
+#: src/DonationSummary/resources/views/summary.php:104
+#: src/Receipt/DonationReceipt.php:256
 msgid "Donation Total"
 msgstr ""
 
@@ -2605,7 +2599,7 @@ msgstr ""
 
 #: includes/admin/import-functions.php:433
 #: includes/admin/import-functions.php:545
-#: src/DonorDashboards/resources/js/app/tabs/edit-profile/content.js:144
+#: src/DonorDashboards/resources/js/app/tabs/edit-profile/content.js:143
 msgid "Prefix"
 msgstr ""
 
@@ -2644,14 +2638,14 @@ msgid "Donor Company"
 msgstr ""
 
 #: includes/admin/import-functions.php:450
-#: src/DonorDashboards/resources/js/app/tabs/edit-profile/content.js:165
+#: src/DonorDashboards/resources/js/app/tabs/edit-profile/content.js:163
 msgid "Company"
 msgstr ""
 
 #: includes/admin/import-functions.php:453
 #: includes/admin/tools/export/give-export-donations-exporter.php:195
 #: includes/forms/template.php:1176
-#: src/DonorDashboards/resources/js/app/tabs/edit-profile/address-fields/index.js:66
+#: src/DonorDashboards/resources/js/app/tabs/edit-profile/address-fields/index.js:65
 msgid "Address 1"
 msgstr ""
 
@@ -2665,7 +2659,7 @@ msgstr ""
 #: includes/admin/tools/export/class-batch-export-donors.php:188
 #: includes/admin/tools/export/give-export-donations-exporter.php:196
 #: includes/forms/template.php:1199
-#: src/DonorDashboards/resources/js/app/tabs/edit-profile/address-fields/index.js:71
+#: src/DonorDashboards/resources/js/app/tabs/edit-profile/address-fields/index.js:66
 msgid "Address 2"
 msgstr ""
 
@@ -2674,7 +2668,7 @@ msgstr ""
 #: includes/admin/tools/export/give-export-donations-exporter.php:197
 #: includes/forms/template.php:1220
 #: includes/forms/template.php:1232
-#: src/DonorDashboards/resources/js/app/tabs/edit-profile/address-fields/index.js:76
+#: src/DonorDashboards/resources/js/app/tabs/edit-profile/address-fields/index.js:67
 msgid "City"
 msgstr ""
 
@@ -2687,7 +2681,7 @@ msgstr ""
 #: includes/country-functions.php:552
 #: includes/country-functions.php:810
 #: includes/forms/template.php:1242
-#: src/DonorDashboards/resources/js/app/tabs/edit-profile/address-fields/index.js:82
+#: src/DonorDashboards/resources/js/app/tabs/edit-profile/address-fields/index.js:70
 msgid "State"
 msgstr ""
 
@@ -2734,7 +2728,7 @@ msgstr ""
 #: includes/admin/import-functions.php:467
 #: includes/admin/tools/export/class-batch-export-donors.php:191
 #: includes/admin/tools/export/give-export-donations-exporter.php:199
-#: src/DonorDashboards/resources/js/app/tabs/edit-profile/address-fields/index.js:88
+#: src/DonorDashboards/resources/js/app/tabs/edit-profile/address-fields/index.js:75
 msgid "Zip"
 msgstr ""
 
@@ -2762,10 +2756,10 @@ msgid "Donation Status"
 msgstr ""
 
 #: includes/admin/import-functions.php:482
-#: src/Receipt/DonationReceipt.php:176
+#: src/Receipt/DonationReceipt.php:191
 #: templates/history-donations.php:73
 #: templates/shortcode-receipt.php:100
-#: src/DonorDashboards/resources/js/app/components/subscription-manager/index.js:96
+#: src/DonorDashboards/resources/js/app/components/subscription-manager/index.js:94
 msgid "Payment Method"
 msgstr ""
 
@@ -2907,14 +2901,14 @@ msgid "Name, Email, or Donation ID"
 msgstr ""
 
 #: includes/admin/payments/class-payments-table.php:313
-#: src/API/Endpoints/Reports/PaymentStatuses.php:80
+#: src/API/Endpoints/Reports/PaymentStatuses.php:85
 msgid "Completed"
 msgstr ""
 
 #: includes/admin/payments/class-payments-table.php:317
 #: includes/payments/functions.php:539
-#: src/API/Endpoints/Reports/PaymentStatuses.php:85
-#: src/MigrationLog/MigrationLogStatus.php:34
+#: src/API/Endpoints/Reports/PaymentStatuses.php:90
+#: src/MigrationLog/MigrationLogStatus.php:37
 msgid "Pending"
 msgstr ""
 
@@ -2926,7 +2920,7 @@ msgstr ""
 #: includes/admin/payments/class-payments-table.php:325
 #: includes/payments/functions.php:541
 #: includes/post-types.php:343
-#: src/API/Endpoints/Reports/PaymentStatuses.php:90
+#: src/API/Endpoints/Reports/PaymentStatuses.php:95
 #: assets/src/js/admin/reports/components/donation-item/utils/index.js:77
 msgid "Refunded"
 msgstr ""
@@ -2941,15 +2935,15 @@ msgstr ""
 #: includes/class-give-cli-commands.php:1258
 #: includes/payments/functions.php:542
 #: includes/post-types.php:354
-#: src/API/Endpoints/Reports/PaymentStatuses.php:105
-#: src/MigrationLog/MigrationLogStatus.php:33
+#: src/API/Endpoints/Reports/PaymentStatuses.php:110
+#: src/MigrationLog/MigrationLogStatus.php:36
 msgid "Failed"
 msgstr ""
 
 #: includes/admin/payments/class-payments-table.php:337
 #: includes/payments/functions.php:543
 #: includes/post-types.php:376
-#: src/API/Endpoints/Reports/PaymentStatuses.php:100
+#: src/API/Endpoints/Reports/PaymentStatuses.php:105
 #: assets/src/js/admin/reports/components/donation-item/utils/index.js:75
 msgid "Cancelled"
 msgstr ""
@@ -2957,7 +2951,7 @@ msgstr ""
 #: includes/admin/payments/class-payments-table.php:341
 #: includes/payments/functions.php:544
 #: includes/post-types.php:387
-#: src/API/Endpoints/Reports/PaymentStatuses.php:95
+#: src/API/Endpoints/Reports/PaymentStatuses.php:100
 #: assets/src/js/admin/reports/components/donation-item/utils/index.js:73
 msgid "Abandoned"
 msgstr ""
@@ -2967,10 +2961,11 @@ msgid "Preapproval Pending"
 msgstr ""
 
 #: includes/admin/payments/class-payments-table.php:412
-#: src/API/Endpoints/Reports/TopDonors.php:43
-#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:57
+#: src/API/Endpoints/Reports/TopDonors.php:46
+#: src/PaymentGateways/PayPalCommerce/PayPalCommerce.php:89
+#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:71
 #: templates/shortcode-receipt.php:82
-#: src/DonorDashboards/resources/js/app/components/donation-table/index.js:52
+#: src/DonorDashboards/resources/js/app/components/donation-table/index.js:49
 msgid "Donation"
 msgid_plural "Donations"
 msgstr[0] ""
@@ -2978,8 +2973,8 @@ msgstr[1] ""
 
 #: includes/admin/payments/class-payments-table.php:420
 #: templates/history-donations.php:74
-#: src/Log/Admin/Logs/index.js:346
-#: src/MigrationLog/Admin/Migrations/index.js:265
+#: src/Log/Admin/Logs/index.js:365
+#: src/MigrationLog/Admin/Migrations/index.js:266
 msgid "Details"
 msgstr ""
 
@@ -3118,7 +3113,7 @@ msgstr ""
 #: includes/class-give-cache-setting.php:240
 #: includes/class-give-cache-setting.php:241
 #: includes/gateways/functions.php:133
-#: src/DonorDashboards/resources/js/app/components/donation-row/index.js:36
+#: src/DonorDashboards/resources/js/app/components/donation-row/index.js:35
 msgid "Test Donation"
 msgstr ""
 
@@ -3294,6 +3289,14 @@ msgstr ""
 
 #: includes/admin/plugins.php:69
 msgid "Documentation"
+msgstr ""
+
+#: includes/admin/plugins.php:83
+#: includes/admin/settings/class-settings-addon.php:29
+#: src/InPluginUpsells/AddonsAdminPage.php:20
+#: src/Onboarding/Setup/templates/index.html.php:300
+#: assets/src/js/admin/onboarding-wizard/app/index.js:87
+msgid "Add-ons"
 msgstr ""
 
 #: includes/admin/plugins.php:470
@@ -3637,87 +3640,79 @@ msgid "Footer"
 msgstr ""
 
 #: includes/admin/settings/class-settings-advanced.php:125
-msgid "Babel Polyfill Script"
-msgstr ""
-
-#: includes/admin/settings/class-settings-advanced.php:126
-msgid "This controls loading the Babel polyfill, which provides backwards compatibility for older browsers such as IE 11. The polyfill may be disabled to avoid conflicts with other themes or plugins that load the same script."
-msgstr ""
-
-#: includes/admin/settings/class-settings-advanced.php:136
 msgid "Setup Page"
 msgstr ""
 
-#: includes/admin/settings/class-settings-advanced.php:140
+#: includes/admin/settings/class-settings-advanced.php:129
 msgid "This option controls the display of the <a href=\"%s\" target=\"_blank\">GiveWP Setup page</a> when GiveWP is first installed."
 msgstr ""
 
-#: includes/admin/settings/class-settings-advanced.php:164
+#: includes/admin/settings/class-settings-advanced.php:153
 msgid "Form Page URL Prefix"
 msgstr ""
 
-#: includes/admin/settings/class-settings-advanced.php:166
+#: includes/admin/settings/class-settings-advanced.php:155
 msgid "This slug is used as a base for the (invisible to users/site visitors) iframe URL that contains all form templates besides the legacy form template. The URL currently looks like this: %1$s. This option allows you to modify that URL to avoid conflicts that might exist with other pages and URLs on the site."
 msgstr ""
 
-#: includes/admin/settings/class-settings-advanced.php:174
+#: includes/admin/settings/class-settings-advanced.php:163
 msgid "Advanced Database Updates"
 msgstr ""
 
-#: includes/admin/settings/class-settings-advanced.php:175
+#: includes/admin/settings/class-settings-advanced.php:164
 msgid "This option is only for advanced users and/or those directed by GiveWP support. Once you enable this, you'll have the ability to override the run order and to force re-running for database updates at Donations > Tools > Data. If you don't know what you are doing, you can easily break things with this option enabled. Do not leave this option enabled after you're done troubleshooting."
 msgstr ""
 
-#: includes/admin/settings/class-settings-advanced.php:187
+#: includes/admin/settings/class-settings-advanced.php:176
 msgid "Clear Cache"
 msgstr ""
 
-#: includes/admin/settings/class-settings-advanced.php:188
+#: includes/admin/settings/class-settings-advanced.php:177
 msgid "Click this button if you want to clear GiveWP's cache. The plugin stores common settings and queries in cache to optimize performance. Clearing cache will remove and begin rebuilding these saved queries."
 msgstr ""
 
-#: includes/admin/settings/class-settings-advanced.php:192
+#: includes/admin/settings/class-settings-advanced.php:181
 msgid "Advanced Settings Docs Link"
 msgstr ""
 
-#: includes/admin/settings/class-settings-advanced.php:195
+#: includes/admin/settings/class-settings-advanced.php:184
 msgid "Advanced Settings"
 msgstr ""
 
-#: includes/admin/settings/class-settings-advanced.php:212
-#: includes/admin/settings/class-settings-advanced.php:302
+#: includes/admin/settings/class-settings-advanced.php:201
+#: includes/admin/settings/class-settings-advanced.php:291
 msgid "Akismet SPAM Protection"
 msgstr ""
 
-#: includes/admin/settings/class-settings-advanced.php:213
+#: includes/admin/settings/class-settings-advanced.php:202
 msgid "Add a layer of SPAM protection to your donation submissions with Akismet. When enabled, donation submissions will be first sent through Akismet's SPAM check API if you have the plugin activated and configured."
 msgstr ""
 
-#: includes/admin/settings/class-settings-advanced.php:223
+#: includes/admin/settings/class-settings-advanced.php:212
 msgid "Whitelist by Email"
 msgstr ""
 
-#: includes/admin/settings/class-settings-advanced.php:226
+#: includes/admin/settings/class-settings-advanced.php:215
 msgid "Add emails one at a time to ensure that donations using that email bypass GiveWP's Akismet SPAM filtering. Emails added to the list here are always allowed to donate, even if they've been flagged by Akismet."
 msgstr ""
 
-#: includes/admin/settings/class-settings-advanced.php:228
+#: includes/admin/settings/class-settings-advanced.php:217
 msgid "To permanently prevent emails from being flagged as SPAM by Akismet <a href=\"%1$s\" target=\"_blank\">contact their team here</a>."
 msgstr ""
 
-#: includes/admin/settings/class-settings-advanced.php:260
+#: includes/admin/settings/class-settings-advanced.php:249
 msgid "Cache"
 msgstr ""
 
-#: includes/admin/settings/class-settings-advanced.php:261
+#: includes/admin/settings/class-settings-advanced.php:250
 msgid "If caching is enabled the plugin will start caching custom post type related queries and reduce the overall load time."
 msgstr ""
 
-#: includes/admin/settings/class-settings-advanced.php:301
+#: includes/admin/settings/class-settings-advanced.php:290
 msgid "Advanced Options"
 msgstr ""
 
-#: includes/admin/settings/class-settings-advanced.php:355
+#: includes/admin/settings/class-settings-advanced.php:344
 msgid "Please properly configure Akismet to enable SPAM protection."
 msgstr ""
 
@@ -3923,7 +3918,7 @@ msgstr ""
 
 #: includes/admin/settings/class-settings-gateways.php:65
 #: includes/gateways/stripe/includes/admin/class-give-stripe-admin-settings.php:209
-#: src/PaymentGateways/PayPalCommerce/PayPalCommerce.php:93
+#: src/PaymentGateways/PayPalCommerce/PayPalCommerce.php:113
 msgid "Collect Billing Details"
 msgstr ""
 
@@ -4158,7 +4153,7 @@ msgstr ""
 #: includes/admin/settings/class-settings-general.php:280
 #: includes/admin/settings/class-settings-general.php:297
 #: includes/admin/settings/class-settings-general.php:315
-#: src/DonorDashboards/Admin/Settings.php:76
+#: src/DonorDashboards/Admin/Settings.php:89
 msgid "Choose a page"
 msgstr ""
 
@@ -4180,12 +4175,12 @@ msgid "Base Country"
 msgstr ""
 
 #: includes/admin/settings/class-settings-general.php:320
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:94
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:103
 msgid "The country your site operates from."
 msgstr ""
 
 #: includes/admin/settings/class-settings-general.php:327
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:71
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:78
 msgid "Choose a country"
 msgstr ""
 
@@ -4351,7 +4346,7 @@ msgstr ""
 
 #: includes/admin/shortcodes/abstract-shortcode-generator.php:91
 #: includes/class-give-scripts.php:291
-#: src/Views/IframeView.php:235
+#: src/Views/IframeView.php:249
 msgid "Close"
 msgstr ""
 
@@ -4740,7 +4735,7 @@ msgid "Do you want to display the donation goal?"
 msgstr ""
 
 #: includes/admin/shortcodes/shortcode-give-form.php:88
-#: src/Form/Template/Options.php:173
+#: src/Form/Template/Options.php:189
 msgid "Display Content"
 msgstr ""
 
@@ -4761,7 +4756,7 @@ msgid "Display content BELOW the fields"
 msgstr ""
 
 #: includes/admin/shortcodes/shortcode-give-form.php:100
-#: src/Form/Template/Options.php:99
+#: src/Form/Template/Options.php:106
 msgid "Display Options"
 msgstr ""
 
@@ -4771,7 +4766,7 @@ msgstr ""
 
 #: includes/admin/shortcodes/shortcode-give-form.php:103
 #: includes/forms/widget.php:228
-#: src/Form/Template/Options.php:105
+#: src/Form/Template/Options.php:112
 msgid "All Fields"
 msgstr ""
 
@@ -4783,7 +4778,7 @@ msgstr ""
 
 #: includes/admin/shortcodes/shortcode-give-form.php:106
 #: includes/forms/widget.php:231
-#: src/Form/Template/Options.php:106
+#: src/Form/Template/Options.php:113
 msgid "Button"
 msgstr ""
 
@@ -4793,7 +4788,7 @@ msgstr ""
 
 #: includes/admin/shortcodes/shortcode-give-form.php:114
 #: includes/forms/widget.php:239
-#: src/Form/Template/Options.php:128
+#: src/Form/Template/Options.php:136
 msgid "The button label for displaying the additional payment fields."
 msgstr ""
 
@@ -5171,7 +5166,7 @@ msgid "Donor Created Date"
 msgstr ""
 
 #: includes/admin/tools/export/export-functions.php:150
-#: src/DonorDashboards/resources/js/app/tabs/donation-history/stats/index.js:25
+#: src/DonorDashboards/resources/js/app/tabs/donation-history/stats/index.js:24
 msgid "Number of donations"
 msgstr ""
 
@@ -5488,10 +5483,10 @@ msgstr ""
 
 #: includes/admin/tools/import/class-give-import-donations.php:269
 #: includes/admin/tools/import/class-give-import-donations.php:275
-#: src/MultiFormGoals/resources/views/progressbar.php:28
-#: src/Views/Form/Templates/Sequoia/sections/income-stats.php:24
-#: src/MultiFormGoals/resources/js/blocks/multi-form-goal/index.js:30
-#: src/MultiFormGoals/resources/js/blocks/progress-bar/index.js:30
+#: src/MultiFormGoals/resources/views/progressbar.php:37
+#: src/Views/Form/Templates/Sequoia/sections/income-stats.php:25
+#: src/MultiFormGoals/resources/js/blocks/multi-form-goal/index.js:32
+#: src/MultiFormGoals/resources/js/blocks/progress-bar/index.js:32
 msgid "donation"
 msgid_plural "donations"
 msgstr[0] ""
@@ -5683,7 +5678,7 @@ msgid "Use these tools to recount stats, delete test transactions, or reset stat
 msgstr ""
 
 #: includes/admin/tools/views/html-admin-page-data.php:33
-#: includes/class-give-scripts.php:533
+#: includes/class-give-scripts.php:520
 msgid "Please select an option"
 msgstr ""
 
@@ -6059,7 +6054,7 @@ msgid "The hosting provider for this WordPress installation."
 msgstr ""
 
 #: includes/admin/tools/views/html-admin-page-system-info.php:195
-#: src/DonorDashboards/Repositories/Donations.php:347
+#: src/DonorDashboards/Repositories/Donations.php:374
 msgid "Unknown"
 msgstr ""
 
@@ -6722,13 +6717,13 @@ msgstr ""
 
 #: includes/ajax-functions.php:696
 #: includes/login-register.php:396
-#: src/DonorDashboards/Routes/VerifyEmailRoute.php:65
-#: src/DonorDashboards/Routes/VerifyEmailRoute.php:97
+#: src/DonorDashboards/Routes/VerifyEmailRoute.php:72
+#: src/DonorDashboards/Routes/VerifyEmailRoute.php:106
 msgid "Unable to send email. Please try again."
 msgstr ""
 
 #: includes/ajax-functions.php:711
-#: includes/class-give-scripts.php:482
+#: includes/class-give-scripts.php:469
 #: templates/email-login-form.php:33
 msgid "Please check your email and click on the link to access your complete donation history."
 msgstr ""
@@ -6740,7 +6735,7 @@ msgid "Too many access email requests detected. Please wait %s before requesting
 msgstr ""
 
 #: includes/ajax-functions.php:737
-#: src/DonorDashboards/Routes/VerifyEmailRoute.php:117
+#: src/DonorDashboards/Routes/VerifyEmailRoute.php:125
 #: templates/email-login-form.php:61
 #: templates/history-donations.php:46
 msgid "%s minute"
@@ -6991,8 +6986,8 @@ msgstr ""
 
 #: includes/class-give-cli-commands.php:1257
 #: includes/class-give-scripts.php:289
-#: src/Log/ValueObjects/LogType.php:45
-#: src/MigrationLog/MigrationLogStatus.php:32
+#: src/Log/ValueObjects/LogType.php:48
+#: src/MigrationLog/MigrationLogStatus.php:35
 msgid "Success"
 msgstr ""
 
@@ -7037,7 +7032,7 @@ msgstr ""
 
 #: includes/class-give-license-handler.php:724
 #: includes/class-give-scripts.php:286
-#: src/Views/Admin/Form/Metabox-Settings.php:34
+#: src/Views/Admin/Form/Metabox-Settings.php:37
 msgid "Activate"
 msgstr ""
 
@@ -7047,7 +7042,7 @@ msgstr ""
 
 #: includes/class-give-license-handler.php:735
 #: includes/class-give-scripts.php:287
-#: src/Views/Admin/Form/Metabox-Settings.php:34
+#: src/Views/Admin/Form/Metabox-Settings.php:37
 msgid "Deactivate"
 msgstr ""
 
@@ -7138,8 +7133,8 @@ msgid "Download"
 msgstr ""
 
 #: includes/class-give-logging.php:106
-#: src/Log/LogFactory.php:62
-#: src/Log/LogModel.php:98
+#: src/Log/LogFactory.php:66
+#: src/Log/LogModel.php:102
 msgid "Something went wrong"
 msgstr ""
 
@@ -7228,8 +7223,8 @@ msgid "Ok"
 msgstr ""
 
 #: includes/class-give-scripts.php:292
-#: src/Log/Admin/Logs/index.js:275
-#: src/MigrationLog/Admin/Migrations/index.js:195
+#: src/Log/Admin/Logs/index.js:294
+#: src/MigrationLog/Admin/Migrations/index.js:196
 msgid "Confirm"
 msgstr ""
 
@@ -7467,15 +7462,15 @@ msgid "Updating..."
 msgstr ""
 
 #: includes/class-give-scripts.php:395
-#: includes/class-give-scripts.php:498
-#: src/DonorDashboards/resources/js/app/tabs/annual-receipts/content.js:38
-#: src/DonorDashboards/resources/js/app/tabs/donation-history/content.js:49
-#: src/DonorDashboards/resources/js/app/tabs/donation-history/content.js:80
-#: src/DonorDashboards/resources/js/app/tabs/donation-history/dashboard-content.js:20
-#: src/DonorDashboards/resources/js/app/tabs/donation-history/dashboard-content.js:46
-#: src/DonorDashboards/resources/js/app/tabs/recurring-donations/content.js:54
-#: src/DonorDashboards/resources/js/app/tabs/recurring-donations/content.js:80
-#: src/DonorDashboards/resources/js/app/tabs/recurring-donations/content.js:110
+#: includes/class-give-scripts.php:485
+#: src/DonorDashboards/resources/js/app/tabs/annual-receipts/content.js:33
+#: src/DonorDashboards/resources/js/app/tabs/donation-history/content.js:44
+#: src/DonorDashboards/resources/js/app/tabs/donation-history/content.js:73
+#: src/DonorDashboards/resources/js/app/tabs/donation-history/dashboard-content.js:19
+#: src/DonorDashboards/resources/js/app/tabs/donation-history/dashboard-content.js:38
+#: src/DonorDashboards/resources/js/app/tabs/recurring-donations/content.js:51
+#: src/DonorDashboards/resources/js/app/tabs/recurring-donations/content.js:75
+#: src/DonorDashboards/resources/js/app/tabs/recurring-donations/content.js:102
 msgid "Loading..."
 msgstr ""
 
@@ -7484,7 +7479,7 @@ msgid "Uploading..."
 msgstr ""
 
 #: includes/class-give-scripts.php:397
-#: includes/class-give-scripts.php:500
+#: includes/class-give-scripts.php:487
 msgid "Processing..."
 msgstr ""
 
@@ -7492,62 +7487,62 @@ msgstr ""
 msgid "Activating..."
 msgstr ""
 
-#: includes/class-give-scripts.php:495
+#: includes/class-give-scripts.php:482
 msgid "Please select a payment method."
 msgstr ""
 
-#: includes/class-give-scripts.php:496
+#: includes/class-give-scripts.php:483
 msgid "The minimum custom donation amount for this form is"
 msgstr ""
 
-#: includes/class-give-scripts.php:497
+#: includes/class-give-scripts.php:484
 msgid "The maximum custom donation amount for this form is"
 msgstr ""
 
-#: includes/class-give-scripts.php:499
+#: includes/class-give-scripts.php:486
 msgid "Please Wait..."
 msgstr ""
 
-#: includes/class-give-scripts.php:500
-#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:179
+#: includes/class-give-scripts.php:487
+#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:198
 msgid "This will only take a second!"
 msgstr ""
 
-#: includes/class-give-scripts.php:515
+#: includes/class-give-scripts.php:502
 msgid "Please select payment mode."
 msgstr ""
 
-#: includes/class-give-scripts.php:517
+#: includes/class-give-scripts.php:504
 #: includes/process-donation.php:746
 msgid "Please enter your last name."
 msgstr ""
 
-#: includes/class-give-scripts.php:518
+#: includes/class-give-scripts.php:505
 #: includes/process-donation.php:592
 msgid "Please enter a valid email address."
 msgstr ""
 
-#: includes/class-give-scripts.php:519
+#: includes/class-give-scripts.php:506
 msgid "Invalid email address or username."
 msgstr ""
 
-#: includes/class-give-scripts.php:520
+#: includes/class-give-scripts.php:507
 #: includes/process-donation.php:991
 #: includes/user-functions.php:419
 msgid "Enter a password."
 msgstr ""
 
-#: includes/class-give-scripts.php:521
+#: includes/class-give-scripts.php:508
 #: includes/user-functions.php:423
 msgid "Enter the password confirmation."
 msgstr ""
 
-#: includes/class-give-scripts.php:522
+#: includes/class-give-scripts.php:509
 #: includes/process-donation.php:570
 msgid "You must agree to the terms and conditions."
 msgstr ""
 
-#: includes/class-give-scripts.php:531
+#: includes/class-give-scripts.php:518
 msgid "Loading"
 msgstr ""
 
@@ -7577,7 +7572,7 @@ msgid "Text ID within a group already exists."
 msgstr ""
 
 #: includes/class-notices.php:515
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:403
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:470
 msgid "Click here"
 msgstr ""
 
@@ -12261,7 +12256,7 @@ msgid "API Requests"
 msgstr ""
 
 #: includes/deprecated/deprecated-functions.php:1203
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:495
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:573
 msgid "Connect with Stripe"
 msgstr ""
 
@@ -12482,10 +12477,10 @@ msgid "%s million"
 msgstr ""
 
 #: includes/forms/functions.php:1272
-#: src/DonorDashboards/resources/js/app/components/annual-receipt-table/index.js:73
-#: src/DonorDashboards/resources/js/app/components/donation-table/index.js:75
-#: src/DonorDashboards/resources/js/app/components/subscription-table/index.js:74
-#: src/Views/Components/Pagination/index.js:53
+#: src/DonorDashboards/resources/js/app/components/annual-receipt-table/index.js:58
+#: src/DonorDashboards/resources/js/app/components/donation-table/index.js:60
+#: src/DonorDashboards/resources/js/app/components/subscription-table/index.js:61
+#: src/Views/Components/Pagination/index.js:52
 msgid "of"
 msgstr ""
 
@@ -12524,19 +12519,19 @@ msgstr ""
 #: includes/gateways/stripe/includes/give-stripe-scripts.php:54
 #: includes/gateways/stripe/includes/payment-methods/class-give-stripe-checkout.php:556
 #: includes/shortcodes.php:595
-#: src/Form/Template.php:230
-#: src/Form/Template.php:240
-#: src/Form/Template/Options.php:56
-#: src/Form/Template/Options.php:58
-#: src/Form/Template/Options.php:131
-#: src/Onboarding/DefaultFormFactory.php:39
-#: src/Onboarding/DefaultFormFactory.php:43
-#: src/Onboarding/DefaultFormFactory.php:119
-#: src/Views/Form/Templates/Sequoia/Actions.php:221
-#: src/Views/Form/Templates/Sequoia/Actions.php:266
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:68
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:70
-#: src/Views/Form/Templates/Sequoia/Sequoia.php:67
+#: src/Form/Template.php:239
+#: src/Form/Template.php:250
+#: src/Form/Template/Options.php:60
+#: src/Form/Template/Options.php:62
+#: src/Form/Template/Options.php:139
+#: src/Onboarding/DefaultFormFactory.php:41
+#: src/Onboarding/DefaultFormFactory.php:45
+#: src/Onboarding/DefaultFormFactory.php:129
+#: src/Views/Form/Templates/Sequoia/Actions.php:230
+#: src/Views/Form/Templates/Sequoia/Actions.php:293
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:122
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:124
+#: src/Views/Form/Templates/Sequoia/Sequoia.php:81
 msgid "Donate Now"
 msgstr ""
 
@@ -12603,49 +12598,49 @@ msgstr ""
 #: includes/forms/template.php:1011
 #: includes/forms/template.php:1018
 #: includes/gateways/stripe/includes/give-stripe-scripts.php:52
-#: src/Helpers/Gateways/Stripe.php:95
-#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:162
+#: src/Helpers/Gateways/Stripe.php:108
+#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:175
 msgid "Card Number"
 msgstr ""
 
 #: includes/forms/template.php:1013
 #: includes/gateways/stripe/includes/payment-methods/class-give-stripe-sepa.php:97
-#: src/Helpers/Gateways/Stripe.php:98
+#: src/Helpers/Gateways/Stripe.php:112
 msgid "The (typically) 16 digits on the front of your credit card."
 msgstr ""
 
 #: includes/forms/template.php:1024
 #: includes/forms/template.php:1030
 #: includes/gateways/stripe/includes/give-stripe-scripts.php:53
-#: src/Helpers/Gateways/Stripe.php:108
-#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:163
+#: src/Helpers/Gateways/Stripe.php:131
+#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:176
 msgid "CVC"
 msgstr ""
 
 #: includes/forms/template.php:1026
-#: src/Helpers/Gateways/Stripe.php:111
+#: src/Helpers/Gateways/Stripe.php:135
 msgid "The 3 digit (back) or 4 digit (front) value on your card."
 msgstr ""
 
 #: includes/forms/template.php:1036
 #: includes/forms/template.php:1042
-#: src/Helpers/Gateways/Stripe.php:119
-#: src/Helpers/Gateways/Stripe.php:130
+#: src/Helpers/Gateways/Stripe.php:151
+#: src/Helpers/Gateways/Stripe.php:165
 msgid "Cardholder Name"
 msgstr ""
 
 #: includes/forms/template.php:1038
-#: src/Helpers/Gateways/Stripe.php:122
+#: src/Helpers/Gateways/Stripe.php:155
 msgid "The name of the credit card account holder."
 msgstr ""
 
 #: includes/forms/template.php:1057
-#: src/Helpers/Gateways/Stripe.php:139
+#: src/Helpers/Gateways/Stripe.php:179
 msgid "Expiration"
 msgstr ""
 
 #: includes/forms/template.php:1059
-#: src/Helpers/Gateways/Stripe.php:142
+#: src/Helpers/Gateways/Stripe.php:183
 msgid "The date your credit card expires, typically on the front of the card."
 msgstr ""
 
@@ -12654,8 +12649,8 @@ msgid "MM / YY"
 msgstr ""
 
 #: includes/forms/template.php:1112
-#: src/PaymentGateways/PayPalCommerce/AdvancedCardFields.php:72
-#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:63
+#: src/PaymentGateways/PayPalCommerce/AdvancedCardFields.php:78
+#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:77
 msgid "Billing Details"
 msgstr ""
 
@@ -12705,7 +12700,7 @@ msgid "Create an account on the site to see and manage donation history."
 msgstr ""
 
 #: includes/forms/template.php:1416
-#: src/DonorDashboards/resources/js/app/components/auth-modal/index.js:118
+#: src/DonorDashboards/resources/js/app/components/auth-modal/index.js:131
 msgid "Already have an account?"
 msgstr ""
 
@@ -12799,18 +12794,18 @@ msgstr ""
 
 #: includes/forms/widget.php:170
 #: includes/forms/widget.php:177
-#: src/Onboarding/DefaultFormFactory.php:124
-#: src/Views/Form/Templates/Sequoia/Actions.php:290
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:103
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:105
-#: src/Views/Form/Templates/Sequoia/Sequoia.php:69
+#: src/Onboarding/DefaultFormFactory.php:140
+#: src/Views/Form/Templates/Sequoia/Actions.php:321
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:169
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:171
+#: src/Views/Form/Templates/Sequoia/Sequoia.php:86
 #: assets/src/js/admin/onboarding-wizard/components/continue-button/index.js:46
 msgid "Continue"
 msgstr ""
 
 #: includes/forms/widget.php:171
-#: src/Onboarding/DefaultFormFactory.php:116
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:11
+#: src/Onboarding/DefaultFormFactory.php:123
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:14
 msgid "Help our organization by donating today! All donations go directly to making a difference for our cause."
 msgstr ""
 
@@ -12909,7 +12904,7 @@ msgstr ""
 #: includes/gateways/functions.php:282
 #: includes/gateways/manual.php:104
 #: includes/gateways/paypal/paypal-standard.php:83
-#: src/PaymentGateways/PayPalCommerce/DonationProcessor.php:73
+#: src/PaymentGateways/PayPalCommerce/DonationProcessor.php:78
 msgid "Payment Error"
 msgstr ""
 
@@ -13113,7 +13108,7 @@ msgstr ""
 #: includes/gateways/stripe/class-give-stripe.php:196
 #: includes/gateways/stripe/class-give-stripe.php:202
 #: includes/gateways/stripe/includes/admin/class-give-stripe-admin-settings.php:112
-#: src/PaymentGateways/PayPalCommerce/PayPalCommerce.php:38
+#: src/PaymentGateways/PayPalCommerce/PayPalCommerce.php:42
 msgid "Credit Card"
 msgstr ""
 
@@ -13225,7 +13220,7 @@ msgstr ""
 #: includes/gateways/stripe/includes/admin/class-give-stripe-admin-settings.php:67
 #: includes/gateways/stripe/includes/admin/class-give-stripe-admin-settings.php:94
 #: includes/gateways/stripe/includes/admin/class-give-stripe-admin-settings.php:132
-#: src/Onboarding/Setup/templates/index.html.php:97
+#: src/Onboarding/Setup/templates/index.html.php:111
 msgid "Stripe"
 msgstr ""
 
@@ -13273,7 +13268,7 @@ msgid "Stripe Gateway Documentation"
 msgstr ""
 
 #: includes/gateways/stripe/includes/admin/class-give-stripe-admin-settings.php:265
-#: src/PaymentGateways/Stripe/Admin/CreditCardSettingField.php:44
+#: src/PaymentGateways/Stripe/Admin/CreditCardSettingField.php:51
 msgid "Credit Card Fields Format"
 msgstr ""
 
@@ -13822,7 +13817,7 @@ msgid "Donate"
 msgstr ""
 
 #: includes/gateways/stripe/includes/give-stripe-scripts.php:49
-#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:177
+#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:196
 msgid "Donation Processing..."
 msgstr ""
 
@@ -13937,16 +13932,16 @@ msgstr ""
 msgid "IBAN"
 msgstr ""
 
-#: includes/install.php:454
+#: includes/install.php:455
 msgid "Donation Confirmation"
 msgstr ""
 
-#: includes/install.php:473
+#: includes/install.php:474
 msgid "Donation Failed"
 msgstr ""
 
-#: includes/install.php:474
-#: src/Form/Template.php:203
+#: includes/install.php:475
+#: src/Form/Template.php:211
 msgid "We're sorry, your donation failed to process. Please try again or contact site support."
 msgstr ""
 
@@ -14397,16 +14392,16 @@ msgstr ""
 msgid "Enter an email."
 msgstr ""
 
-#: includes/process-donation.php:1250
+#: includes/process-donation.php:1244
 msgid "The zip / postal code you entered for your billing address is invalid."
 msgstr ""
 
 #. translators: %s: invalid donation amount
-#: includes/process-donation.php:1559
+#: includes/process-donation.php:1553
 msgid "Donation amount %s is invalid."
 msgstr ""
 
-#: includes/process-donation.php:1605
+#: includes/process-donation.php:1599
 msgid "The First Name and Last Name fields cannot contain an email address or numbers."
 msgstr ""
 
@@ -14491,463 +14486,509 @@ msgstr ""
 msgid "Passwords you entered do not match. Please try again."
 msgstr ""
 
-#: src/API/Endpoints/Logs/Endpoint.php:29
+#: src/API/Endpoints/Logs/Endpoint.php:31
 msgid "You dont have the right permissions to view Logs"
 msgstr ""
 
-#: src/API/Endpoints/Logs/GetLogs.php:111
-#: src/API/Endpoints/Migrations/GetMigrations.php:115
+#: src/API/Endpoints/Logs/GetLogs.php:118
+#: src/API/Endpoints/Migrations/GetMigrations.php:120
 msgid "Current page"
 msgstr ""
 
-#: src/API/Endpoints/Logs/GetLogs.php:115
+#: src/API/Endpoints/Logs/GetLogs.php:122
 msgid "Log type"
 msgstr ""
 
-#: src/API/Endpoints/Logs/GetLogs.php:119
+#: src/API/Endpoints/Logs/GetLogs.php:126
 msgid "Log category"
 msgstr ""
 
-#: src/API/Endpoints/Logs/GetLogs.php:123
+#: src/API/Endpoints/Logs/GetLogs.php:130
 msgid "Log source"
 msgstr ""
 
-#: src/API/Endpoints/Logs/GetLogs.php:127
-#: src/API/Endpoints/Migrations/GetMigrations.php:123
+#: src/API/Endpoints/Logs/GetLogs.php:134
+#: src/API/Endpoints/Migrations/GetMigrations.php:128
 msgid "Sort direction"
 msgstr ""
 
-#: src/API/Endpoints/Logs/GetLogs.php:131
-#: src/API/Endpoints/Migrations/GetMigrations.php:119
+#: src/API/Endpoints/Logs/GetLogs.php:138
+#: src/API/Endpoints/Migrations/GetMigrations.php:124
 msgid "Sort by column"
 msgstr ""
 
-#: src/API/Endpoints/Migrations/Endpoint.php:29
+#: src/API/Endpoints/Migrations/Endpoint.php:31
 msgid "You dont have the right permissions to view Migrations"
 msgstr ""
 
-#: src/API/Endpoints/Migrations/RunMigration.php:83
-#: src/MigrationLog/Admin/Migrations/index.js:144
+#: src/API/Endpoints/Migrations/RunMigration.php:86
+#: src/MigrationLog/Admin/Migrations/index.js:142
 msgid "Migration ID"
 msgstr ""
 
-#: src/API/Endpoints/Reports/AverageDonation.php:106
+#: src/API/Endpoints/Reports/AverageDonation.php:109
 msgid "Avg Revenue"
 msgstr ""
 
-#: src/API/Endpoints/Reports/AverageDonation.php:124
-#: src/API/Endpoints/Reports/TotalDonors.php:105
-#: src/API/Endpoints/Reports/TotalIncome.php:112
-#: src/API/Endpoints/Reports/TotalRefunds.php:107
+#: src/API/Endpoints/Reports/AverageDonation.php:130
+#: src/API/Endpoints/Reports/TotalDonors.php:110
+#: src/API/Endpoints/Reports/TotalIncome.php:117
+#: src/API/Endpoints/Reports/TotalRefunds.php:110
 msgid "VS previous"
 msgstr ""
 
-#: src/API/Endpoints/Reports/AverageDonation.php:124
-#: src/API/Endpoints/Reports/TotalDonors.php:105
-#: src/API/Endpoints/Reports/TotalIncome.php:112
-#: src/API/Endpoints/Reports/TotalRefunds.php:107
+#: src/API/Endpoints/Reports/AverageDonation.php:130
+#: src/API/Endpoints/Reports/TotalDonors.php:110
+#: src/API/Endpoints/Reports/TotalIncome.php:117
+#: src/API/Endpoints/Reports/TotalRefunds.php:110
 msgid "days"
 msgstr ""
 
-#: src/API/Endpoints/Reports/AverageDonation.php:124
-#: src/API/Endpoints/Reports/TotalDonors.php:105
-#: src/API/Endpoints/Reports/TotalIncome.php:112
-#: src/API/Endpoints/Reports/TotalRefunds.php:107
+#: src/API/Endpoints/Reports/AverageDonation.php:130
+#: src/API/Endpoints/Reports/TotalDonors.php:110
+#: src/API/Endpoints/Reports/TotalIncome.php:117
+#: src/API/Endpoints/Reports/TotalRefunds.php:110
 msgid "VS previous day"
 msgstr ""
 
-#: src/API/Endpoints/Reports/Endpoint.php:223
+#: src/API/Endpoints/Reports/Endpoint.php:232
 msgid "You cannot view the reports resource."
 msgstr ""
 
-#: src/API/Endpoints/Reports/Endpoint.php:266
+#: src/API/Endpoints/Reports/Endpoint.php:276
 msgid "The data for the report."
 msgstr ""
 
-#: src/API/Endpoints/Reports/IncomeBreakdown.php:83
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:177
+#: src/API/Endpoints/Reports/IncomeBreakdown.php:85
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:202
 msgid "Refunds"
 msgstr ""
 
-#: src/API/Endpoints/Reports/IncomeBreakdown.php:84
+#: src/API/Endpoints/Reports/IncomeBreakdown.php:86
 msgid "Net"
 msgstr ""
 
-#: src/API/Endpoints/Reports/PaymentMethods.php:70
-#: src/API/Endpoints/Reports/PaymentStatuses.php:79
+#: src/API/Endpoints/Reports/PaymentMethods.php:73
 #: src/API/Endpoints/Reports/PaymentStatuses.php:84
 #: src/API/Endpoints/Reports/PaymentStatuses.php:89
 #: src/API/Endpoints/Reports/PaymentStatuses.php:94
 #: src/API/Endpoints/Reports/PaymentStatuses.php:99
 #: src/API/Endpoints/Reports/PaymentStatuses.php:104
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:173
+#: src/API/Endpoints/Reports/PaymentStatuses.php:109
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:194
 msgid "Payments"
 msgstr ""
 
-#: src/API/Endpoints/Reports/TotalDonors.php:86
-#: src/API/Endpoints/Reports/TotalRefunds.php:88
+#: src/API/Endpoints/Reports/TotalDonors.php:91
+#: src/API/Endpoints/Reports/TotalRefunds.php:91
 msgid "%d Donor"
 msgid_plural "%d Donors"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/API/Endpoints/Reports/TotalDonors.php:87
+#: src/API/Endpoints/Reports/TotalDonors.php:92
 #: assets/src/js/admin/reports/app/pages/overview-page/index.js:58
 #: assets/src/js/admin/reports/widget/index.js:56
 msgid "Total Donors"
 msgstr ""
 
-#: src/API/Endpoints/Reports/TotalIncome.php:94
+#: src/API/Endpoints/Reports/TotalIncome.php:99
 #: assets/src/js/admin/reports/app/pages/overview-page/index.js:46
 #: assets/src/js/admin/reports/widget/index.js:44
 msgid "Total Revenue"
 msgstr ""
 
-#: src/API/Endpoints/Reports/TotalRefunds.php:89
+#: src/API/Endpoints/Reports/TotalRefunds.php:92
 #: assets/src/js/admin/reports/app/pages/overview-page/index.js:64
 #: assets/src/js/admin/reports/widget/index.js:62
 msgid "Total Refunds"
 msgstr ""
 
-#: src/DonorDashboards/Admin/Settings.php:60
+#: src/DonationSummary/resources/views/summary.php:59
+msgid "Consider making this donation %srecurring%s"
+msgstr ""
+
+#: src/DonationSummary/resources/views/summary.php:72
+msgid "One time"
+msgstr ""
+
+#: src/DonationSummary/resources/views/summary.php:83
+msgid "Cover Donation Fees"
+msgstr ""
+
+#: src/DonationSummary/resources/views/summary.php:88
+msgid "Ensures 100% of your donation reaches our cause"
+msgstr ""
+
+#: src/DonorDashboards/Admin/Settings.php:68
 msgid " Need helping setting one up? <a href=\"%s\">Generate a new Donor Dashboard page.</a>"
 msgstr ""
 
-#: src/DonorDashboards/Admin/Settings.php:63
+#: src/DonorDashboards/Admin/Settings.php:73
 msgid "Donor Dashboard Page"
 msgstr ""
 
-#: src/DonorDashboards/Admin/Settings.php:64
+#: src/DonorDashboards/Admin/Settings.php:74
 msgid "This is the page where donors can manage their information, review history and more -- all in one place. The Donor Dashboard block or <code>[give_donor_dashboard]</code> shortcode should be on this page. "
 msgstr ""
 
-#: src/DonorDashboards/Admin/Settings.php:90
+#: src/DonorDashboards/Admin/Settings.php:104
 msgid "Override Legacy Donation Management Pages"
 msgstr ""
 
-#: src/DonorDashboards/Admin/Settings.php:91
+#: src/DonorDashboards/Admin/Settings.php:105
 msgid "Use the Donor Dashboard instead of the legacy donation management pages (Donation History, Edit Profile, Subscriptions, etc)."
 msgstr ""
 
-#: src/DonorDashboards/Admin/Settings.php:125
-#: src/DonorDashboards/resources/views/donordashboard.php:12
+#: src/DonorDashboards/Admin/Settings.php:142
+#: src/DonorDashboards/resources/views/donordashboard.php:13
 #: src/DonorDashboards/resources/js/block/index.js:19
 msgid "Donor Dashboard"
 msgstr ""
 
-#: src/DonorDashboards/Exceptions/DuplicateTabException.php:25
+#: src/DonorDashboards/Exceptions/DuplicateTabException.php:27
 msgid "A tab can only be added once. Make sure there are not id conflicts."
 msgstr ""
 
-#: src/DonorDashboards/Exceptions/MissingTabException.php:25
+#: src/DonorDashboards/Exceptions/MissingTabException.php:27
 msgid "No tab exists with the ID: "
 msgstr ""
 
-#: src/DonorDashboards/Helpers/LocationList.php:22
-#: src/Onboarding/Helpers/LocationList.php:19
-#: src/MultiFormGoals/resources/js/components/multi-select-control/index.js:77
+#: src/DonorDashboards/Helpers/LocationList.php:26
+#: src/Onboarding/Helpers/LocationList.php:23
+#: src/MultiFormGoals/resources/js/components/multi-select-control/index.js:83
 msgid "Select"
 msgstr ""
 
-#: src/DonorDashboards/resources/views/successnotice.php:10
+#: src/DonorDashboards/resources/views/successnotice.php:12
 msgid "Success! Donor Dashboard page was created. You can <a href=\"%s\">take a look at it here.</a>"
 msgstr ""
 
-#: src/DonorDashboards/resources/views/upgradenotice.php:19
+#: src/DonorDashboards/resources/views/upgradenotice.php:22
 msgid "Introducing the Donor Dashboard"
 msgstr ""
 
-#: src/DonorDashboards/resources/views/upgradenotice.php:22
+#: src/DonorDashboards/resources/views/upgradenotice.php:26
 msgid "New in GiveWP 2.10.0"
 msgstr ""
 
-#: src/DonorDashboards/resources/views/upgradenotice.php:26
+#: src/DonorDashboards/resources/views/upgradenotice.php:31
 msgid "The Donor Dashboard provides your donors with a one-stop location to manage all their giving history, profile, and more! Ready to get started? In order to use the new Donor Dashboard, GiveWP needs to create a new page on your site."
 msgstr ""
 
-#: src/DonorDashboards/resources/views/upgradenotice.php:30
+#: src/DonorDashboards/resources/views/upgradenotice.php:40
 msgid "Create Donor Dashboard Page"
 msgstr ""
 
-#: src/DonorDashboards/resources/views/upgradenotice.php:33
+#: src/DonorDashboards/resources/views/upgradenotice.php:45
 msgid "Want to know more? Learn more about the <a href=\"%s\" target=\"_blank\">new Donor Dashboard <i class=\"fas fa-external-link-alt\"></i></a>"
 msgstr ""
 
-#: src/DonorDashboards/resources/views/upgradenotice.php:37
+#: src/DonorDashboards/resources/views/upgradenotice.php:55
 msgid "I'll setup Donor Dashboards later"
 msgstr ""
 
-#: src/DonorDashboards/Routes/LoginRoute.php:85
+#: src/DonorDashboards/Routes/LoginRoute.php:89
 msgid "The provided password was incorrect."
 msgstr ""
 
-#: src/DonorDashboards/Routes/LoginRoute.php:96
+#: src/DonorDashboards/Routes/LoginRoute.php:101
 msgid "A record for the provided login (%s) could not be found."
 msgstr ""
 
-#: src/DonorDashboards/Routes/LogoutRoute.php:80
+#: src/DonorDashboards/Routes/LogoutRoute.php:78
 msgid "User was logged out successfully."
 msgstr ""
 
-#: src/DonorDashboards/Routes/VerifyEmailRoute.php:83
-#: src/DonorDashboards/Routes/VerifyEmailRoute.php:116
+#: src/DonorDashboards/Routes/VerifyEmailRoute.php:90
+#: src/DonorDashboards/Routes/VerifyEmailRoute.php:124
 msgid "Email sent. If not received, make sure it is a valid donor email."
 msgstr ""
 
-#: src/DonorDashboards/Tabs/Contracts/Route.php:74
+#: src/DonorDashboards/Tabs/Contracts/Route.php:77
 msgid "An error occurred while validating donor ID on request."
 msgstr ""
 
-#: src/DonorDashboards/Tabs/Contracts/Route.php:82
+#: src/DonorDashboards/Tabs/Contracts/Route.php:85
 msgid "Donor ID coud not be validated for request."
 msgstr ""
 
-#: src/DonorDashboards/Tabs/Contracts/Route.php:91
+#: src/DonorDashboards/Tabs/Contracts/Route.php:95
 msgid "An error occurred while retrieving your donation records. Contact a site administrator and have them search the logs at Donations > Tools > Logs for a more specific cause of the problem."
 msgstr ""
 
-#: src/DonorDashboards/Tabs/DonationHistoryTab/DonationsRoute.php:84
+#: src/DonorDashboards/Tabs/DonationHistoryTab/DonationsRoute.php:88
 msgid "An error occurred while retrieving donation records"
 msgstr ""
 
-#: src/DonorDashboards/Tabs/DonationHistoryTab/DonationsRoute.php:97
+#: src/DonorDashboards/Tabs/DonationHistoryTab/DonationsRoute.php:101
 msgid "An error occurred while retrieving your donation records. Contact the site administrator for assistance."
 msgstr ""
 
-#: src/DonorDashboards/Tabs/EditProfileTab/AvatarRoute.php:41
+#: src/DonorDashboards/Tabs/EditProfileTab/AvatarRoute.php:44
 msgid "No files were included in request for upload."
 msgstr ""
 
-#: src/Form/LegacyConsumer/Commands/DeprecateOldTemplateHook.php:29
+#: src/Form/LegacyConsumer/Commands/DeprecateOldTemplateHook.php:32
 msgid "The %s action"
 msgstr ""
 
-#: src/Form/LegacyConsumer/Commands/SetupFieldValidation.php:81
+#: src/Form/LegacyConsumer/Commands/SetupFieldValidation.php:88
 msgid "%1$s field value exceed allowed character limit."
 msgstr ""
 
-#: src/Form/LegacyConsumer/Validators/FileUploadValidator.php:81
+#: src/Form/LegacyConsumer/Validators/FileUploadValidator.php:91
 msgid "Unable to upload file. Allowed file %1$s: %2$s"
 msgstr ""
 
-#: src/Form/LegacyConsumer/Validators/FileUploadValidator.php:82
+#: src/Form/LegacyConsumer/Validators/FileUploadValidator.php:92
 msgid "type"
 msgid_plural "types"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Form/LegacyConsumer/Validators/FileUploadValidator.php:105
+#: src/Form/LegacyConsumer/Validators/FileUploadValidator.php:120
 msgid "File size exceed upload limit. Maximum file limit is %s"
 msgstr ""
 
-#: src/Form/Template/Options.php:52
+#: src/Form/Template/Options.php:56
 msgid "Submit Button"
 msgstr ""
 
-#: src/Form/Template/Options.php:53
+#: src/Form/Template/Options.php:57
 msgid "The button label for completing a donation."
 msgstr ""
 
-#: src/Form/Template/Options.php:73
+#: src/Form/Template/Options.php:78
 msgid "Display Style"
 msgstr ""
 
-#: src/Form/Template/Options.php:74
+#: src/Form/Template/Options.php:79
 msgid "Set how the donations levels will display on the form."
 msgstr ""
 
-#: src/Form/Template/Options.php:79
+#: src/Form/Template/Options.php:84
 msgid "Buttons"
 msgstr ""
 
-#: src/Form/Template/Options.php:80
+#: src/Form/Template/Options.php:85
 msgid "Radios"
 msgstr ""
 
-#: src/Form/Template/Options.php:81
+#: src/Form/Template/Options.php:86
 msgid "Dropdown"
 msgstr ""
 
-#: src/Form/Template/Options.php:100
+#: src/Form/Template/Options.php:107
 msgid "How would you like to display donation information for this form?"
 msgstr ""
 
-#: src/Form/Template/Options.php:127
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:99
+#: src/Form/Template/Options.php:135
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:165
 msgid "Continue Button"
 msgstr ""
 
-#: src/Form/Template/Options.php:148
+#: src/Form/Template/Options.php:157
 msgid "Floating Labels"
 msgstr ""
 
-#. translators: %s: forms http://docs.givewp.com/form-floating-labels
-#: src/Form/Template/Options.php:150
+#: src/Form/Template/Options.php:160
 msgid "Select the <a href=\"%s\" target=\"_blank\">floating labels</a> setting for this GiveWP form. Be aware that if you have the \"Disable CSS\" option enabled, you will need to style the floating labels yourself."
 msgstr ""
 
-#: src/Form/Template/Options.php:174
+#: src/Form/Template/Options.php:190
 msgid "Do you want to add custom content to this form?"
 msgstr ""
 
-#: src/Form/Template/Options.php:197
+#: src/Form/Template/Options.php:214
 msgid "Content Placement"
 msgstr ""
 
-#: src/Form/Template/Options.php:198
+#: src/Form/Template/Options.php:215
 msgid "This option controls where the content appears within the donation form."
 msgstr ""
 
-#: src/Form/Template/Options.php:204
+#: src/Form/Template/Options.php:221
 msgid "Above fields"
 msgstr ""
 
-#: src/Form/Template/Options.php:205
+#: src/Form/Template/Options.php:222
 msgid "Below fields"
 msgstr ""
 
-#: src/Form/Template/Options.php:224
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:90
+#: src/Form/Template/Options.php:242
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:147
 msgid "Content"
 msgstr ""
 
-#: src/Form/Template/Options.php:225
+#: src/Form/Template/Options.php:243
 msgid "This content will display on the single give form page."
 msgstr ""
 
-#: src/FormAPI/Fields.php:91
+#: src/FormAPI/Fields.php:100
 msgid "To create a Field object, please provide valid id, name and type."
 msgstr ""
 
-#: src/FormAPI/Form/Field.php:129
+#: src/FormAPI/Form/Field.php:137
 msgid "To create a TextField object, please provide valid id, name and type."
 msgstr ""
 
-#: src/FormAPI/Form/Group.php:84
+#: src/FormAPI/Form/Group.php:89
 msgid "Field with %1$s Id does not exist in group."
 msgstr ""
 
-#: src/FormAPI/Section.php:85
+#: src/FormAPI/Section.php:87
 msgid "To create a Group object, please provide id, name and fields."
 msgstr ""
 
-#: src/Framework/FieldsAPI/Concerns/IsRequired.php:30
+#: src/Framework/FieldsAPI/Concerns/IsRequired.php:35
 msgid "Please enter a value for "
 msgstr ""
 
-#: src/Framework/Migrations/Actions/ManuallyRunMigration.php:34
-#: src/Framework/Migrations/MigrationsRunner.php:125
+#: src/Framework/Migrations/Actions/ManuallyRunMigration.php:36
+#: src/Framework/Migrations/MigrationsRunner.php:128
 msgid "There was a problem running the migrations. Please reach out to GiveWP support for assistance:"
 msgstr ""
 
-#: src/Framework/Migrations/Contracts/Migration.php:64
+#: src/Framework/Migrations/Contracts/Migration.php:68
 msgid "GiveWP Core"
 msgstr ""
 
-#: src/Helpers/Gateways/Stripe.php:42
-#: src/Helpers/Gateways/Stripe.php:48
+#: src/Helpers/Form/Template.php:59
+#: src/Onboarding/DefaultFormFactory.php:152
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:237
+msgid "Here's what you're about to donate:"
+msgstr ""
+
+#: src/Helpers/Gateways/Stripe.php:49
+#: src/Helpers/Gateways/Stripe.php:55
 msgid "Donation accepted with Stripe account"
 msgstr ""
 
-#: src/Helpers/Gateways/Stripe.php:44
+#: src/Helpers/Gateways/Stripe.php:51
 msgid "using Stripe Connect."
 msgstr ""
 
-#: src/Helpers/Gateways/Stripe.php:50
+#: src/Helpers/Gateways/Stripe.php:57
 msgid "using Manual API Keys."
 msgstr ""
 
-#: src/Log/LogFactory.php:64
-#: src/Log/LogModel.php:121
+#: src/InPluginUpsells/AddonsAdminPage.php:19
+#: src/Onboarding/Setup/templates/index.html.php:301
+msgid "GiveWP Add-ons"
+msgstr ""
+
+#: src/InPluginUpsells/resources/views/sale-banners.php:37
+msgid "Dismiss"
+msgstr ""
+
+#: src/InPluginUpsells/SaleBanners.php:41
+msgid "Black Friday/Giving Tuesday Sale"
+msgstr ""
+
+#: src/InPluginUpsells/SaleBanners.php:42
+msgid "Save 40% on all Plans for a limited time."
+msgstr ""
+
+#: src/InPluginUpsells/SaleBanners.php:43
+msgid "Black Friday through Giving Tuesday."
+msgstr ""
+
+#: src/InPluginUpsells/SaleBanners.php:44
+msgid "Shop Now"
+msgstr ""
+
+#: src/Log/LogFactory.php:68
+#: src/Log/LogModel.php:127
 msgid "Give Core"
 msgstr ""
 
-#: src/Log/Migrations/CreateNewLogTable.php:30
+#: src/Log/Migrations/CreateNewLogTable.php:31
 msgid "Create new give_log table"
 msgstr ""
 
-#: src/Log/Migrations/DeleteOldLogTables.php:24
+#: src/Log/Migrations/DeleteOldLogTables.php:27
 msgid "Delete give_logs and give_logmeta tables"
 msgstr ""
 
-#: src/Log/Migrations/MigrateExistingLogs.php:67
+#: src/Log/Migrations/MigrateExistingLogs.php:71
 msgid "Migrate existing logs to give_log table"
 msgstr ""
 
-#: src/Log/ValueObjects/LogType.php:43
+#: src/Log/ValueObjects/LogType.php:46
 msgid "Warning"
 msgstr ""
 
-#: src/Log/ValueObjects/LogType.php:44
-#: src/MigrationLog/Admin/Migrations/index.js:189
+#: src/Log/ValueObjects/LogType.php:47
+#: src/MigrationLog/Admin/Migrations/index.js:187
 msgid "Notice"
 msgstr ""
 
-#: src/Log/ValueObjects/LogType.php:46
+#: src/Log/ValueObjects/LogType.php:49
 msgid "Info"
 msgstr ""
 
-#: src/Log/ValueObjects/LogType.php:47
+#: src/Log/ValueObjects/LogType.php:50
 msgid "HTTP"
 msgstr ""
 
-#: src/Log/ValueObjects/LogType.php:48
+#: src/Log/ValueObjects/LogType.php:51
 msgid "Spam"
 msgstr ""
 
-#: src/MigrationLog/Migrations/CreateMigrationsTable.php:29
+#: src/MigrationLog/Migrations/CreateMigrationsTable.php:31
 msgid "Create new give_migrations table"
 msgstr ""
 
-#: src/MultiFormGoals/ProgressBar/Block.php:72
+#: src/MultiFormGoals/ProgressBar/Block.php:77
 msgid "Red"
 msgstr ""
 
-#: src/MultiFormGoals/ProgressBar/Block.php:76
+#: src/MultiFormGoals/ProgressBar/Block.php:81
 msgid "Orange"
 msgstr ""
 
-#: src/MultiFormGoals/ProgressBar/Block.php:80
+#: src/MultiFormGoals/ProgressBar/Block.php:85
 msgid "Green"
 msgstr ""
 
-#: src/MultiFormGoals/ProgressBar/Block.php:84
+#: src/MultiFormGoals/ProgressBar/Block.php:89
 msgid "Blue"
 msgstr ""
 
-#: src/MultiFormGoals/ProgressBar/Block.php:88
+#: src/MultiFormGoals/ProgressBar/Block.php:93
 msgid "Purple"
 msgstr ""
 
-#: src/MultiFormGoals/ProgressBar/Block.php:92
+#: src/MultiFormGoals/ProgressBar/Block.php:97
 msgid "Grey"
 msgstr ""
 
-#: src/MultiFormGoals/ProgressBar/Model.php:274
+#: src/MultiFormGoals/ProgressBar/Model.php:303
 msgid "day to go"
 msgid_plural "days to go"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MultiFormGoals/ProgressBar/Model.php:277
+#: src/MultiFormGoals/ProgressBar/Model.php:307
 msgid "hour to go"
 msgid_plural "hours to go"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MultiFormGoals/ProgressBar/Model.php:280
+#: src/MultiFormGoals/ProgressBar/Model.php:311
 msgid "minute to go"
 msgid_plural "minutes to go"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MultiFormGoals/resources/views/progressbar.php:24
-#: src/Views/Form/Templates/Sequoia/sections/income-stats.php:61
+#: src/MultiFormGoals/resources/views/progressbar.php:31
+#: src/Views/Form/Templates/Sequoia/sections/income-stats.php:67
 msgid "raised"
 msgstr ""
 
-#: src/MultiFormGoals/resources/views/progressbar.php:32
-#: src/Views/Form/Templates/Sequoia/sections/income-stats.php:73
+#: src/MultiFormGoals/resources/views/progressbar.php:43
+#: src/Views/Form/Templates/Sequoia/sections/income-stats.php:83
 msgid "goal"
 msgstr ""
 
@@ -14975,593 +15016,603 @@ msgstr ""
 msgid "Religious"
 msgstr ""
 
-#: src/Onboarding/DefaultFormFactory.php:67
+#: src/Onboarding/DefaultFormFactory.php:72
 msgid "Agree to terms?"
 msgstr ""
 
-#: src/Onboarding/DefaultFormFactory.php:68
+#: src/Onboarding/DefaultFormFactory.php:73
 msgid "The terms can be customized in the donation form settings."
 msgstr ""
 
-#: src/Onboarding/DefaultFormFactory.php:115
+#: src/Onboarding/DefaultFormFactory.php:122
 #: src/Views/Form/Templates/Sequoia/optionConfig.php:10
 msgid "Support Our Cause"
 msgstr ""
 
-#: src/Onboarding/DefaultFormFactory.php:122
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:84
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:86
-#: src/Views/Form/Templates/Sequoia/Sequoia.php:70
+#: src/Onboarding/DefaultFormFactory.php:132
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:141
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:143
+#: src/Views/Form/Templates/Sequoia/Sequoia.php:90
 msgid "Choose Amount"
 msgstr ""
 
-#: src/Onboarding/DefaultFormFactory.php:123
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:94
+#: src/Onboarding/DefaultFormFactory.php:134
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:155
 msgid "How much would you like to donate? As a contributor to %s we make sure your donation goes directly to supporting our cause."
 msgstr ""
 
-#: src/Onboarding/DefaultFormFactory.php:127
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:130
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:132
-#: src/Views/Form/Templates/Sequoia/Sequoia.php:71
+#: src/Onboarding/DefaultFormFactory.php:148
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:188
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:190
+#: src/Views/Form/Templates/Sequoia/Sequoia.php:94
 msgid "Add Your Information"
 msgstr ""
 
-#: src/Onboarding/DefaultFormFactory.php:128
-#: src/Views/Form/Templates/Sequoia/Actions.php:240
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:140
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:142
+#: src/Onboarding/DefaultFormFactory.php:149
+#: src/Views/Form/Templates/Sequoia/Actions.php:253
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:201
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:203
 msgid "Who's giving today?"
 msgstr ""
 
-#: src/Onboarding/DefaultFormFactory.php:129
-#: src/Views/Form/Templates/Sequoia/Actions.php:241
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:150
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:152
+#: src/Onboarding/DefaultFormFactory.php:150
+#: src/Views/Form/Templates/Sequoia/Actions.php:257
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:214
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:216
 msgid "We’ll never share this information with anyone."
 msgstr ""
 
-#: src/Onboarding/DefaultFormFactory.php:134
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:173
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:175
+#: src/Onboarding/DefaultFormFactory.php:158
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:275
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:277
 msgid "A great big thank you!"
 msgstr ""
 
-#: src/Onboarding/DefaultFormFactory.php:135
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:183
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:185
+#: src/Onboarding/DefaultFormFactory.php:159
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:288
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:293
 msgid "{name}, your contribution means a lot and will be put to good use in making a difference. We’ve sent your donation receipt to {donor_email}. "
 msgstr ""
 
-#: src/Onboarding/DefaultFormFactory.php:137
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:204
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:206
+#: src/Onboarding/DefaultFormFactory.php:164
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:318
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:323
 msgid "Help spread the word by sharing your support with your friends and followers!"
 msgstr ""
 
-#: src/Onboarding/DefaultFormFactory.php:138
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:214
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:216
+#: src/Onboarding/DefaultFormFactory.php:168
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:337
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:339
 msgid "I just gave to this cause. Who's next?"
 msgstr ""
 
-#: src/Onboarding/Routes/AddonsRoute.php:95
-#: src/Onboarding/Routes/FeaturesRoute.php:104
-#: src/Onboarding/Routes/SettingsRoute.php:124
+#: src/Onboarding/Routes/AddonsRoute.php:101
+#: src/Onboarding/Routes/FeaturesRoute.php:129
+#: src/Onboarding/Routes/SettingsRoute.php:132
 msgid "The reference name for the setting being updated."
 msgstr ""
 
-#: src/Onboarding/Routes/AddonsRoute.php:99
-#: src/Onboarding/Routes/FeaturesRoute.php:108
-#: src/Onboarding/Routes/SettingsRoute.php:128
+#: src/Onboarding/Routes/AddonsRoute.php:105
+#: src/Onboarding/Routes/FeaturesRoute.php:133
+#: src/Onboarding/Routes/SettingsRoute.php:136
 msgid "The value of the setting being updated."
 msgstr ""
 
-#: src/Onboarding/Routes/CurrencyRoute.php:104
+#: src/Onboarding/Routes/CurrencyRoute.php:109
 msgid "Two letter code representing a country."
 msgstr ""
 
-#: src/Onboarding/Routes/LocationRoute.php:76
+#: src/Onboarding/Routes/LocationRoute.php:81
 msgid "A short alphabetic geographical code representing a country."
 msgstr ""
 
-#: src/Onboarding/Setup/Page.php:56
+#: src/Onboarding/Setup/Page.php:60
 msgid "Setup GiveWP"
 msgstr ""
 
-#: src/Onboarding/Setup/Page.php:57
+#: src/Onboarding/Setup/Page.php:61
 msgid "Setup"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:4
+#: src/Onboarding/Setup/templates/index.html.php:5
 msgid "GiveWP Setup Guide"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:29
-#: src/Onboarding/Setup/templates/index.html.php:60
-#: src/Onboarding/Setup/templates/index.html.php:141
+#: src/Onboarding/Setup/templates/index.html.php:33
+#: src/Onboarding/Setup/templates/index.html.php:68
+#: src/Onboarding/Setup/templates/index.html.php:161
 msgid "Step"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:29
+#: src/Onboarding/Setup/templates/index.html.php:33
 msgid "Create your first donation form"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:39
-#: src/Onboarding/Setup/templates/index.html.php:40
+#: src/Onboarding/Setup/templates/index.html.php:44
+#: src/Onboarding/Setup/templates/index.html.php:45
 msgid "First-Time Configuration"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:41
+#: src/Onboarding/Setup/templates/index.html.php:46
 msgid "Every fundraising campaign begins with a donation form. Click here to create your first donation form in minutes. Once created you can use it anywhere on your website."
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:60
+#: src/Onboarding/Setup/templates/index.html.php:68
 msgid "Connect a payment gateway"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:71
-#: src/Onboarding/Setup/templates/index.html.php:85
+#: src/Onboarding/Setup/templates/index.html.php:79
+#: src/Onboarding/Setup/templates/index.html.php:96
 msgid "Connect to PayPal"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:72
+#: src/Onboarding/Setup/templates/index.html.php:80
 msgid "PayPal is synonymous with nonprofits and online charitable gifts. It's been the go-to payment merchant for many of the world's top NGOs. Accept PayPal, credit and debit cards without any added platform fees."
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:85
+#: src/Onboarding/Setup/templates/index.html.php:96
 msgid "PayPal Settings"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:98
+#: src/Onboarding/Setup/templates/index.html.php:112
 msgid "Connect to Stripe"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:99
+#: src/Onboarding/Setup/templates/index.html.php:113
 msgid "Stripe is one of the most popular payment gateways, and for good reason! Receive one-time and Recurring Donations (add-on) using many of the most popular payment methods. Note: the FREE version of Stripe includes an additional 2% fee for processing one-time donations. Remove the fee by installing and activating the premium Stripe add-on."
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:123
+#: src/Onboarding/Setup/templates/index.html.php:140
 msgid "Want to use a different gateway? GiveWP has support for many others including Authorize.net, Square, Razorpay and more! %s"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:127
+#: src/Onboarding/Setup/templates/index.html.php:147
 msgid "View all gateways"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:141
+#: src/Onboarding/Setup/templates/index.html.php:161
 msgid "Level up your fundraising"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:154
-#: src/Onboarding/Setup/templates/index.html.php:155
+#: src/Onboarding/Setup/templates/index.html.php:174
+#: src/Onboarding/Setup/templates/index.html.php:175
 #: assets/src/js/admin/onboarding-wizard/app/steps/addons/index.js:35
-#: src/DonorDashboards/resources/js/app/tabs/recurring-donations/index.js:14
+#: src/DonorDashboards/resources/js/app/tabs/recurring-donations/index.js:12
 msgid "Recurring Donations"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:156
+#: src/Onboarding/Setup/templates/index.html.php:176
 msgid "The Recurring Donations add-on for GiveWP brings you more dependable payments by allowing your donors to give regularly at different time intervals. Let your donors choose how often they give and how much. Manage your subscriptions, view specialized reports, and connect more strategically with your recurring donors."
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:162
+#: src/Onboarding/Setup/templates/index.html.php:185
 msgid "Learn more about Recurring Donations"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:172
-#: src/Onboarding/Setup/templates/index.html.php:173
+#: src/Onboarding/Setup/templates/index.html.php:195
+#: src/Onboarding/Setup/templates/index.html.php:196
 msgid "Fee Recovery"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:174
+#: src/Onboarding/Setup/templates/index.html.php:197
 msgid "Credit Card processing fees can take away a big chunk of your donations. This means less money goes to your cause. Why not ask your donors to further help your cause by asking them to take care of the payment processing fees? That’s where the Fee Recovery add-on comes into play."
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:180
+#: src/Onboarding/Setup/templates/index.html.php:206
 msgid "Learn more about Fee Recovery"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:190
-#: src/Onboarding/Setup/templates/index.html.php:191
+#: src/Onboarding/Setup/templates/index.html.php:216
+#: src/Onboarding/Setup/templates/index.html.php:217
 #: assets/src/js/admin/onboarding-wizard/app/steps/addons/index.js:43
 msgid "PDF Receipts"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:192
+#: src/Onboarding/Setup/templates/index.html.php:218
 msgid "PDF Receipts makes it easy for your donors to print their tax deductible receipts by making PDF downloadable copies of them easily available. Donors can get a link to their receipt provided to them in the confirmation email, there is also a link in the donation confirmation screen, and a link in their Donation History page."
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:198
+#: src/Onboarding/Setup/templates/index.html.php:227
 msgid "Learn more about PDF Receipts"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:208
-#: src/Onboarding/Setup/templates/index.html.php:209
+#: src/Onboarding/Setup/templates/index.html.php:237
+#: src/Onboarding/Setup/templates/index.html.php:238
 msgid "Form Field Manager"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:210
+#: src/Onboarding/Setup/templates/index.html.php:239
 msgid "Form Field Manager (FFM) allows you to add and manage additional fields for your GiveWP donation forms using an intuitive drag-and-drop interface. Form fields include simple fields such as checkboxes, dropdowns, radios, and more. The more complex form fields that you can add are file upload fields, Rich text editors (TinyMCE), and the powerful Repeater field."
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:216
+#: src/Onboarding/Setup/templates/index.html.php:248
 msgid "Learn more about Form Field Manager"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:226
-#: src/Onboarding/Setup/templates/index.html.php:227
+#: src/Onboarding/Setup/templates/index.html.php:258
+#: src/Onboarding/Setup/templates/index.html.php:259
 msgid "Currency Switcher"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:228
+#: src/Onboarding/Setup/templates/index.html.php:260
 msgid "Allow your donors to switch to their currency of choice and increase your overall giving with the GiveWP Currency Switcher add-on. Select from an extensive list of currencies, set the currency based on your donor's location, pull from live exchange rates and more!"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:234
+#: src/Onboarding/Setup/templates/index.html.php:269
 msgid "Learn more about Currency Switcher"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:244
-#: src/Onboarding/Setup/templates/index.html.php:245
+#: src/Onboarding/Setup/templates/index.html.php:279
+#: src/Onboarding/Setup/templates/index.html.php:280
 msgid "Tributes"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:246
+#: src/Onboarding/Setup/templates/index.html.php:281
 msgid "Allow donors to give to your cause via customizable tributes like “In honor of,” “In memory of,” or any dedication you prefer. Send eCards and produce customizable mailable cards that your donors and their honorees will love."
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:252
+#: src/Onboarding/Setup/templates/index.html.php:290
 msgid "Learn more about Tributes"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:263
-msgid "GiveWP Add-ons"
-msgstr ""
-
-#: src/Onboarding/Setup/templates/index.html.php:264
+#: src/Onboarding/Setup/templates/index.html.php:302
 msgid "Make your fundraising even more effective with powerful add-ons like Recurring Donations, Fee Recovery, Google Analytics Donation Tracking, MailChimp, and much more. View our growing library of 35+ add-ons and extend your fundraising now."
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:270
+#: src/Onboarding/Setup/templates/index.html.php:311
 msgid "View Add-ons for GiveWP"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:284
+#: src/Onboarding/Setup/templates/index.html.php:325
 msgid "Get the most out of GiveWP"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:291
-#: src/Onboarding/Setup/templates/index.html.php:292
+#: src/Onboarding/Setup/templates/index.html.php:332
+#: src/Onboarding/Setup/templates/index.html.php:333
 msgid "GiveWP Getting Started Guide"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:293
+#: src/Onboarding/Setup/templates/index.html.php:334
 msgid "Start off on the right foot by learning the basics of the plugin and how to get the most out of it to further your online fundraising efforts."
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:299
+#: src/Onboarding/Setup/templates/index.html.php:343
 msgid "Learn more about GiveWP"
 msgstr ""
 
-#: src/Onboarding/Setup/templates/index.html.php:315
+#: src/Onboarding/Setup/templates/index.html.php:359
 msgid "Dismiss Setup Screen"
 msgstr ""
 
-#: src/Onboarding/Wizard/templates/form-preview.php:14
-#: src/Onboarding/Wizard/templates/index.php:14
+#: src/Onboarding/Wizard/templates/form-preview.php:16
+#: src/Onboarding/Wizard/templates/index.php:16
 msgid "GiveWP &rsaquo; Onboarding Wizard"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AccountAdminNotices.php:50
-#: src/PaymentGateways/PayPalCommerce/AccountAdminNotices.php:78
-#: src/PaymentGateways/PayPalCommerce/RefundPaymentHandler.php:81
+#: src/PaymentGateways/PayPalCommerce/AccountAdminNotices.php:53
+#: src/PaymentGateways/PayPalCommerce/AccountAdminNotices.php:82
+#: src/PaymentGateways/PayPalCommerce/RefundPaymentHandler.php:87
 msgid "PayPal Donations:"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AccountAdminNotices.php:51
+#: src/PaymentGateways/PayPalCommerce/AccountAdminNotices.php:54
 msgid "Please connect to your account so donations may be processed."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AccountAdminNotices.php:52
+#: src/PaymentGateways/PayPalCommerce/AccountAdminNotices.php:55
 msgid "Connect Account"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AccountAdminNotices.php:79
+#: src/PaymentGateways/PayPalCommerce/AccountAdminNotices.php:83
 msgid "Please check your account status as additional setup is needed before you may accept donations."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AccountAdminNotices.php:80
+#: src/PaymentGateways/PayPalCommerce/AccountAdminNotices.php:87
 msgid "Account Status"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:87
-#: src/PaymentGateways/PayPalCommerce/PayPalCommerce.php:65
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:96
+#: src/PaymentGateways/PayPalCommerce/PayPalCommerce.php:71
 msgid "Account Country"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:113
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:124
 msgid "PayPal Connection"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:127
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:140
 msgid "Connect with PayPal"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:136
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:150
 msgid "Sign up for PayPal"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:140
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:155
 msgid "Click to get started!"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:145
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:161
 msgid "PayPal is currently NOT connected."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:151
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:311
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:169
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:359
 msgid "Connected"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:160
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:178
 msgid "Connected for payments as"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:167
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:186
 msgid "Disconnect"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:171
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:191
 msgid "APIs Connected:"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:175
-#: src/DonorDashboards/resources/js/app/components/subscription-table/index.js:74
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:198
+#: src/DonorDashboards/resources/js/app/components/subscription-table/index.js:63
 msgid "Subscriptions"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:200
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:227
 msgid "Accept Donations with PayPal Donations"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:201
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:229
 msgid "Allow your donors to give using Debit or Credit Cards directly on your website with no additional fees."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:204
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:238
 msgid "PayPal Logo Image"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:208
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:243
 msgid "Credit and Debit Card Donations"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:211
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:247
 msgid "Improve donation conversion rates"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:213
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:250
 msgid "Easy no-API key connection"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:215
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:253
 msgid "Accept payments from around the world"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:217
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:256
 msgid "Donate via PayPal accounts"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:219
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:259
 msgid "Supports 3D Secure payments"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:281
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:323
 msgid "Please call a PayPal support representative at %1$s"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:285
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:327
 msgid "Please reach out to PayPal support from your PayPal account Resolution Center"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:288
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:333
 msgid " and relay the following message:"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:305
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:352
 msgid "Warning, your account is not ready to accept donations."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:310
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:357
 msgid "There is an issue with your PayPal account that is preventing you from being able to accept donations."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:319
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:367
 msgid "Greetings!"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:320
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:369
 msgid "I am trying to connect my PayPal account to the GiveWP plugin for WordPress. I have gone through the onboarding process to connect my account, but when I finish I'm given the following message from GiveWP:"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:322
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:376
 msgid "Please help me resolve these account errors so I can begin accepting payments via PayPal on GiveWP."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:328
+#: src/PaymentGateways/PayPalCommerce/AdminSettingFields.php:390
 msgid "Re-Check Account Status"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AjaxRequestHandler.php:262
+#: src/PaymentGateways/PayPalCommerce/AjaxRequestHandler.php:271
 msgid "Make sure to complete the entire PayPal process. Do not close the window until you have finished the process."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AjaxRequestHandler.php:266
+#: src/PaymentGateways/PayPalCommerce/AjaxRequestHandler.php:275
 msgid "The last screen of the PayPal connect process includes a button to be sent back to your site. It is important you click this and do not close the window yourself."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AjaxRequestHandler.php:270
+#: src/PaymentGateways/PayPalCommerce/AjaxRequestHandler.php:279
 msgid "If you’re still having problems connecting: "
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/AjaxRequestHandler.php:278
+#: src/PaymentGateways/PayPalCommerce/AjaxRequestHandler.php:287
 msgid "Having trouble connecting to PayPal?"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/DonationDetailsPage.php:20
+#: src/PaymentGateways/PayPalCommerce/DonationDetailsPage.php:22
 msgid "View PayPal Commerce payment"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/DonationProcessor.php:76
+#: src/PaymentGateways/PayPalCommerce/DonationProcessor.php:81
 msgid "The payment creation failed before processing the PayPalCommerce gateway request. Payment data: %s"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/DonationProcessor.php:81
+#: src/PaymentGateways/PayPalCommerce/DonationProcessor.php:91
 msgid "An error occurred while processing your payment. Please try again."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/DonationProcessor.php:104
+#: src/PaymentGateways/PayPalCommerce/DonationProcessor.php:116
 msgid "Transaction Successful. PayPal Transaction ID: %1$s    PayPal Order ID: %2$s"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/Models/MerchantDetail.php:179
+#: src/PaymentGateways/PayPalCommerce/Models/MerchantDetail.php:184
 msgid "To create a MerchantDetail object, please provide the following: "
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/Models/PayPalOrder.php:151
+#: src/PaymentGateways/PayPalCommerce/Models/PayPalOrder.php:154
 msgid "To create a PayPalOrder object, please provide valid %1$s"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/Models/PayPalPayment.php:109
+#: src/PaymentGateways/PayPalCommerce/Models/PayPalPayment.php:114
 msgid "To create a PayPalPayment object, please provide valid id, amount, status, create_time, update_time and links"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:109
+#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:117
 msgid "There was a problem with PayPal return url and we could not find valid merchant ID. Paypal return URL is:"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:167
+#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:189
 msgid "There was a problem with creating webhook on PayPal. A gateway error log also added to get details information about PayPal response."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:191
+#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:220
 msgid "PayPal account connected successfully."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:243
+#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:279
 msgid "PayPal client access token API request response is:"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:249
+#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:285
 msgid "PayPal client rest api credentials API request response is:"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:253
+#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:289
 msgid "There was a problem with PayPal client rest API request and we could not find valid client id and secret."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:297
+#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:341
 msgid "PayPal merchant status check API request response is:"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:302
+#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:346
 msgid ""
 "A valid SSL certificate is required to accept donations and set up your PayPal account. Once a\n"
 "\t\t\t\t\tcertificate is installed and the site is using https, please disconnect and reconnect your account."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:310
+#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:354
 msgid "There was a problem with the status check for your account. Please try disconnecting and connecting again. If the problem persists, please contact support."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:317
+#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:364
 msgid "Set up an account to receive payment from PayPal"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:321
+#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:368
 msgid "Confirm your primary email address"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:329
+#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:376
 msgid ""
 "Your account was expected to be able to accept custom payments, but is not. Please make sure your\n"
 "\t\t\t\taccount country matches the country setting. If the problem persists, please contact PayPal."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:350
+#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:397
 msgid "Reach out to PayPal to enable PPCP_CUSTOM for your account"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:362
+#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:409
 msgid "Reach out to PayPal to resolve the following capabilities:"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:390
+#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:446
 msgid "logs data"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:396
+#: src/PaymentGateways/PayPalCommerce/onBoardingRedirectHandler.php:452
 msgid "There was a problem setting up the webhooks for your PayPal account. Please try disconnecting and reconnecting your PayPal account. If the problem persists, please contact support and provide them with the latest %1$s"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/PayPalCommerce.php:31
+#: src/PaymentGateways/PayPalCommerce/PayPalCommerce.php:34
 msgid "PayPal Donations"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/PayPalCommerce.php:70
+#: src/PaymentGateways/PayPalCommerce/PayPalCommerce.php:76
 msgid "Connect With Paypal"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/PayPalCommerce.php:75
+#: src/PaymentGateways/PayPalCommerce/PayPalCommerce.php:81
+msgid "Transaction Type"
+msgstr ""
+
+#: src/PaymentGateways/PayPalCommerce/PayPalCommerce.php:82
+#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:64
+msgid "Nonprofits must verify their status to withdraw donations they receive via PayPal. PayPal users that are not verified nonprofits must demonstrate how their donations will be used, once they raise more than $10,000. By default, GiveWP transactions are sent to PayPal as donations. You may change the transaction type using this option if you feel you may not meet PayPal's donation requirements."
+msgstr ""
+
+#: src/PaymentGateways/PayPalCommerce/PayPalCommerce.php:90
+#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:72
+msgid "Standard Transaction"
+msgstr ""
+
+#: src/PaymentGateways/PayPalCommerce/PayPalCommerce.php:95
 msgid "PayPal Donations Gateway Settings Docs Link"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/PayPalCommerce.php:78
+#: src/PaymentGateways/PayPalCommerce/PayPalCommerce.php:98
 msgid "PayPal Donations Gateway Settings"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/PayPalCommerce.php:96
+#: src/PaymentGateways/PayPalCommerce/PayPalCommerce.php:116
 msgid "If enabled, required billing address fields are added to PayPal Donations Donation forms. These fields are required to process the transaction when enabled. Billing address details are added to both the donation and donor record in GiveWP."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/RefundPaymentHandler.php:82
+#: src/PaymentGateways/PayPalCommerce/RefundPaymentHandler.php:88
 msgid "We were unable to process refund."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/RefundPaymentHandler.php:83
+#: src/PaymentGateways/PayPalCommerce/RefundPaymentHandler.php:89
 msgid "Please "
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/RefundPaymentHandler.php:85
+#: src/PaymentGateways/PayPalCommerce/RefundPaymentHandler.php:91
 msgid "check log"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/RefundPaymentHandler.php:86
+#: src/PaymentGateways/PayPalCommerce/RefundPaymentHandler.php:92
 msgid " for detailed information."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/RefundPaymentHandler.php:111
+#: src/PaymentGateways/PayPalCommerce/RefundPaymentHandler.php:121
 msgid "Refund Charge in PayPal?"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/Repositories/PayPalOrder.php:190
+#: src/PaymentGateways/PayPalCommerce/Repositories/PayPalOrder.php:232
 msgid "To create a paypal order, please provide formId, donationAmount and payer"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:64
+#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:67
 msgid "Disconnect PayPal Account"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:65
+#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:68
 msgid "Are you sure you want to disconnect your PayPal account?"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:66
+#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:72
 msgid "You’re connected to PayPal! Here’s what’s next..."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:68
+#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:74
 msgid ""
 "PayPal allows you to accept credit or debit cards directly on your website. Because of\n"
 "\t\t\t\t\t\t\tthis, your site needs to maintain <a href=\"%1$s\" target=\"_blank\">PCI-DDS compliance</a>.\n"
@@ -15569,505 +15620,498 @@ msgid ""
 "\t\t\t\t\t\t\tseamlessly with SSL certificates. Compliance is comprised of, but not limited to:"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:78
+#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:84
 msgid "Using a trusted, secure hosting provider – preferably one which claims and actively promotes PCI compliance."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:79
+#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:88
 msgid "Maintain security best practices when setting passwords and limit access to your server."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:80
+#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:92
 msgid "Implement an SSL certificate to keep your donations secure."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:81
+#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:93
 msgid "Keep plugins up to date to ensure latest security fixes are present."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:83
+#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:95
 msgid ""
 "You have connected your account for test mode. You will need to connect again once you\n"
 "\t\t\t\t\t\tare in live mode."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:157
+#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:170
 msgid "Card Expiration Date:"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:158
+#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:171
 msgid "Card Number:"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:159
+#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:172
 msgid "Card CVC:"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:164
+#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:177
 msgid "MM/YY"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:166
+#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:179
 msgid "There was a problem authenticating your payment method. Please try again. If the problem persists, please try another payment method."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:167
+#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:183
 msgid "Error Code"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:168
+#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:184
 msgid "There was an error processing your donation. Please contact the administrator."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:173
+#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:192
 msgid "Or pay with card"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:178
+#: src/PaymentGateways/PayPalCommerce/ScriptLoader.php:197
 msgid "Checking donation status with PayPal."
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/Webhooks/Listeners/PayPalCommerce/PaymentCaptureCompleted.php:28
+#: src/PaymentGateways/PayPalCommerce/Webhooks/Listeners/PayPalCommerce/PaymentCaptureCompleted.php:30
 msgid "Charge Completed in PayPal"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/Webhooks/Listeners/PayPalCommerce/PaymentCaptureDenied.php:28
+#: src/PaymentGateways/PayPalCommerce/Webhooks/Listeners/PayPalCommerce/PaymentCaptureDenied.php:30
 msgid "Charge Denied in PayPal"
 msgstr ""
 
-#: src/PaymentGateways/PayPalCommerce/Webhooks/Listeners/PayPalCommerce/PaymentCaptureRefunded.php:30
+#: src/PaymentGateways/PayPalCommerce/Webhooks/Listeners/PayPalCommerce/PaymentCaptureRefunded.php:32
 msgid "Charge refunded in PayPal"
 msgstr ""
 
-#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:19
+#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:22
 msgid "PayPal Standard"
 msgstr ""
 
-#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:40
+#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:45
 msgid "PayPal Email"
 msgstr ""
 
-#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:41
+#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:46
 msgid "Enter the email address associated with your PayPal account to connect with the gateway."
 msgstr ""
 
-#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:46
+#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:54
 msgid "PayPal Page Style"
 msgstr ""
 
-#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:47
+#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:55
 msgid "Enter the name of the PayPal page style to use, or leave blank to use the default."
 msgstr ""
 
-#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:52
+#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:63
 msgid "PayPal Transaction Type"
 msgstr ""
 
-#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:53
-msgid "Nonprofits must verify their status to withdraw donations they receive via PayPal. PayPal users that are not verified nonprofits must demonstrate how their donations will be used, once they raise more than $10,000. By default, GiveWP transactions are sent to PayPal as donations. You may change the transaction type using this option if you feel you may not meet PayPal's donation requirements."
-msgstr ""
-
-#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:58
-msgid "Standard Transaction"
-msgstr ""
-
-#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:64
+#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:78
 msgid "If enabled, required billing address fields are added to PayPal Standard forms. These fields are not required by PayPal to process the transaction, but you may have a need to collect the data. Billing address details are added to both the donation and donor record in GiveWP."
 msgstr ""
 
-#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:75
+#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:92
 msgid "Invoice ID Prefix"
 msgstr ""
 
-#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:76
+#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:93
 msgid "Please enter a prefix for your invoice numbers. If you use your PayPal account for multiple fundraising platforms or ecommerce stores, ensure this prefix is unique. PayPal will not allow orders or donations with the same invoice number."
 msgstr ""
 
-#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:81
+#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:101
 msgid "PayPal Standard Gateway Settings Docs Link"
 msgstr ""
 
-#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:84
+#: src/PaymentGateways/PayPalStandard/PayPalStandard.php:104
 msgid "PayPal Standard Gateway Settings"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:90
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:97
 msgid "Connected Accounts"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:112
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:122
 msgid "Accept Donations with Stripe"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:118
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:129
 msgid "You are using the Pro version of the GiveWP add-on which includes additional payment methods, zero additional fees, and premium support."
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:125
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:137
 msgid "Pro Version Active"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:132
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:145
 msgid "Connect to the Stripe payment gateway using this section. Multiple Stripe accounts can be connected simultaneously. All donation forms will use the \"Default Account\" unless configured otherwise. To specify a different Stripe account for a form, configure the settings within the \"Stripe Account\" tab on the individual form edit screen."
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:187
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:206
 msgid "Add a New Stripe Account"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:256
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:285
 msgid "Account name:"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:264
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:296
 msgid "Account email:"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:273
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:309
 msgid "Account ID:"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:282
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:321
 msgid "Connection Method:"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:308
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:355
 msgid "Connection Status:"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:326
-#: src/PaymentGateways/Stripe/Admin/CustomizeAccountField.php:66
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:382
+#: src/PaymentGateways/Stripe/Admin/CustomizeAccountField.php:82
 msgid "Default Account"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:334
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:393
 msgid "Set as Default"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:354
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:415
 msgid "You are connected! Now this is important: Please configure your Stripe webhook to finalize the setup."
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:361
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:422
 msgid "In order for Stripe to function properly, you must add a new Stripe webhook endpoint. To do this please visit the <a href='https://dashboard.stripe.com/webhooks' target='_blank'>Webhooks Section of your Stripe Dashboard</a> and click the <strong>Add endpoint</strong> button and paste the following URL:"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:367
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:428
 msgid "Stripe webhooks are required so GiveWP can communicate properly with the payment gateway to confirm payment completion, renewals, and more."
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:398
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:465
 msgid "Give 2.7.0 introduces the ability to connect a single site to multiple Stripe accounts. To use this feature, you need to complete database updates. "
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:404
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:471
 msgid "to complete your pending database updates."
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:422
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:490
 msgid "NOTE: You are using the free Stripe payment gateway integration. This includes an additional 2%% fee for processing one-time donations. This fee is removed by activating the premium <a href=\"%1$s\" target=\"_blank\">Stripe add-on</a> and never applies to subscription donations made through the <a href=\"%2$s\" target=\"_blank\">Recurring Donations add-on</a>. <a href=\"%3$s\" target=\"_blank\">Learn More ></a>"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:446
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:515
 msgid "No Stripe Accounts Connected"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:447
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:516
 msgid "Connect a New Stripe Account"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:453
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:522
 msgid "Connect an account to get started!"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:454
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:523
 msgid "Add a new account to customize the Stripe account used for this donation form."
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:511
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:590
 msgid "All payments go to the default account"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:512
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:591
 msgid "Stripe donations process through the account set above"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:518
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:597
 msgid "You can set this globally (for all donation forms) or override the Stripe account per donation form."
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:519
+#: src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php:601
 msgid "This overrides the global default account setting for this donation form."
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/CreditCardSettingField.php:47
+#: src/PaymentGateways/Stripe/Admin/CreditCardSettingField.php:54
 msgid "The credit card fieldset uses Stripe Elements for a secure method of accepting payment. Stripe offers two different types of credit card fields. A consolidated single field or a more traditional multi-fields format."
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/CreditCardSettingField.php:77
+#: src/PaymentGateways/Stripe/Admin/CreditCardSettingField.php:90
 msgid "Single Field"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/CreditCardSettingField.php:78
+#: src/PaymentGateways/Stripe/Admin/CreditCardSettingField.php:92
 msgid "The single credit card format combines the Card number, expiration date, CVC, and zip / postal code (if enabled) fields  into one intuitive field."
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/CreditCardSettingField.php:80
-#: src/PaymentGateways/Stripe/Admin/CreditCardSettingField.php:105
+#: src/PaymentGateways/Stripe/Admin/CreditCardSettingField.php:98
+#: src/PaymentGateways/Stripe/Admin/CreditCardSettingField.php:135
 msgid "Example"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/CreditCardSettingField.php:101
+#: src/PaymentGateways/Stripe/Admin/CreditCardSettingField.php:126
 msgid "Multiple Fields"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/CreditCardSettingField.php:102
+#: src/PaymentGateways/Stripe/Admin/CreditCardSettingField.php:128
 msgid "This is the more traditional credit card fieldset format that many are familiar with. All fields areseparate from one another."
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/CustomizeAccountField.php:40
+#: src/PaymentGateways/Stripe/Admin/CustomizeAccountField.php:47
 msgid "Which Stripe account would you like to use to process donations for this form?"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/CustomizeAccountField.php:71
+#: src/PaymentGateways/Stripe/Admin/CustomizeAccountField.php:87
 msgid "All donations are processed through the default account set in the"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/CustomizeAccountField.php:77
+#: src/PaymentGateways/Stripe/Admin/CustomizeAccountField.php:94
 msgid "Default account name:"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/CustomizeAccountField.php:83
+#: src/PaymentGateways/Stripe/Admin/CustomizeAccountField.php:100
 msgid "None set"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/CustomizeAccountField.php:107
+#: src/PaymentGateways/Stripe/Admin/CustomizeAccountField.php:132
 msgid "Customize Stripe Account"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Admin/CustomizeAccountField.php:110
+#: src/PaymentGateways/Stripe/Admin/CustomizeAccountField.php:135
 msgid "Donations are processed through a Stripe account custom to this donation form. The default account is overridden for this form."
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Controllers/NewStripeAccountOnBoardingController.php:58
-#: src/PaymentGateways/Stripe/Controllers/NewStripeAccountOnBoardingController.php:128
+#: src/PaymentGateways/Stripe/Controllers/NewStripeAccountOnBoardingController.php:61
+#: src/PaymentGateways/Stripe/Controllers/NewStripeAccountOnBoardingController.php:135
 msgid "Stripe Error:"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Controllers/NewStripeAccountOnBoardingController.php:59
-#: src/PaymentGateways/Stripe/Controllers/NewStripeAccountOnBoardingController.php:129
+#: src/PaymentGateways/Stripe/Controllers/NewStripeAccountOnBoardingController.php:62
+#: src/PaymentGateways/Stripe/Controllers/NewStripeAccountOnBoardingController.php:136
 msgid "We are unable to connect your Stripe account. Please contact the support team for assistance."
 msgstr ""
 
-#: src/PaymentGateways/Stripe/DonationFormSettingPage.php:31
+#: src/PaymentGateways/Stripe/DonationFormSettingPage.php:33
 msgid "Stripe Account"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/DonationFormSettingPage.php:72
+#: src/PaymentGateways/Stripe/DonationFormSettingPage.php:75
 msgid "Stripe Documentation"
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Repositories/Settings.php:89
+#: src/PaymentGateways/Stripe/Repositories/Settings.php:97
 msgid "Stripe account already exist with same name."
 msgstr ""
 
-#: src/PaymentGateways/Stripe/Repositories/Settings.php:96
+#: src/PaymentGateways/Stripe/Repositories/Settings.php:104
 msgid "Stripe account already connected"
 msgstr ""
 
-#: src/Receipt/DonationReceipt.php:91
+#: src/Receipt/DonationReceipt.php:101
 msgid "Donation Details"
 msgstr ""
 
-#: src/Receipt/DonationReceipt.php:107
+#: src/Receipt/DonationReceipt.php:118
 msgid "Donor Name"
 msgstr ""
 
-#: src/Receipt/DonationReceipt.php:190
+#: src/Receipt/DonationReceipt.php:206
 msgid "Payment Status"
 msgstr ""
 
-#: src/Receipt/DonationReceipt.php:250
+#: src/Receipt/DonationReceipt.php:271
 msgid "Additional Information"
 msgstr ""
 
-#: src/Receipt/DonationReceipt.php:274
+#: src/Receipt/DonationReceipt.php:299
 msgid "Invalid receipt section. Please provide valid section id"
 msgstr ""
 
-#: src/Receipt/Section.php:151
+#: src/Receipt/Section.php:161
 msgid "Invalid receipt section line item. Please provide valid line item id, label, and value."
 msgstr ""
 
-#: src/Revenue/Migrations/AddPastDonationsToRevenueTable.php:87
+#: src/Revenue/Migrations/AddPastDonationsToRevenueTable.php:92
 msgid "An error occurred inserting data into the revenue table"
 msgstr ""
 
-#: src/Tracking/AdminSettings.php:34
+#: src/Tracking/AdminSettings.php:37
 msgid "Anonymous Usage Tracking"
 msgstr ""
 
-#: src/Tracking/AdminSettings.php:35
+#: src/Tracking/AdminSettings.php:38
 msgid "Allow usage of GiveWP to be tracked."
 msgstr ""
 
-#: src/Tracking/AdminSettings.php:36
+#: src/Tracking/AdminSettings.php:39
 msgid "Can GiveWP collect data about the usage of the plugin? Usage data is completely anonymous, does not include any personal information, and will only be used to improve the software."
 msgstr ""
 
-#: src/Tracking/UsageTrackingOnBoarding.php:74
+#: src/Tracking/UsageTrackingOnBoarding.php:80
 msgid "Anonymous usage tracking icon"
 msgstr ""
 
-#: src/Tracking/UsageTrackingOnBoarding.php:75
+#: src/Tracking/UsageTrackingOnBoarding.php:81
 msgid "Help GiveWP improve your fundraising experience"
 msgstr ""
 
-#: src/Tracking/UsageTrackingOnBoarding.php:78
+#: src/Tracking/UsageTrackingOnBoarding.php:84
 msgid "Can you help improve GiveWP? With your permission, the GiveWP team uses non-sensitive data from plugin users to optimize donation form conversion rates, increase average donation amounts, and streamline the fundraising experience. This data is never shared with any third party."
 msgstr ""
 
-#: src/Tracking/UsageTrackingOnBoarding.php:79
+#: src/Tracking/UsageTrackingOnBoarding.php:88
 msgid "Learn more about how GiveWP respects user and donor privacy while improving the plugin >"
 msgstr ""
 
-#: src/Tracking/UsageTrackingOnBoarding.php:84
+#: src/Tracking/UsageTrackingOnBoarding.php:96
 msgid "Glad to Help"
 msgstr ""
 
-#: src/Tracking/UsageTrackingOnBoarding.php:86
+#: src/Tracking/UsageTrackingOnBoarding.php:98
 msgid "Not Right Now"
 msgstr ""
 
-#: src/Tracking/UsageTrackingOnBoarding.php:88
+#: src/Tracking/UsageTrackingOnBoarding.php:100
 msgid "Dismiss Forever"
 msgstr ""
 
-#: src/Tracking/UsageTrackingOnBoarding.php:89
+#: src/Tracking/UsageTrackingOnBoarding.php:101
 msgid "Disable notice for 48 hours"
 msgstr ""
 
-#: src/Views/Admin/DashboardWidgets/Reports.php:34
+#: src/Views/Admin/DashboardWidgets/Reports.php:37
 msgid "GiveWP Donations: Reports"
 msgstr ""
 
-#: src/Views/Admin/DashboardWidgets/Reports.php:34
+#: src/Views/Admin/DashboardWidgets/Reports.php:40
 msgid "Visit Reports"
 msgstr ""
 
-#: src/Views/Admin/DashboardWidgets/templates/reports-template.php:10
-#: src/Views/Admin/Pages/templates/reports-template.php:52
+#: src/Views/Admin/DashboardWidgets/templates/reports-template.php:11
+#: src/Views/Admin/Pages/templates/reports-template.php:63
 #: assets/src/js/admin/reports/components/loading-notice/index.js:14
 msgid "Loading your latest"
 msgstr ""
 
-#: src/Views/Admin/DashboardWidgets/templates/reports-template.php:10
-#: src/Views/Admin/Pages/templates/reports-template.php:52
+#: src/Views/Admin/DashboardWidgets/templates/reports-template.php:11
+#: src/Views/Admin/Pages/templates/reports-template.php:63
 #: assets/src/js/admin/reports/components/loading-notice/index.js:14
 #: assets/src/js/admin/reports/components/no-data-notice/index.js:35
 #: assets/src/js/admin/reports/components/no-data-notice/index.js:48
 msgid "donation activity"
 msgstr ""
 
-#: src/Views/Admin/Form/Metabox-Settings.php:12
+#: src/Views/Admin/Form/Metabox-Settings.php:15
 msgid "Available Form Templates"
 msgstr ""
 
-#: src/Views/Admin/Form/Metabox-Settings.php:33
+#: src/Views/Admin/Form/Metabox-Settings.php:36
 msgid "active"
 msgstr ""
 
-#: src/Views/Admin/Form/Metabox-Settings.php:43
+#: src/Views/Admin/Form/Metabox-Settings.php:47
 msgid "What Are Form Templates?"
 msgstr ""
 
-#: src/Views/Admin/Form/Metabox-Settings.php:45
+#: src/Views/Admin/Form/Metabox-Settings.php:50
 msgid "Form Templates are built-in ways of changing the appearance of a GiveWP form on your site. Each template has a different design, layout, and features. Choose the one that suits your taste and the requirements for your cause. Note: compatibility with add-ons and third-party plugins or themes is not guaranteed. Always thoroughly test your donation forms before going live!"
 msgstr ""
 
-#: src/Views/Admin/Form/Metabox-Settings.php:49
+#: src/Views/Admin/Form/Metabox-Settings.php:60
 msgid "Learn the ins and outs of creating the perfect Donation Form with GiveWP"
 msgstr ""
 
-#: src/Views/Admin/Form/Metabox-Settings.php:50
+#: src/Views/Admin/Form/Metabox-Settings.php:62
+#: src/InPluginUpsells/resources/js/components/RecurringDonationsTab.js:32
 msgid "Learn More"
 msgstr ""
 
-#: src/Views/Admin/Form/Metabox-Settings.php:56
+#: src/Views/Admin/Form/Metabox-Settings.php:69
 msgid "Form Template Options"
 msgstr ""
 
-#: src/Views/Admin/Form/Metabox-Settings.php:58
+#: src/Views/Admin/Form/Metabox-Settings.php:72
 msgid "Customize the form template using the options below. See those customizations at any time using the \"Preview\" button."
 msgstr ""
 
-#: src/Views/Admin/Pages/Reports.php:90
+#: src/Views/Admin/Pages/Reports.php:94
 msgid "Donation Reports"
 msgstr ""
 
-#: src/Views/Admin/Pages/Reports.php:91
+#: src/Views/Admin/Pages/Reports.php:95
 #: assets/src/js/admin/reports/app/index.js:42
 msgid "Reports"
 msgstr ""
 
-#: src/Views/Admin/Pages/templates/reports-template.php:15
+#: src/Views/Admin/Pages/templates/reports-template.php:16
 #: assets/src/js/admin/reports/components/mini-period-selector/index.js:14
 #: assets/src/js/admin/reports/components/period-selector/index.js:65
 msgid "Day"
 msgstr ""
 
-#: src/Views/Admin/Pages/templates/reports-template.php:18
+#: src/Views/Admin/Pages/templates/reports-template.php:20
 #: assets/src/js/admin/reports/components/mini-period-selector/index.js:15
 #: assets/src/js/admin/reports/components/period-selector/index.js:66
 msgid "Week"
 msgstr ""
 
-#: src/Views/Admin/Pages/templates/reports-template.php:21
+#: src/Views/Admin/Pages/templates/reports-template.php:24
 #: assets/src/js/admin/reports/components/mini-period-selector/index.js:16
 #: assets/src/js/admin/reports/components/period-selector/index.js:67
 msgid "Month"
 msgstr ""
 
-#: src/Views/Admin/Pages/templates/reports-template.php:24
+#: src/Views/Admin/Pages/templates/reports-template.php:28
 #: assets/src/js/admin/reports/components/period-selector/index.js:68
-#: src/DonorDashboards/resources/js/app/components/annual-receipt-table/index.js:50
+#: src/DonorDashboards/resources/js/app/components/annual-receipt-table/index.js:47
 msgid "Year"
 msgstr ""
 
-#: src/Views/Admin/Pages/templates/reports-template.php:27
+#: src/Views/Admin/Pages/templates/reports-template.php:32
 #: assets/src/js/admin/reports/components/period-selector/index.js:69
 msgid "All Time"
 msgstr ""
 
-#: src/Views/Admin/Pages/templates/reports-template.php:42
+#: src/Views/Admin/Pages/templates/reports-template.php:50
 #: assets/src/js/admin/reports/components/tabs/index.js:33
 #: assets/src/js/admin/reports/widget/index.js:34
 msgid "Overview"
 msgstr ""
 
-#: src/Views/Admin/Pages/templates/reports-template.php:45
+#: src/Views/Admin/Pages/templates/reports-template.php:55
 #: assets/src/js/admin/reports/components/tabs/index.js:36
 msgid "Legacy Reports"
 msgstr ""
 
-#: src/Views/Admin/UpsellNotice.php:34
+#: src/Views/Admin/UpsellNotice.php:36
 msgid "Activate the <a href=\"%1$s\" title=\"%2$s\" target=\"_blank\">Recurring Donations add-on</a> and provide your donors with flexible subscription giving options."
 msgstr ""
 
-#: src/Views/Admin/UpsellNotice.php:36
+#: src/Views/Admin/UpsellNotice.php:41
 msgid "Click to view the Recurring Donations add-on"
 msgstr ""
 
-#: src/Views/Admin/UpsellNotice.php:39
+#: src/Views/Admin/UpsellNotice.php:44
 msgid "View Add-on"
 msgstr ""
 
-#: src/Views/Form/defaultFormDonationProcessing.php:12
-#: src/Views/Form/defaultRedirectHandlerTemplate.php:14
+#: src/Views/Form/defaultFormDonationProcessing.php:15
+#: src/Views/Form/defaultRedirectHandlerTemplate.php:16
 msgid "Redirecting..."
 msgstr ""
 
-#: src/Views/Form/Templates/Legacy/Legacy.php:18
+#: src/Views/Form/Templates/Legacy/Legacy.php:22
 msgid "Legacy Donation Form"
 msgstr ""
 
@@ -16075,189 +16119,241 @@ msgstr ""
 msgid "Step description will show up here if any"
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/Actions.php:265
+#: src/Views/Form/Templates/Sequoia/Actions.php:287
 msgid "How much would you like to donate? As a contributor to %s we make sure your donation goes directly to supporting our cause. Thank you for your generosity!"
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/Actions.php:312
+#: src/Views/Form/Templates/Sequoia/Actions.php:347
 msgid "Donate with %1$s"
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:15
-msgid "%1$s Step 1: %2$s Introduction"
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:21
+msgid "Visual Appearance"
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:16
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:76
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:122
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:159
-msgid "Step description goes here."
-msgstr ""
-
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:19
-msgid "Include Step One"
-msgstr ""
-
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:20
-msgid "If enabled, a headline and description show for the first step of the donation process."
-msgstr ""
-
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:31
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:136
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:169
-msgid "Headline"
-msgstr ""
-
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:32
-msgid "The headline displays at the top of step one, and defaults to the Form Title. Best practice: limit the headline to fewer than 8 words."
-msgstr ""
-
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:41
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:146
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:179
-#: src/Log/Admin/Logs/index.js:232
-#: src/Log/Admin/Logs/index.js:342
-msgid "Description"
-msgstr ""
-
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:42
-msgid "The description displays below the headline, and defaults to the Donation Form's excerpt, if present. Best practice: limit the description to short sentences that drive the donor toward the next step."
-msgstr ""
-
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:52
-msgid "Upload an eye-catching image that reflects your cause. For best results use an image in 16x9 aspect ratio at least 680x400px."
-msgstr ""
-
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:57
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:25
 msgid "Primary Color"
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:58
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:26
 msgid "The primary color is used throughout the Form Template for various elements including buttons, line breaks, and focus/hover elements. Set a color that reflects your brand or main featured image for best results."
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:64
-msgid "Donate Button"
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:34
+msgid "Primary Font"
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:65
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:100
-msgid "Customize the text that appears prompting the user to go to the next step."
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:35
+msgid "The default font for this donation form uses the Montserrat Google Font. The System Font option uses the system font of a particular operating system and can boost performance but impact visual appearance."
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:75
-msgid "%1$s Step 2: %2$s Payment Amount"
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:42
+msgid "Montserrat Google Font"
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:80
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:126
-msgid "Header Label"
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:43
+msgid "User’s System Font"
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:81
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:127
-msgid "The Header Label displays at the top of this step, and is designed to focus the donor's attention on what this step is about. Best Practice: limit this to fewer than 4 words."
-msgstr ""
-
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:91
-msgid "Content displays before the level amounts, and is designed to provide context for those levels. Best practice: limit this to 1-2 short sentences crafted to drive the donor to decide and to remove friction."
-msgstr ""
-
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:109
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:49
 msgid "Decimal amounts"
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:110
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:50
 msgid "Do you want to enable decimal amounts? When the setting is disabled, decimal values are rounded."
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:121
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:64
+msgid "%1$s Step 1: %2$s Introduction"
+msgstr ""
+
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:65
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:130
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:177
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:255
+msgid "Step description goes here."
+msgstr ""
+
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:68
+msgid "Include Step One"
+msgstr ""
+
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:69
+msgid "If enabled, a headline and description show for the first step of the donation process."
+msgstr ""
+
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:83
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:194
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:268
+msgid "Headline"
+msgstr ""
+
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:84
+msgid "The headline displays at the top of step one, and defaults to the Form Title. Best practice: limit the headline to fewer than 8 words."
+msgstr ""
+
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:96
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:207
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:281
+#: src/Log/Admin/Logs/index.js:248
+#: src/Log/Admin/Logs/index.js:361
+msgid "Description"
+msgstr ""
+
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:97
+msgid "The description displays below the headline, and defaults to the Donation Form's excerpt, if present. Best practice: limit the description to short sentences that drive the donor toward the next step."
+msgstr ""
+
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:110
+msgid "Upload an eye-catching image that reflects your cause. For best results use an image in 16x9 aspect ratio at least 680x400px."
+msgstr ""
+
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:118
+msgid "Donate Button"
+msgstr ""
+
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:119
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:166
+msgid "Customize the text that appears prompting the user to go to the next step."
+msgstr ""
+
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:129
+msgid "%1$s Step 2: %2$s Payment Amount"
+msgstr ""
+
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:134
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:181
+msgid "Header Label"
+msgstr ""
+
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:135
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:182
+msgid "The Header Label displays at the top of this step, and is designed to focus the donor's attention on what this step is about. Best Practice: limit this to fewer than 4 words."
+msgstr ""
+
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:148
+msgid "Content displays before the level amounts, and is designed to provide context for those levels. Best practice: limit this to 1-2 short sentences crafted to drive the donor to decide and to remove friction."
+msgstr ""
+
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:176
 msgid "%1$s Step 3: %2$s Payment Information"
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:137
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:195
 msgid "The Headline introduces the section where donors provide information about themselves. Best practice: limit the headline to fewer than 5 words."
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:147
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:208
 msgid "The description displays below the checkout step, and is designed to remove obstacles from donating. Best practice: use this section to reassure donors that they are making a wise decision."
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:158
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:220
+msgid "Donation Summary"
+msgstr ""
+
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:221
+msgid "Display a summary of the donation on the Payment Information step"
+msgstr ""
+
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:231
+msgid "Summary Heading"
+msgstr ""
+
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:232
+msgid "This text displays above the donation summary table and is designed to help introduce the donation breakdown to the visitor. Leave blank to remove."
+msgstr ""
+
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:241
+msgid "Summary Location"
+msgstr ""
+
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:242
+msgid "Where should the donation summary be placed?"
+msgstr ""
+
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:245
+msgid "Before Payment Fields"
+msgstr ""
+
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:246
+msgid "After Payment Fields"
+msgstr ""
+
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:254
 msgid "%1$s Step 4: %2$s Thank You"
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:164
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:260
 msgid "This image appears above the main thank you content. If no image is provided, a check mark icon will appear. For best results use an image in 16x9 aspect ratio at least 680x400px."
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:170
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:269
 msgid "This message displays in large font on the thank you screen. Best practice: short, sweet, and sincere works best."
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:180
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:282
 msgid "The description is displayed directly below the main headline and should be 1-2 sentences. You may use <a href=\"http://docs.givewp.com/email-tags\" target=\"_blank\">any of the available template tags</a> within this message."
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:188
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:299
 msgid "Social Sharing"
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:189
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:300
 msgid "Enable to display links for donors to share on social media that they donated."
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:200
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:311
 msgid "Sharing Instruction"
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:201
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:312
 msgid "Sharing instructions display above the social sharing buttons. Best practice: be direct, bold, and confident here. Donors share when they are asked to."
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:210
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:330
 msgid "Twitter Message"
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/optionConfig.php:211
+#: src/Views/Form/Templates/Sequoia/optionConfig.php:331
 msgid "This puts \"words in the mouth\" of your donor to share with their Twitter followers."
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/sections/footer.php:11
-#: src/Views/Form/Templates/Sequoia/views/receipt.php:98
+#: src/Views/Form/Templates/Sequoia/sections/footer.php:12
+#: src/Views/Form/Templates/Sequoia/views/receipt.php:109
 msgid "Secure Donation"
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/sections/footer.php:14
+#: src/Views/Form/Templates/Sequoia/sections/footer.php:17
 msgid "Insecure Donation"
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/sections/form-navigator.php:4
+#: src/Views/Form/Templates/Sequoia/sections/form-navigator.php:5
 #: assets/src/js/admin/onboarding-wizard/app/index.js:62
 msgid "Introduction"
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/Sequoia.php:72
+#: src/Views/Form/Templates/Sequoia/Sequoia.php:98
 msgid "Process Donation"
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/Sequoia.php:290
+#: src/Views/Form/Templates/Sequoia/Sequoia.php:343
 msgid "optional"
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/Sequoia.php:306
+#: src/Views/Form/Templates/Sequoia/Sequoia.php:361
 msgid "Multi-Step Donation Form"
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/views/social-sharing.php:24
+#: src/Views/Form/Templates/Sequoia/views/social-sharing.php:27
 msgid "Share on Facebook"
 msgstr ""
 
-#: src/Views/Form/Templates/Sequoia/views/social-sharing.php:42
+#: src/Views/Form/Templates/Sequoia/views/social-sharing.php:47
 msgid "Share on Twitter"
 msgstr ""
 
-#: src/Views/IframeView.php:100
+#: src/Views/IframeView.php:102
 msgid "Click to donate"
 msgstr ""
 
@@ -16270,7 +16366,7 @@ msgid "Donation Email:"
 msgstr ""
 
 #: templates/email-login-form.php:133
-#: src/DonorDashboards/resources/js/app/components/auth-modal/index.js:100
+#: src/DonorDashboards/resources/js/app/components/auth-modal/index.js:105
 msgid "Verify Email"
 msgstr ""
 
@@ -16915,58 +17011,58 @@ msgstr ""
 msgid "Load More Text"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/annual-receipt-table/annual-receipt-row/index.js:25
+#: src/DonorDashboards/resources/js/app/components/annual-receipt-table/annual-receipt-row/index.js:19
 #: src/DonorDashboards/resources/js/app/components/donation-row/index.js:44
 msgid "View Receipt"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/annual-receipt-table/index.js:56
+#: src/DonorDashboards/resources/js/app/components/annual-receipt-table/index.js:49
 msgid "Count"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/annual-receipt-table/index.js:59
+#: src/DonorDashboards/resources/js/app/components/annual-receipt-table/index.js:50
 msgid "Statement"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/annual-receipt-table/index.js:73
-#: src/DonorDashboards/resources/js/app/components/donation-table/index.js:75
-#: src/DonorDashboards/resources/js/app/components/subscription-table/index.js:74
+#: src/DonorDashboards/resources/js/app/components/annual-receipt-table/index.js:58
+#: src/DonorDashboards/resources/js/app/components/donation-table/index.js:60
+#: src/DonorDashboards/resources/js/app/components/subscription-table/index.js:61
 msgid "Showing"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/annual-receipt-table/index.js:73
+#: src/DonorDashboards/resources/js/app/components/annual-receipt-table/index.js:60
 msgid "Receipts"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/auth-modal/index.js:80
+#: src/DonorDashboards/resources/js/app/components/auth-modal/index.js:78
 msgid "Log in to see your donor dashboard"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/auth-modal/index.js:85
+#: src/DonorDashboards/resources/js/app/components/auth-modal/index.js:83
 msgid "The account you are currently logged into the site with does not have an associated donor dashboard. Donate now or contact the site administrator to associate this WordPress user with a donor dashboard."
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/auth-modal/index.js:91
+#: src/DonorDashboards/resources/js/app/components/auth-modal/index.js:92
 msgid "Enter your email below and we'll send you a link to access your donor dashboard"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/auth-modal/index.js:100
+#: src/DonorDashboards/resources/js/app/components/auth-modal/index.js:105
 msgid "Email Sent"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/auth-modal/index.js:121
+#: src/DonorDashboards/resources/js/app/components/auth-modal/index.js:134
 msgid "Log in below to access your dashboard"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/auth-modal/index.js:128
+#: src/DonorDashboards/resources/js/app/components/auth-modal/index.js:146
 msgid "Log in"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/avatar-control/index.js:32
+#: src/DonorDashboards/resources/js/app/components/avatar-control/index.js:31
 msgid "Avatar"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/donation-table/index.js:55
+#: src/DonorDashboards/resources/js/app/components/donation-table/index.js:50
 msgid "Campaign"
 msgstr ""
 
@@ -16974,163 +17070,163 @@ msgstr ""
 msgid "Last donated %s ago"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/donor-info/index.js:47
+#: src/DonorDashboards/resources/js/app/components/donor-info/index.js:48
 msgid "Donor for %s"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/logout-modal/index.js:20
+#: src/DonorDashboards/resources/js/app/components/logout-modal/index.js:17
 msgid "Are you sure you want to logout?"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/logout-modal/index.js:25
+#: src/DonorDashboards/resources/js/app/components/logout-modal/index.js:21
 msgid "Yes, logout"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/logout-modal/index.js:28
-#: src/DonorDashboards/resources/js/app/components/subscription-cancel-modal/index.js:27
+#: src/DonorDashboards/resources/js/app/components/logout-modal/index.js:23
+#: src/DonorDashboards/resources/js/app/components/subscription-cancel-modal/index.js:21
 msgid "Nevermind"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/select-control/index.js:111
+#: src/DonorDashboards/resources/js/app/components/select-control/index.js:115
 msgid "Select..."
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/subscription-cancel-modal/index.js:19
+#: src/DonorDashboards/resources/js/app/components/subscription-cancel-modal/index.js:16
 msgid "Cancel Subscription?"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/subscription-cancel-modal/index.js:24
+#: src/DonorDashboards/resources/js/app/components/subscription-cancel-modal/index.js:19
 msgid "Yes, cancel"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/subscription-manager/amount-control/index.js:82
+#: src/DonorDashboards/resources/js/app/components/subscription-manager/amount-control/index.js:81
 msgid "Amount must be less than %s."
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/subscription-manager/amount-control/index.js:89
-#: src/DonorDashboards/resources/js/app/components/subscription-manager/amount-control/index.js:99
+#: src/DonorDashboards/resources/js/app/components/subscription-manager/amount-control/index.js:85
+#: src/DonorDashboards/resources/js/app/components/subscription-manager/amount-control/index.js:92
 msgid "Amount must be more than %s."
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/subscription-manager/amount-control/index.js:113
+#: src/DonorDashboards/resources/js/app/components/subscription-manager/amount-control/index.js:104
 msgid "Subscription Amount"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/subscription-manager/amount-control/index.js:134
+#: src/DonorDashboards/resources/js/app/components/subscription-manager/amount-control/index.js:128
 msgid "Enter amount..."
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/subscription-manager/index.js:104
-#: src/DonorDashboards/resources/js/app/tabs/edit-profile/content.js:195
+#: src/DonorDashboards/resources/js/app/components/subscription-manager/index.js:102
+#: src/DonorDashboards/resources/js/app/tabs/edit-profile/content.js:191
 msgid "Updated"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/subscription-manager/index.js:108
+#: src/DonorDashboards/resources/js/app/components/subscription-manager/index.js:106
 msgid "Update Subscription"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/subscription-row/index.js:34
-#: src/DonorDashboards/resources/js/app/components/subscription-table/index.js:57
+#: src/DonorDashboards/resources/js/app/components/subscription-row/index.js:44
+#: src/DonorDashboards/resources/js/app/components/subscription-table/index.js:52
 msgid "Next Renewal"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/subscription-row/index.js:38
-#: src/DonorDashboards/resources/js/app/components/subscription-table/index.js:60
+#: src/DonorDashboards/resources/js/app/components/subscription-row/index.js:50
+#: src/DonorDashboards/resources/js/app/components/subscription-table/index.js:53
 msgid "Progress"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/subscription-row/index.js:45
+#: src/DonorDashboards/resources/js/app/components/subscription-row/index.js:58
 msgid "View Subscription"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/subscription-row/index.js:51
-#: src/DonorDashboards/resources/js/app/tabs/recurring-donations/content.js:91
+#: src/DonorDashboards/resources/js/app/components/subscription-row/index.js:64
+#: src/DonorDashboards/resources/js/app/tabs/recurring-donations/content.js:84
 msgid "Manage Subscription"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/subscription-row/index.js:58
+#: src/DonorDashboards/resources/js/app/components/subscription-row/index.js:70
 msgid "Cancel Subscription"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/subscription-table/index.js:51
-#: src/DonorDashboards/resources/js/app/tabs/recurring-donations/content.js:65
+#: src/DonorDashboards/resources/js/app/components/subscription-table/index.js:50
+#: src/DonorDashboards/resources/js/app/tabs/recurring-donations/content.js:61
 msgid "Subscription"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/components/tab-menu/index.js:32
+#: src/DonorDashboards/resources/js/app/components/tab-menu/index.js:28
 msgid "Logout"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/tabs/annual-receipts/content.js:45
+#: src/DonorDashboards/resources/js/app/tabs/annual-receipts/content.js:38
 msgid "Total Annual Receipts"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/tabs/annual-receipts/index.js:6
+#: src/DonorDashboards/resources/js/app/tabs/annual-receipts/index.js:7
 msgid "Annual Receipts"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/tabs/dashboard/index.js:6
+#: src/DonorDashboards/resources/js/app/tabs/dashboard/index.js:7
 msgid "Dashboard"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/tabs/donation-history/content.js:53
-#: src/DonorDashboards/resources/js/app/tabs/donation-history/content.js:65
+#: src/DonorDashboards/resources/js/app/tabs/donation-history/content.js:47
+#: src/DonorDashboards/resources/js/app/tabs/donation-history/content.js:59
 msgid "Back to Donation History"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/tabs/donation-history/content.js:69
+#: src/DonorDashboards/resources/js/app/tabs/donation-history/content.js:63
 msgid "Download Receipt"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/tabs/donation-history/content.js:88
+#: src/DonorDashboards/resources/js/app/tabs/donation-history/content.js:80
 msgid "Total Donations"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/tabs/donation-history/dashboard-content.js:42
+#: src/DonorDashboards/resources/js/app/tabs/donation-history/dashboard-content.js:35
 msgid "Your Giving Stats"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/tabs/donation-history/stats/index.js:43
+#: src/DonorDashboards/resources/js/app/tabs/donation-history/stats/index.js:46
 msgid "Lifetime donations"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/tabs/donation-history/stats/index.js:60
+#: src/DonorDashboards/resources/js/app/tabs/donation-history/stats/index.js:68
 msgid "Average donation"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/tabs/donation-history/utils/index.js:42
+#: src/DonorDashboards/resources/js/app/tabs/donation-history/utils/index.js:43
 msgid "The site is unable to verify your access to this data. Try refreshing the page, and if the problem persists reach out to the site administrator."
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/tabs/edit-profile/address-controls/index.js:43
+#: src/DonorDashboards/resources/js/app/tabs/edit-profile/address-controls/index.js:48
 msgid "Additional Address"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/tabs/edit-profile/address-controls/index.js:67
+#: src/DonorDashboards/resources/js/app/tabs/edit-profile/address-controls/index.js:74
 msgid "Primary Address"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/tabs/edit-profile/address-controls/index.js:82
+#: src/DonorDashboards/resources/js/app/tabs/edit-profile/address-controls/index.js:84
 msgid "Looks like you have not set up an address!"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/tabs/edit-profile/content.js:82
+#: src/DonorDashboards/resources/js/app/tabs/edit-profile/content.js:89
 msgid "Public - show my donations publicly"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/tabs/edit-profile/content.js:134
+#: src/DonorDashboards/resources/js/app/tabs/edit-profile/content.js:138
 msgid "Profile Information"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/tabs/edit-profile/content.js:182
+#: src/DonorDashboards/resources/js/app/tabs/edit-profile/content.js:176
 msgid "Additional Info"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/tabs/edit-profile/content.js:187
+#: src/DonorDashboards/resources/js/app/tabs/edit-profile/content.js:180
 msgid "This will prevent your avatar, first name, donation comments, and other information from appearing publicly on this organization’s website."
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/tabs/edit-profile/content.js:199
+#: src/DonorDashboards/resources/js/app/tabs/edit-profile/content.js:195
 msgid "Update Profile"
 msgstr ""
 
@@ -17138,26 +17234,26 @@ msgstr ""
 msgid "Additional Emails"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/tabs/edit-profile/email-controls/index.js:60
+#: src/DonorDashboards/resources/js/app/tabs/edit-profile/email-controls/index.js:63
 msgid "Primary Email"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/tabs/edit-profile/index.js:6
+#: src/DonorDashboards/resources/js/app/tabs/edit-profile/index.js:7
 msgid "Edit Profile"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/tabs/recurring-donations/content.js:58
-#: src/DonorDashboards/resources/js/app/tabs/recurring-donations/content.js:70
-#: src/DonorDashboards/resources/js/app/tabs/recurring-donations/content.js:84
-#: src/DonorDashboards/resources/js/app/tabs/recurring-donations/content.js:98
+#: src/DonorDashboards/resources/js/app/tabs/recurring-donations/content.js:54
+#: src/DonorDashboards/resources/js/app/tabs/recurring-donations/content.js:66
+#: src/DonorDashboards/resources/js/app/tabs/recurring-donations/content.js:78
+#: src/DonorDashboards/resources/js/app/tabs/recurring-donations/content.js:90
 msgid "Back to Recurring Donations"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/tabs/recurring-donations/content.js:117
+#: src/DonorDashboards/resources/js/app/tabs/recurring-donations/content.js:109
 msgid "Total Subscriptions"
 msgstr ""
 
-#: src/DonorDashboards/resources/js/app/tabs/recurring-donations/content.js:124
+#: src/DonorDashboards/resources/js/app/tabs/recurring-donations/content.js:116
 msgid "No Subscriptions"
 msgstr ""
 
@@ -17173,83 +17269,135 @@ msgstr ""
 msgid "The Donor Dashboard block allows donors to modify and review their donor information from the front-end."
 msgstr ""
 
-#: src/DonorDashboards/resources/js/block/index.js:25
+#: src/DonorDashboards/resources/js/block/index.js:26
 msgid "dashboard"
 msgstr ""
 
-#: src/Log/Admin/Logs/index.js:174
-#: src/MultiFormGoals/resources/js/blocks/progress-bar/edit/inspector.js:70
+#: src/InPluginUpsells/resources/js/components/AdditionalAddons.js:30
+msgid "Didn’t find what you were looking for?<br> View the entire catalog!"
+msgstr ""
+
+#: src/InPluginUpsells/resources/js/components/AdditionalAddons.js:34
+msgid "View All Add-ons"
+msgstr ""
+
+#: src/InPluginUpsells/resources/js/components/AddonsAdminPage.js:52
+msgid "Must Have Add-ons"
+msgstr ""
+
+#: src/InPluginUpsells/resources/js/components/AddonsAdminPage.js:53
+msgid "View Pricing Plans"
+msgstr ""
+
+#: src/InPluginUpsells/resources/js/components/AddonsAdminPage.js:54
+msgid "Additional Add-ons"
+msgstr ""
+
+#: src/InPluginUpsells/resources/js/components/RecurringDonationsTab.js:8
+msgid "Flexible recurring giving options"
+msgstr ""
+
+#: src/InPluginUpsells/resources/js/components/RecurringDonationsTab.js:9
+msgid "Subscription management built-in"
+msgstr ""
+
+#: src/InPluginUpsells/resources/js/components/RecurringDonationsTab.js:10
+msgid "Advanced reporting features"
+msgstr ""
+
+#: src/InPluginUpsells/resources/js/components/RecurringDonationsTab.js:11
+msgid "Multiple gateways supported"
+msgstr ""
+
+#: src/InPluginUpsells/resources/js/components/RecurringDonationsTab.js:12
+msgid "Customizable subscription emails"
+msgstr ""
+
+#: src/InPluginUpsells/resources/js/components/RecurringDonationsTab.js:13
+msgid "Stripe, PayPal, Apple and G Pay"
+msgstr ""
+
+#: src/InPluginUpsells/resources/js/components/RecurringDonationsTab.js:18
+msgid "Increase your fundraising with Recurring Donations"
+msgstr ""
+
+#: src/InPluginUpsells/resources/js/components/RecurringDonationsTab.js:20
+msgid "The best fundraisers and organizations know that capturing recurring donors is the foundation of your organizations longevity."
+msgstr ""
+
+#: src/Log/Admin/Logs/index.js:185
+#: src/MultiFormGoals/resources/js/blocks/progress-bar/edit/inspector.js:71
 msgid "All categories"
 msgstr ""
 
-#: src/Log/Admin/Logs/index.js:190
+#: src/Log/Admin/Logs/index.js:201
 msgid "All statuses"
 msgstr ""
 
-#: src/Log/Admin/Logs/index.js:206
+#: src/Log/Admin/Logs/index.js:217
 msgid "All sources"
 msgstr ""
 
-#: src/Log/Admin/Logs/index.js:226
+#: src/Log/Admin/Logs/index.js:242
 msgid "Log ID"
 msgstr ""
 
-#: src/Log/Admin/Logs/index.js:233
-#: src/Log/Admin/Logs/index.js:324
+#: src/Log/Admin/Logs/index.js:249
+#: src/Log/Admin/Logs/index.js:343
 msgid "Category"
 msgstr ""
 
-#: src/Log/Admin/Logs/index.js:234
-#: src/Log/Admin/Logs/index.js:330
-#: src/MigrationLog/Admin/Migrations/index.js:239
+#: src/Log/Admin/Logs/index.js:250
+#: src/Log/Admin/Logs/index.js:349
+#: src/MigrationLog/Admin/Migrations/index.js:240
 msgid "Source"
 msgstr ""
 
-#: src/Log/Admin/Logs/index.js:235
+#: src/Log/Admin/Logs/index.js:251
 msgid "Date & Time"
 msgstr ""
 
-#: src/Log/Admin/Logs/index.js:249
-#: src/Log/Admin/Logs/index.js:387
+#: src/Log/Admin/Logs/index.js:265
+#: src/Log/Admin/Logs/index.js:407
 #: src/MigrationLog/Admin/Migrations/index.js:322
 msgid "Something went wrong!"
 msgstr ""
 
-#: src/Log/Admin/Logs/index.js:258
+#: src/Log/Admin/Logs/index.js:277
 msgid "Flushing logs"
 msgstr ""
 
-#: src/Log/Admin/Logs/index.js:266
-#: src/Log/Admin/Logs/index.js:460
+#: src/Log/Admin/Logs/index.js:283
+#: src/Log/Admin/Logs/index.js:481
 msgid "Flush all logs"
 msgstr ""
 
-#: src/Log/Admin/Logs/index.js:270
+#: src/Log/Admin/Logs/index.js:285
 msgid "Do you want to flush all logs?"
 msgstr ""
 
-#: src/Log/Admin/Logs/index.js:336
+#: src/Log/Admin/Logs/index.js:355
 msgid "Date/Time"
 msgstr ""
 
-#: src/Log/Admin/Logs/index.js:378
+#: src/Log/Admin/Logs/index.js:398
 msgid "Loading log activity"
 msgstr ""
 
-#: src/Log/Admin/Logs/index.js:432
+#: src/Log/Admin/Logs/index.js:454
 msgid "Reset"
 msgstr ""
 
-#: src/MigrationLog/Admin/Migrations/index.js:138
+#: src/MigrationLog/Admin/Migrations/index.js:137
 msgid "Migration Failed"
 msgstr ""
 
-#: src/MigrationLog/Admin/Migrations/index.js:145
-#: src/MigrationLog/Admin/Migrations/index.js:230
+#: src/MigrationLog/Admin/Migrations/index.js:143
+#: src/MigrationLog/Admin/Migrations/index.js:231
 msgid "Last run"
 msgstr ""
 
-#: src/MigrationLog/Admin/Migrations/index.js:160
+#: src/MigrationLog/Admin/Migrations/index.js:162
 msgid "Database update failed!"
 msgstr ""
 
@@ -17257,27 +17405,27 @@ msgstr ""
 msgid "Check migration details for more information"
 msgstr ""
 
-#: src/MigrationLog/Admin/Migrations/index.js:174
+#: src/MigrationLog/Admin/Migrations/index.js:173
 msgid "Running Update"
 msgstr ""
 
-#: src/MigrationLog/Admin/Migrations/index.js:185
+#: src/MigrationLog/Admin/Migrations/index.js:183
 msgid "Create a Backup Before Running Database Update"
 msgstr ""
 
-#: src/MigrationLog/Admin/Migrations/index.js:190
+#: src/MigrationLog/Admin/Migrations/index.js:188
 msgid "We strongly recommend you create a complete backup of your WordPress files and database prior to performing an update. We are not responsible for any misuse, deletions, white screens, fatal errors, or any other issue resulting from the use of this plugin."
 msgstr ""
 
-#: src/MigrationLog/Admin/Migrations/index.js:219
+#: src/MigrationLog/Admin/Migrations/index.js:220
 msgid "Migration Title"
 msgstr ""
 
-#: src/MigrationLog/Admin/Migrations/index.js:248
+#: src/MigrationLog/Admin/Migrations/index.js:249
 msgid "Run Order"
 msgstr ""
 
-#: src/MigrationLog/Admin/Migrations/index.js:286
+#: src/MigrationLog/Admin/Migrations/index.js:285
 msgid "Re-run Update"
 msgstr ""
 
@@ -17285,11 +17433,11 @@ msgstr ""
 msgid "Loading updates activity"
 msgstr ""
 
-#: src/MultiFormGoals/resources/js/blocks/multi-form-goal/edit/index.js:28
+#: src/MultiFormGoals/resources/js/blocks/multi-form-goal/edit/index.js:33
 msgid "Heading"
 msgstr ""
 
-#: src/MultiFormGoals/resources/js/blocks/multi-form-goal/edit/index.js:31
+#: src/MultiFormGoals/resources/js/blocks/multi-form-goal/edit/index.js:39
 msgid "Summary"
 msgstr ""
 
@@ -17301,7 +17449,7 @@ msgstr ""
 msgid "The Multi-Form Goals block displays progress made across donation forms towards a common goal."
 msgstr ""
 
-#: src/MultiFormGoals/resources/js/blocks/multi-form-goal/index.js:31
+#: src/MultiFormGoals/resources/js/blocks/multi-form-goal/index.js:32
 msgid "multi form goals"
 msgstr ""
 
@@ -17329,15 +17477,15 @@ msgstr ""
 msgid "All forms"
 msgstr ""
 
-#: src/MultiFormGoals/resources/js/blocks/progress-bar/edit/inspector.js:68
+#: src/MultiFormGoals/resources/js/blocks/progress-bar/edit/inspector.js:69
 msgid "Filter by categories"
 msgstr ""
 
-#: src/MultiFormGoals/resources/js/blocks/progress-bar/edit/inspector.js:75
+#: src/MultiFormGoals/resources/js/blocks/progress-bar/edit/inspector.js:77
 msgid "Filter by tags"
 msgstr ""
 
-#: src/MultiFormGoals/resources/js/blocks/progress-bar/edit/inspector.js:77
+#: src/MultiFormGoals/resources/js/blocks/progress-bar/edit/inspector.js:79
 msgid "All tags"
 msgstr ""
 
@@ -17349,32 +17497,32 @@ msgstr ""
 msgid "The Progress Bar block displays progress made across donation forms towards a common goal."
 msgstr ""
 
-#: src/MultiFormGoals/resources/js/blocks/progress-bar/index.js:31
+#: src/MultiFormGoals/resources/js/blocks/progress-bar/index.js:32
 msgid "progress-bar"
 msgstr ""
 
-#: src/MultiFormGoals/resources/js/components/date-time-control/index.js:43
+#: src/MultiFormGoals/resources/js/components/date-time-control/index.js:37
 msgid "Set date"
 msgstr ""
 
-#: src/MultiFormGoals/resources/js/components/image-control/index.js:33
+#: src/MultiFormGoals/resources/js/components/image-control/index.js:27
 msgid "Change Image"
 msgstr ""
 
-#: src/MultiFormGoals/resources/js/components/image-control/index.js:36
+#: src/MultiFormGoals/resources/js/components/image-control/index.js:30
 msgid "Remove Image"
 msgstr ""
 
-#: src/MultiFormGoals/resources/js/components/image-control/index.js:42
+#: src/MultiFormGoals/resources/js/components/image-control/index.js:36
 msgid "Select an Image"
 msgstr ""
 
-#: src/PaymentGateways/resources/js/stripe-account-manager/customize-stripe-account-validation.js:42
-msgid "Select Default Stripe Account"
+#: src/PaymentGateways/resources/js/stripe-account-manager/customize-stripe-account-validation.js:46
+msgid "Select a Stripe Account"
 msgstr ""
 
-#: src/PaymentGateways/resources/js/stripe-account-manager/customize-stripe-account-validation.js:43
-msgid "We notice that you want to accept donation with other then global default Stripe Account but you did not selected Stripe account."
+#: src/PaymentGateways/resources/js/stripe-account-manager/customize-stripe-account-validation.js:47
+msgid "You've selected to customize the Stripe account for this form, but not selected a different account. Please set an account as default for this form on the Stripe settings tab."
 msgstr ""
 
 #: src/PaymentGateways/resources/js/stripe-account-manager/disconnect-stripe-account-action.js:21
@@ -17385,42 +17533,42 @@ msgstr ""
 msgid "Are you sure you want to disconnect this Stripe account?"
 msgstr ""
 
-#: src/PaymentGateways/resources/js/stripe-account-manager/set-default-account-action.js:29
+#: src/PaymentGateways/resources/js/stripe-account-manager/set-default-account-action.js:31
 msgid "Account Name"
 msgstr ""
 
-#: src/PaymentGateways/resources/js/stripe-account-manager/set-default-account-action.js:36
+#: src/PaymentGateways/resources/js/stripe-account-manager/set-default-account-action.js:40
 msgid "Account Email"
 msgstr ""
 
-#: src/PaymentGateways/resources/js/stripe-account-manager/set-default-account-action.js:44
+#: src/PaymentGateways/resources/js/stripe-account-manager/set-default-account-action.js:48
 msgid "View Documentation >"
 msgstr ""
 
-#: src/PaymentGateways/resources/js/stripe-account-manager/set-default-account-action.js:49
+#: src/PaymentGateways/resources/js/stripe-account-manager/set-default-account-action.js:54
 msgid "Please confirm you’d like to set the account below as the new default Stripe account. All donation forms set to inherit the Global Settings will use this new default account. %1$s<br>%2$s%3$s"
 msgstr ""
 
-#: src/PaymentGateways/resources/js/stripe-account-manager/set-default-account-action.js:55
+#: src/PaymentGateways/resources/js/stripe-account-manager/set-default-account-action.js:63
 msgid "Please confirm you’d like to set the account below as the new default Stripe account for this donation form. All donations will process through this Stripe account rather than the Global default Stripe account. %1$s<br>%2$s%3$s"
 msgstr ""
 
-#: src/PaymentGateways/resources/js/stripe-account-manager/set-default-account-action.js:69
+#: src/PaymentGateways/resources/js/stripe-account-manager/set-default-account-action.js:79
 msgid "Confirm New Default Account"
 msgstr ""
 
-#: src/Views/Components/Modal/index.js:98
+#: src/Views/Components/Modal/index.js:94
 msgid "Error details"
 msgstr ""
 
-#: src/Views/Components/Modal/index.js:98
+#: src/Views/Components/Modal/index.js:94
 msgid "Additional context"
 msgstr ""
 
-#: src/Views/Components/Pagination/index.js:50
+#: src/Views/Components/Pagination/index.js:48
 msgid "Current Page"
 msgstr ""
 
-#: src/Views/Components/Table/index.js:94
+#: src/Views/Components/Table/index.js:92
 msgid "No data"
 msgstr ""

@@ -154,29 +154,14 @@ class The_Events_Calendar
 	{
 		$tec = $bcd->the_events_calendar;
 
-		// Does this event have an organizer?
-		foreach( $bcd->custom_fields->original as $key => $value )
-		{
-			if ( $key != '_EventOrganizerID' )
-				continue;
+		$key = '_EventOrganizerID';
+		$values = $bcd->custom_fields()->get( $key );
 
-			$value = reset( $value );
-			$organiser_id = $value;
-			$this->debug( 'The organiser ID for this event is %s.', $organiser_id );
+		if ( ! $values )
+			return;
 
-			$organiser_post = false;
-			if ( $organiser_id > 0 )
-				$organiser_post = get_post( $organiser_id );
-			if ( ! $organiser_post )
-				$this->debug( 'No organiser post.' );
-			else
-			{
-				$tec->organiser = (object)[];
-				$tec->organiser->id = $organiser_id;
-				$tec->organiser->post = $organiser_post;
-				$tec->organiser->broadcast_data = ThreeWP_Broadcast()->get_post_broadcast_data( get_current_blog_id(), $organiser_id );
-			}
-		}
+		$this->debug( 'The organiser IDs for this event are %s.', $values );
+		$tec->organisers = $values;
 	}
 
 	/**
@@ -326,19 +311,20 @@ class The_Events_Calendar
 	{
 		$tec = $bcd->the_events_calendar;
 
-		if ( ! isset( $tec->organiser ) )
+		if ( ! isset( $tec->organisers ) )
 			return;
 
-		switch_to_blog( $bcd->parent_blog_id );
-		$organiser_bcd = ThreeWP_Broadcast()->api()
-			->broadcast_children( $tec->organiser->id, [ $bcd->current_child_blog_id ] );
-		restore_current_blog();
+		$new_values = [];
+		foreach( $tec->organisers as $organiser_id )
+		{
+			$new_organiser_id = $bcd->equivalent_posts()->broadcast_once( $bcd->parent_blog_id, $organiser_id );
+			$new_values []= $new_organiser_id;
+		}
 
-		$new_organiser_id = $organiser_bcd->new_post( 'ID' );
-		$bcd->equivalent_posts()->set( $bcd->parent_blog_id, $tec->organiser->id, get_current_blog_id(), $new_organiser_id );
-
-		update_post_meta( $bcd->new_post( 'ID' ), '_EventOrganizerID', $new_organiser_id );
-		$this->debug( 'Setting new organiser ID: %s', $new_organiser_id );
+		$this->debug( 'Setting new organiser ID: %s', $new_values );
+		$bcd->custom_fields()
+			->child_fields()
+			->update_metas( '_EventOrganizerID', $new_values );
 	}
 
 	/**

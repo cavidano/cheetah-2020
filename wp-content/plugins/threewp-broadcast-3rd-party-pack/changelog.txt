@@ -1,3 +1,21 @@
+<strong>48.01</strong> 20211105
+
+<a href="https://broadcast.plainviewplugins.com/addon/pods/">Pods</a>: Clear the cache when pods are deleted on the parent blog, so that they are also shown as deleted on the child blog.
+<a href="https://broadcast.plainviewplugins.com/addon/the-events-calendar/">The Events Calendar</a>: Allow several organisers per event.
+<a href="https://broadcast.plainviewplugins.com/addon/toolset/">Toolset</a>: Fix recursion when broadcasting relationships again. Use new broadcast_once() functionality.
+
+<strong>47.13</strong> 20211007
+
+<a href="https://broadcast.plainviewplugins.com/addon/gravity-forms/">Gravity Forms</a>: Delete existing add-on feeds on child blogs before adding the parent ones.
+
+<strong>47.12</strong> 20210923
+
+New add-on: <a href="https://broadcast.plainviewplugins.com/addon/search-and-filter/">Search And Filter</a>: Adds support for the <a href="https://searchandfilter.com/">Search And Filter</a> plugin.
+<a href="https://broadcast.plainviewplugins.com/addon/advanced-custom-fields/">ACF</a>: Allow handling of non-pro ACF5 fields with add-ons (repeater) as pro.
+<a href="https://broadcast.plainviewplugins.com/addon/elementor/">Elementor</a>: Add support for ProductIntroFullDetail element type.
+<a href="https://broadcast.plainviewplugins.com/addon/woocommerce/">WooCommerce</a>: Add support for syncing shipping and coupon info when syncing orders.
+<a href="https://broadcast.plainviewplugins.com/addon/woocommerce/">WooCommerce</a>: Add support for the <a href="https://wclovers.com/">WCFM - WooCommerce Multivendor Marketplace</a> plugin.
+
 <strong>47.11</strong> 20210815
 
 <a href="https://broadcast.plainviewplugins.com/addon/woocommerce/">WooCommerce</a>: Add support for <a href="https://woocommerce.com/products/product-bundles/">product bundles</a>.

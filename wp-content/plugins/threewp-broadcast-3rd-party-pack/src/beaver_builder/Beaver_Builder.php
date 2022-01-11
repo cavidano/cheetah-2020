@@ -142,6 +142,15 @@ class Beaver_Builder
 			if ( isset( $data->tax_post_category ) )
 			{
 				$bcd->taxonomies()->also_sync( 'post', 'category' );
+				$term_ids = explode( ',', $data->tax_post_category );
+				$bcd->taxonomies()->use_terms( $term_ids );
+			}
+
+			if ( isset( $data->tax_post_post_tag ) )
+			{
+				$bcd->taxonomies()->also_sync( 'post', 'post_tag' );
+				$term_ids = explode( ',', $data->tax_post_post_tag );
+				$bcd->taxonomies()->use_terms( $term_ids );
 			}
 
 			foreach( (array) $data as $key => $value )

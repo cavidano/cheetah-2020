@@ -273,25 +273,6 @@
           )
         );
 
-        // register_taxonomy(
-        //     'cheetah-category',
-        //     'ccfcheetahs',
-        //     array(
-        //       'labels' => array(
-        //       'name' => __( 'Cheetah Categories' ),
-        //       'singular_name' => __( 'Cheetah Category' ),
-        //       'add_new_item' => 'Add New Cheetah Category',
-        //       'new_item_name' => 'New Category Name',
-        //       'edit_item' => 'Edit Cheetah Category',
-        //       'view_item' => 'View Cheetah Category',
-        //       'update_item' => 'Update Cheetah Category'
-        //     ),
-        //     'hierarchical' => true,
-        //     'show_in_nav_menus' => true,
-        //     'public' => true
-        //   )
-        // );
-
         register_taxonomy(
             'news-author',
             'post',

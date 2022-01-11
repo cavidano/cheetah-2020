@@ -68,6 +68,7 @@ class ThreeWP_Broadcast_3rd_Party_Pack
 			__NAMESPACE__ . '\\post_expirator\\Post_Expirator',
 			__NAMESPACE__ . '\\qode_carousels\\Qode_Carousels',
 			__NAMESPACE__ . '\\rank_math\\Rank_Math',
+			__NAMESPACE__ . '\\search_and_filter\\Search_And_Filter',
 			__NAMESPACE__ . '\\sensei\\Sensei',
 			__NAMESPACE__ . '\\simple_custom_post_order\\Simple_Custom_Post_Order',
 			__NAMESPACE__ . '\\siteorigin_page_builder\\SiteOrigin_Page_Builder',

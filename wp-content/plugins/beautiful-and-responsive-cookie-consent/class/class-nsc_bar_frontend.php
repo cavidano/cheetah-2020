@@ -102,13 +102,13 @@ class nsc_bar_frontend
 
     public function nsc_bar_enqueue_scripts()
     {
-        wp_register_style('nsc_bar_nice-cookie-consent', $this->plugin_url . 'public/cookieNSCconsent.min.css', array(), '6');
+        wp_register_style('nsc_bar_nice-cookie-consent', $this->plugin_url . 'public/cookieNSCconsent.min.css', array(), '7');
         if (!empty($this->customized_font)) {
             wp_add_inline_style('nsc_bar_nice-cookie-consent', '.cc-window { font-family: ' . str_replace("&#039;", "'", esc_html($this->customized_font)) . '}');
         }
         wp_enqueue_style('nsc_bar_nice-cookie-consent');
 
-        wp_register_script('nsc_bar_nice-cookie-consent_js', $this->plugin_url . 'public/cookieNSCconsent.min.js', array(), '6', true);
+        wp_register_script('nsc_bar_nice-cookie-consent_js', $this->plugin_url . 'public/cookieNSCconsent.min.js', array(), '7', true);
         $eventListener = "load";
         if ($this->improveBannerLoadingSpeed === "1") {
             $eventListener = "DOMContentLoaded";

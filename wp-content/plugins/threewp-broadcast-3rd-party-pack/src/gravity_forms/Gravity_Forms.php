@@ -282,7 +282,9 @@ class Gravity_Forms
 		// Delete existing feeds.
 		foreach( $action->target_feeds as $target_feed )
 		{
-			$this->debug( 'Deleting target addon_feed: %s', $target_feed->id );
+			$query = sprintf( "DELETE FROM `%s` WHERE `id` = '%s'", $table, $target_feed->id );
+			$this->debug( 'Deleting target addon_feed %s: %s', $target_feed->id, $query );
+			$wpdb->query( $query );
 		}
 
 		// Add source feeds.

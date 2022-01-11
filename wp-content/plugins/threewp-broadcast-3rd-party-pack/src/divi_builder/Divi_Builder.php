@@ -172,7 +172,9 @@ class Divi_Builder
 						switch( $parts[ 1 ] )
 						{
 							case 'taxonomy':
-								$bcd->taxonomies()->also_sync( null, $parts[ 2 ] );
+								$bcd->taxonomies()
+									->also_sync( null, $parts[ 2 ] )
+									->use_term( $parts[ 2 ] );
 							break;
 						}
 					break;
@@ -180,7 +182,10 @@ class Divi_Builder
 						switch( $parts[ 1 ] )
 						{
 							case 'taxonomy':
+								// singular:taxonomy:category:term:id:10
 								$bcd->taxonomies()->also_sync( null, $parts[ 5 ] );
+								if ( $parts[ 4 ] == 'id' )
+									$bcd->taxonomies()->use_term( $parts[ 5 ] );
 							break;
 						}
 					break;

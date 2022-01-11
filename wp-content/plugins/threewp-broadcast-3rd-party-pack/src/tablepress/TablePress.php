@@ -76,7 +76,12 @@ class TablePress
 		$tables = \TablePress::$model_table->load_all();
 		$r = [];
 		foreach( $tables as $table_id )
-			$r[ $table_id ] = \TablePress::$model_table->load( $table_id );
+		{
+			$data = \TablePress::$model_table->load( $table_id );
+			if ( is_wp_error( $data ) )
+				continue;
+			$r[ $table_id ] = $data;
+		}
 
 		return $r;
 	}

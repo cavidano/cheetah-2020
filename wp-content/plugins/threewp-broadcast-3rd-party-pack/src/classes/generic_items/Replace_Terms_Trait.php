@@ -38,6 +38,7 @@ trait Replace_Terms_Trait
 			$this->debug( 'Term %s belongs to taxonomy %s', $id, $taxonomy );
 			$find->collection( 'taxonomies' )->set( $id, $taxonomy );
 			$bcd->taxonomies()->also_sync( false, $taxonomy );	// False to force resyncing of the taxonomy.
+			$bcd->taxonomies()->use_term( $id );
 			$taxonomies->set( $taxonomy, true );
 		}
 

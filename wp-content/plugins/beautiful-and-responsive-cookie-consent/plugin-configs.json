@@ -487,7 +487,7 @@
             "required": false,
             "extra_validation_name": false,
             "pre_selected_value": false,
-            "helpertext": "If this is checked the banner will appear on the next page again, until the user accepts cookies. In case of 'Differentiated consent' the user must accept all cookie types.",
+            "helpertext": "If checked and the user declines the usage of cookies, the banner will be shown on the next page load again, until he accepts. In case of 'Differentiated consent' the user must accept all cookie types.",
             "name": "Ask until acceptance",
             "save_in_db": true
           },

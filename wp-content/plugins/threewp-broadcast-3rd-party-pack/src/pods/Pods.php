@@ -21,6 +21,7 @@ class Pods
 		$this->add_filter( 'pods_admin_menu' );
 		$this->add_action( 'threewp_broadcast_broadcasting_started' );
 		$this->add_action( 'threewp_broadcast_broadcasting_before_restore_current_blog' );
+		$this->add_action( 'delete_post' );
 	}
 
 	/**
@@ -74,6 +75,17 @@ class Pods
 	// --------------------------------------------------------------------------------------------
 
 	/**
+		@brief		Clear the pods cache when deleting posts.
+		@since		2021-10-18 19:04:29
+	**/
+	public function delete_post( $post_id )
+	{
+		$this->debug( 'Flushing cache because of post %s', $post_id );
+		$api = pods_api();
+		$api->cache_flush_pods();
+	}
+
+	/**
 		@brief		threewp_broadcast_broadcasting_before_restore_current_blog
 		@since		2017-10-06 19:55:53
 	**/
@@ -121,6 +133,7 @@ class Pods
 		$podsmeta = \PodsMeta::$instance;
 		$groups = $podsmeta->groups_get( 'post_type', $bcd->post->post_type );
 		$taxonomies_to_sync = [];
+		$term_ids = [];		// The terms we are expecting.
 		foreach( $groups as $group )
 		{
 			if ( ! isset( $group[ 'fields' ] ) )
@@ -167,6 +180,7 @@ class Pods
 
 							foreach( $pick_values as $term_id )
 							{
+								$term_ids []= $term_id;		// We need to mark the terms as used.
 								$term = get_term( $term_id );
 								$taxonomy = $term->taxonomy;
 								$taxonomies_to_sync[ $taxonomy ] = $taxonomy;
@@ -219,6 +233,7 @@ class Pods
 		}
 		foreach( $taxonomies_to_sync as $taxonomy_to_sync )
 			$bcd->taxonomies()->also_sync_taxonomy( $taxonomy_to_sync );
+		$bcd->taxonomies()->use_terms( $term_ids );
 	}
 
 	/**
