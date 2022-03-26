@@ -360,7 +360,7 @@
         },
         {
             "key": "field_5cf124f448a42",
-            "label": "Custom Post Type Headers",
+            "label": "Events and News Headers",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -423,10 +423,10 @@
             "mime_types": ""
         },
         {
-            "key": "field_5dd1398566d65",
-            "label": "Videos Header Image",
-            "name": "videos_header_image",
-            "type": "image",
+            "key": "field_61dffa797a911",
+            "label": "Donate Settings",
+            "name": "",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -435,16 +435,24 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_61dff9072fd53",
+            "label": "Donate Page URL",
+            "name": "donate_page_url",
+            "type": "url",
+            "instructions": "Add the full url here",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "https:\/\/cheetah.org\/donate\/",
+            "placeholder": ""
         }
     ],
     "location": [
@@ -462,7 +470,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1574164078
+    "modified": 1642068701
 }

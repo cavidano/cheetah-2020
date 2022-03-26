@@ -21,6 +21,7 @@ $inside_news = strpos($url, 'news');
 </head>
 
 <body <?php body_class(); ?>>
+
     
     <!-- For keyboard users -->
     <a class="sr-only sr-only-focusable skip-menu" href="#content" title="Skip Header">Skip Header</a>
@@ -28,6 +29,9 @@ $inside_news = strpos($url, 'news');
     <header id="global-header">
 
         <?php if (is_child_theme()) : ?>
+
+
+<?php get_template_part('template-parts/cool'); ?>
 
         <?php $title = get_field('header_title_text', 'option'); ?>
 

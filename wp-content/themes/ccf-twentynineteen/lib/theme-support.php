@@ -161,7 +161,7 @@
 
     add_action( 'init', 'create_parent_post_types' );
 
-    function cheetahs_post_type(){
+    function cheetahs_post_type() {
 
         register_post_type(
             'CCF Cheetahs',
